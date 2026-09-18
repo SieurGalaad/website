@@ -38,6 +38,10 @@
 [hidden] { display: none !important; }
 
 html {
+  /* Indispensable : sans cette déclaration, le mode sombre automatique de
+     Chrome traite le site comme une page claire et le recouvre d'un filtre
+     gris. */
+  color-scheme: dark;
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
   -webkit-text-size-adjust: 100%;
@@ -349,17 +353,21 @@ a { color: inherit; }
   font-size: clamp(30px, 4.4vw, 48px); letter-spacing: .06em; margin: 0;
 }
 .filet { width: min(360px, 70%); height: 12px; margin: 18px auto 0; display: block; }
-.filet-trait { stroke-dasharray: 100; stroke-dashoffset: 100; transition: stroke-dashoffset 1s ease .1s; }
-.est-visible .filet-trait { stroke-dashoffset: 0; }
+.filet-trait { stroke-dasharray: 100; stroke-dashoffset: 0; transition: stroke-dashoffset 1s ease .1s; }
+.anime .filet-trait { stroke-dashoffset: 100; }
+.anime .est-visible .filet-trait { stroke-dashoffset: 0; }
 
 /* ──────────────────────── Apparitions au défilement ────────────────────── */
 /* Une seule mécanique pour tout le site : opacité + léger relevé.
    Pas d'effet par carte, qui devient fatigant après deux sections. */
+/* État par défaut : VISIBLE. Le masquage n'existe que si le script a pu poser
+   la classe « anime » sur <html>. Un texte parqué à opacité 0 en attendant un
+   observateur est un texte qu'on risque de ne jamais voir. */
 [data-apparition] {
-  opacity: 0; transform: translateY(22px);
   transition: opacity 620ms ease, transform 620ms cubic-bezier(.2,.7,.3,1);
 }
-[data-apparition].est-visible { opacity: 1; transform: none; }
+.anime [data-apparition] { opacity: 0; transform: translateY(22px); }
+.anime [data-apparition].est-visible { opacity: 1; transform: none; }
 [data-apparition][data-retard="1"] { transition-delay: 90ms; }
 [data-apparition][data-retard="2"] { transition-delay: 180ms; }
 [data-apparition][data-retard="3"] { transition-delay: 270ms; }
@@ -652,7 +660,7 @@ a { color: inherit; }
     animation-duration: .01ms !important; animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
   }
-  [data-apparition] { opacity: 1; transform: none; }
-  .filet-trait { stroke-dashoffset: 0; }
+  .anime [data-apparition] { opacity: 1 !important; transform: none !important; }
+  .anime .filet-trait { stroke-dashoffset: 0 !important; }
   .heros-poussiere { display: none; }
 }

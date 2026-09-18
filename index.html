@@ -6,6 +6,10 @@
 <title>SieurGalaad — Walkthroughs 4K60 Ultra</title>
 <meta name="description" content="Walkthroughs complets en 4K60 ultra, sans commentaire, en version française. Vidéos, planning de jeu, sorties PC à venir et configuration de capture de la chaîne SieurGalaad.">
 <meta name="theme-color" content="#0c0b0a">
+<!-- Déclare que la page est déjà sombre. Sans ça, le mode sombre automatique
+     de Chrome la considère comme claire et lui applique son propre filtre :
+     tout le site vire au gris délavé. -->
+<meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SieurGalaad — Walkthroughs 4K60 Ultra">
 <meta property="og:description" content="Walkthroughs complets en 4K60 ultra, sans commentaire, en version française.">
@@ -17,6 +21,12 @@
 <!-- Icone d'onglet : remplace assets/img/logo.png par ton logo, rien d'autre a faire. -->
 <link rel="icon" type="image/png" href="assets/img/logo.png">
 <link rel="apple-touch-icon" href="assets/img/logo.png">
+<script>
+  /* Les apparitions au défilement ne sont armées que si le JavaScript tourne.
+     Sans cette classe, le contenu reste visible en toutes circonstances —
+     une page ne doit jamais dépendre d'un script pour être lisible. */
+  document.documentElement.classList.add("anime");
+</script>
 </head>
 <body>
 

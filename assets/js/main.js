@@ -312,17 +312,50 @@
   /* ─────────────────────────────── Effets ──────────────────────────────── */
 
   // 1. Apparition à l'encre : opacité + relevé, une seule fois par élément.
+  //    Trois filets successifs, parce qu'un contenu invisible est un bug bien
+  //    plus grave qu'une animation manquée :
+  //      a. ce qui est déjà à l'écran apparaît immédiatement ;
+  //      b. le reste passe par l'observateur d'intersection ;
+  //      c. si l'observateur ne se déclenche jamais (onglet en arrière-plan,
+  //         page mise en veille par le navigateur), le défilement prend le
+  //         relais.
   function brancherApparitions() {
+    const cibles = $$("[data-apparition], .section-entete");
+    const reveler = (el) => el.classList.add("est-visible");
+    const dansLaVue = (el) => {
+      const r = el.getBoundingClientRect();
+      return r.top < window.innerHeight * 0.92 && r.bottom > 0;
+    };
+
+    cibles.forEach((el) => { if (dansLaVue(el)) reveler(el); });
+
+    let restants = cibles.filter((el) => !el.classList.contains("est-visible"));
+    if (!restants.length) return;
+
+    if (typeof IntersectionObserver !== "function") { restants.forEach(reveler); return; }
+
     const observateur = new IntersectionObserver((entrees) => {
       entrees.forEach((entree) => {
         if (entree.isIntersecting) {
-          entree.target.classList.add("est-visible");
+          reveler(entree.target);
           observateur.unobserve(entree.target);
         }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    restants.forEach((el) => observateur.observe(el));
 
-    $$("[data-apparition], .section-entete").forEach((el) => observateur.observe(el));
+    const auDefilement = () => {
+      restants = restants.filter((el) => {
+        if (el.classList.contains("est-visible")) return false;
+        if (!dansLaVue(el)) return true;
+        reveler(el);
+        observateur.unobserve(el);
+        return false;
+      });
+      if (!restants.length) window.removeEventListener("scroll", auDefilement);
+    };
+    window.addEventListener("scroll", auDefilement, { passive: true });
+    window.addEventListener("resize", auDefilement, { passive: true });
   }
 
   // 2. Parallaxe du héros : trois profondeurs, calculées dans un seul rAF.
@@ -391,26 +424,27 @@
     });
   }
 
-  // 5. Compteurs : le chiffre monte une fois, à l'entrée dans le champ.
+  // 5. Compteurs : le chiffre est écrit tout de suite, puis animé s'il est à
+  //    l'écran. Jamais d'observateur ici — un chiffre bloqué sur « — » parce
+  //    qu'une animation ne s'est pas lancée serait absurde.
   function animerCompteur(element, valeur) {
     if (!element) return;
     if (!valeur) { element.textContent = "—"; return; }
-    if (moinsDeMouvement) { element.textContent = nombreFr.format(valeur); return; }
+    element.textContent = nombreFr.format(valeur);
+    if (moinsDeMouvement) return;
 
-    const observateur = new IntersectionObserver((entrees) => {
-      if (!entrees[0].isIntersecting) return;
-      observateur.disconnect();
-      const duree = 1100;
-      const depart = performance.now();
-      const pas = (maintenant) => {
-        const t = Math.min(1, (maintenant - depart) / duree);
-        const adouci = 1 - Math.pow(1 - t, 3);
-        element.textContent = nombreFr.format(Math.round(valeur * adouci));
-        if (t < 1) requestAnimationFrame(pas);
-      };
-      requestAnimationFrame(pas);
-    }, { threshold: 0.4 });
-    observateur.observe(element);
+    const r = element.getBoundingClientRect();
+    if (r.top > window.innerHeight || r.bottom < 0) return;
+
+    const duree = 1100;
+    const depart = performance.now();
+    const pas = (maintenant) => {
+      const t = Math.min(1, (maintenant - depart) / duree);
+      const adouci = 1 - Math.pow(1 - t, 3);
+      element.textContent = nombreFr.format(Math.round(valeur * adouci));
+      if (t < 1) requestAnimationFrame(pas);
+    };
+    requestAnimationFrame(pas);
   }
 
   // 6. Inclinaison 3D légère des cartes (souris uniquement, 6° maximum).
@@ -473,6 +507,7 @@
     dimensionner();
     dessiner();
     window.addEventListener("resize", dimensionner);
+    if (typeof IntersectionObserver !== "function") return;
     // On coupe l'animation dès que le héros sort du champ : zéro CPU en bas de page.
     new IntersectionObserver((entrees) => {
       if (entrees[0].isIntersecting) { if (!animation) dessiner(); }
@@ -495,12 +530,20 @@
   }
 
   /* ─────────────────────────────── Démarrage ───────────────────────────── */
+
+  /* Un effet décoratif qui échoue ne doit JAMAIS empêcher le contenu de
+     s'afficher. Chaque étage est isolé : s'il tombe, le reste continue. */
+  function sansCasser(nom, fonction) {
+    try { fonction(); }
+    catch (e) { console.warn(`[site] « ${nom} » a échoué, le reste continue :`, e); }
+  }
+
   async function demarrer() {
-    surveillerLogos();
-    brancherMenu();
-    brancherParallaxe();
-    brancherPoussiere();
-    brancherDefilement();
+    sansCasser("logos", surveillerLogos);
+    sansCasser("menu", brancherMenu);
+    sansCasser("parallaxe", brancherParallaxe);
+    sansCasser("poussière", brancherPoussiere);
+    sansCasser("défilement", brancherDefilement);
 
     const donnees = await chargerDonnees();
     if (!donnees) {
