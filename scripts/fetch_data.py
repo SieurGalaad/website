@@ -18,8 +18,10 @@ C'est volontaire : un site qui se vide tout seul est pire qu'un site un peu
 en retard.
 
 Variables d'environnement (toutes optionnelles sauf RAWG_API_KEY) :
-  YOUTUBE_CHANNEL_ID    par defaut UCqaDIhqrP-MLQzU8Mj1-JDA
-  YOUTUBE_API_KEY       optionnel, debloque le catalogue complet + stats chaine
+  YOUTUBE_HANDLE        par defaut SieurGalaad (le @pseudo de la chaine)
+  YOUTUBE_CHANNEL_ID    optionnel : resolu automatiquement depuis le pseudo
+  YOUTUBE_API_KEY       necessaire pour resoudre le pseudo, le catalogue complet
+                        et les statistiques de la chaine
   REDDIT_USERNAME       par defaut SieurGalaad
   REDDIT_CLIENT_ID      optionnel mais fortement recommande (voir README)
   REDDIT_CLIENT_SECRET  optionnel
@@ -45,7 +47,9 @@ RACINE = Path(__file__).resolve().parent.parent
 FICHIER_SORTIE = RACINE / "data" / "site.json"
 FICHIER_PLANNING = RACINE / "data" / "planning.json"
 
-CHANNEL_ID = os.environ.get("YOUTUBE_CHANNEL_ID", "UCqaDIhqrP-MLQzU8Mj1-JDA")
+YOUTUBE_HANDLE = os.environ.get("YOUTUBE_HANDLE", "SieurGalaad").strip().lstrip("@")
+# Laisse vide : l'identifiant est resolu automatiquement a partir du pseudo.
+CHANNEL_ID = os.environ.get("YOUTUBE_CHANNEL_ID", "").strip()
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", "").strip()
 REDDIT_USERNAME = os.environ.get("REDDIT_USERNAME", "SieurGalaad").strip()
 REDDIT_CLIENT_ID = os.environ.get("REDDIT_CLIENT_ID", "").strip()
@@ -132,8 +136,65 @@ def horodatage_iso(valeur: str) -> str:
 # --------------------------------------------------------------------------- #
 # YouTube
 # --------------------------------------------------------------------------- #
+def resoudre_channel_id() -> str:
+    """Trouve l'identifiant UC... de la chaine a partir du pseudo @SieurGalaad.
+
+    Un identifiant recopie a la main est la source d'erreur numero un (le flux
+    RSS renvoie alors un 404 sans explication). On le demande donc a YouTube.
+    Necessite YOUTUBE_API_KEY ; sinon on se rabat sur YOUTUBE_CHANNEL_ID.
+    """
+    global CHANNEL_ID
+    if CHANNEL_ID and not YOUTUBE_API_KEY:
+        return CHANNEL_ID
+    if not YOUTUBE_API_KEY:
+        log("Ni YOUTUBE_CHANNEL_ID ni YOUTUBE_API_KEY : impossible d'identifier la chaine.")
+        return ""
+
+    base = "https://www.googleapis.com/youtube/v3/channels?part=id,snippet&key=" + YOUTUBE_API_KEY
+    tentatives = [
+        ("pseudo", f"{base}&forHandle=%40{urllib.parse.quote(YOUTUBE_HANDLE)}"),
+        ("ancien pseudo", f"{base}&forUsername={urllib.parse.quote(YOUTUBE_HANDLE)}"),
+    ]
+    if CHANNEL_ID:
+        tentatives.insert(0, ("identifiant fourni", f"{base}&id={CHANNEL_ID}"))
+
+    for libelle, url in tentatives:
+        try:
+            items = http_json_retry(url).get("items") or []
+        except Exception as exc:  # noqa: BLE001
+            log(f"Resolution par {libelle} en echec : {exc}")
+            continue
+        if items:
+            trouve = items[0]["id"]
+            if trouve != CHANNEL_ID:
+                log(f"Identifiant de chaine resolu par {libelle} : {trouve}")
+            CHANNEL_ID = trouve
+            return trouve
+
+    # Dernier recours : la recherche, en n'acceptant qu'une correspondance exacte
+    # du titre, pour ne pas ramener la chaine de quelqu'un d'autre.
+    try:
+        url = (
+            "https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel"
+            f"&q={urllib.parse.quote(YOUTUBE_HANDLE)}&maxResults=5&key={YOUTUBE_API_KEY}"
+        )
+        for item in http_json_retry(url).get("items", []):
+            titre = (item.get("snippet", {}).get("title") or "").strip()
+            if titre.lower() == YOUTUBE_HANDLE.lower():
+                CHANNEL_ID = item["snippet"]["channelId"]
+                log(f"Identifiant de chaine resolu par recherche : {CHANNEL_ID}")
+                return CHANNEL_ID
+    except Exception as exc:  # noqa: BLE001
+        log(f"Recherche de la chaine en echec : {exc}")
+
+    log(f"Chaine @{YOUTUBE_HANDLE} introuvable. Renseigne la variable YOUTUBE_CHANNEL_ID.")
+    return CHANNEL_ID
+
+
 def youtube_via_rss() -> dict:
     """Flux public, sans cle : les 15 dernieres videos. Toujours disponible."""
+    if not CHANNEL_ID:
+        raise RuntimeError("identifiant de chaine inconnu")
     url = f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"
     racine = ET.fromstring(http_get(url).decode("utf-8", "replace"))
     titre_chaine = (racine.findtext("atom:title", default="SieurGalaad", namespaces=NS) or "").strip()
@@ -241,6 +302,7 @@ def youtube_via_api() -> dict:
 
 
 def collecter_youtube() -> tuple[dict | None, str]:
+    resoudre_channel_id()
     if YOUTUBE_API_KEY:
         try:
             donnees = youtube_via_api()
@@ -467,8 +529,9 @@ def main() -> int:
         chaine = {
             "id": CHANNEL_ID,
             "titre": yt.get("titre", "SieurGalaad"),
-            "url": f"https://www.youtube.com/channel/{CHANNEL_ID}",
-            "handle": "https://www.youtube.com/@SieurGalaad",
+            "url": (f"https://www.youtube.com/channel/{CHANNEL_ID}" if CHANNEL_ID
+                    else f"https://www.youtube.com/@{YOUTUBE_HANDLE}"),
+            "handle": f"https://www.youtube.com/@{YOUTUBE_HANDLE}",
             "reddit": REDDIT_USERNAME,
             "description": yt.get("description", chaine_precedente.get("description", "")),
             "abonnes": yt.get("abonnes", chaine_precedente.get("abonnes", 0)),
@@ -486,8 +549,9 @@ def main() -> int:
         chaine = chaine_precedente or {
             "id": CHANNEL_ID,
             "titre": "SieurGalaad",
-            "url": f"https://www.youtube.com/channel/{CHANNEL_ID}",
-            "handle": "https://www.youtube.com/@SieurGalaad",
+            "url": (f"https://www.youtube.com/channel/{CHANNEL_ID}" if CHANNEL_ID
+                    else f"https://www.youtube.com/@{YOUTUBE_HANDLE}"),
+            "handle": f"https://www.youtube.com/@{YOUTUBE_HANDLE}",
             "reddit": REDDIT_USERNAME,
         }
         videos = videos_precedentes
@@ -512,11 +576,11 @@ def main() -> int:
         f"{len(site['sorties'])} sorties, {len(site['planning'])} creneaux"
     )
 
-    # On echoue bruyamment seulement si TOUT est tombe : sinon le site reste
-    # publiable avec les donnees precedentes.
+    # On ne fait jamais echouer la publication : un site en ligne avec une
+    # section vide vaut mieux qu'un site absent. Les sources en panne sont
+    # signalees dans le pied de page.
     if statuts["youtube"] == "echec" and not site["videos"]:
-        log("Aucune donnee video disponible, echec.")
-        return 1
+        log("ATTENTION : aucune video recuperee. Le site est publie quand meme.")
     return 0
 
 
