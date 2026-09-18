@@ -140,8 +140,11 @@ a { color: inherit; }
 .marque { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
 .marque-logo {
   height: 36px; width: auto; max-width: 120px; flex: none;
-  object-fit: contain; transition: height var(--transition);
+  object-fit: contain;
+  filter: drop-shadow(0 0 9px rgba(200, 163, 74, .30));
+  transition: height var(--transition), filter var(--transition);
 }
+.marque:hover .marque-logo { filter: drop-shadow(0 0 16px rgba(231, 197, 111, .60)); }
 .entete.est-collee .marque-logo { height: 30px; }
 .marque-texte {
   font-family: var(--police-titre); font-weight: 600;
@@ -200,6 +203,18 @@ a { color: inherit; }
 .bouton--fantome { border-color: var(--trait); color: var(--parchemin-terne); }
 .bouton--fantome:hover { color: var(--encre); border-color: var(--or); }
 .bouton:active { transform: translateY(1px); }
+/* Une lueur qui ne se déclenche qu'au survol : aucun coût quand la souris
+   est ailleurs. */
+.bouton:hover { box-shadow: 0 0 26px rgba(200, 163, 74, .26); }
+
+/* Seul le bouton d'abonnement respire en permanence : c'est l'unique action
+   que le site cherche vraiment à provoquer. */
+#lien-abonnement { animation: lueur-abonnement 7.5s ease-in-out infinite; }
+#lien-abonnement:hover { animation: none; box-shadow: 0 0 30px rgba(231, 197, 111, .48); }
+@keyframes lueur-abonnement {
+  0%, 100% { box-shadow: 0 0 0 rgba(200, 163, 74, 0); }
+  50%      { box-shadow: 0 0 22px rgba(200, 163, 74, .30); }
+}
 
 /* ─────────────────────────────── Héros ─────────────────────────────────── */
 .heros {
@@ -242,15 +257,26 @@ a { color: inherit; }
 }
 
 /* Le chevalier : personnage de la scène, pas illustration posée à côté du
-   texte. Masqué sous 1100 px, où le titre a besoin de toute la largeur. */
+   texte. Masqué sous 1100 px, où le titre a besoin de toute la largeur.
+   Le halo est le ::before du conteneur : il suit le personnage à toutes les
+   tailles sans avoir à recopier trois fois ses réglages de position. */
 .heros-chevalier {
   position: absolute; display: none;
   left: clamp(0px, 3vw, 96px);
   bottom: 2%;
-  height: min(52vh, 460px); width: auto;
-  object-fit: contain; pointer-events: none;
+  height: min(52vh, 460px); width: auto; aspect-ratio: 393 / 760;
+  pointer-events: none; will-change: transform;
+}
+.heros-chevalier img {
+  position: relative; width: 100%; height: 100%; object-fit: contain;
   filter: drop-shadow(0 18px 34px rgba(0, 0, 0, .8));
-  will-change: transform;
+}
+.heros-chevalier::before {
+  content: ""; position: absolute; left: 50%; top: 46%;
+  width: 210%; height: 110%; transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(231,197,111,.20), rgba(200,163,74,.06) 46%, transparent 70%);
+  animation: souffle-aura 11s ease-in-out infinite;
+  will-change: opacity;
 }
 /* Il grandit avec l'écran : sur un 1366 il écraserait le titre, sur un
    ultra-large il serait perdu. */
@@ -258,14 +284,34 @@ a { color: inherit; }
 @media (min-width: 1400px) { .heros-chevalier { height: min(60vh, 580px); left: clamp(20px, 4vw, 140px); } }
 @media (min-width: 1700px) { .heros-chevalier { height: min(66vh, 700px); left: clamp(60px, 8vw, 240px); } }
 
-.heros-poussiere { position: absolute; inset: 0; pointer-events: none; opacity: .5; }
+.heros-poussiere { position: absolute; inset: 0; pointer-events: none; opacity: .68; }
 
+/* ── Lumière de paladin ──────────────────────────────────────────────────
+   Uniquement des halos en dégradé radial dont on anime l'opacité : c'est la
+   seule propriété que le navigateur sait animer sans repeindre, et surtout
+   aucun mode de fusion — c'est ce qui avait mis le fond en gris.
+   Respirations lentes et désynchronisées (6 à 11 s), amplitudes faibles :
+   on doit le sentir sans le remarquer. */
+
+.heros-blason {
+  position: relative; display: block; width: fit-content; margin: 0 auto 26px;
+}
+.heros-blason::before {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: 260%; height: 260%; transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(231,197,111,.30), rgba(200,163,74,.10) 42%, transparent 68%);
+  animation: souffle-halo 6.5s ease-in-out infinite;
+  pointer-events: none;
+}
 .heros-logo {
-  display: block; margin: 0 auto 26px;
+  position: relative; display: block;
   height: clamp(64px, 8vw, 96px); width: auto; max-width: 240px;
   object-fit: contain;
   filter: drop-shadow(0 4px 24px rgba(0, 0, 0, .6));
 }
+
+@keyframes souffle-halo { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes souffle-aura { 0%, 100% { opacity: .42; } 50% { opacity: .92; } }
 
 .heros-contenu { position: relative; z-index: 5; max-width: 860px; }
 
@@ -333,7 +379,19 @@ a { color: inherit; }
 .section--alt::before { top: 0; }
 .section--alt::after { bottom: 0; }
 
-.section-entete { text-align: center; margin-bottom: clamp(38px, 5vw, 62px); }
+.section-entete { text-align: center; margin-bottom: clamp(38px, 5vw, 62px); position: relative; }
+
+/* Lueur derrière l'emblème, seulement dans les sections qui en ont un.
+   Respiration décalée de celle du héros pour éviter l'effet clignotant
+   synchronisé quand deux sections sont visibles en même temps. */
+.section-entete:has(.section-embleme)::before {
+  content: ""; position: absolute; left: 50%; top: -10px;
+  width: min(380px, 78%); height: clamp(100px, 10vw, 145px);
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(231,197,111,.14), rgba(200,163,74,.04) 48%, transparent 72%);
+  animation: souffle-halo 9s ease-in-out infinite;
+  pointer-events: none;
+}
 
 /* Emblème de section : une illustration par section, choisie pour ce qu'elle
    raconte — le coffre pour la vidéothèque, les armes pour le planning, la
@@ -358,7 +416,10 @@ a { color: inherit; }
   font-family: var(--police-titre); font-weight: 600; text-transform: uppercase;
   font-size: clamp(30px, 4.4vw, 48px); letter-spacing: .06em; margin: 0;
 }
-.filet { width: min(360px, 70%); height: 12px; margin: 18px auto 0; display: block; }
+.filet {
+  width: min(360px, 70%); height: 12px; margin: 18px auto 0; display: block;
+  filter: drop-shadow(0 0 7px rgba(200, 163, 74, .38));
+}
 .filet-trait { stroke-dasharray: 100; stroke-dashoffset: 0; transition: stroke-dashoffset 1s ease .1s; }
 .anime .filet-trait { stroke-dashoffset: 100; }
 .anime .est-visible .filet-trait { stroke-dashoffset: 0; }
@@ -386,7 +447,11 @@ a { color: inherit; }
   clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
   transition: border-color var(--transition), transform var(--transition), background var(--transition);
 }
-.panneau:hover { border-color: var(--or-sombre); background: var(--panneau-haut); }
+.panneau { box-shadow: 0 0 0 rgba(200, 163, 74, 0); }
+.panneau:hover {
+  border-color: var(--or-sombre); background: var(--panneau-haut);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, .5), 0 0 24px rgba(200, 163, 74, .12);
+}
 
 /* ─────────────────────── À l'affiche (lecteur) ─────────────────────────── */
 .affiche-grille {

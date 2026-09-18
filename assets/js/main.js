@@ -477,28 +477,50 @@
       canvas.width = r.width * dpr;
       canvas.height = r.height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const nombre = Math.round(Math.min(46, r.width / 26));
-      particules = Array.from({ length: nombre }, () => ({
-        x: Math.random() * r.width,
-        y: Math.random() * r.height,
-        r: Math.random() * 1.5 + 0.4,
-        vy: -(Math.random() * 0.22 + 0.05),
-        vx: (Math.random() - 0.5) * 0.14,
-        a: Math.random() * 0.4 + 0.1,
-      }));
+      /* Deux populations : la poussière, nombreuse et à peine visible, et
+         quelques braises plus grosses qui portent la lueur dorée. Chacune
+         dérive en sinusoïde plutôt qu'en ligne droite — c'est ce qui donne
+         l'impression qu'elles volent au lieu de tomber à l'envers. */
+      const nombre = Math.round(Math.min(95, r.width / 15));
+      particules = Array.from({ length: nombre }, (_, i) => {
+        const braise = i % 7 === 0;
+        return {
+          braise,
+          x: Math.random() * r.width,
+          y: Math.random() * r.height,
+          r: braise ? Math.random() * 1.2 + 1.4 : Math.random() * 1.1 + 0.35,
+          vy: -(Math.random() * 0.26 + 0.05),
+          vx: (Math.random() - 0.5) * 0.1,
+          a: braise ? Math.random() * 0.25 + 0.35 : Math.random() * 0.3 + 0.08,
+          phase: Math.random() * Math.PI * 2,
+          freq: Math.random() * 0.0007 + 0.0003,
+          amp: Math.random() * 0.34 + 0.12,
+          scintille: Math.random() * 0.0016 + 0.0006,
+        };
+      });
     };
 
-    const dessiner = () => {
+    const dessiner = (horodatage) => {
+      const t = horodatage || 0;
       const r = canvas.getBoundingClientRect();
       ctx.clearRect(0, 0, r.width, r.height);
       particules.forEach((p) => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.y < -5) { p.y = r.height + 5; p.x = Math.random() * r.width; }
-        if (p.x < -5) p.x = r.width + 5;
-        if (p.x > r.width + 5) p.x = -5;
+        p.x += p.vx + Math.sin(t * p.freq + p.phase) * p.amp;
+        p.y += p.vy;
+        if (p.y < -6) { p.y = r.height + 6; p.x = Math.random() * r.width; }
+        if (p.x < -6) p.x = r.width + 6;
+        if (p.x > r.width + 6) p.x = -6;
+
+        const eclat = p.a * (0.72 + 0.28 * Math.sin(t * p.scintille + p.phase));
+        if (p.braise) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r * 3.4, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(200,163,74,${eclat * 0.16})`;
+          ctx.fill();
+        }
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(231,197,111,${p.a})`;
+        ctx.fillStyle = `rgba(${p.braise ? "245,222,160" : "231,197,111"},${eclat})`;
         ctx.fill();
       });
       animation = requestAnimationFrame(dessiner);
