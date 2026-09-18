@@ -267,25 +267,46 @@
     }).join("");
   }
 
-  function rendreReddit(donnees) {
-    const grille = $("#grille-posts");
-    const posts = donnees.reddit || [];
-    const pseudo = donnees.chaine?.reddit || "SieurGalaad";
-    $("#lien-reddit").href = `https://www.reddit.com/user/${encodeURIComponent(pseudo)}`;
+  function rendreForge(donnees) {
+    const grille = $("#grille-forge");
+    const forge = donnees.forge || {};
+    const groupes = (forge.groupes || []).filter((g) => (g.lignes || []).length);
 
-    if (!posts.length) {
-      grille.innerHTML = `<p class="etat-vide">Aucun post Reddit à afficher pour l'instant.</p>`;
+    const pseudo = donnees.chaine?.reddit || "SieurGalaad";
+    const lienReddit = $("#lien-reddit");
+    if (lienReddit) lienReddit.href = `https://www.reddit.com/user/${encodeURIComponent(pseudo)}`;
+
+    $("#forge-intro").textContent = forge.intro || "";
+
+    if (!groupes.length) {
+      grille.innerHTML = `<p class="etat-vide">Configuration non renseignée — complète <code>data/forge.json</code>.</p>`;
       return;
     }
-    grille.innerHTML = posts.map((p) => `
-      <a class="carte-post panneau" href="${echapper(p.url)}" target="_blank" rel="noopener">
-        <div class="score"><strong>${nombreFr.format(p.score || 0)}</strong><span>points</span></div>
-        <div>
-          <h3>${echapper(p.titre)}</h3>
-          <p class="meta">${echapper(p.subreddit)} · ${formaterDate(p.publie, dateCourte)} · ${nombreFr.format(p.commentaires || 0)} commentaires</p>
-        </div>
-        <span class="fleche" aria-hidden="true">→</span>
-      </a>`).join("");
+
+    grille.innerHTML = groupes.map((groupe) => `
+      <article class="forge-groupe panneau" data-apparition>
+        <h3>${echapper(groupe.titre)}</h3>
+        <dl class="forge-liste">
+          ${(groupe.lignes || []).map((ligne) => {
+            const valeur = (ligne.valeur || "").trim();
+            const vide = !valeur || /^à compléter$/i.test(valeur);
+            return `<div class="forge-ligne">
+              <dt>${echapper(ligne.libelle)}</dt>
+              <dd class="${vide ? "est-vide" : ""}">${echapper(vide ? "à compléter" : valeur)}</dd>
+            </div>`;
+          }).join("")}
+        </dl>
+      </article>`).join("");
+  }
+
+  /* Les visuels de marque sont des fichiers que l'on remplace librement. Si
+     l'un manque, on retire l'image plutôt que de laisser une icône cassée. */
+  function surveillerLogos() {
+    $$('img[src^="assets/img/"]').forEach((img) => {
+      const retirer = () => { img.style.display = "none"; };
+      if (img.complete && img.naturalWidth === 0) retirer();
+      img.addEventListener("error", retirer);
+    });
   }
 
   /* ─────────────────────────────── Effets ──────────────────────────────── */
@@ -475,6 +496,7 @@
 
   /* ─────────────────────────────── Démarrage ───────────────────────────── */
   async function demarrer() {
+    surveillerLogos();
     brancherMenu();
     brancherParallaxe();
     brancherPoussiere();
@@ -495,7 +517,7 @@
     rendreVideos();
     rendrePlanning(donnees);
     rendreSorties(donnees);
-    rendreReddit(donnees);
+    rendreForge(donnees);
 
     $("#plus-videos").addEventListener("click", () => { nbAffichees += 9; rendreVideos(); });
 

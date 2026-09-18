@@ -106,6 +106,40 @@ Ensuite, plus rien à faire : ça tourne à 7 minutes après minuit, 6 h, 12 h e
 
 ---
 
+## Les visuels de la marque
+
+Tout est dans `assets/img/`. Pour changer l'un d'eux, remplace le fichier en
+gardant **exactement le même nom** : aucun code à modifier. Si un fichier est
+absent, le site s'affiche quand même, l'emplacement disparaît simplement.
+
+| Fichier | Où il apparaît |
+|---|---|
+| `logo.png` | icône de l'onglet du navigateur, en-tête à côté du nom, héros, pied de page |
+| `chevalier.png` | le personnage en pied, à gauche dans le héros (masqué sous 1100 px de large) |
+| `coffre.png` | emblème de Chroniques — le butin accumulé |
+| `parchemin.png` | emblème du Registre — la charte scellée |
+| `gemmes.png` | emblème de L'Horizon — les trésors à venir |
+| `lame.png` | emblème de La Forge — ce que la forge produit |
+| `bourse.png` | **en réserve**, affiché nulle part. Sa place naturelle est un futur bloc d'affiliation ou de soutien. |
+
+Format : PNG à fond transparent. Les fichiers sont volontairement réduits
+(340 px de large pour les emblèmes, 760 px de haut pour le chevalier) — inutile
+d'y mettre du 4K, ils ne s'affichent jamais plus grands que ça.
+
+Sur GitHub : ouvre `assets/img` → **Add file** → **Upload files** → glisse le
+fichier → **Commit changes**.
+
+## Remplir La Forge
+
+`data/forge.json` contient ta configuration et tes réglages. Chaque valeur
+laissée à `"à compléter"` s'affiche en doré italique sur le site : tu vois d'un
+coup d'œil ce qu'il reste à renseigner. Tu peux ajouter, retirer ou renommer
+librement les lignes et les groupes.
+
+```json
+{ "libelle": "Mémoire vive", "valeur": "32 Go DDR5 6000 MHz" }
+```
+
 ## Mettre à jour ton planning
 
 C'est le **seul** fichier à toucher : `data/planning.json`.
@@ -198,7 +232,9 @@ source a échoué et pourquoi.
 index.html                    la page
 assets/css/style.css          toute la mise en forme
 assets/js/main.js             affichage des données + effets
-data/planning.json            ← le seul fichier que tu édites
+assets/img/                   ← tes visuels (remplace les fichiers, garde les noms)
+data/planning.json            ← ton planning de jeu
+data/forge.json               ← ta configuration et tes réglages
 data/site.json                généré par le robot, ne pas éditer à la main
 data/exemple.json             données fictives pour l'aperçu local
 scripts/fetch_data.py         le collecteur (Python, sans dépendance)

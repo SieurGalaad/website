@@ -16,7 +16,9 @@ Usage : python3 scripts/build_apercu.py [--reelles] [--artifact]
 """
 
 import argparse
+import base64
 import json
+import mimetypes
 import re
 from pathlib import Path
 
@@ -61,6 +63,16 @@ def construire(reelles: bool, artifact: bool) -> str:
     if not reelles:
         html = html.replace('<div class="grain" aria-hidden="true"></div>',
                             BANDEAU + '<div class="grain" aria-hidden="true"></div>')
+
+    # Les visuels sont integres a la page : le fichier reste autonome, meme
+    # ouvert hors ligne ou publie sans les fichiers voisins.
+    for image in sorted((RACINE / "assets/img").glob("*")):
+        chemin = f"assets/img/{image.name}"
+        if chemin not in html:
+            continue
+        type_mime = mimetypes.guess_type(image.name)[0] or "image/png"
+        donnees = base64.b64encode(image.read_bytes()).decode()
+        html = html.replace(chemin, f"data:{type_mime};base64,{donnees}")
 
     if artifact:
         # L'outil d'artifact fournit lui-meme doctype/html/head/body : on ne

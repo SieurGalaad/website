@@ -1,0 +1,39 @@
+{
+  "_lisezmoi": "Ta configuration et tes reglages, affiches dans la section La Forge. Remplace chaque 'a completer' par ta vraie valeur ; les lignes non renseignees apparaissent en dore italique sur le site, pour que tu voies tout de suite ce qu'il reste a remplir. Tu peux ajouter ou retirer des lignes et des groupes librement.",
+  "intro": "Tout ce qui sert à fabriquer les vidéos : la machine, la capture, et les réglages utilisés en jeu. C'est la question qu'on me pose le plus souvent, alors autant qu'elle soit écrite quelque part.",
+  "groupes": [
+    {
+      "titre": "La machine",
+      "lignes": [
+        { "libelle": "Processeur", "valeur": "AMD Ryzen 7 9800X3D" },
+        { "libelle": "Carte graphique", "valeur": "NVIDIA GeForce RTX 5080" },
+        { "libelle": "Mémoire vive", "valeur": "à compléter" },
+        { "libelle": "Stockage", "valeur": "à compléter" },
+        { "libelle": "Écran", "valeur": "à compléter" },
+        { "libelle": "Système", "valeur": "à compléter" }
+      ]
+    },
+    {
+      "titre": "La capture",
+      "lignes": [
+        { "libelle": "Définition", "valeur": "3840 × 2160 (4K)" },
+        { "libelle": "Fréquence d'images", "valeur": "60 im/s" },
+        { "libelle": "Logiciel", "valeur": "à compléter" },
+        { "libelle": "Encodeur", "valeur": "à compléter" },
+        { "libelle": "Débit", "valeur": "à compléter" },
+        { "libelle": "Montage", "valeur": "à compléter" }
+      ]
+    },
+    {
+      "titre": "Les réglages en jeu",
+      "lignes": [
+        { "libelle": "Préréglage graphique", "valeur": "Ultra" },
+        { "libelle": "Ray tracing", "valeur": "à compléter" },
+        { "libelle": "Upscaling", "valeur": "à compléter" },
+        { "libelle": "Interface à l'écran", "valeur": "à compléter" },
+        { "libelle": "Langue", "valeur": "Version française" },
+        { "libelle": "Commentaire", "valeur": "Aucun — le son du jeu seul" }
+      ]
+    }
+  ]
+}

@@ -127,8 +127,12 @@ a { color: inherit; }
   padding-top: calc(10px + env(safe-area-inset-top, 0px));
 }
 
-.marque { display: flex; align-items: center; gap: 11px; text-decoration: none; margin-right: auto; }
-.marque-blason { width: 26px; height: 32px; flex: none; }
+.marque { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
+.marque-logo {
+  height: 36px; width: auto; max-width: 120px; flex: none;
+  object-fit: contain; transition: height var(--transition);
+}
+.entete.est-collee .marque-logo { height: 30px; }
 .marque-texte {
   font-family: var(--police-titre); font-weight: 600;
   letter-spacing: .16em; text-transform: uppercase; font-size: 15px;
@@ -202,10 +206,56 @@ a { color: inherit; }
     radial-gradient(42% 34% at 50% 40%, rgba(200,163,74,.24), transparent 72%),
     radial-gradient(80% 45% at 50% 100%, rgba(142,43,36,.14), transparent 72%);
 }
-.heros-couche--lointain { bottom: 0; height: 62%; opacity: .85; }
-.heros-couche--median   { bottom: 0; height: 74%; }
-.heros-couche--proche   { bottom: -2px; height: 26%; }
+/* Bandes de collines : hauteurs en pourcentage du héros, largeur pleine.
+   Combinées à preserveAspectRatio="none" dans le HTML, elles collent au pixel
+   près quel que soit le format de l'écran — 16:9, ultra-large ou téléphone. */
+.heros-couche--lointain { bottom: 0; height: clamp(150px, 30%, 320px); opacity: .9; }
+.heros-couche--median   { bottom: 0; height: clamp(110px, 21%, 240px); }
+/* Premier plan : un dégradé, pas une forme. Une forme pleine créait une arête
+   horizontale nette en bas de l'écran. */
+.heros-couche--proche {
+  bottom: 0; height: 26%;
+  background: linear-gradient(180deg, transparent, rgba(8,7,6,.72) 62%, #0c0b0a 100%);
+}
+
+/* La ruine garde ses proportions : on ne déforme pas un objet reconnaissable.
+   Pas de z-index : l'ordre du HTML suffit, et c'est lui qui fait passer la
+   brume du premier plan par-dessus. */
+.heros-ruine {
+  position: absolute;
+  /* Le bas de la ruine descend sous la crête des collines : elle repose
+     dessus au lieu de flotter au-dessus. */
+  right: clamp(12px, 9vw, 230px);
+  bottom: clamp(34px, 6%, 92px);
+  width: clamp(140px, 18vw, 300px);
+  height: auto; opacity: .95; will-change: transform;
+}
+
+/* Le chevalier : personnage de la scène, pas illustration posée à côté du
+   texte. Masqué sous 1100 px, où le titre a besoin de toute la largeur. */
+.heros-chevalier {
+  position: absolute; display: none;
+  left: clamp(0px, 3vw, 96px);
+  bottom: 2%;
+  height: min(52vh, 460px); width: auto;
+  object-fit: contain; pointer-events: none;
+  filter: drop-shadow(0 18px 34px rgba(0, 0, 0, .8));
+  will-change: transform;
+}
+/* Il grandit avec l'écran : sur un 1366 il écraserait le titre, sur un
+   ultra-large il serait perdu. */
+@media (min-width: 1100px) { .heros-chevalier { display: block; } }
+@media (min-width: 1400px) { .heros-chevalier { height: min(60vh, 580px); left: clamp(20px, 4vw, 140px); } }
+@media (min-width: 1700px) { .heros-chevalier { height: min(66vh, 700px); left: clamp(60px, 8vw, 240px); } }
+
 .heros-poussiere { position: absolute; inset: 0; pointer-events: none; opacity: .5; }
+
+.heros-logo {
+  display: block; margin: 0 auto 26px;
+  height: clamp(64px, 8vw, 96px); width: auto; max-width: 240px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, .6));
+}
 
 .heros-contenu { position: relative; z-index: 5; max-width: 860px; }
 
@@ -274,6 +324,22 @@ a { color: inherit; }
 .section--alt::after { bottom: 0; }
 
 .section-entete { text-align: center; margin-bottom: clamp(38px, 5vw, 62px); }
+
+/* Emblème de section : une illustration par section, choisie pour ce qu'elle
+   raconte — le coffre pour la vidéothèque, les armes pour le planning, la
+   bourse pour les sorties, le blason pour la forge. Elles gardent leurs
+   couleurs : ce sont des encres sombres à dominante or et acier, déjà dans la
+   palette du site. */
+.section-embleme {
+  display: block; margin: 0 auto 20px;
+  height: clamp(84px, 8.5vw, 116px); width: auto; max-width: min(320px, 82%);
+  object-fit: contain;
+  filter: drop-shadow(0 0 34px rgba(200, 163, 74, .16)) drop-shadow(0 12px 22px rgba(0, 0, 0, .7));
+}
+/* Les armes sont un visuel très large et peu haut : sans réglage propre, elles
+   se perdent à côté des autres emblèmes. */
+.section-embleme--large { height: clamp(72px, 7.5vw, 100px); max-width: min(400px, 88%); }
+.section-embleme--blason { height: clamp(80px, 8vw, 108px); }
 .section-oeil {
   font-family: var(--police-titre); font-size: 11px; letter-spacing: .32em;
   text-transform: uppercase; color: var(--or); margin: 0 0 12px;
@@ -502,6 +568,34 @@ a { color: inherit; }
 .carte-post .fleche { color: var(--or-sombre); font-size: 20px; transition: transform var(--transition), color var(--transition); }
 .carte-post:hover .fleche { transform: translateX(5px); color: var(--or-clair); }
 
+/* ──────────────────────────── La Forge (matériel) ──────────────────────── */
+.forge-intro {
+  max-width: 62ch; margin: -18px auto 42px; text-align: center;
+  color: var(--parchemin-terne); font-style: italic; font-size: 16px;
+}
+.grille-forge {
+  display: grid; gap: clamp(16px, 2vw, 24px);
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+.forge-groupe { padding: 24px 26px 26px; }
+.forge-groupe h3 {
+  font-family: var(--police-titre); font-weight: 600; font-size: 13px;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--or);
+  margin: 0 0 18px; padding-bottom: 14px; border-bottom: 1px solid var(--trait);
+}
+.forge-liste { margin: 0; display: grid; gap: 13px; }
+.forge-ligne { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.forge-ligne dt {
+  font-size: 13.5px; color: var(--parchemin-terne); letter-spacing: .02em; flex: none;
+}
+.forge-ligne dd {
+  margin: 0; text-align: right; font-size: 14.5px; color: var(--parchemin);
+  font-variant-numeric: tabular-nums;
+}
+/* Une ligne non renseignée doit se voir comme un trou à combler, pas comme
+   une valeur. */
+.forge-ligne dd.est-vide { color: var(--or-sombre); font-style: italic; }
+
 /* ─────────────────────────────── Vide / états ──────────────────────────── */
 .etat-vide {
   border: 1px dashed var(--trait); padding: 38px 24px; text-align: center;
@@ -518,6 +612,8 @@ a { color: inherit; }
 /* ─────────────────────────────── Pied ──────────────────────────────────── */
 .pied { border-top: 1px solid var(--trait); padding: 54px 0 42px; background: #090807; }
 .pied-grille { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 34px; align-items: start; }
+.pied-marque { display: flex; align-items: flex-start; gap: 16px; }
+.pied-logo { height: 46px; width: auto; max-width: 120px; object-fit: contain; flex: none; opacity: .9; }
 .marque-texte--pied { font-size: 17px; margin: 0 0 10px; }
 .pied-note, .pied-meta p { color: var(--parchemin-terne); font-size: 13.5px; margin: 0 0 6px; }
 .pied-liens { display: flex; flex-direction: column; gap: 9px; }

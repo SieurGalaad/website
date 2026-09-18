@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SieurGalaad — Walkthroughs 4K60 Ultra</title>
-<meta name="description" content="Walkthroughs complets en 4K60 ultra, sans commentaire, en version française. Vidéos, planning de jeu, sorties PC à venir et fil Reddit de la chaîne SieurGalaad.">
+<meta name="description" content="Walkthroughs complets en 4K60 ultra, sans commentaire, en version française. Vidéos, planning de jeu, sorties PC à venir et configuration de capture de la chaîne SieurGalaad.">
 <meta name="theme-color" content="#0c0b0a">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SieurGalaad — Walkthroughs 4K60 Ultra">
@@ -14,33 +14,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230c0b0a'/><path d='M16 4v24M8 12h16' stroke='%23c8a34a' stroke-width='3'/></svg>">
+<!-- Icone d'onglet : remplace assets/img/logo.png par ton logo, rien d'autre a faire. -->
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="apple-touch-icon" href="assets/img/logo.png">
 </head>
 <body>
 
-<!-- ───────────────── Filtres SVG : c'est eux qui donnent le grain d'encre ─── -->
+<!-- ───────────────── Definitions SVG partagees ──────────────────────────── -->
 <svg class="defs" aria-hidden="true" focusable="false">
   <defs>
-    <filter id="encre-rugueuse">
-      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.06" numOctaves="3" seed="7" result="bruit"/>
-      <feDisplacementMap in="SourceGraphic" in2="bruit" scale="4" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-    <filter id="encre-forte">
-      <feTurbulence type="fractalNoise" baseFrequency="0.015 0.04" numOctaves="4" seed="19" result="bruit"/>
-      <feDisplacementMap in="SourceGraphic" in2="bruit" scale="9" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-    <filter id="grain-papier">
-      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
-      <feColorMatrix type="saturate" values="0"/>
-    </filter>
     <linearGradient id="degrade-or" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#8a6f2a"/>
       <stop offset="50%" stop-color="#e7c56f"/>
       <stop offset="100%" stop-color="#8a6f2a"/>
     </linearGradient>
-    <!-- Version en unites utilisateur : indispensable pour un trait horizontal,
-         dont la boite englobante est de hauteur nulle (un degrade en unites
-         relatives y devient invisible). -->
+    <!-- En unites utilisateur : indispensable pour un trait horizontal, dont la
+         boite englobante est de hauteur nulle (un degrade relatif y disparait). -->
     <linearGradient id="degrade-or-h" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="400" y2="0">
       <stop offset="0%" stop-color="#6a5320" stop-opacity=".2"/>
       <stop offset="35%" stop-color="#c8a34a"/>
@@ -59,10 +48,7 @@
 <!-- ───────────────── En-tête ─────────────────────────────────────────────── -->
 <header class="entete" id="entete">
   <a class="marque" href="#haut">
-    <svg class="marque-blason" viewBox="0 0 40 48" aria-hidden="true">
-      <path d="M20 1 L38 7 V25 C38 36 30 43 20 47 C10 43 2 36 2 25 V7 Z" fill="none" stroke="url(#degrade-or)" stroke-width="1.6"/>
-      <path d="M20 10 V36 M11 19 H29" stroke="url(#degrade-or)" stroke-width="2.6" stroke-linecap="square"/>
-    </svg>
+    <img class="marque-logo" src="assets/img/logo.png" alt="" width="36" height="36" decoding="async">
     <span class="marque-texte">Sieur<em>Galaad</em></span>
   </a>
   <nav class="navigation" aria-label="Navigation principale">
@@ -70,7 +56,7 @@
     <a href="#chroniques">Chroniques</a>
     <a href="#registre">Registre</a>
     <a href="#horizon">Horizon</a>
-    <a href="#taverne">Taverne</a>
+    <a href="#forge">La Forge</a>
   </nav>
   <a class="bouton bouton--or" id="lien-abonnement" href="https://www.youtube.com/@SieurGalaad?sub_confirmation=1" target="_blank" rel="noopener">S'abonner</a>
   <button class="bascule-menu" id="bascule-menu" aria-expanded="false" aria-controls="navigation-mobile" aria-label="Ouvrir le menu">
@@ -82,39 +68,50 @@
   <a href="#chroniques">Chroniques</a>
   <a href="#registre">Registre</a>
   <a href="#horizon">Horizon</a>
-  <a href="#taverne">Taverne</a>
+  <a href="#forge">La Forge</a>
   <a href="https://www.youtube.com/@SieurGalaad?sub_confirmation=1" target="_blank" rel="noopener">S'abonner</a>
 </nav>
 
 <!-- ───────────────── Héros ──────────────────────────────────────────────── -->
+<!-- Les collines utilisent preserveAspectRatio="none" : elles épousent très
+     exactement la largeur et la hauteur de leur bande, sur un 16:9 comme sur un
+     ultra-large ou un téléphone. Aucun recadrage, donc aucun élément qui sort
+     du cadre ou qui flotte. La ruine, elle, garde ses proportions : c'est un
+     objet reconnaissable, on ne l'étire pas. -->
 <section class="heros" id="haut">
   <div class="heros-couche heros-couche--lueur" data-parallaxe="0.08" aria-hidden="true"></div>
 
-  <svg class="heros-couche heros-couche--lointain" data-parallaxe="0.16" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <path d="M0 492 L74 408 L128 452 L236 330 L302 404 L358 376 L468 458 L542 392 L598 422 L706 314 L792 418 L844 384 L946 462 L1028 372 L1092 430 L1196 338 L1268 426 L1352 396 L1440 446 V600 H0 Z" fill="#221d16"/>
-    <path d="M0 492 L74 408 L128 452 L236 330 L302 404 L358 376 L468 458 L542 392 L598 422 L706 314 L792 418 L844 384 L946 462 L1028 372 L1092 430 L1196 338 L1268 426 L1352 396 L1440 446" fill="none" stroke="#4a3d26" stroke-width="1" opacity=".35"/>
+  <svg class="heros-couche heros-couche--lointain" data-parallaxe="0.12" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#241f18" d="M0 118 C 62 78 108 140 176 112 C 236 88 282 138 352 110 C 418 84 470 136 540 112 C 610 88 664 142 740 116 C 812 92 872 138 938 114 C 962 106 982 112 1000 106 L1000 200 L0 200 Z"/>
   </svg>
 
-  <svg class="heros-couche heros-couche--median" data-parallaxe="0.34" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <g fill="#14100b">
-      <path d="M0 536 L108 486 L196 522 L286 448 L392 518 L488 474 L582 530 L698 460 L812 526 L926 470 L1048 532 L1164 484 L1288 528 L1440 490 V600 H0 Z"/>
-      <rect x="898" y="438" width="18" height="98"/>
-      <rect x="1046" y="438" width="18" height="98"/>
-      <path d="M898 440 q83 -78 166 0 Z"/>
-      <rect x="886" y="424" width="190" height="16"/>
-      <rect x="872" y="506" width="22" height="42"/>
-      <rect x="1068" y="500" width="22" height="48"/>
-      <path d="M232 540 L248 470 L266 540 Z"/>
-      <path d="M296 542 L308 496 L322 542 Z"/>
-    </g>
-    <g fill="none" stroke="#5a4a2c" stroke-width="1" opacity=".45">
-      <path d="M0 536 L108 486 L196 522 L286 448 L392 518 L488 474 L582 530 L698 460 L812 526 L926 470 L1048 532 L1164 484 L1288 528 L1440 490"/>
-      <path d="M898 440 q83 -78 166 0"/>
-      <rect x="886" y="424" width="190" height="16"/>
+  <svg class="heros-couche heros-couche--median" data-parallaxe="0.24" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#17130d" d="M0 140 C 80 112 140 164 224 138 C 300 114 352 160 436 136 C 512 114 566 162 652 138 C 730 116 790 160 874 136 C 928 120 966 138 1000 128 L1000 200 L0 200 Z"/>
+  </svg>
+
+  <svg class="heros-ruine" data-parallaxe="0.2" viewBox="0 0 320 210" aria-hidden="true">
+    <g fill="#17130d">
+      <rect x="62" y="64" width="22" height="130"/>
+      <rect x="236" y="64" width="22" height="130"/>
+      <path d="M62 66 q98 -84 196 0 Z"/>
+      <rect x="46" y="46" width="228" height="20"/>
+      <path d="M236 64 h22 v44 l-22 -14 Z"/>
+      <rect x="30" y="150" width="20" height="44"/>
+      <path d="M270 168 l16 -22 l14 48 h-30 Z"/>
+      <rect x="150" y="120" width="22" height="74"/>
     </g>
   </svg>
+
+  <!-- Le chevalier se tient sur la crête, à gauche du titre. Il est placé avant
+       la brume : ses pieds s'y fondent, ce qui l'ancre dans le décor au lieu de
+       le poser dessus comme un autocollant. -->
+  <img class="heros-chevalier" src="assets/img/chevalier.png" alt="Le chevalier SieurGalaad" width="393" height="760" data-parallaxe="0.3" decoding="async">
+
+  <div class="heros-couche heros-couche--proche" data-parallaxe="0.4" aria-hidden="true"></div>
+  <canvas class="heros-poussiere" id="heros-poussiere" aria-hidden="true"></canvas>
 
   <div class="heros-contenu">
+    <img class="heros-logo" src="assets/img/logo.png" alt="Logo SieurGalaad" width="92" height="92" decoding="async" data-apparition>
     <p class="surtitre" data-apparition>Chaîne de walkthroughs · 4K60 Ultra · RTX 5080</p>
     <h1 class="heros-titre" data-apparition>
       <span class="heros-titre-ligne">Sieur</span><span class="heros-titre-ligne heros-titre-ligne--or">Galaad</span>
@@ -128,16 +125,11 @@
       <a class="bouton bouton--fantome" href="https://www.youtube.com/@SieurGalaad" target="_blank" rel="noopener">La chaîne sur YouTube</a>
     </div>
     <dl class="heros-stats" id="heros-stats" data-apparition>
-      <div><dt>Vidéos</dt><dd data-compteur="0" id="stat-videos">—</dd></div>
-      <div><dt>Abonnés</dt><dd data-compteur="0" id="stat-abonnes">—</dd></div>
-      <div><dt>Vues cumulées</dt><dd data-compteur="0" id="stat-vues">—</dd></div>
+      <div><dt>Vidéos</dt><dd id="stat-videos">—</dd></div>
+      <div><dt>Abonnés</dt><dd id="stat-abonnes">—</dd></div>
+      <div><dt>Vues cumulées</dt><dd id="stat-vues">—</dd></div>
     </dl>
   </div>
-
-  <svg class="heros-couche heros-couche--proche" data-parallaxe="0.62" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <path d="M0 190 C160 140 260 220 400 185 C540 150 620 225 760 195 C900 165 1010 235 1150 200 C1290 165 1370 215 1440 195 V300 H0 Z" fill="#0c0b0a"/>
-  </svg>
-  <canvas class="heros-poussiere" id="heros-poussiere" aria-hidden="true"></canvas>
 
   <a class="heros-indice" href="#affiche" aria-label="Défiler vers le contenu">
     <span></span>
@@ -164,6 +156,7 @@
   <section class="section section--alt" id="chroniques">
     <div class="enveloppe">
       <header class="section-entete" data-apparition>
+        <img class="section-embleme" src="assets/img/coffre.png" alt="" width="320" height="251" loading="lazy" decoding="async">
         <p class="section-oeil">La vidéothèque</p>
         <h2 class="section-titre">Chroniques</h2>
         <svg class="filet" viewBox="0 0 400 12" aria-hidden="true"><path d="M0 6 H160 M200 6 H400" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M180 1 L186 6 L180 11 L174 6 Z" fill="#c8a34a"/></svg>
@@ -180,6 +173,7 @@
   <section class="section" id="registre">
     <div class="enveloppe">
       <header class="section-entete" data-apparition>
+        <img class="section-embleme" src="assets/img/parchemin.png" alt="" width="340" height="183" loading="lazy" decoding="async">
         <p class="section-oeil">Ce qui se joue maintenant et après</p>
         <h2 class="section-titre">Le Registre</h2>
         <svg class="filet" viewBox="0 0 400 12" aria-hidden="true"><path d="M0 6 H160 M200 6 H400" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M180 1 L186 6 L180 11 L174 6 Z" fill="#c8a34a"/></svg>
@@ -194,6 +188,7 @@
   <section class="section section--alt" id="horizon">
     <div class="enveloppe">
       <header class="section-entete" data-apparition>
+        <img class="section-embleme" src="assets/img/gemmes.png" alt="" width="340" height="197" loading="lazy" decoding="async">
         <p class="section-oeil">Sorties PC à venir</p>
         <h2 class="section-titre">L'Horizon</h2>
         <svg class="filet" viewBox="0 0 400 12" aria-hidden="true"><path d="M0 6 H160 M200 6 H400" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M180 1 L186 6 L180 11 L174 6 Z" fill="#c8a34a"/></svg>
@@ -204,16 +199,18 @@
     </div>
   </section>
 
-  <!-- ─────────────── Taverne (Reddit) ─────────────────────────────────── -->
-  <section class="section" id="taverne">
+  <!-- ─────────────── La Forge (matériel et réglages) ──────────────────── -->
+  <section class="section" id="forge">
     <div class="enveloppe">
       <header class="section-entete" data-apparition>
-        <p class="section-oeil">Discussions Reddit</p>
-        <h2 class="section-titre">La Taverne</h2>
+        <img class="section-embleme section-embleme--large" src="assets/img/lame.png" alt="" width="380" height="191" loading="lazy" decoding="async">
+        <p class="section-oeil">Le matériel et les réglages</p>
+        <h2 class="section-titre">La Forge</h2>
         <svg class="filet" viewBox="0 0 400 12" aria-hidden="true"><path d="M0 6 H160 M200 6 H400" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M180 1 L186 6 L180 11 L174 6 Z" fill="#c8a34a"/></svg>
       </header>
-      <div class="grille-posts" id="grille-posts">
-        <div class="squelette squelette--ligne"></div><div class="squelette squelette--ligne"></div>
+      <p class="forge-intro" id="forge-intro" data-apparition></p>
+      <div class="grille-forge" id="grille-forge">
+        <div class="squelette squelette--ligne"></div><div class="squelette squelette--ligne"></div><div class="squelette squelette--ligne"></div>
       </div>
     </div>
   </section>
@@ -222,9 +219,12 @@
 
 <footer class="pied">
   <div class="enveloppe pied-grille">
-    <div>
-      <p class="marque-texte marque-texte--pied">Sieur<em>Galaad</em></p>
-      <p class="pied-note">Walkthroughs complets, 4K60 ultra, version française, sans commentaire.</p>
+    <div class="pied-marque">
+      <img class="pied-logo" src="assets/img/logo.png" alt="" width="46" height="46" decoding="async">
+      <div>
+        <p class="marque-texte marque-texte--pied">Sieur<em>Galaad</em></p>
+        <p class="pied-note">Walkthroughs complets, 4K60 ultra, version française, sans commentaire.</p>
+      </div>
     </div>
     <nav class="pied-liens" aria-label="Liens externes">
       <a href="https://www.youtube.com/@SieurGalaad" target="_blank" rel="noopener">YouTube</a>

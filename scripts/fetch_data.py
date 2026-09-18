@@ -46,6 +46,7 @@ from pathlib import Path
 RACINE = Path(__file__).resolve().parent.parent
 FICHIER_SORTIE = RACINE / "data" / "site.json"
 FICHIER_PLANNING = RACINE / "data" / "planning.json"
+FICHIER_FORGE = RACINE / "data" / "forge.json"
 
 YOUTUBE_HANDLE = os.environ.get("YOUTUBE_HANDLE", "SieurGalaad").strip().lstrip("@")
 # Laisse vide : l'identifiant est resolu automatiquement a partir du pseudo.
@@ -502,6 +503,29 @@ def collecter_planning() -> list[dict]:
 
 
 # --------------------------------------------------------------------------- #
+# La Forge : materiel et reglages, entierement edites a la main
+# --------------------------------------------------------------------------- #
+def collecter_forge() -> dict:
+    if not FICHIER_FORGE.exists():
+        log("data/forge.json absent -> section La Forge vide")
+        return {}
+    try:
+        brut = json.loads(FICHIER_FORGE.read_text(encoding="utf-8"))
+    except Exception as exc:  # noqa: BLE001
+        log(f"data/forge.json illisible ({exc}) -> section La Forge vide")
+        return {}
+    groupes = brut.get("groupes", [])
+    a_completer = sum(
+        1
+        for g in groupes
+        for l in g.get("lignes", [])
+        if (l.get("valeur") or "").strip().lower() in ("", "a completer", "à compléter")
+    )
+    log(f"Forge : {len(groupes)} groupes" + (f", {a_completer} ligne(s) a completer" if a_completer else ""))
+    return {"intro": brut.get("intro", ""), "groupes": groupes}
+
+
+# --------------------------------------------------------------------------- #
 # Assemblage
 # --------------------------------------------------------------------------- #
 def charger_precedent() -> dict:
@@ -521,6 +545,7 @@ def main() -> int:
     posts, statuts["reddit"] = collecter_reddit()
     sorties, statuts["sorties"] = collecter_sorties()
     planning = collecter_planning()
+    forge = collecter_forge()
 
     chaine_precedente = precedent.get("chaine", {})
     videos_precedentes = precedent.get("videos", [])
@@ -563,6 +588,7 @@ def main() -> int:
         "reddit": posts if posts is not None else precedent.get("reddit", []),
         "sorties": sorties if sorties is not None else precedent.get("sorties", []),
         "planning": planning,
+        "forge": forge,
         "statuts": statuts,
     }
 
