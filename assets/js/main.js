@@ -271,6 +271,7 @@
     const grille = $("#grille-forge");
     const forge = donnees.forge || {};
     const groupes = (forge.groupes || []).filter((g) => (g.lignes || []).length);
+    let auMoinsUnLien = false;
 
     const pseudo = donnees.chaine?.reddit || "SieurGalaad";
     const lienReddit = $("#lien-reddit");
@@ -290,13 +291,127 @@
           ${(groupe.lignes || []).map((ligne) => {
             const valeur = (ligne.valeur || "").trim();
             const vide = !valeur || /^à compléter$/i.test(valeur);
+            const lien = lienSur(ligne.lien);
+            const contenu = (!vide && lien)
+              ? `<a class="forge-lien" href="${echapper(lien)}" target="_blank"
+                    rel="sponsored nofollow noopener">${echapper(valeur)}<span class="fleche-externe" aria-hidden="true">↗</span></a>`
+              : echapper(vide ? "à compléter" : valeur);
+            if (!vide && lien) auMoinsUnLien = true;
             return `<div class="forge-ligne">
               <dt>${echapper(ligne.libelle)}</dt>
-              <dd class="${vide ? "est-vide" : ""}">${echapper(vide ? "à compléter" : valeur)}</dd>
+              <dd class="${vide ? "est-vide" : ""}">${contenu}</dd>
             </div>`;
           }).join("")}
         </dl>
       </article>`).join("");
+
+    /* La mention d'affiliation n'apparaît que s'il y a effectivement un lien :
+       elle est obligatoire dès qu'on en met un (loi influenceurs en France,
+       et conditions du programme Amazon Partenaires), inutile sinon. */
+    const mention = $("#forge-mention");
+    const texte = (forge.mention_affiliation || "").trim();
+    mention.hidden = !(auMoinsUnLien && texte);
+    mention.textContent = texte;
+  }
+
+  /* N'accepte qu'une vraie adresse http(s). Écarte javascript:, data: et les
+     valeurs mal recopiées, qui deviendraient un lien piégé sur le site. */
+  function lienSur(url) {
+    const brut = (url || "").trim();
+    if (!brut) return "";
+    try {
+      const u = new URL(brut);
+      return (u.protocol === "https:" || u.protocol === "http:") ? u.href : "";
+    } catch { return ""; }
+  }
+
+  /* ─────────────────────────────── Contact ─────────────────────────────── */
+  /* Un site statique ne peut pas envoyer de courrier tout seul. Deux modes :
+     avec une clé Web3Forms, le message part en arrière-plan ; sans clé, le
+     bouton ouvre le logiciel de mail avec le message déjà écrit. Le second
+     marche partout et ne demande aucune inscription — il est juste moins
+     fluide, donc c'est un repli, pas la cible. */
+  function rendreContact(donnees) {
+    const contact = donnees.contact || {};
+    const adresse = (contact.adresse || "").trim();
+    const formulaire = $("#contact-formulaire");
+    if (!formulaire) return;
+
+    if (contact.titre) $("#contact-titre").textContent = contact.titre;
+    if (contact.oeil) $("#contact-oeil").textContent = contact.oeil;
+    $("#contact-intro").textContent = contact.intro || "";
+    $("#contact-delai").textContent = contact.delai || "";
+
+    const lienAdresse = $("#contact-adresse");
+    if (adresse) {
+      lienAdresse.textContent = adresse;
+      lienAdresse.href = `mailto:${adresse}`;
+    } else {
+      lienAdresse.closest(".contact-adresse-bloc").hidden = true;
+    }
+
+    const sujets = (contact.sujets || []).filter(Boolean);
+    $("#contact-sujet").innerHTML = (sujets.length ? sujets : ["Message"])
+      .map((s) => `<option value="${echapper(s)}">${echapper(s)}</option>`).join("");
+
+    const etat = $("#contact-etat");
+    const bouton = $("#contact-envoi");
+    const cle = (contact.cle || "").trim();
+
+    const dire = (message, type) => {
+      etat.textContent = message;
+      etat.className = `contact-etat ${type ? `est-${type}` : ""}`;
+    };
+
+    formulaire.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if ($("#contact-siteweb").value) return; // robot : on ne fait rien, sans le dire
+
+      const nom = $("#contact-nom").value.trim();
+      const courriel = $("#contact-email").value.trim();
+      const sujet = $("#contact-sujet").value;
+      const message = $("#contact-message").value.trim();
+
+      if (!nom || !courriel || !message) {
+        dire("Il manque ton nom, ton adresse ou ton message.", "erreur");
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(courriel)) {
+        dire("Cette adresse e-mail ne semble pas valide.", "erreur");
+        return;
+      }
+
+      if (!cle) {
+        const corps = `${message}\n\n— ${nom} (${courriel})`;
+        window.location.href = `mailto:${adresse}?subject=${encodeURIComponent(`[Site] ${sujet}`)}&body=${encodeURIComponent(corps)}`;
+        dire("Ton logiciel de mail vient de s'ouvrir avec le message pré-rempli.", "ok");
+        return;
+      }
+
+      bouton.disabled = true;
+      dire("Envoi en cours…");
+      try {
+        const reponse = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            access_key: cle,
+            subject: `[Site SieurGalaad] ${sujet}`,
+            from_name: "Site SieurGalaad",
+            name: nom, email: courriel, sujet, message,
+          }),
+        });
+        const resultat = await reponse.json().catch(() => ({}));
+        if (!reponse.ok || resultat.success === false) throw new Error(resultat.message || reponse.status);
+        formulaire.reset();
+        dire("Message envoyé. Merci — je te réponds dès que possible.", "ok");
+      } catch (err) {
+        console.warn("[contact] envoi impossible :", err);
+        dire(`L'envoi a échoué. Écris-moi directement à ${adresse}.`, "erreur");
+      } finally {
+        bouton.disabled = false;
+      }
+    });
   }
 
   /* Les visuels de marque sont des fichiers que l'on remplace librement. Si
@@ -477,50 +592,28 @@
       canvas.width = r.width * dpr;
       canvas.height = r.height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      /* Deux populations : la poussière, nombreuse et à peine visible, et
-         quelques braises plus grosses qui portent la lueur dorée. Chacune
-         dérive en sinusoïde plutôt qu'en ligne droite — c'est ce qui donne
-         l'impression qu'elles volent au lieu de tomber à l'envers. */
-      const nombre = Math.round(Math.min(95, r.width / 15));
-      particules = Array.from({ length: nombre }, (_, i) => {
-        const braise = i % 7 === 0;
-        return {
-          braise,
-          x: Math.random() * r.width,
-          y: Math.random() * r.height,
-          r: braise ? Math.random() * 1.2 + 1.4 : Math.random() * 1.1 + 0.35,
-          vy: -(Math.random() * 0.26 + 0.05),
-          vx: (Math.random() - 0.5) * 0.1,
-          a: braise ? Math.random() * 0.25 + 0.35 : Math.random() * 0.3 + 0.08,
-          phase: Math.random() * Math.PI * 2,
-          freq: Math.random() * 0.0007 + 0.0003,
-          amp: Math.random() * 0.34 + 0.12,
-          scintille: Math.random() * 0.0016 + 0.0006,
-        };
-      });
+      const nombre = Math.round(Math.min(46, r.width / 26));
+      particules = Array.from({ length: nombre }, () => ({
+        x: Math.random() * r.width,
+        y: Math.random() * r.height,
+        r: Math.random() * 1.5 + 0.4,
+        vy: -(Math.random() * 0.22 + 0.05),
+        vx: (Math.random() - 0.5) * 0.14,
+        a: Math.random() * 0.4 + 0.1,
+      }));
     };
 
-    const dessiner = (horodatage) => {
-      const t = horodatage || 0;
+    const dessiner = () => {
       const r = canvas.getBoundingClientRect();
       ctx.clearRect(0, 0, r.width, r.height);
       particules.forEach((p) => {
-        p.x += p.vx + Math.sin(t * p.freq + p.phase) * p.amp;
-        p.y += p.vy;
-        if (p.y < -6) { p.y = r.height + 6; p.x = Math.random() * r.width; }
-        if (p.x < -6) p.x = r.width + 6;
-        if (p.x > r.width + 6) p.x = -6;
-
-        const eclat = p.a * (0.72 + 0.28 * Math.sin(t * p.scintille + p.phase));
-        if (p.braise) {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r * 3.4, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(200,163,74,${eclat * 0.16})`;
-          ctx.fill();
-        }
+        p.x += p.vx; p.y += p.vy;
+        if (p.y < -5) { p.y = r.height + 5; p.x = Math.random() * r.width; }
+        if (p.x < -5) p.x = r.width + 5;
+        if (p.x > r.width + 5) p.x = -5;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.braise ? "245,222,160" : "231,197,111"},${eclat})`;
+        ctx.fillStyle = `rgba(231,197,111,${p.a})`;
         ctx.fill();
       });
       animation = requestAnimationFrame(dessiner);
@@ -583,6 +676,7 @@
     rendrePlanning(donnees);
     rendreSorties(donnees);
     rendreForge(donnees);
+    rendreContact(donnees);
 
     $("#plus-videos").addEventListener("click", () => { nbAffichees += 9; rendreVideos(); });
 

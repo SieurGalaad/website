@@ -1,15 +1,16 @@
 {
-  "_lisezmoi": "Ta configuration et tes reglages, affiches dans la section La Forge. Remplace chaque 'a completer' par ta vraie valeur ; les lignes non renseignees apparaissent en dore italique sur le site, pour que tu voies tout de suite ce qu'il reste a remplir. Tu peux ajouter ou retirer des lignes et des groupes librement.",
+  "_lisezmoi": "Ta configuration et tes reglages, affiches dans la section La Forge. Remplace chaque 'a completer' par ta vraie valeur ; les lignes non renseignees apparaissent en dore italique sur le site, pour que tu voies tout de suite ce qu'il reste a remplir. Ajoute 'lien' sur une ligne pour la transformer en lien d'achat (affilie ou non) : le site ajoute automatiquement rel=sponsored nofollow, comme l'exigent Google et les programmes d'affiliation. Des qu'au moins un lien est present, la mention d'affiliation ci-dessous s'affiche sous la section : elle est obligatoire en France (loi influenceurs) et exigee par le programme Amazon Partenaires.",
   "intro": "Tout ce qui sert à fabriquer les vidéos : la machine, la capture, et les réglages utilisés en jeu. C'est la question qu'on me pose le plus souvent, alors autant qu'elle soit écrite quelque part.",
+  "mention_affiliation": "Certains liens de cette section sont des liens affiliés. Si tu achètes en passant par eux, je touche une petite commission — le prix que tu paies reste exactement le même. En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.",
   "groupes": [
     {
       "titre": "La machine",
       "lignes": [
-        { "libelle": "Processeur", "valeur": "AMD Ryzen 7 9800X3D" },
-        { "libelle": "Carte graphique", "valeur": "NVIDIA GeForce RTX 5080" },
-        { "libelle": "Mémoire vive", "valeur": "à compléter" },
-        { "libelle": "Stockage", "valeur": "à compléter" },
-        { "libelle": "Écran", "valeur": "à compléter" },
+        { "libelle": "Processeur", "valeur": "AMD Ryzen 7 9800X3D", "lien": "" },
+        { "libelle": "Carte graphique", "valeur": "NVIDIA GeForce RTX 5080", "lien": "" },
+        { "libelle": "Mémoire vive", "valeur": "à compléter", "lien": "" },
+        { "libelle": "Stockage", "valeur": "à compléter", "lien": "" },
+        { "libelle": "Écran", "valeur": "à compléter", "lien": "" },
         { "libelle": "Système", "valeur": "à compléter" }
       ]
     },

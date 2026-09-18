@@ -67,6 +67,7 @@
     <a href="#registre">Registre</a>
     <a href="#horizon">Horizon</a>
     <a href="#forge">La Forge</a>
+    <a href="#contact">Contact</a>
   </nav>
   <a class="bouton bouton--or" id="lien-abonnement" href="https://www.youtube.com/@SieurGalaad?sub_confirmation=1" target="_blank" rel="noopener">S'abonner</a>
   <button class="bascule-menu" id="bascule-menu" aria-expanded="false" aria-controls="navigation-mobile" aria-label="Ouvrir le menu">
@@ -79,6 +80,7 @@
   <a href="#registre">Registre</a>
   <a href="#horizon">Horizon</a>
   <a href="#forge">La Forge</a>
+    <a href="#contact">Contact</a>
   <a href="https://www.youtube.com/@SieurGalaad?sub_confirmation=1" target="_blank" rel="noopener">S'abonner</a>
 </nav>
 
@@ -115,17 +117,13 @@
   <!-- Le chevalier se tient sur la crête, à gauche du titre. Il est placé avant
        la brume : ses pieds s'y fondent, ce qui l'ancre dans le décor au lieu de
        le poser dessus comme un autocollant. -->
-  <div class="heros-chevalier" data-parallaxe="0.3">
-    <img src="assets/img/chevalier.png" alt="Le chevalier SieurGalaad" width="393" height="760" decoding="async">
-  </div>
+  <img class="heros-chevalier" src="assets/img/chevalier.png" alt="Le chevalier SieurGalaad" width="393" height="760" data-parallaxe="0.3" decoding="async">
 
   <div class="heros-couche heros-couche--proche" data-parallaxe="0.4" aria-hidden="true"></div>
   <canvas class="heros-poussiere" id="heros-poussiere" aria-hidden="true"></canvas>
 
   <div class="heros-contenu">
-    <span class="heros-blason" data-apparition>
-      <img class="heros-logo" src="assets/img/logo.png" alt="Logo SieurGalaad" width="92" height="92" decoding="async">
-    </span>
+    <img class="heros-logo" src="assets/img/logo.png" alt="Logo SieurGalaad" width="92" height="92" decoding="async" data-apparition>
     <p class="surtitre" data-apparition>Chaîne de walkthroughs · 4K60 Ultra · RTX 5080</p>
     <h1 class="heros-titre" data-apparition>
       <span class="heros-titre-ligne">Sieur</span><span class="heros-titre-ligne heros-titre-ligne--or">Galaad</span>
@@ -226,6 +224,56 @@
       <div class="grille-forge" id="grille-forge">
         <div class="squelette squelette--ligne"></div><div class="squelette squelette--ligne"></div><div class="squelette squelette--ligne"></div>
       </div>
+      <p class="forge-mention" id="forge-mention" hidden></p>
+    </div>
+  </section>
+
+  <!-- ─────────────── Contact ──────────────────────────────────────────── -->
+  <section class="section section--alt" id="contact">
+    <div class="enveloppe">
+      <header class="section-entete" data-apparition>
+        <p class="section-oeil" id="contact-oeil">Partenariats, questions, propositions</p>
+        <h2 class="section-titre" id="contact-titre">Le Messager</h2>
+        <svg class="filet" viewBox="0 0 400 12" aria-hidden="true"><path d="M0 6 H160 M200 6 H400" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M180 1 L186 6 L180 11 L174 6 Z" fill="#c8a34a"/></svg>
+      </header>
+
+      <div class="contact-grille">
+        <aside class="contact-mot" data-apparition>
+          <p class="contact-intro" id="contact-intro"></p>
+          <p class="contact-adresse-bloc">
+            <span class="contact-etiquette">Adresse</span>
+            <a class="contact-adresse" id="contact-adresse" href="#">…</a>
+          </p>
+          <p class="contact-delai" id="contact-delai"></p>
+        </aside>
+
+        <form class="contact-formulaire panneau" id="contact-formulaire" data-apparition novalidate>
+          <div class="champ">
+            <label for="contact-nom">Ton nom</label>
+            <input type="text" id="contact-nom" name="nom" autocomplete="name" required maxlength="80">
+          </div>
+          <div class="champ">
+            <label for="contact-email">Ton adresse e-mail</label>
+            <input type="email" id="contact-email" name="email" autocomplete="email" required maxlength="120">
+          </div>
+          <div class="champ">
+            <label for="contact-sujet">Sujet</label>
+            <select id="contact-sujet" name="sujet"></select>
+          </div>
+          <div class="champ">
+            <label for="contact-message">Ton message</label>
+            <textarea id="contact-message" name="message" rows="6" required maxlength="3000"></textarea>
+          </div>
+          <!-- Piege a robots : invisible pour un humain, rempli par les scripts
+               de spam. Si ce champ contient quoi que ce soit, on n'envoie rien. -->
+          <div class="champ-piege" aria-hidden="true">
+            <label for="contact-siteweb">Ne remplis pas ce champ</label>
+            <input type="text" id="contact-siteweb" name="siteweb" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="bouton bouton--or" type="submit" id="contact-envoi">Envoyer le message</button>
+          <p class="contact-etat" id="contact-etat" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -243,6 +291,7 @@
     <nav class="pied-liens" aria-label="Liens externes">
       <a href="https://www.youtube.com/@SieurGalaad" target="_blank" rel="noopener">YouTube</a>
       <a id="lien-reddit" href="https://www.reddit.com/user/SieurGalaad" target="_blank" rel="noopener">Reddit</a>
+      <a href="#contact">Me contacter</a>
     </nav>
     <div class="pied-meta">
       <p>Mis à jour automatiquement — <span id="date-maj">…</span></p>

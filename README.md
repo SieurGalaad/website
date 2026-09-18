@@ -140,6 +140,42 @@ librement les lignes et les groupes.
 { "libelle": "Mémoire vive", "valeur": "32 Go DDR5 6000 MHz" }
 ```
 
+### Transformer une ligne en lien d'achat
+
+Ajoute `"lien"` sur la ligne :
+
+```json
+{ "libelle": "Carte graphique", "valeur": "NVIDIA GeForce RTX 5080", "lien": "https://amzn.to/xxxxx" }
+```
+
+La valeur devient un lien discret, avec `rel="sponsored nofollow noopener"` —
+ce que Google et les programmes d'affiliation exigent. Seules les adresses en
+`http://` ou `https://` sont acceptées, le reste est ignoré.
+
+**Dès qu'au moins un lien est présent**, la phrase du champ
+`mention_affiliation` s'affiche automatiquement sous la section. Ne la retire
+pas : la mention d'un partenariat commercial est obligatoire en France (loi
+influenceurs de 2023), et le programme Amazon Partenaires exige en plus sa
+formule exacte, déjà incluse. Si tu mets des liens sans mention, le robot te le
+signale dans le journal d'exécution.
+
+## Le formulaire de contact
+
+`data/contact.json` contient ton adresse, les textes et la liste des sujets.
+
+Tant que le champ `cle` est vide, le bouton « Envoyer » ouvre le logiciel de
+mail du visiteur avec le message pré-rempli. Ça marche partout, mais beaucoup
+de gens n'ont pas de logiciel de mail configuré et abandonnent à ce moment-là.
+
+**Pour un vrai envoi (2 minutes, gratuit, sans compte) :** va sur
+[web3forms.com](https://web3forms.com), saisis `contact.sieurgalaad@gmail.com`,
+reçois ta clé d'accès par mail, et colle-la dans `"cle"`. Les messages
+arriveront directement dans ta boîte. Cette clé est conçue pour être publique,
+il n'y a aucun risque à la laisser dans le fichier.
+
+Le formulaire contient déjà un piège à robots invisible qui bloque la majorité
+du spam automatisé.
+
 ## Mettre à jour ton planning
 
 C'est le **seul** fichier à toucher : `data/planning.json`.
@@ -234,7 +270,8 @@ assets/css/style.css          toute la mise en forme
 assets/js/main.js             affichage des données + effets
 assets/img/                   ← tes visuels (remplace les fichiers, garde les noms)
 data/planning.json            ← ton planning de jeu
-data/forge.json               ← ta configuration et tes réglages
+data/forge.json               ← ta configuration, tes réglages et tes liens d'achat
+data/contact.json             ← ton adresse de contact et les textes du formulaire
 data/site.json                généré par le robot, ne pas éditer à la main
 data/exemple.json             données fictives pour l'aperçu local
 scripts/fetch_data.py         le collecteur (Python, sans dépendance)

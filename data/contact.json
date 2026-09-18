@@ -1,0 +1,15 @@
+{
+  "_lisezmoi": "Bloc de contact affiche en bas du site. 'cle' est la cle d'acces Web3Forms (gratuite, sans compte : https://web3forms.com, tu saisis ton adresse et tu recois la cle par mail). Tant que 'cle' est vide, le formulaire ouvre le logiciel de mail du visiteur avec le message pre-rempli : ca marche, c'est juste moins fluide. Cette cle est faite pour etre publique, aucun risque a la laisser ici.",
+  "adresse": "contact.sieurgalaad@gmail.com",
+  "cle": "",
+  "titre": "Le Messager",
+  "oeil": "Partenariats, questions, propositions",
+  "intro": "Une proposition de partenariat, une question sur la configuration, un jeu que tu aimerais me voir jouer ? Écris-moi. Je lis tout, je réponds à ce qui appelle une réponse.",
+  "delai": "Réponse sous 2 à 3 jours en général.",
+  "sujets": [
+    "Partenariat ou sponsor",
+    "Question sur la configuration",
+    "Proposition de jeu",
+    "Autre"
+  ]
+}

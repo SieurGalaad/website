@@ -47,6 +47,7 @@ RACINE = Path(__file__).resolve().parent.parent
 FICHIER_SORTIE = RACINE / "data" / "site.json"
 FICHIER_PLANNING = RACINE / "data" / "planning.json"
 FICHIER_FORGE = RACINE / "data" / "forge.json"
+FICHIER_CONTACT = RACINE / "data" / "contact.json"
 
 YOUTUBE_HANDLE = os.environ.get("YOUTUBE_HANDLE", "SieurGalaad").strip().lstrip("@")
 # Laisse vide : l'identifiant est resolu automatiquement a partir du pseudo.
@@ -521,8 +522,42 @@ def collecter_forge() -> dict:
         for l in g.get("lignes", [])
         if (l.get("valeur") or "").strip().lower() in ("", "a completer", "à compléter")
     )
-    log(f"Forge : {len(groupes)} groupes" + (f", {a_completer} ligne(s) a completer" if a_completer else ""))
-    return {"intro": brut.get("intro", ""), "groupes": groupes}
+    liens = sum(1 for g in groupes for l in g.get("lignes", []) if (l.get("lien") or "").strip())
+    log(
+        f"Forge : {len(groupes)} groupes"
+        + (f", {a_completer} ligne(s) a completer" if a_completer else "")
+        + (f", {liens} lien(s) d'achat" if liens else "")
+    )
+    if liens and not (brut.get("mention_affiliation") or "").strip():
+        log("ATTENTION : des liens d'achat sont presents sans mention d'affiliation "
+            "(obligatoire en France). Renseigne 'mention_affiliation' dans data/forge.json.")
+    return {
+        "intro": brut.get("intro", ""),
+        "mention_affiliation": brut.get("mention_affiliation", ""),
+        "groupes": groupes,
+    }
+
+
+# --------------------------------------------------------------------------- #
+# Contact : adresse, textes et cle du service d'envoi
+# --------------------------------------------------------------------------- #
+def collecter_contact() -> dict:
+    if not FICHIER_CONTACT.exists():
+        log("data/contact.json absent -> bloc de contact vide")
+        return {}
+    try:
+        brut = json.loads(FICHIER_CONTACT.read_text(encoding="utf-8"))
+    except Exception as exc:  # noqa: BLE001
+        log(f"data/contact.json illisible ({exc}) -> bloc de contact vide")
+        return {}
+    contact = {c: brut.get(c, "") for c in ("adresse", "cle", "titre", "oeil", "intro", "delai")}
+    contact["sujets"] = brut.get("sujets", [])
+    log(
+        "Contact : "
+        + (f"{contact['adresse']}" if contact["adresse"] else "aucune adresse")
+        + (", envoi direct actif" if contact["cle"] else ", repli sur le logiciel de mail (pas de cle)")
+    )
+    return contact
 
 
 # --------------------------------------------------------------------------- #
@@ -546,6 +581,7 @@ def main() -> int:
     sorties, statuts["sorties"] = collecter_sorties()
     planning = collecter_planning()
     forge = collecter_forge()
+    contact = collecter_contact()
 
     chaine_precedente = precedent.get("chaine", {})
     videos_precedentes = precedent.get("videos", [])
@@ -589,6 +625,7 @@ def main() -> int:
         "sorties": sorties if sorties is not None else precedent.get("sorties", []),
         "planning": planning,
         "forge": forge,
+        "contact": contact,
         "statuts": statuts,
     }
 
