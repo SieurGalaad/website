@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SieurGalaad — Walkthroughs 4K60 Ultra</title>
+<meta name="description" content="Walkthroughs complets en 4K60 ultra, sans commentaire, en version française. Vidéos, planning de jeu, sorties PC à venir et fil Reddit de la chaîne SieurGalaad.">
+<meta name="theme-color" content="#0c0b0a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SieurGalaad — Walkthroughs 4K60 Ultra">
+<meta property="og:description" content="Walkthroughs complets en 4K60 ultra, sans commentaire, en version française.">
+<meta property="og:locale" content="fr_FR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230c0b0a'/><path d='M16 4v24M8 12h16' stroke='%23c8a34a' stroke-width='3'/></svg>">
+</head>
+<body>
+
+<!-- ───────────────── Filtres SVG : c'est eux qui donnent le grain d'encre ─── -->
+<svg class="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="encre-rugueuse">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.06" numOctaves="3" seed="7" result="bruit"/>
+      <feDisplacementMap in="SourceGraphic" in2="bruit" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="encre-forte">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015 0.04" numOctaves="4" seed="19" result="bruit"/>
+      <feDisplacementMap in="SourceGraphic" in2="bruit" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain-papier">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <linearGradient id="degrade-or" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8a6f2a"/>
+      <stop offset="50%" stop-color="#e7c56f"/>
+      <stop offset="100%" stop-color="#8a6f2a"/>
+    </linearGradient>
+    <!-- Version en unites utilisateur : indispensable pour un trait horizontal,
+         dont la boite englobante est de hauteur nulle (un degrade en unites
+         relatives y devient invisible). -->
+    <linearGradient id="degrade-or-h" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="400" y2="0">
+      <stop offset="0%" stop-color="#6a5320" stop-opacity=".2"/>
+      <stop offset="35%" stop-color="#c8a34a"/>
+      <stop offset="65%" stop-color="#c8a34a"/>
+      <stop offset="100%" stop-color="#6a5320" stop-opacity=".2"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="progression"><span id="barre-progression"></span></div>
+
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<!-- ───────────────── En-tête ─────────────────────────────────────────────── -->
+<header class="entete" id="entete">
+  <a class="marque" href="#haut">
+    <svg class="marque-blason" viewBox="0 0 40 48" aria-hidden="true">
+      <path d="M20 1 L38 7 V25 C38 36 30 43 20 47 C10 43 2 36 2 25 V7 Z" fill="none" stroke="url(#degrade-or)" stroke-width="1.6"/>
+      <path d="M20 10 V36 M11 19 H29" stroke="url(#degrade-or)" stroke-width="2.6" stroke-linecap="square"/>
+    </svg>
+    <span class="marque-texte">Sieur<em>Galaad</em></span>
+  </a>
+  <nav class="navigation" aria-label="Navigation principale">
+    <a href="#affiche">À l'affiche</a>
+    <a href="#chroniques">Chroniques</a>
+    <a href="#registre">Registre</a>
+    <a href="#horizon">Horizon</a>
+    <a href="#taverne">Taverne</a>
+  </nav>
+  <a class="bouton bouton--or" id="lien-abonnement" href="https://www.youtube.com/@SieurGalaad?sub_confirmation=1" target="_blank" rel="noopener">S'abonner</a>
+  <button class="bascule-menu" id="bascule-menu" aria-expanded="false" aria-controls="navigation-mobile" aria-label="Ouvrir le menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="navigation-mobile" id="navigation-mobile" aria-label="Navigation mobile" hidden>
+  <a href="#affiche">À l'affiche</a>
+  <a href="#chroniques">Chroniques</a>
+  <a href="#registre">Registre</a>
+  <a href="#horizon">Horizon</a>
+  <a href="#taverne">Taverne</a>
+  <a href="https://www.youtube.com/@SieurGalaad?sub_confirmation=1" target="_blank" rel="noopener">S'abonner</a>
+</nav>
+
+<!-- ───────────────── Héros ──────────────────────────────────────────────── -->
+<section class="heros" id="haut">
+  <div class="heros-couche heros-couche--lueur" data-parallaxe="0.08" aria-hidden="true"></div>
+
+  <svg class="heros-couche heros-couche--lointain" data-parallaxe="0.16" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path d="M0 492 L74 408 L128 452 L236 330 L302 404 L358 376 L468 458 L542 392 L598 422 L706 314 L792 418 L844 384 L946 462 L1028 372 L1092 430 L1196 338 L1268 426 L1352 396 L1440 446 V600 H0 Z" fill="#221d16"/>
+    <path d="M0 492 L74 408 L128 452 L236 330 L302 404 L358 376 L468 458 L542 392 L598 422 L706 314 L792 418 L844 384 L946 462 L1028 372 L1092 430 L1196 338 L1268 426 L1352 396 L1440 446" fill="none" stroke="#4a3d26" stroke-width="1" opacity=".35"/>
+  </svg>
+
+  <svg class="heros-couche heros-couche--median" data-parallaxe="0.34" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <g fill="#14100b">
+      <path d="M0 536 L108 486 L196 522 L286 448 L392 518 L488 474 L582 530 L698 460 L812 526 L926 470 L1048 532 L1164 484 L1288 528 L1440 490 V600 H0 Z"/>
+      <rect x="898" y="438" width="18" height="98"/>
+      <rect x="1046" y="438" width="18" height="98"/>
+      <path d="M898 440 q83 -78 166 0 Z"/>
+      <rect x="886" y="424" width="190" height="16"/>
+      <rect x="872" y="506" width="22" height="42"/>
+      <rect x="1068" y="500" width="22" height="48"/>
+      <path d="M232 540 L248 470 L266 540 Z"/>
+      <path d="M296 542 L308 496 L322 542 Z"/>
+    </g>
+    <g fill="none" stroke="#5a4a2c" stroke-width="1" opacity=".45">
+      <path d="M0 536 L108 486 L196 522 L286 448 L392 518 L488 474 L582 530 L698 460 L812 526 L926 470 L1048 532 L1164 484 L1288 528 L1440 490"/>
+      <path d="M898 440 q83 -78 166 0"/>
+      <rect x="886" y="424" width="190" height="16"/>
+    </g>
+  </svg>
+
+  <div class="heros-contenu">
+    <p class="surtitre" data-apparition>Chaîne de walkthroughs · 4K60 Ultra · RTX 5080</p>
+    <h1 class="heros-titre" data-apparition>
+      <span class="heros-titre-ligne">Sieur</span><span class="heros-titre-ligne heros-titre-ligne--or">Galaad</span>
+    </h1>
+    <p class="heros-accroche" data-apparition>
+      Des aventures jouées d'un bout à l'autre, en version française, sans commentaire.
+      L'image, le son du jeu, et rien entre les deux.
+    </p>
+    <div class="heros-actions" data-apparition>
+      <a class="bouton bouton--or" href="#affiche">Voir la dernière vidéo</a>
+      <a class="bouton bouton--fantome" href="https://www.youtube.com/@SieurGalaad" target="_blank" rel="noopener">La chaîne sur YouTube</a>
+    </div>
+    <dl class="heros-stats" id="heros-stats" data-apparition>
+      <div><dt>Vidéos</dt><dd data-compteur="0" id="stat-videos">—</dd></div>
+      <div><dt>Abonnés</dt><dd data-compteur="0" id="stat-abonnes">—</dd></div>
+      <div><dt>Vues cumulées</dt><dd data-compteur="0" id="stat-vues">—</dd></div>
+    </dl>
+  </div>
+
+  <svg class="heros-couche heros-couche--proche" data-parallaxe="0.62" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path d="M0 190 C160 140 260 220 400 185 C540 150 620 225 760 195 C900 165 1010 235 1150 200 C1290 165 1370 215 1440 195 V300 H0 Z" fill="#0c0b0a"/>
+  </svg>
+  <canvas class="heros-poussiere" id="heros-poussiere" aria-hidden="true"></canvas>
+
+  <a class="heros-indice" href="#affiche" aria-label="Défiler vers le contenu">
+    <span></span>
+  </a>
+</section>
+
+<main id="contenu">
+
+  <!-- ─────────────── À l'affiche ──────────────────────────────────────── -->
+  <section class="section" id="affiche">
+    <div class="enveloppe">
+      <header class="section-entete" data-apparition>
+        <p class="section-oeil">Dernière parution</p>
+        <h2 class="section-titre">À l'affiche</h2>
+        <svg class="filet" viewBox="0 0 400 12" aria-hidden="true"><path d="M0 6 H160 M200 6 H400" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M180 1 L186 6 L180 11 L174 6 Z" fill="#c8a34a"/></svg>
+      </header>
+      <div class="affiche-grille" id="affiche-grille" data-apparition>
+        <div class="squelette squelette--lecteur"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── Chroniques ───────────────────────────────────────── -->
+  <section class="section section--alt" id="chroniques">
+    <div class="enveloppe">
+      <header class="section-entete" data-apparition>
+        <p class="section-oeil">La vidéothèque</p>
+        <h2 class="section-titre">Chroniques</h2>
+        <svg class="filet" viewBox="0 0 400 12" aria-hidden="true"><path d="M0 6 H160 M200 6 H400" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M180 1 L186 6 L180 11 L174 6 Z" fill="#c8a34a"/></svg>
+      </header>
+      <div class="filtres" id="filtres" role="group" aria-label="Filtrer par jeu" data-apparition></div>
+      <div class="grille-videos" id="grille-videos">
+        <div class="squelette"></div><div class="squelette"></div><div class="squelette"></div>
+      </div>
+      <div class="centrer"><button class="bouton bouton--fantome" id="plus-videos" hidden>Dérouler le parchemin</button></div>
+    </div>
+  </section>
+
+  <!-- ─────────────── Registre (planning) ──────────────────────────────── -->
+  <section class="section" id="registre">
+    <div class="enveloppe">
+      <header class="section-entete" data-apparition>
+        <p class="section-oeil">Ce qui se joue maintenant et après</p>
+        <h2 class="section-titre">Le Registre</h2>
+        <svg class="filet" viewBox="0 0 400 12" aria-hidden="true"><path d="M0 6 H160 M200 6 H400" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M180 1 L186 6 L180 11 L174 6 Z" fill="#c8a34a"/></svg>
+      </header>
+      <ol class="frise" id="frise">
+        <li class="squelette squelette--ligne"></li><li class="squelette squelette--ligne"></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ─────────────── Horizon (sorties PC) ─────────────────────────────── -->
+  <section class="section section--alt" id="horizon">
+    <div class="enveloppe">
+      <header class="section-entete" data-apparition>
+        <p class="section-oeil">Sorties PC à venir</p>
+        <h2 class="section-titre">L'Horizon</h2>
+        <svg class="filet" viewBox="0 0 400 12" aria-hidden="true"><path d="M0 6 H160 M200 6 H400" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M180 1 L186 6 L180 11 L174 6 Z" fill="#c8a34a"/></svg>
+      </header>
+      <div class="grille-sorties" id="grille-sorties">
+        <div class="squelette"></div><div class="squelette"></div><div class="squelette"></div><div class="squelette"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── Taverne (Reddit) ─────────────────────────────────── -->
+  <section class="section" id="taverne">
+    <div class="enveloppe">
+      <header class="section-entete" data-apparition>
+        <p class="section-oeil">Discussions Reddit</p>
+        <h2 class="section-titre">La Taverne</h2>
+        <svg class="filet" viewBox="0 0 400 12" aria-hidden="true"><path d="M0 6 H160 M200 6 H400" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M180 1 L186 6 L180 11 L174 6 Z" fill="#c8a34a"/></svg>
+      </header>
+      <div class="grille-posts" id="grille-posts">
+        <div class="squelette squelette--ligne"></div><div class="squelette squelette--ligne"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="enveloppe pied-grille">
+    <div>
+      <p class="marque-texte marque-texte--pied">Sieur<em>Galaad</em></p>
+      <p class="pied-note">Walkthroughs complets, 4K60 ultra, version française, sans commentaire.</p>
+    </div>
+    <nav class="pied-liens" aria-label="Liens externes">
+      <a href="https://www.youtube.com/@SieurGalaad" target="_blank" rel="noopener">YouTube</a>
+      <a id="lien-reddit" href="https://www.reddit.com/user/SieurGalaad" target="_blank" rel="noopener">Reddit</a>
+    </nav>
+    <div class="pied-meta">
+      <p>Mis à jour automatiquement — <span id="date-maj">…</span></p>
+      <p class="pied-credit">Données de sorties fournies par <a href="https://rawg.io" target="_blank" rel="noopener">RAWG</a>.</p>
+      <p class="pied-etat" id="pied-etat"></p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+{
+ "genere_le": "2026-09-18T09:32:03.355456Z",
+ "chaine": {
+  "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
+  "titre": "SieurGalaad",
+  "url": "https://www.youtube.com/channel/UCqaDIhqrP-MLQzU8Mj1-JDA",
+  "handle": "https://www.youtube.com/@SieurGalaad",
+  "reddit": "SieurGalaad",
+  "description": "Walkthroughs complets 4K60 ultra, VF, sans commentaire.",
+  "abonnes": 12,
+  "nb_videos": 73,
+  "vues_totales": 12634
+ },
+ "videos": [
+  {
+   "id": "exemple00",
+   "titre": "[VF] The Witcher 3: Wild Hunt — Les 60 premieres minutes | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-09-16T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231d1a14%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ETW3%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 2040,
+   "vues": 14800,
+   "jeu": "The Witcher 3: Wild Hunt",
+   "short": false
+  },
+  {
+   "id": "exemple01",
+   "titre": "[VF] The Witcher 3: Wild Hunt — Novigrad de nuit | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-09-11T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23191c1e%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ETW3%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 1920,
+   "vues": 9400,
+   "jeu": "The Witcher 3: Wild Hunt",
+   "short": false
+  },
+  {
+   "id": "exemple02",
+   "titre": "[VF] Gears of War: E-Day — Prise en main | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-09-06T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e1712%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EGOW%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 1740,
+   "vues": 21300,
+   "jeu": "Gears of War: E-Day",
+   "short": false
+  },
+  {
+   "id": "exemple03",
+   "titre": "[VF] Gears of War: E-Day — La descente | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-09-01T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23151a17%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EGOW%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 1860,
+   "vues": 7100,
+   "jeu": "Gears of War: E-Day",
+   "short": false
+  },
+  {
+   "id": "exemple04",
+   "titre": "[VF] The Blood of Dawnwalker — Premiere nuit | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-08-27T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231c1519%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ETBO%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 2220,
+   "vues": 12600,
+   "jeu": "The Blood of Dawnwalker",
+   "short": false
+  },
+  {
+   "id": "exemple05",
+   "titre": "[VF] Phantom Blade Zero — Le duel du pont | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-08-22T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23171a1d%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EPBZ%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 1560,
+   "vues": 5900,
+   "jeu": "Phantom Blade Zero",
+   "short": false
+  },
+  {
+   "id": "exemple06",
+   "titre": "[VF] Cyberpunk 2077 — Traversee de Night City | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-08-17T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231d1a14%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EC2%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 2460,
+   "vues": 18200,
+   "jeu": "Cyberpunk 2077",
+   "short": false
+  },
+  {
+   "id": "exemple07",
+   "titre": "[VF] Black Myth: Wukong — Le temple englouti | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-08-12T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23191c1e%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EBMW%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 1980,
+   "vues": 8800,
+   "jeu": "Black Myth: Wukong",
+   "short": false
+  },
+  {
+   "id": "exemple08",
+   "titre": "[VF] Silent Hill 2 — L'hopital | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-08-07T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e1712%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ESH2%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 2100,
+   "vues": 6400,
+   "jeu": "Silent Hill 2",
+   "short": false
+  },
+  {
+   "id": "exemple09",
+   "titre": "[VF] Elden Ring — Necrolimbe au crepuscule | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-08-02T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23151a17%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EER%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 2340,
+   "vues": 11500,
+   "jeu": "Elden Ring",
+   "short": false
+  },
+  {
+   "id": "exemple10",
+   "titre": "[VF] Cyberpunk 2077 — Les docks sous la pluie | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-07-28T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231c1519%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EC2%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 1680,
+   "vues": 4300,
+   "jeu": "Cyberpunk 2077",
+   "short": false
+  },
+  {
+   "id": "exemple11",
+   "titre": "[VF] Elden Ring — Le lac aux racines | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/@SieurGalaad",
+   "publie": "2026-07-23T09:32:03.355456Z",
+   "miniature": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22640%22%20height%3D%22360%22%20viewBox%3D%220%200%20640%20360%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23171a1d%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M320.0%2086.39999999999999%20V273.6%20M262.4%20144.0%20H377.6%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22320.0%22%20y%3D%22334.8%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2225%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EER%3C/text%3E%0A%3C/svg%3E",
+   "description": "Walkthrough complet en 4K60, reglages ultra, ray tracing active, version francaise et sans commentaire. Capture realisee sur RTX 5080 et Ryzen 7 9800X3D.",
+   "duree_s": 2520,
+   "vues": 5100,
+   "jeu": "Elden Ring",
+   "short": false
+  }
+ ],
+ "reddit": [
+  {
+   "titre": "Witcher 3 Remastered en 4K60 ultra sur RTX 5080 — premieres impressions",
+   "subreddit": "r/pcgaming",
+   "url": "https://www.reddit.com/user/SieurGalaad",
+   "score": 184,
+   "commentaires": 47,
+   "publie": "2026-09-15T09:32:03.355456Z",
+   "miniature": "",
+   "texte": ""
+  },
+  {
+   "titre": "J'ai capture Novigrad de nuit avec le path tracing active, le resultat est fou",
+   "subreddit": "r/witcher",
+   "url": "https://www.reddit.com/user/SieurGalaad",
+   "score": 96,
+   "commentaires": 23,
+   "publie": "2026-09-09T09:32:03.355456Z",
+   "miniature": "",
+   "texte": ""
+  },
+  {
+   "titre": "Quels reglages pour tenir le 60 fps en 4K sur Gears E-Day ?",
+   "subreddit": "r/france",
+   "url": "https://www.reddit.com/user/SieurGalaad",
+   "score": 41,
+   "commentaires": 18,
+   "publie": "2026-09-02T09:32:03.355456Z",
+   "miniature": "",
+   "texte": ""
+  },
+  {
+   "titre": "Walkthrough complet VF sans commentaire : ca interesse encore du monde ?",
+   "subreddit": "r/jeuxvideo",
+   "url": "https://www.reddit.com/user/SieurGalaad",
+   "score": 27,
+   "commentaires": 34,
+   "publie": "2026-08-25T09:32:03.355456Z",
+   "miniature": "",
+   "texte": ""
+  }
+ ],
+ "sorties": [
+  {
+   "nom": "The Witcher 3: Wild Hunt — Remastered",
+   "sortie": "2026-09-29",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22480%22%20height%3D%22300%22%20viewBox%3D%220%200%20480%20300%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e1712%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%223%22%3E%0A%3Cpath%20d%3D%22M240.0%2072.0%20V228.0%20M192.0%20120.0%20H288.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22240.0%22%20y%3D%22279.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2221%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ETW3%3C/text%3E%0A%3C/svg%3E",
+   "note": 92,
+   "popularite": 4000,
+   "genres": [
+    "RPG",
+    "Aventure"
+   ],
+   "boutiques": [
+    "Steam",
+    "Epic Games"
+   ],
+   "url": "https://rawg.io"
+  },
+  {
+   "nom": "Gears of War: E-Day",
+   "sortie": "2026-10-06",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22480%22%20height%3D%22300%22%20viewBox%3D%220%200%20480%20300%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23151a17%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%223%22%3E%0A%3Cpath%20d%3D%22M240.0%2072.0%20V228.0%20M192.0%20120.0%20H288.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22240.0%22%20y%3D%22279.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2221%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EGOW%3C/text%3E%0A%3C/svg%3E",
+   "note": 88,
+   "popularite": 3700,
+   "genres": [
+    "Action",
+    "Shooter"
+   ],
+   "boutiques": [
+    "Steam",
+    "Epic Games"
+   ],
+   "url": "https://rawg.io"
+  },
+  {
+   "nom": "Crimson Desert",
+   "sortie": "2026-10-15",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22480%22%20height%3D%22300%22%20viewBox%3D%220%200%20480%20300%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231c1519%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%223%22%3E%0A%3Cpath%20d%3D%22M240.0%2072.0%20V228.0%20M192.0%20120.0%20H288.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22240.0%22%20y%3D%22279.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2221%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ECD%3C/text%3E%0A%3C/svg%3E",
+   "note": null,
+   "popularite": 3400,
+   "genres": [
+    "Action",
+    "Aventure"
+   ],
+   "boutiques": [
+    "Steam",
+    "Epic Games"
+   ],
+   "url": "https://rawg.io"
+  },
+  {
+   "nom": "Phantom Blade Zero",
+   "sortie": "2026-10-29",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22480%22%20height%3D%22300%22%20viewBox%3D%220%200%20480%20300%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23171a1d%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%223%22%3E%0A%3Cpath%20d%3D%22M240.0%2072.0%20V228.0%20M192.0%20120.0%20H288.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22240.0%22%20y%3D%22279.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2221%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EPBZ%3C/text%3E%0A%3C/svg%3E",
+   "note": null,
+   "popularite": 3100,
+   "genres": [
+    "Action",
+    "RPG"
+   ],
+   "boutiques": [
+    "Steam",
+    "Epic Games"
+   ],
+   "url": "https://rawg.io"
+  },
+  {
+   "nom": "Nioh 3",
+   "sortie": "2026-11-12",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22480%22%20height%3D%22300%22%20viewBox%3D%220%200%20480%20300%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231d1a14%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%223%22%3E%0A%3Cpath%20d%3D%22M240.0%2072.0%20V228.0%20M192.0%20120.0%20H288.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22240.0%22%20y%3D%22279.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2221%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EN3%3C/text%3E%0A%3C/svg%3E",
+   "note": null,
+   "popularite": 2800,
+   "genres": [
+    "Action",
+    "RPG"
+   ],
+   "boutiques": [
+    "Steam",
+    "Epic Games"
+   ],
+   "url": "https://rawg.io"
+  },
+  {
+   "nom": "The Blood of Dawnwalker",
+   "sortie": "2026-11-20",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22480%22%20height%3D%22300%22%20viewBox%3D%220%200%20480%20300%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23191c1e%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%223%22%3E%0A%3Cpath%20d%3D%22M240.0%2072.0%20V228.0%20M192.0%20120.0%20H288.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22240.0%22%20y%3D%22279.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2221%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ETBO%3C/text%3E%0A%3C/svg%3E",
+   "note": null,
+   "popularite": 2500,
+   "genres": [
+    "RPG"
+   ],
+   "boutiques": [
+    "Steam",
+    "Epic Games"
+   ],
+   "url": "https://rawg.io"
+  },
+  {
+   "nom": "Resident Evil Requiem",
+   "sortie": "2026-12-01",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22480%22%20height%3D%22300%22%20viewBox%3D%220%200%20480%20300%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e1712%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%223%22%3E%0A%3Cpath%20d%3D%22M240.0%2072.0%20V228.0%20M192.0%20120.0%20H288.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22240.0%22%20y%3D%22279.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2221%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ERER%3C/text%3E%0A%3C/svg%3E",
+   "note": null,
+   "popularite": 2200,
+   "genres": [
+    "Horreur",
+    "Action"
+   ],
+   "boutiques": [
+    "Steam",
+    "Epic Games"
+   ],
+   "url": "https://rawg.io"
+  },
+  {
+   "nom": "Subnautica 2",
+   "sortie": "2026-12-23",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22480%22%20height%3D%22300%22%20viewBox%3D%220%200%20480%20300%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23151a17%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22480%22%20height%3D%22300%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%223%22%3E%0A%3Cpath%20d%3D%22M240.0%2072.0%20V228.0%20M192.0%20120.0%20H288.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22240.0%22%20y%3D%22279.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2221%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ES2%3C/text%3E%0A%3C/svg%3E",
+   "note": null,
+   "popularite": 1900,
+   "genres": [
+    "Survie",
+    "Aventure"
+   ],
+   "boutiques": [
+    "Steam",
+    "Epic Games"
+   ],
+   "url": "https://rawg.io"
+  }
+ ],
+ "planning": [
+  {
+   "jeu": "The Witcher 3: Wild Hunt",
+   "debut": "2026-09-21",
+   "fin": "2026-09-28",
+   "statut": "en_cours",
+   "note": "Fin de la campagne principale avant la bascule sur le Remastered.",
+   "episodes": "Ep. 12-16",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22300%22%20height%3D%22400%22%20viewBox%3D%220%200%20300%20400%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231d1a14%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M150.0%2096.0%20V304.0%20M86.0%20160.0%20H214.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22150.0%22%20y%3D%22372.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2228%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ETW3%3C/text%3E%0A%3C/svg%3E",
+   "url_jeu": "https://rawg.io"
+  },
+  {
+   "jeu": "The Witcher 3: Wild Hunt",
+   "debut": "2026-09-29",
+   "fin": "2026-10-12",
+   "statut": "prevu",
+   "note": "Remastered, captation day-1. Priorite absolue : pic de recherche le jour de la sortie.",
+   "episodes": "Ep. 1-8",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22300%22%20height%3D%22400%22%20viewBox%3D%220%200%20300%20400%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23191c1e%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M150.0%2096.0%20V304.0%20M86.0%20160.0%20H214.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22150.0%22%20y%3D%22372.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2228%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ETW3%3C/text%3E%0A%3C/svg%3E",
+   "url_jeu": "https://rawg.io"
+  },
+  {
+   "jeu": "Gears of War: E-Day",
+   "debut": "2026-10-06",
+   "fin": "2026-10-19",
+   "statut": "prevu",
+   "note": "Sortie le 06/10. Les 60 premieres minutes en ligne sous 24 h.",
+   "episodes": "Ep. 1-6",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22300%22%20height%3D%22400%22%20viewBox%3D%220%200%20300%20400%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e1712%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M150.0%2096.0%20V304.0%20M86.0%20160.0%20H214.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22150.0%22%20y%3D%22372.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2228%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EGOW%3C/text%3E%0A%3C/svg%3E",
+   "url_jeu": "https://rawg.io"
+  },
+  {
+   "jeu": "Phantom Blade Zero",
+   "debut": "2026-10-29",
+   "fin": "2026-11-15",
+   "statut": "prevu",
+   "note": "Vitrine technique ideale pour la RTX 5080.",
+   "episodes": "Ep. 1-10",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22300%22%20height%3D%22400%22%20viewBox%3D%220%200%20300%20400%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23151a17%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M150.0%2096.0%20V304.0%20M86.0%20160.0%20H214.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22150.0%22%20y%3D%22372.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2228%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EPBZ%3C/text%3E%0A%3C/svg%3E",
+   "url_jeu": "https://rawg.io"
+  },
+  {
+   "jeu": "The Blood of Dawnwalker",
+   "debut": "2026-11-16",
+   "fin": "2026-11-30",
+   "statut": "envisage",
+   "note": "Dark fantasy, parfaitement aligne avec l'identite de la chaine.",
+   "episodes": "a definir",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22300%22%20height%3D%22400%22%20viewBox%3D%220%200%20300%20400%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231c1519%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M150.0%2096.0%20V304.0%20M86.0%20160.0%20H214.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22150.0%22%20y%3D%22372.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2228%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3ETBO%3C/text%3E%0A%3C/svg%3E",
+   "url_jeu": "https://rawg.io"
+  },
+  {
+   "jeu": "Fable",
+   "debut": "2027-02-23",
+   "fin": "2027-03-15",
+   "statut": "envisage",
+   "note": "Sortie annoncee au 23/02/2027. A confirmer.",
+   "episodes": "a definir",
+   "image": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22300%22%20height%3D%22400%22%20viewBox%3D%220%200%20300%20400%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23171a1d%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230c0b0a%22/%3E%3C/linearGradient%3E%0A%3Cpattern%20id%3D%22t%22%20width%3D%226%22%20height%3D%226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%3Ccircle%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%220.9%22%20fill%3D%22%23c8a34a%22%20opacity%3D%220.18%22/%3E%3C/pattern%3E%3C/defs%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Crect%20width%3D%22300%22%20height%3D%22400%22%20fill%3D%22url%28%23t%29%22/%3E%0A%3Cg%20opacity%3D%220.5%22%20stroke%3D%22%23c8a34a%22%20fill%3D%22none%22%20stroke-width%3D%224%22%3E%0A%3Cpath%20d%3D%22M150.0%2096.0%20V304.0%20M86.0%20160.0%20H214.0%22/%3E%0A%3C/g%3E%0A%3Ctext%20x%3D%22150.0%22%20y%3D%22372.0%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%0A%20font-size%3D%2228%22%20fill%3D%22%23a89b80%22%20letter-spacing%3D%223%22%3EF%3C/text%3E%0A%3C/svg%3E",
+   "url_jeu": "https://rawg.io"
+  }
+ ],
+ "statuts": {
+  "youtube": "exemple",
+  "reddit": "exemple",
+  "sorties": "exemple"
+ }
+}

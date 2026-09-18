@@ -1,0 +1,509 @@
+/* ==========================================================================
+   SieurGalaad — logique du site
+   Le navigateur ne contacte jamais YouTube, Reddit ou RAWG directement :
+   il lit data/site.json, rafraîchi côté serveur par GitHub Actions.
+   C'est ce qui évite les blocages CORS et les clés d'API exposées.
+   ========================================================================== */
+
+(() => {
+  "use strict";
+
+  const $  = (sel, racine = document) => racine.querySelector(sel);
+  const $$ = (sel, racine = document) => [...racine.querySelectorAll(sel)];
+  const moinsDeMouvement = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const pointeurFin = window.matchMedia("(pointer: fine)").matches;
+
+  const nombreFr = new Intl.NumberFormat("fr-FR");
+  const dateLongue = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+  const dateCourte = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "short" });
+
+  const echapper = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => (
+    { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
+  ));
+
+  const LIBELLES_STATUT = {
+    en_cours: "En cours", prevu: "Prévu", envisage: "Envisagé", termine: "Terminé",
+  };
+
+  /* ───────────────────────── Récupération des données ──────────────────── */
+  async function chargerDonnees() {
+    try {
+      const reponse = await fetch("data/site.json", { cache: "no-cache" });
+      if (!reponse.ok) throw new Error(reponse.status);
+      return await reponse.json();
+    } catch (e) {
+      // Ouverture en file:// ou fichier absent : on retombe sur les données
+      // éventuellement intégrées à la page (version aperçu).
+      if (window.__SITE_DATA__) return window.__SITE_DATA__;
+      console.warn("data/site.json illisible :", e);
+      return null;
+    }
+  }
+
+  /* ─────────────────────────────── Formatage ───────────────────────────── */
+  function formaterDuree(secondes) {
+    if (!secondes) return "";
+    const h = Math.floor(secondes / 3600);
+    const m = Math.floor((secondes % 3600) / 60);
+    const s = secondes % 60;
+    return h ? `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
+             : `${m}:${String(s).padStart(2, "0")}`;
+  }
+
+  function formaterDate(iso, format = dateLongue) {
+    if (!iso) return "";
+    const d = new Date(iso);
+    return Number.isNaN(d.getTime()) ? "" : format.format(d);
+  }
+
+  function joursRestants(iso) {
+    const cible = new Date(`${iso}T00:00:00`);
+    if (Number.isNaN(cible.getTime())) return null;
+    const aujourdhui = new Date();
+    aujourdhui.setHours(0, 0, 0, 0);
+    return Math.round((cible - aujourdhui) / 86400000);
+  }
+
+  /* ─────────────────────────── Lecteur « façade » ──────────────────────── */
+  /* L'iframe YouTube n'est injectée qu'au clic : la page reste légère et
+     aucun cookie YouTube n'est déposé avant une action de l'utilisateur. */
+  const CROIX = `<svg class="lecteur-croix" viewBox="0 0 84 84" aria-hidden="true">
+      <circle cx="42" cy="42" r="40"/>
+      <path d="M39 20h6v44h-6z"/><path d="M26 36h32v6H26z"/>
+    </svg>`;
+
+  function construireLecteur(video) {
+    const conteneur = document.createElement("div");
+    conteneur.className = "lecteur";
+    conteneur.setAttribute("role", "button");
+    conteneur.setAttribute("tabindex", "0");
+    conteneur.setAttribute("aria-label", `Lire : ${video.titre}`);
+    conteneur.innerHTML = `
+      <img src="${echapper(video.miniature)}" alt="" loading="lazy" decoding="async">
+      ${CROIX}`;
+
+    const lancer = () => {
+      conteneur.innerHTML = `<iframe
+        src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(video.id)}?autoplay=1&rel=0&hl=fr"
+        title="${echapper(video.titre)}"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+      conteneur.removeAttribute("role");
+      conteneur.removeAttribute("tabindex");
+    };
+    conteneur.addEventListener("click", lancer);
+    conteneur.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); lancer(); }
+    });
+    return conteneur;
+  }
+
+  /* ─────────────────────────────── Rendus ──────────────────────────────── */
+  function rendreEnTete(donnees) {
+    const chaine = donnees.chaine || {};
+    if (chaine.handle) {
+      $("#lien-abonnement").href = `${chaine.handle}?sub_confirmation=1`;
+    }
+    const videos = donnees.videos || [];
+    const totalVues = chaine.vues_totales
+      || videos.reduce((somme, v) => somme + (v.vues || 0), 0);
+
+    animerCompteur($("#stat-videos"), chaine.nb_videos || videos.length);
+    animerCompteur($("#stat-abonnes"), chaine.abonnes || 0);
+    animerCompteur($("#stat-vues"), totalVues);
+
+    if (!chaine.abonnes) $("#stat-abonnes").closest("div").hidden = true;
+
+    $("#date-maj").textContent = donnees.genere_le
+      ? new Intl.DateTimeFormat("fr-FR", { dateStyle: "long", timeStyle: "short" }).format(new Date(donnees.genere_le))
+      : "—";
+
+    const statuts = donnees.statuts || {};
+    const soucis = Object.entries(statuts)
+      .filter(([, v]) => v === "echec" || v === "sans_cle")
+      .map(([k]) => k);
+    if (soucis.length) {
+      $("#pied-etat").textContent = `Source(s) momentanément indisponible(s) : ${soucis.join(", ")} — dernières données connues affichées.`;
+    }
+  }
+
+  function rendreAffiche(donnees) {
+    const cible = $("#affiche-grille");
+    const video = (donnees.videos || []).find((v) => !v.short) || (donnees.videos || [])[0];
+    if (!video) {
+      cible.innerHTML = `<p class="etat-vide">Aucune vidéo à afficher pour le moment.</p>`;
+      return;
+    }
+    cible.innerHTML = "";
+    cible.appendChild(construireLecteur(video));
+
+    const infos = document.createElement("div");
+    infos.className = "affiche-infos";
+    const resume = (video.description || "").split("\n").find((l) => l.trim().length > 40) || "";
+    infos.innerHTML = `
+      ${video.jeu ? `<p class="affiche-jeu">${echapper(video.jeu)}</p>` : ""}
+      <h3 class="affiche-titre">${echapper(video.titre)}</h3>
+      <div class="affiche-meta">
+        <span>${formaterDate(video.publie)}</span>
+        ${video.duree_s ? `<span>${formaterDuree(video.duree_s)}</span>` : ""}
+        ${video.vues ? `<span>${nombreFr.format(video.vues)} vues</span>` : ""}
+      </div>
+      ${resume ? `<p class="affiche-texte">${echapper(resume.slice(0, 220))}${resume.length > 220 ? "…" : ""}</p>` : ""}
+      <a class="bouton bouton--fantome" href="${echapper(video.url)}" target="_blank" rel="noopener">Ouvrir sur YouTube</a>`;
+    cible.appendChild(infos);
+  }
+
+  let toutesLesVideos = [];
+  let filtreActif = "*";
+  let nbAffichees = 9;
+
+  function rendreVideos() {
+    const grille = $("#grille-videos");
+    const liste = toutesLesVideos.filter((v) => filtreActif === "*" || v.jeu === filtreActif);
+    const visibles = liste.slice(0, nbAffichees);
+
+    if (!visibles.length) {
+      grille.innerHTML = `<p class="etat-vide">Aucune vidéo pour ce filtre.</p>`;
+      $("#plus-videos").hidden = true;
+      return;
+    }
+
+    grille.innerHTML = visibles.map((v) => `
+      <a class="carte-video panneau inclinable" href="${echapper(v.url)}" target="_blank" rel="noopener">
+        <div class="vignette-video">
+          <img src="${echapper(v.miniature)}" alt="" loading="lazy" decoding="async">
+          ${v.duree_s ? `<span class="duree">${formaterDuree(v.duree_s)}</span>` : ""}
+        </div>
+        <div class="corps">
+          ${v.jeu ? `<span class="etiquette">${echapper(v.jeu)}</span>` : ""}
+          <h3>${echapper(v.titre)}</h3>
+          <div class="pied-carte">
+            <span>${formaterDate(v.publie, dateCourte)}</span>
+            ${v.vues ? `<span>${nombreFr.format(v.vues)} vues</span>` : ""}
+          </div>
+        </div>
+      </a>`).join("");
+
+    $("#plus-videos").hidden = liste.length <= nbAffichees;
+    if (pointeurFin && !moinsDeMouvement) brancherInclinaison(grille);
+  }
+
+  function rendreFiltres() {
+    const compte = new Map();
+    toutesLesVideos.forEach((v) => { if (v.jeu) compte.set(v.jeu, (compte.get(v.jeu) || 0) + 1); });
+    const jeux = [...compte.entries()].filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1]).slice(0, 8);
+    if (!jeux.length) return;
+
+    const conteneur = $("#filtres");
+    conteneur.innerHTML = `<button class="filtre est-active" data-jeu="*">Tout</button>` +
+      jeux.map(([jeu, n]) => `<button class="filtre" data-jeu="${echapper(jeu)}">${echapper(jeu)} <span aria-hidden="true">· ${n}</span></button>`).join("");
+
+    conteneur.addEventListener("click", (e) => {
+      const bouton = e.target.closest(".filtre");
+      if (!bouton) return;
+      $$(".filtre", conteneur).forEach((b) => b.classList.toggle("est-active", b === bouton));
+      filtreActif = bouton.dataset.jeu;
+      nbAffichees = 9;
+      rendreVideos();
+    });
+  }
+
+  function rendrePlanning(donnees) {
+    const frise = $("#frise");
+    const creneaux = donnees.planning || [];
+    if (!creneaux.length) {
+      frise.innerHTML = `<li class="etat-vide">Le planning n'est pas encore renseigné.</li>`;
+      return;
+    }
+    frise.innerHTML = creneaux.map((c) => {
+      const statut = LIBELLES_STATUT[c.statut] ? c.statut : "prevu";
+      const periode = c.debut && c.fin
+        ? `${formaterDate(c.debut, dateCourte)} — ${formaterDate(c.fin, dateCourte)}`
+        : formaterDate(c.debut || c.fin, dateLongue);
+      return `
+        <li class="creneau" data-apparition>
+          <article class="creneau-carte panneau">
+            <div class="creneau-visuel">
+              ${c.image ? `<img src="${echapper(c.image)}" alt="" loading="lazy" decoding="async">` : ""}
+            </div>
+            <div>
+              <p class="creneau-dates">${echapper(periode)}</p>
+              <h3 class="creneau-jeu">${echapper(c.jeu)}<span class="jeton jeton--${statut}">${LIBELLES_STATUT[statut]}</span></h3>
+              ${c.note ? `<p class="creneau-note">${echapper(c.note)}</p>` : ""}
+              ${c.episodes ? `<p class="creneau-episodes">${echapper(c.episodes)}</p>` : ""}
+            </div>
+          </article>
+        </li>`;
+    }).join("");
+  }
+
+  function rendreSorties(donnees) {
+    const grille = $("#grille-sorties");
+    const sorties = donnees.sorties || [];
+    if (!sorties.length) {
+      grille.innerHTML = `<p class="etat-vide">Calendrier des sorties indisponible pour l'instant.</p>`;
+      return;
+    }
+    grille.innerHTML = sorties.map((s) => {
+      const d = new Date(`${s.sortie}T00:00:00`);
+      const jours = joursRestants(s.sortie);
+      const mois = Number.isNaN(d.getTime()) ? "" : d.toLocaleDateString("fr-FR", { month: "short" }).replace(".", "");
+      const compte = jours === null ? ""
+        : jours <= 0 ? "Disponible"
+        : jours === 1 ? "Demain"
+        : `Dans ${jours} jours`;
+      return `
+        <a class="carte-sortie panneau" href="${echapper(s.url)}" target="_blank" rel="noopener">
+          <div class="visuel">
+            ${s.image ? `<img src="${echapper(s.image)}" alt="" loading="lazy" decoding="async">` : ""}
+            <div class="jour"><strong>${Number.isNaN(d.getTime()) ? "?" : d.getDate()}</strong><span>${echapper(mois)}</span></div>
+          </div>
+          <div class="corps">
+            <h3>${echapper(s.nom)}</h3>
+            <span class="compte-a-rebours ${jours !== null && jours <= 7 ? "compte-a-rebours--proche" : ""}">${echapper(compte)}</span>
+            ${s.genres?.length ? `<span class="genres">${echapper(s.genres.join(" · "))}</span>` : ""}
+          </div>
+        </a>`;
+    }).join("");
+  }
+
+  function rendreReddit(donnees) {
+    const grille = $("#grille-posts");
+    const posts = donnees.reddit || [];
+    const pseudo = donnees.chaine?.reddit || "SieurGalaad";
+    $("#lien-reddit").href = `https://www.reddit.com/user/${encodeURIComponent(pseudo)}`;
+
+    if (!posts.length) {
+      grille.innerHTML = `<p class="etat-vide">Aucun post Reddit à afficher pour l'instant.</p>`;
+      return;
+    }
+    grille.innerHTML = posts.map((p) => `
+      <a class="carte-post panneau" href="${echapper(p.url)}" target="_blank" rel="noopener">
+        <div class="score"><strong>${nombreFr.format(p.score || 0)}</strong><span>points</span></div>
+        <div>
+          <h3>${echapper(p.titre)}</h3>
+          <p class="meta">${echapper(p.subreddit)} · ${formaterDate(p.publie, dateCourte)} · ${nombreFr.format(p.commentaires || 0)} commentaires</p>
+        </div>
+        <span class="fleche" aria-hidden="true">→</span>
+      </a>`).join("");
+  }
+
+  /* ─────────────────────────────── Effets ──────────────────────────────── */
+
+  // 1. Apparition à l'encre : opacité + relevé, une seule fois par élément.
+  function brancherApparitions() {
+    const observateur = new IntersectionObserver((entrees) => {
+      entrees.forEach((entree) => {
+        if (entree.isIntersecting) {
+          entree.target.classList.add("est-visible");
+          observateur.unobserve(entree.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+    $$("[data-apparition], .section-entete").forEach((el) => observateur.observe(el));
+  }
+
+  // 2. Parallaxe du héros : trois profondeurs, calculées dans un seul rAF.
+  function brancherParallaxe() {
+    if (moinsDeMouvement) return;
+    const couches = $$("[data-parallaxe]");
+    const heros = $(".heros");
+    let enAttente = false;
+
+    const mettreAJour = () => {
+      enAttente = false;
+      const y = window.scrollY;
+      if (y > heros.offsetHeight) return; // hors champ : on ne calcule rien
+      couches.forEach((couche) => {
+        const vitesse = parseFloat(couche.dataset.parallaxe) || 0;
+        couche.style.transform = `translate3d(0, ${(y * vitesse).toFixed(1)}px, 0)`;
+      });
+    };
+    window.addEventListener("scroll", () => {
+      if (!enAttente) { enAttente = true; requestAnimationFrame(mettreAJour); }
+    }, { passive: true });
+    mettreAJour();
+  }
+
+  // 3. Barre de progression + en-tête collé + lien de navigation actif.
+  function brancherDefilement() {
+    const entete = $("#entete");
+    const barre = $("#barre-progression");
+    const liens = $$(".navigation a");
+    const sections = liens.map((a) => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+    let enAttente = false;
+
+    const mettreAJour = () => {
+      enAttente = false;
+      const y = window.scrollY;
+      const hauteur = document.documentElement.scrollHeight - window.innerHeight;
+      barre.style.width = `${hauteur > 0 ? (y / hauteur) * 100 : 0}%`;
+      entete.classList.toggle("est-collee", y > 60);
+
+      let actif = -1;
+      sections.forEach((section, i) => {
+        if (section.getBoundingClientRect().top <= window.innerHeight * 0.35) actif = i;
+      });
+      liens.forEach((a, i) => a.classList.toggle("est-active", i === actif));
+
+      majFrise();
+    };
+    window.addEventListener("scroll", () => {
+      if (!enAttente) { enAttente = true; requestAnimationFrame(mettreAJour); }
+    }, { passive: true });
+    window.addEventListener("resize", mettreAJour);
+    mettreAJour();
+  }
+
+  // 4. La frise du registre se dessine au fil du défilement.
+  function majFrise() {
+    const frise = $("#frise");
+    if (!frise) return;
+    const rect = frise.getBoundingClientRect();
+    const debut = window.innerHeight * 0.8;
+    const avancee = Math.max(0, Math.min(1, (debut - rect.top) / (rect.height || 1)));
+    frise.style.setProperty("--avancee", `${(avancee * 100).toFixed(1)}%`);
+    $$(".creneau", frise).forEach((creneau) => {
+      const centre = creneau.getBoundingClientRect().top + 30;
+      creneau.classList.toggle("est-atteint", centre < debut);
+    });
+  }
+
+  // 5. Compteurs : le chiffre monte une fois, à l'entrée dans le champ.
+  function animerCompteur(element, valeur) {
+    if (!element) return;
+    if (!valeur) { element.textContent = "—"; return; }
+    if (moinsDeMouvement) { element.textContent = nombreFr.format(valeur); return; }
+
+    const observateur = new IntersectionObserver((entrees) => {
+      if (!entrees[0].isIntersecting) return;
+      observateur.disconnect();
+      const duree = 1100;
+      const depart = performance.now();
+      const pas = (maintenant) => {
+        const t = Math.min(1, (maintenant - depart) / duree);
+        const adouci = 1 - Math.pow(1 - t, 3);
+        element.textContent = nombreFr.format(Math.round(valeur * adouci));
+        if (t < 1) requestAnimationFrame(pas);
+      };
+      requestAnimationFrame(pas);
+    }, { threshold: 0.4 });
+    observateur.observe(element);
+  }
+
+  // 6. Inclinaison 3D légère des cartes (souris uniquement, 6° maximum).
+  function brancherInclinaison(racine) {
+    $$(".inclinable", racine).forEach((carte) => {
+      if (carte.dataset.inclinaison) return;
+      carte.dataset.inclinaison = "1";
+      carte.addEventListener("mousemove", (e) => {
+        const r = carte.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        carte.style.transform = `perspective(900px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateY(-3px)`;
+      });
+      carte.addEventListener("mouseleave", () => { carte.style.transform = ""; });
+    });
+  }
+
+  // 7. Poussière du héros : quelques particules très lentes, canvas léger.
+  function brancherPoussiere() {
+    if (moinsDeMouvement) return;
+    const canvas = $("#heros-poussiere");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    let particules = [];
+    let animation;
+
+    const dimensionner = () => {
+      const r = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = r.width * dpr;
+      canvas.height = r.height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const nombre = Math.round(Math.min(46, r.width / 26));
+      particules = Array.from({ length: nombre }, () => ({
+        x: Math.random() * r.width,
+        y: Math.random() * r.height,
+        r: Math.random() * 1.5 + 0.4,
+        vy: -(Math.random() * 0.22 + 0.05),
+        vx: (Math.random() - 0.5) * 0.14,
+        a: Math.random() * 0.4 + 0.1,
+      }));
+    };
+
+    const dessiner = () => {
+      const r = canvas.getBoundingClientRect();
+      ctx.clearRect(0, 0, r.width, r.height);
+      particules.forEach((p) => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.y < -5) { p.y = r.height + 5; p.x = Math.random() * r.width; }
+        if (p.x < -5) p.x = r.width + 5;
+        if (p.x > r.width + 5) p.x = -5;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(231,197,111,${p.a})`;
+        ctx.fill();
+      });
+      animation = requestAnimationFrame(dessiner);
+    };
+
+    dimensionner();
+    dessiner();
+    window.addEventListener("resize", dimensionner);
+    // On coupe l'animation dès que le héros sort du champ : zéro CPU en bas de page.
+    new IntersectionObserver((entrees) => {
+      if (entrees[0].isIntersecting) { if (!animation) dessiner(); }
+      else { cancelAnimationFrame(animation); animation = null; }
+    }, { threshold: 0 }).observe(canvas);
+  }
+
+  // 8. Menu mobile.
+  function brancherMenu() {
+    const bouton = $("#bascule-menu");
+    const menu = $("#navigation-mobile");
+    bouton.addEventListener("click", () => {
+      const ouvert = bouton.getAttribute("aria-expanded") === "true";
+      bouton.setAttribute("aria-expanded", String(!ouvert));
+      menu.hidden = ouvert;
+    });
+    menu.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") { bouton.setAttribute("aria-expanded", "false"); menu.hidden = true; }
+    });
+  }
+
+  /* ─────────────────────────────── Démarrage ───────────────────────────── */
+  async function demarrer() {
+    brancherMenu();
+    brancherParallaxe();
+    brancherPoussiere();
+    brancherDefilement();
+
+    const donnees = await chargerDonnees();
+    if (!donnees) {
+      $("#affiche-grille").innerHTML = `<p class="etat-vide">Les données du site n'ont pas pu être chargées. Si tu ouvres ce fichier directement depuis ton disque, lance plutôt un petit serveur local (voir le README).</p>`;
+      $$(".squelette").forEach((s) => s.remove());
+      brancherApparitions();
+      return;
+    }
+
+    toutesLesVideos = (donnees.videos || []).filter((v) => !v.short);
+    rendreEnTete(donnees);
+    rendreAffiche(donnees);
+    rendreFiltres();
+    rendreVideos();
+    rendrePlanning(donnees);
+    rendreSorties(donnees);
+    rendreReddit(donnees);
+
+    $("#plus-videos").addEventListener("click", () => { nbAffichees += 9; rendreVideos(); });
+
+    brancherApparitions();
+    majFrise();
+    if (pointeurFin && !moinsDeMouvement) brancherInclinaison(document);
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", demarrer);
+  else demarrer();
+})();

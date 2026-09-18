@@ -1,0 +1,562 @@
+/* ==========================================================================
+   SieurGalaad — feuille de style
+   Direction : comic encré, sobre, inspiration Thronebreaker.
+   Trois règles tenues partout :
+     1. L'or est un accent, jamais une surface. Il souligne, il ne remplit pas.
+     2. Toutes les images passent en duotone au repos et ne reprennent leur
+        couleur qu'au survol — c'est ce qui unifie des jaquettes bariolées.
+     3. Aucune animation ne dure plus de 700 ms et tout se fige proprement
+        si l'utilisateur a demandé moins de mouvement.
+   ========================================================================== */
+
+:root {
+  --encre:          #0c0b0a;
+  --encre-2:        #121010;
+  --panneau:        #17140f;
+  --panneau-haut:   #1e1a14;
+  --trait:          #2c261c;
+  --parchemin:      #e6dcc6;
+  --parchemin-terne:#a89b80;
+  --or:             #c8a34a;
+  --or-clair:       #e7c56f;
+  --or-sombre:      #7d642a;
+  --sang:           #8e2b24;
+  --acier:          #6d7c86;
+
+  --police-titre: "Cinzel", "Times New Roman", serif;
+  --police-texte: "Spectral", Georgia, serif;
+
+  --largeur: 1180px;
+  --gouttiere: clamp(18px, 4vw, 48px);
+  --rayon: 2px;
+  --transition: 420ms cubic-bezier(.2, .7, .3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Sans cette règle, un élément en display:flex ignore l'attribut hidden. */
+[hidden] { display: none !important; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--encre);
+  color: var(--parchemin);
+  font-family: var(--police-texte);
+  font-weight: 300;
+  font-size: clamp(16px, 1.05vw, 17px);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+.enveloppe {
+  width: min(100% - var(--gouttiere) * 2, var(--largeur));
+  margin-inline: auto;
+}
+
+.centrer { text-align: center; margin-top: 34px; }
+
+.evitement {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--or); color: var(--encre);
+  padding: 10px 16px; z-index: 200;
+}
+.evitement:focus { left: 12px; top: 12px; }
+
+:focus-visible {
+  outline: 2px solid var(--or-clair);
+  outline-offset: 3px;
+}
+
+/* ─────────────────────────────── Textures ──────────────────────────────── */
+/* Grain de papier : une seule couche fixe, très faible, pour casser le côté
+   « aplat numérique » sans coûter de performance au défilement. */
+.grain {
+  position: fixed; inset: 0; z-index: 90; pointer-events: none;
+  opacity: .05; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.vignette {
+  position: fixed; inset: 0; z-index: 89; pointer-events: none;
+  background: radial-gradient(130% 95% at 50% 40%, transparent 55%, rgba(0,0,0,.55) 100%);
+}
+
+/* Trame de demi-teintes, réservée aux bandeaux d'accent. */
+.trame {
+  background-image: radial-gradient(var(--or-sombre) .7px, transparent .8px);
+  background-size: 4px 4px;
+  opacity: .22;
+}
+
+/* ─────────────────────────── Barre de progression ──────────────────────── */
+.progression {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 120;
+  background: rgba(200,163,74,.12);
+}
+.progression span {
+  display: block; height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--or-sombre), var(--or-clair));
+  box-shadow: 0 0 10px rgba(231,197,111,.5);
+}
+
+/* ─────────────────────────────── En-tête ───────────────────────────────── */
+.entete {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 110;
+  display: flex; align-items: center; gap: 28px;
+  padding: 16px var(--gouttiere);
+  /* env() vaut 0 partout sauf sur les téléphones à encoche. */
+  padding-top: calc(16px + env(safe-area-inset-top, 0px));
+  transition: background var(--transition), border-color var(--transition), padding var(--transition);
+  border-bottom: 1px solid transparent;
+}
+.entete.est-collee {
+  background: rgba(12,11,10,.9);
+  backdrop-filter: blur(9px);
+  border-bottom-color: var(--trait);
+  padding-bottom: 10px;
+  padding-top: calc(10px + env(safe-area-inset-top, 0px));
+}
+
+.marque { display: flex; align-items: center; gap: 11px; text-decoration: none; margin-right: auto; }
+.marque-blason { width: 26px; height: 32px; flex: none; }
+.marque-texte {
+  font-family: var(--police-titre); font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; font-size: 15px;
+}
+.marque-texte em { font-style: normal; color: var(--or); }
+
+.navigation { display: flex; gap: 26px; }
+.navigation a {
+  font-family: var(--police-titre); font-size: 12.5px; letter-spacing: .15em;
+  text-transform: uppercase; text-decoration: none; color: var(--parchemin-terne);
+  position: relative; padding-block: 4px; transition: color var(--transition);
+}
+.navigation a::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 0;
+  background: var(--or); transition: width var(--transition);
+}
+.navigation a:hover, .navigation a.est-active { color: var(--parchemin); }
+.navigation a:hover::after, .navigation a.est-active::after { width: 100%; }
+
+.bascule-menu { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.bascule-menu span { display: block; width: 22px; height: 1.5px; background: var(--parchemin); margin: 5px 0; transition: var(--transition); }
+.bascule-menu[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.bascule-menu[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.bascule-menu[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.navigation-mobile {
+  position: fixed; top: calc(60px + env(safe-area-inset-top, 0px)); left: 0; right: 0; z-index: 109;
+  background: rgba(12,11,10,.97); border-bottom: 1px solid var(--trait);
+  display: flex; flex-direction: column; padding: 10px var(--gouttiere) 22px;
+}
+.navigation-mobile a {
+  font-family: var(--police-titre); text-transform: uppercase; letter-spacing: .14em;
+  font-size: 13px; text-decoration: none; padding: 14px 0;
+  border-bottom: 1px solid var(--trait);
+}
+.navigation-mobile a:last-child { border-bottom: 0; color: var(--or); }
+
+/* ─────────────────────────────── Boutons ───────────────────────────────── */
+.bouton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  font-family: var(--police-titre); font-size: 12.5px; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; text-decoration: none;
+  padding: 13px 26px; border: 1px solid var(--or-sombre); color: var(--parchemin);
+  background: transparent; cursor: pointer; position: relative; overflow: hidden;
+  transition: color var(--transition), border-color var(--transition), transform var(--transition);
+}
+.bouton::before {
+  content: ""; position: absolute; inset: 0; background: var(--or);
+  transform: translateY(101%); transition: transform var(--transition); z-index: -1;
+}
+.bouton:hover { color: var(--encre); border-color: var(--or); }
+.bouton:hover::before { transform: translateY(0); }
+.bouton--or { border-color: var(--or); color: var(--or-clair); }
+.bouton--or:hover { color: var(--encre); }
+.bouton--fantome { border-color: var(--trait); color: var(--parchemin-terne); }
+.bouton--fantome:hover { color: var(--encre); border-color: var(--or); }
+.bouton:active { transform: translateY(1px); }
+
+/* ─────────────────────────────── Héros ─────────────────────────────────── */
+.heros {
+  position: relative; min-height: 100svh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; overflow: hidden;
+  padding: 120px var(--gouttiere) 90px;
+  background: linear-gradient(180deg, #0a0908 0%, #121010 62%, var(--encre) 100%);
+}
+.heros-couche { position: absolute; left: 0; right: 0; will-change: transform; }
+.heros-couche--lueur {
+  inset: 0;
+  background:
+    radial-gradient(42% 34% at 50% 40%, rgba(200,163,74,.24), transparent 72%),
+    radial-gradient(80% 45% at 50% 100%, rgba(142,43,36,.14), transparent 72%);
+}
+.heros-couche--lointain { bottom: 0; height: 62%; opacity: .85; }
+.heros-couche--median   { bottom: 0; height: 74%; }
+.heros-couche--proche   { bottom: -2px; height: 26%; }
+.heros-poussiere { position: absolute; inset: 0; pointer-events: none; opacity: .5; }
+
+.heros-contenu { position: relative; z-index: 5; max-width: 860px; }
+
+.surtitre {
+  font-family: var(--police-titre); font-size: 11.5px; letter-spacing: .38em;
+  text-transform: uppercase; color: var(--or); margin: 0 0 26px;
+}
+
+.heros-titre {
+  font-family: var(--police-titre); font-weight: 800;
+  font-size: clamp(50px, 12vw, 132px); line-height: .92; margin: 0;
+  letter-spacing: .02em; text-transform: uppercase;
+}
+.heros-titre-ligne { display: block; }
+.heros-titre-ligne--or {
+  background: linear-gradient(175deg, var(--or-clair), var(--or) 42%, var(--or-sombre));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 2px 14px rgba(200,163,74,.22));
+}
+
+.heros-accroche {
+  font-size: clamp(16px, 1.5vw, 19px); color: var(--parchemin-terne);
+  max-width: 54ch; margin: 28px auto 0; font-style: italic;
+}
+
+.heros-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 38px; }
+
+.heros-stats {
+  display: flex; gap: clamp(24px, 6vw, 68px); justify-content: center;
+  margin: 56px 0 0; padding-top: 26px; border-top: 1px solid var(--trait);
+}
+.heros-stats div { text-align: center; }
+.heros-stats dt {
+  font-family: var(--police-titre); font-size: 10.5px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--parchemin-terne);
+}
+.heros-stats dd {
+  margin: 6px 0 0; font-family: var(--police-titre); font-weight: 600;
+  font-size: clamp(22px, 3vw, 32px); color: var(--or-clair);
+  font-variant-numeric: tabular-nums;
+}
+
+.heros-indice {
+  position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+  width: 22px; height: 38px; border: 1px solid var(--or-sombre); border-radius: 12px; z-index: 6;
+}
+.heros-indice span {
+  position: absolute; left: 50%; top: 8px; width: 2px; height: 7px;
+  background: var(--or); transform: translateX(-50%);
+  animation: descendre 1.9s ease-in-out infinite;
+}
+@keyframes descendre {
+  0%, 100% { opacity: 0; transform: translate(-50%, 0); }
+  35% { opacity: 1; }
+  70% { opacity: 0; transform: translate(-50%, 15px); }
+}
+
+/* ─────────────────────────────── Sections ──────────────────────────────── */
+.section { padding: clamp(74px, 9vw, 128px) 0; position: relative; }
+.section--alt { background: var(--encre-2); }
+.section--alt::before, .section--alt::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--trait) 20%, var(--trait) 80%, transparent);
+}
+.section--alt::before { top: 0; }
+.section--alt::after { bottom: 0; }
+
+.section-entete { text-align: center; margin-bottom: clamp(38px, 5vw, 62px); }
+.section-oeil {
+  font-family: var(--police-titre); font-size: 11px; letter-spacing: .32em;
+  text-transform: uppercase; color: var(--or); margin: 0 0 12px;
+}
+.section-titre {
+  font-family: var(--police-titre); font-weight: 600; text-transform: uppercase;
+  font-size: clamp(30px, 4.4vw, 48px); letter-spacing: .06em; margin: 0;
+}
+.filet { width: min(360px, 70%); height: 12px; margin: 18px auto 0; display: block; }
+.filet-trait { stroke-dasharray: 100; stroke-dashoffset: 100; transition: stroke-dashoffset 1s ease .1s; }
+.est-visible .filet-trait { stroke-dashoffset: 0; }
+
+/* ──────────────────────── Apparitions au défilement ────────────────────── */
+/* Une seule mécanique pour tout le site : opacité + léger relevé.
+   Pas d'effet par carte, qui devient fatigant après deux sections. */
+[data-apparition] {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity 620ms ease, transform 620ms cubic-bezier(.2,.7,.3,1);
+}
+[data-apparition].est-visible { opacity: 1; transform: none; }
+[data-apparition][data-retard="1"] { transition-delay: 90ms; }
+[data-apparition][data-retard="2"] { transition-delay: 180ms; }
+[data-apparition][data-retard="3"] { transition-delay: 270ms; }
+
+/* ───────────────────────────── Panneaux ────────────────────────────────── */
+/* Coins coupés + double filet : la signature « planche encrée » du site. */
+.panneau {
+  position: relative; background: var(--panneau);
+  border: 1px solid var(--trait);
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  transition: border-color var(--transition), transform var(--transition), background var(--transition);
+}
+.panneau:hover { border-color: var(--or-sombre); background: var(--panneau-haut); }
+
+/* ─────────────────────── À l'affiche (lecteur) ─────────────────────────── */
+.affiche-grille {
+  display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: clamp(22px, 3vw, 40px); align-items: start;
+}
+.lecteur {
+  position: relative; aspect-ratio: 16 / 9; width: 100%;
+  background: #000; border: 1px solid var(--trait); overflow: hidden; cursor: pointer;
+  clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+}
+.lecteur img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(1) contrast(1.16) brightness(.82);
+  transition: filter 620ms ease, transform 900ms cubic-bezier(.2,.7,.3,1);
+}
+.lecteur::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(200deg, rgba(200,163,74,.14), transparent 55%), rgba(12,11,10,.28);
+  mix-blend-mode: multiply; transition: opacity 620ms ease;
+}
+.lecteur:hover img { filter: grayscale(.12) contrast(1.05) brightness(.96); transform: scale(1.03); }
+.lecteur:hover::after { opacity: .25; }
+.lecteur iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.lecteur-croix {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 84px; height: 84px; z-index: 3; pointer-events: none;
+  transition: transform 520ms cubic-bezier(.2,.7,.3,1), filter 520ms ease;
+}
+.lecteur-croix circle { fill: rgba(12,11,10,.55); stroke: var(--or); stroke-width: 1; }
+.lecteur-croix path { fill: var(--or-clair); }
+.lecteur:hover .lecteur-croix { transform: translate(-50%, -50%) scale(1.12); filter: drop-shadow(0 0 16px rgba(231,197,111,.65)); }
+
+.affiche-infos { padding: 4px 0; }
+.affiche-jeu {
+  font-family: var(--police-titre); font-size: 11px; letter-spacing: .26em;
+  text-transform: uppercase; color: var(--or); margin: 0 0 10px;
+}
+.affiche-titre {
+  font-family: var(--police-titre); font-weight: 600; font-size: clamp(20px, 2.1vw, 27px);
+  line-height: 1.24; margin: 0 0 14px;
+}
+.affiche-texte { color: var(--parchemin-terne); font-size: 15.5px; margin: 0 0 20px; }
+.affiche-meta {
+  display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 22px;
+  font-size: 12px; letter-spacing: .08em; color: var(--parchemin-terne);
+  text-transform: uppercase; font-family: var(--police-titre);
+}
+
+/* ───────────────────────────── Filtres ─────────────────────────────────── */
+.filtres { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-bottom: 38px; }
+.filtre {
+  font-family: var(--police-titre); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; padding: 8px 15px; cursor: pointer;
+  background: transparent; border: 1px solid var(--trait); color: var(--parchemin-terne);
+  transition: var(--transition);
+}
+.filtre:hover { border-color: var(--or-sombre); color: var(--parchemin); }
+.filtre.est-active { border-color: var(--or); color: var(--or-clair); background: rgba(200,163,74,.08); }
+
+/* ──────────────────────────── Grille vidéos ────────────────────────────── */
+.grille-videos {
+  display: grid; gap: clamp(18px, 2.2vw, 28px);
+  grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+}
+.carte-video { display: flex; flex-direction: column; text-decoration: none; }
+.carte-video .vignette-video {
+  position: relative; aspect-ratio: 16/9; overflow: hidden; background: #000;
+  border-bottom: 1px solid var(--trait);
+}
+.carte-video img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(1) contrast(1.14) brightness(.8);
+  transition: filter 560ms ease, transform 760ms cubic-bezier(.2,.7,.3,1);
+}
+.carte-video:hover img { filter: grayscale(.1) brightness(.98); transform: scale(1.05); }
+.carte-video .duree {
+  position: absolute; right: 8px; bottom: 8px; z-index: 2;
+  background: rgba(12,11,10,.85); border: 1px solid var(--trait);
+  font-family: var(--police-titre); font-size: 10.5px; letter-spacing: .1em;
+  padding: 3px 7px; color: var(--parchemin);
+}
+.carte-video .corps { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+.carte-video h3 {
+  font-family: var(--police-titre); font-weight: 400; font-size: 15.5px; line-height: 1.35;
+  margin: 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.carte-video .etiquette {
+  font-family: var(--police-titre); font-size: 10px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--or);
+}
+.carte-video .pied-carte {
+  margin-top: auto; display: flex; gap: 14px; font-size: 12px;
+  color: var(--parchemin-terne); letter-spacing: .06em;
+}
+
+/* Inclinaison 3D légère au survol : 6° maximum, sinon ça fait gadget. */
+.inclinable { transform-style: preserve-3d; will-change: transform; }
+
+/* ──────────────────────────── Frise (registre) ─────────────────────────── */
+.frise { list-style: none; margin: 0; padding: 0; position: relative; }
+.frise::before {
+  content: ""; position: absolute; left: 13px; top: 8px; bottom: 8px; width: 1px;
+  background: var(--trait);
+}
+.frise::after {
+  content: ""; position: absolute; left: 13px; top: 8px; width: 1px; height: var(--avancee, 0%);
+  background: linear-gradient(180deg, var(--or-clair), var(--or-sombre));
+  box-shadow: 0 0 12px rgba(200,163,74,.35);
+  transition: height 180ms linear;
+}
+.creneau { position: relative; padding: 0 0 26px 52px; }
+.creneau::before {
+  content: ""; position: absolute; left: 7px; top: 22px; width: 13px; height: 13px;
+  background: var(--encre); border: 1px solid var(--or-sombre); transform: rotate(45deg);
+  transition: var(--transition); z-index: 2;
+}
+.creneau.est-atteint::before { background: var(--or); box-shadow: 0 0 14px rgba(231,197,111,.55); }
+
+.creneau-carte { display: grid; grid-template-columns: 116px minmax(0,1fr); gap: 20px; padding: 18px; align-items: center; }
+.creneau-visuel {
+  aspect-ratio: 3/4; overflow: hidden; background: var(--encre); border: 1px solid var(--trait);
+}
+.creneau-visuel img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(1) contrast(1.15) brightness(.85);
+  transition: filter 560ms ease;
+}
+.creneau-carte:hover .creneau-visuel img { filter: grayscale(0) brightness(1); }
+.creneau-dates {
+  font-family: var(--police-titre); font-size: 11px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--parchemin-terne); margin: 0 0 7px;
+}
+.creneau-jeu { font-family: var(--police-titre); font-weight: 600; font-size: clamp(17px, 2vw, 22px); margin: 0 0 8px; }
+.creneau-note { color: var(--parchemin-terne); font-size: 14.5px; margin: 0; }
+.creneau-episodes {
+  font-family: var(--police-titre); font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--or); margin: 10px 0 0;
+}
+
+.jeton {
+  display: inline-block; font-family: var(--police-titre); font-size: 9.5px;
+  letter-spacing: .2em; text-transform: uppercase; padding: 4px 10px;
+  border: 1px solid currentColor; margin-left: 10px; vertical-align: 2px;
+}
+.jeton--en_cours { color: var(--or-clair); }
+.jeton--prevu    { color: var(--acier); }
+.jeton--envisage { color: var(--parchemin-terne); }
+.jeton--termine  { color: var(--or-sombre); }
+
+/* ──────────────────────────── Sorties (horizon) ────────────────────────── */
+.grille-sorties {
+  display: grid; gap: clamp(16px, 2vw, 24px);
+  grid-template-columns: repeat(auto-fill, minmax(216px, 1fr));
+}
+.carte-sortie { display: flex; flex-direction: column; text-decoration: none; overflow: hidden; }
+.carte-sortie .visuel { position: relative; aspect-ratio: 16/10; overflow: hidden; background: #000; }
+.carte-sortie img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(1) contrast(1.12) brightness(.74);
+  transition: filter 560ms ease, transform 760ms cubic-bezier(.2,.7,.3,1);
+}
+.carte-sortie:hover img { filter: grayscale(0) brightness(.95); transform: scale(1.06); }
+.carte-sortie .jour {
+  position: absolute; left: 0; top: 0; z-index: 2; padding: 8px 12px 9px;
+  background: rgba(12,11,10,.88); border-right: 1px solid var(--or-sombre); border-bottom: 1px solid var(--or-sombre);
+  text-align: center; font-family: var(--police-titre); line-height: 1;
+}
+.carte-sortie .jour strong { display: block; font-size: 21px; color: var(--or-clair); }
+.carte-sortie .jour span { font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--parchemin-terne); }
+.carte-sortie .corps { padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.carte-sortie h3 { font-family: var(--police-titre); font-weight: 400; font-size: 15px; line-height: 1.3; margin: 0; }
+.carte-sortie .genres { font-size: 11.5px; letter-spacing: .1em; color: var(--parchemin-terne); text-transform: uppercase; margin-top: auto; }
+.compte-a-rebours {
+  font-family: var(--police-titre); font-size: 10.5px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--or);
+}
+.compte-a-rebours--proche { color: var(--sang); }
+
+/* ──────────────────────────── Taverne (Reddit) ─────────────────────────── */
+.grille-posts { display: grid; gap: 14px; }
+.carte-post { display: grid; grid-template-columns: 58px minmax(0,1fr) auto; gap: 18px; align-items: center; padding: 18px 20px; text-decoration: none; }
+.carte-post .score {
+  text-align: center; font-family: var(--police-titre); border: 1px solid var(--trait);
+  padding: 8px 4px; transition: var(--transition);
+}
+.carte-post:hover .score { border-color: var(--or-sombre); }
+.carte-post .score strong { display: block; font-size: 17px; color: var(--or-clair); }
+.carte-post .score span { font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--parchemin-terne); }
+.carte-post h3 { font-family: var(--police-titre); font-weight: 400; font-size: 16px; margin: 0 0 6px; line-height: 1.35; }
+.carte-post .meta { font-size: 12px; color: var(--parchemin-terne); letter-spacing: .06em; }
+.carte-post .fleche { color: var(--or-sombre); font-size: 20px; transition: transform var(--transition), color var(--transition); }
+.carte-post:hover .fleche { transform: translateX(5px); color: var(--or-clair); }
+
+/* ─────────────────────────────── Vide / états ──────────────────────────── */
+.etat-vide {
+  border: 1px dashed var(--trait); padding: 38px 24px; text-align: center;
+  color: var(--parchemin-terne); font-style: italic;
+}
+.squelette {
+  min-height: 210px; background: linear-gradient(100deg, var(--panneau) 30%, var(--panneau-haut) 50%, var(--panneau) 70%);
+  background-size: 220% 100%; animation: chatoyer 1.5s linear infinite; border: 1px solid var(--trait);
+}
+.squelette--lecteur { aspect-ratio: 16/9; min-height: 0; }
+.squelette--ligne { min-height: 86px; list-style: none; }
+@keyframes chatoyer { to { background-position: -220% 0; } }
+
+/* ─────────────────────────────── Pied ──────────────────────────────────── */
+.pied { border-top: 1px solid var(--trait); padding: 54px 0 42px; background: #090807; }
+.pied-grille { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 34px; align-items: start; }
+.marque-texte--pied { font-size: 17px; margin: 0 0 10px; }
+.pied-note, .pied-meta p { color: var(--parchemin-terne); font-size: 13.5px; margin: 0 0 6px; }
+.pied-liens { display: flex; flex-direction: column; gap: 9px; }
+.pied-liens a {
+  font-family: var(--police-titre); font-size: 12px; letter-spacing: .16em;
+  text-transform: uppercase; text-decoration: none; color: var(--parchemin-terne);
+  transition: color var(--transition);
+}
+.pied-liens a:hover { color: var(--or); }
+.pied-credit a { color: var(--or-sombre); }
+.pied-etat { font-size: 12px; color: var(--or-sombre); font-style: italic; }
+
+/* ─────────────────────────────── Responsive ────────────────────────────── */
+@media (min-width: 761px) {
+  .navigation-mobile { display: none; }
+}
+@media (max-width: 960px) {
+  .affiche-grille { grid-template-columns: 1fr; }
+  .pied-grille { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .navigation { display: none; }
+  .bascule-menu { display: block; }
+  .entete .bouton { display: none; }
+  .heros-stats { gap: 22px; }
+  .creneau-carte { grid-template-columns: 84px minmax(0,1fr); gap: 14px; }
+  .carte-post { grid-template-columns: 50px minmax(0,1fr); }
+  .carte-post .fleche { display: none; }
+  .pied-grille { grid-template-columns: 1fr; }
+}
+
+/* ────────────────── Respect de « moins de mouvement » ──────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  [data-apparition] { opacity: 1; transform: none; }
+  .filet-trait { stroke-dashoffset: 0; }
+  .heros-poussiere { display: none; }
+}
