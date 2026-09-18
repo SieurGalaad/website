@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-18T16:38:16.173251Z",
+ "genere_le": "2026-09-18T16:51:32.549061Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -34,7 +34,7 @@
    "miniature": "https://i.ytimg.com/vi/6JZNS9FRiYk/maxresdefault.jpg",
    "description": "Resonance: A Plague Tale Legacy (Ep. 18)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1801,
-   "vues": 4,
+   "vues": 7,
    "jeu": "Patera",
    "short": false
   },
@@ -430,7 +430,7 @@
    "miniature": "https://i.ytimg.com/vi/xjKWYNA7OOc/maxresdefault.jpg",
    "description": "Resonance: A Plague Tale Legacy (Ep. 06)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1999,
-   "vues": 14,
+   "vues": 17,
    "jeu": "De l'enfer il s'éleva",
    "short": false
   },
@@ -466,7 +466,7 @@
    "miniature": "https://i.ytimg.com/vi/bbv15Es1-w8/maxresdefault.jpg",
    "description": "Resonance: A Plague Tale Legacy (Ep. 05)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1526,
-   "vues": 30,
+   "vues": 31,
    "jeu": "De l'enfer il s'éleva",
    "short": false
   },
@@ -1315,8 +1315,8 @@
    "statut": "envisage",
    "note": "Sortie annoncee au 23/02/2027. A confirmer.",
    "episodes": "a definir",
-   "image": "https://media.rawg.io/media/games/e06/e06a04ece5555c8c15a7c68e22649f0c.jpg",
-   "url_jeu": "https://rawg.io/games/fable2020"
+   "image": "",
+   "url_jeu": ""
   }
  ],
  "forge": {
@@ -1434,6 +1434,6 @@
  "statuts": {
   "youtube": "ok",
   "reddit": "echec",
-  "sorties": "ok"
+  "sorties": "echec"
  }
 }
