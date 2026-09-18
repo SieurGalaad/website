@@ -84,10 +84,16 @@ a { color: inherit; }
 
 /* ─────────────────────────────── Textures ──────────────────────────────── */
 /* Grain de papier : une seule couche fixe, très faible, pour casser le côté
-   « aplat numérique » sans coûter de performance au défilement. */
+   « aplat numérique » sans coûter de performance au défilement.
+   PAS de mix-blend-mode ici. Un mode de fusion sur un calque fixe plein écran
+   oblige le navigateur à relire le fond composité : sur les grands écrans il le
+   fait par tuiles, et les tuiles non rafraîchies laissent des rectangles de
+   fond erroné ; au redimensionnement, la relecture repart d'une surface vide et
+   toute la page vire au gris. Un simple aplat en faible opacité donne le même
+   grain sans aucun de ces risques. */
 .grain {
   position: fixed; inset: 0; z-index: 90; pointer-events: none;
-  opacity: .05; mix-blend-mode: overlay;
+  opacity: .04;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .vignette {
@@ -399,8 +405,8 @@ a { color: inherit; }
 }
 .lecteur::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(200deg, rgba(200,163,74,.14), transparent 55%), rgba(12,11,10,.28);
-  mix-blend-mode: multiply; transition: opacity 620ms ease;
+  background: linear-gradient(200deg, rgba(200,163,74,.12), transparent 55%), rgba(12,11,10,.34);
+  transition: opacity 620ms ease;
 }
 .lecteur:hover img { filter: grayscale(.12) contrast(1.05) brightness(.96); transform: scale(1.03); }
 .lecteur:hover::after { opacity: .25; }
@@ -478,8 +484,11 @@ a { color: inherit; }
   color: var(--parchemin-terne); letter-spacing: .06em;
 }
 
-/* Inclinaison 3D légère au survol : 6° maximum, sinon ça fait gadget. */
-.inclinable { transform-style: preserve-3d; will-change: transform; }
+/* Inclinaison 3D légère au survol : 6° maximum, sinon ça fait gadget.
+   Pas de will-change : il y a jusqu'à 120 cartes, autant de calques composités
+   que le navigateur devrait tenir en mémoire en permanence pour un effet qui ne
+   dure qu'au survol. */
+.inclinable { transform-style: preserve-3d; }
 
 /* ──────────────────────────── Frise (registre) ─────────────────────────── */
 .frise { list-style: none; margin: 0; padding: 0; position: relative; }
