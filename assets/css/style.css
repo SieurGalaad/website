@@ -212,7 +212,16 @@ a { color: inherit; }
   padding: 120px var(--gouttiere) 90px;
   background: linear-gradient(180deg, #0a0908 0%, #121010 62%, var(--encre) 100%);
 }
-.heros-couche { position: absolute; left: 0; right: 0; will-change: transform; }
+/* width: 100% est OBLIGATOIRE ici, ce n'est pas une ceinture-bretelles.
+   Un <svg> est un "élément remplacé" : posé en absolu avec left:0 + right:0
+   mais sans largeur explicite, il ne s'étire PAS pour remplir l'espace — il
+   reprend sa largeur naturelle déduite du viewBox (ratio 1000/200 = 5) et de
+   sa hauteur. Avec height:320px il mesurait donc 1600px, quel que soit
+   l'écran : plein cadre sur un 1366, coupé net à 62 % sur un 2560, à 46 % sur
+   un 3440. Les <div> voisines, elles, s'étiraient — d'où l'impression de
+   "morceaux manquants" seulement sur les grands écrans. Comportement identique
+   sur Chrome et Firefox : c'est la spécification CSS, pas un bug de moteur. */
+.heros-couche { position: absolute; left: 0; right: 0; width: 100%; will-change: transform; }
 .heros-couche--lueur {
   inset: 0;
   background:
@@ -224,6 +233,17 @@ a { color: inherit; }
    près quel que soit le format de l'écran — 16:9, ultra-large ou téléphone. */
 .heros-couche--lointain { bottom: 0; height: clamp(150px, 30%, 320px); opacity: .9; }
 .heros-couche--median   { bottom: 0; height: clamp(110px, 21%, 240px); }
+/* Sur un écran très large, une bande de 320 px étirée sur 3440 px aplatit le
+   relief : les collines deviennent une ligne d'horizon. On leur redonne de la
+   hauteur pour conserver un galbe lisible. */
+@media (min-width: 2200px) {
+  .heros-couche--lointain { height: clamp(150px, 32%, 420px); }
+  .heros-couche--median   { height: clamp(110px, 23%, 320px); }
+}
+@media (min-width: 3000px) {
+  .heros-couche--lointain { height: clamp(150px, 34%, 500px); }
+  .heros-couche--median   { height: clamp(110px, 25%, 380px); }
+}
 /* Premier plan : un dégradé, pas une forme. Une forme pleine créait une arête
    horizontale nette en bas de l'écran. */
 .heros-couche--proche {
@@ -263,8 +283,14 @@ a { color: inherit; }
 
 /* Poussière en suspension. Un seul calque par section, piloté par une boucle
    d'animation unique et mis en pause dès que la section sort de l'écran. */
+/* Même piège que les collines : un <canvas> est lui aussi un élément remplacé.
+   inset:0 seul ne suffit pas, il gardait sa taille native de 300x150 px dans le
+   coin haut-gauche — les particules ne volaient donc que dans un petit carré
+   invisible. width/height explicites règlent le problème ; le script lit
+   ensuite la taille réelle et sème les particules dessus. */
 .poussiere {
-  position: absolute; inset: 0; pointer-events: none;
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none;
   opacity: .5; z-index: 0;
 }
 .heros-poussiere { opacity: .5; }
