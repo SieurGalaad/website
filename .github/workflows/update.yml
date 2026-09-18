@@ -1,0 +1,60 @@
+name: Mise a jour et publication du site
+
+on:
+  schedule:
+    - cron: "7 */6 * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  construire-et-publier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperer le depot
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Collecter les donnees (YouTube, Reddit, RAWG, planning)
+        env:
+          YOUTUBE_CHANNEL_ID: ${{ vars.YOUTUBE_CHANNEL_ID }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          REDDIT_USERNAME: ${{ vars.REDDIT_USERNAME }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+        run: python scripts/fetch_data.py
+
+      - name: Enregistrer les donnees si elles ont change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/site.json)" ]; then
+            git add data/site.json
+            git commit -m "Donnees du site mises a jour ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+            git push
+          else
+            echo "Aucun changement dans les donnees."
+          fi
+
+      - name: Preparer l'artefact Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publier sur GitHub Pages
+        id: deploiement
+        uses: actions/deploy-pages@v4
