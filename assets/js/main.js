@@ -112,7 +112,15 @@
     animerCompteur($("#stat-abonnes"), chaine.abonnes || 0);
     animerCompteur($("#stat-vues"), totalVues);
 
+    /* Les heures de visionnage ne sont pas exposées par l'API publique de
+       YouTube : seul le propriétaire de la chaîne y a accès, dans Studio. Le
+       chiffre est donc saisi à la main dans data/chaine.json, et sa case
+       disparaît tant qu'il vaut zéro — mieux vaut rien qu'un chiffre faux. */
+    const heures = Math.round(Number(chaine.heures_visionnees) || 0);
+    animerCompteur($("#stat-heures"), heures, " h");
+
     if (!chaine.abonnes) $("#stat-abonnes").closest("div").hidden = true;
+    if (!heures) $("#stat-heures").closest("div").hidden = true;
 
     $("#date-maj").textContent = donnees.genere_le
       ? new Intl.DateTimeFormat("fr-FR", { dateStyle: "long", timeStyle: "short" }).format(new Date(donnees.genere_le))
@@ -542,10 +550,10 @@
   // 5. Compteurs : le chiffre est écrit tout de suite, puis animé s'il est à
   //    l'écran. Jamais d'observateur ici — un chiffre bloqué sur « — » parce
   //    qu'une animation ne s'est pas lancée serait absurde.
-  function animerCompteur(element, valeur) {
+  function animerCompteur(element, valeur, suffixe = "") {
     if (!element) return;
     if (!valeur) { element.textContent = "—"; return; }
-    element.textContent = nombreFr.format(valeur);
+    element.textContent = nombreFr.format(valeur) + suffixe;
     if (moinsDeMouvement) return;
 
     const r = element.getBoundingClientRect();
@@ -556,7 +564,7 @@
     const pas = (maintenant) => {
       const t = Math.min(1, (maintenant - depart) / duree);
       const adouci = 1 - Math.pow(1 - t, 3);
-      element.textContent = nombreFr.format(Math.round(valeur * adouci));
+      element.textContent = nombreFr.format(Math.round(valeur * adouci)) + suffixe;
       if (t < 1) requestAnimationFrame(pas);
     };
     requestAnimationFrame(pas);
@@ -580,20 +588,21 @@
   // 7. Poussière du héros : quelques particules très lentes, canvas léger.
   function brancherPoussiere() {
     if (moinsDeMouvement) return;
-    const canvas = $("#heros-poussiere");
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    let particules = [];
-    let animation;
+    const calques = $$("canvas.poussiere")
+      .map((canvas) => ({ canvas, ctx: canvas.getContext("2d"), particules: [] }))
+      .filter((c) => c.ctx);
+    if (!calques.length) return;
 
-    const dimensionner = () => {
-      const r = canvas.getBoundingClientRect();
+    const semer = (c) => {
+      const r = c.canvas.getBoundingClientRect();
+      if (!r.width || !r.height) { c.particules = []; return; }
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = r.width * dpr;
-      canvas.height = r.height * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const nombre = Math.round(Math.min(46, r.width / 26));
-      particules = Array.from({ length: nombre }, () => ({
+      c.canvas.width = Math.round(r.width * dpr);
+      c.canvas.height = Math.round(r.height * dpr);
+      c.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const diviseur = parseFloat(c.canvas.dataset.densite) || 30;
+      const nombre = Math.round(Math.min(70, r.width / diviseur));
+      c.particules = Array.from({ length: nombre }, () => ({
         x: Math.random() * r.width,
         y: Math.random() * r.height,
         r: Math.random() * 1.5 + 0.4,
@@ -603,31 +612,37 @@
       }));
     };
 
+    const dimensionner = () => calques.forEach(semer);
+
+    /* Une seule boucle d'animation pour tous les calques, et on ne dessine que
+       ceux qui sont effectivement à l'écran : le reste du site ne coûte rien. */
     const dessiner = () => {
-      const r = canvas.getBoundingClientRect();
-      ctx.clearRect(0, 0, r.width, r.height);
-      particules.forEach((p) => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.y < -5) { p.y = r.height + 5; p.x = Math.random() * r.width; }
-        if (p.x < -5) p.x = r.width + 5;
-        if (p.x > r.width + 5) p.x = -5;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(231,197,111,${p.a})`;
-        ctx.fill();
+      const hauteurVue = window.innerHeight;
+      calques.forEach((c) => {
+        const r = c.canvas.getBoundingClientRect();
+        if (r.bottom < -100 || r.top > hauteurVue + 100 || !c.particules.length) return;
+        c.ctx.clearRect(0, 0, r.width, r.height);
+        c.particules.forEach((pt) => {
+          pt.x += pt.vx; pt.y += pt.vy;
+          if (pt.y < -5) { pt.y = r.height + 5; pt.x = Math.random() * r.width; }
+          if (pt.x < -5) pt.x = r.width + 5;
+          if (pt.x > r.width + 5) pt.x = -5;
+          c.ctx.beginPath();
+          c.ctx.arc(pt.x, pt.y, pt.r, 0, Math.PI * 2);
+          c.ctx.fillStyle = `rgba(231,197,111,${pt.a})`;
+          c.ctx.fill();
+        });
       });
-      animation = requestAnimationFrame(dessiner);
+      requestAnimationFrame(dessiner);
     };
 
     dimensionner();
     dessiner();
-    window.addEventListener("resize", dimensionner);
-    if (typeof IntersectionObserver !== "function") return;
-    // On coupe l'animation dès que le héros sort du champ : zéro CPU en bas de page.
-    new IntersectionObserver((entrees) => {
-      if (entrees[0].isIntersecting) { if (!animation) dessiner(); }
-      else { cancelAnimationFrame(animation); animation = null; }
-    }, { threshold: 0 }).observe(canvas);
+    let minuterie;
+    window.addEventListener("resize", () => {
+      clearTimeout(minuterie);
+      minuterie = setTimeout(dimensionner, 180);
+    });
   }
 
   // 8. Menu mobile.

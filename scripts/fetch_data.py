@@ -48,6 +48,7 @@ FICHIER_SORTIE = RACINE / "data" / "site.json"
 FICHIER_PLANNING = RACINE / "data" / "planning.json"
 FICHIER_FORGE = RACINE / "data" / "forge.json"
 FICHIER_CONTACT = RACINE / "data" / "contact.json"
+FICHIER_CHAINE = RACINE / "data" / "chaine.json"
 
 YOUTUBE_HANDLE = os.environ.get("YOUTUBE_HANDLE", "SieurGalaad").strip().lstrip("@")
 # Laisse vide : l'identifiant est resolu automatiquement a partir du pseudo.
@@ -539,6 +540,30 @@ def collecter_forge() -> dict:
 
 
 # --------------------------------------------------------------------------- #
+# Chiffres saisis a la main (l'API publique de YouTube ne les donne pas)
+# --------------------------------------------------------------------------- #
+def collecter_chaine_manuel() -> dict:
+    if not FICHIER_CHAINE.exists():
+        return {}
+    try:
+        brut = json.loads(FICHIER_CHAINE.read_text(encoding="utf-8"))
+    except Exception as exc:  # noqa: BLE001
+        log(f"data/chaine.json illisible ({exc}) -> ignore")
+        return {}
+    heures = brut.get("heures_visionnees") or 0
+    try:
+        heures = float(heures)
+    except (TypeError, ValueError):
+        heures = 0
+    if heures:
+        log(f"Chaine (saisie manuelle) : {heures:g} h de visionnage"
+            + (f", releve le {brut.get('heures_maj')}" if brut.get("heures_maj") else ""))
+    else:
+        log("Chaine : heures de visionnage non renseignees (case masquee sur le site)")
+    return {"heures_visionnees": heures, "heures_maj": brut.get("heures_maj", "")}
+
+
+# --------------------------------------------------------------------------- #
 # Contact : adresse, textes et cle du service d'envoi
 # --------------------------------------------------------------------------- #
 def collecter_contact() -> dict:
@@ -582,6 +607,7 @@ def main() -> int:
     planning = collecter_planning()
     forge = collecter_forge()
     contact = collecter_contact()
+    chaine_manuelle = collecter_chaine_manuel()
 
     chaine_precedente = precedent.get("chaine", {})
     videos_precedentes = precedent.get("videos", [])
@@ -616,6 +642,8 @@ def main() -> int:
             "reddit": REDDIT_USERNAME,
         }
         videos = videos_precedentes
+
+    chaine.update(chaine_manuelle)
 
     site = {
         "genere_le": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),

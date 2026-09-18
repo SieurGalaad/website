@@ -159,6 +159,20 @@ influenceurs de 2023), et le programme Amazon Partenaires exige en plus sa
 formule exacte, déjà incluse. Si tu mets des liens sans mention, le robot te le
 signale dans le journal d'exécution.
 
+## Les heures de visionnage
+
+`data/chaine.json`. Ce chiffre est le seul du site que le robot **ne peut pas**
+aller chercher : l'API publique de YouTube ne l'expose pas, seul le
+propriétaire de la chaîne y a accès.
+
+Où le trouver : **YouTube Studio → Analyses → Vue d'ensemble → période
+« Depuis toujours » → carte « Durée de visionnage (heures) »**. Recopie le
+nombre dans `heures_visionnees`, et note la date dans `heures_maj` pour savoir
+quand tu l'as relevé.
+
+Tant que la valeur vaut `0`, la case n'apparaît pas sur le site. Mieux vaut
+trois chiffres justes qu'un quatrième faux.
+
 ## Le formulaire de contact
 
 `data/contact.json` contient ton adresse, les textes et la liste des sujets.
@@ -272,6 +286,7 @@ assets/img/                   ← tes visuels (remplace les fichiers, garde les 
 data/planning.json            ← ton planning de jeu
 data/forge.json               ← ta configuration, tes réglages et tes liens d'achat
 data/contact.json             ← ton adresse de contact et les textes du formulaire
+data/chaine.json              ← tes heures de visionnage (relevées à la main)
 data/site.json                généré par le robot, ne pas éditer à la main
 data/exemple.json             données fictives pour l'aperçu local
 scripts/fetch_data.py         le collecteur (Python, sans dépendance)
