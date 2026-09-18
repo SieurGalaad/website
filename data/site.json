@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-18T12:32:24.711689Z",
+ "genere_le": "2026-09-18T13:05:27.826585Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -200,7 +200,7 @@
    "miniature": "https://i.ytimg.com/vi/vr-libw8zQ0/maxresdefault.jpg",
    "description": "Resonance: A Plague Tale Legacy (Ep. 11)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1878,
-   "vues": 27,
+   "vues": 28,
    "jeu": "La mort il sema",
    "short": false
   },
@@ -1305,6 +1305,98 @@
    "url_jeu": "https://rawg.io/games/fable2020"
   }
  ],
+ "forge": {
+  "intro": "Tout ce qui sert à fabriquer les vidéos : la machine, la capture, et les réglages utilisés en jeu. C'est la question qu'on me pose le plus souvent, alors autant qu'elle soit écrite quelque part.",
+  "groupes": [
+   {
+    "titre": "La machine",
+    "lignes": [
+     {
+      "libelle": "Processeur",
+      "valeur": "AMD Ryzen 7 9800X3D"
+     },
+     {
+      "libelle": "Carte graphique",
+      "valeur": "NVIDIA GeForce RTX 5080"
+     },
+     {
+      "libelle": "Mémoire vive",
+      "valeur": "à compléter"
+     },
+     {
+      "libelle": "Stockage",
+      "valeur": "à compléter"
+     },
+     {
+      "libelle": "Écran",
+      "valeur": "à compléter"
+     },
+     {
+      "libelle": "Système",
+      "valeur": "à compléter"
+     }
+    ]
+   },
+   {
+    "titre": "La capture",
+    "lignes": [
+     {
+      "libelle": "Définition",
+      "valeur": "3840 × 2160 (4K)"
+     },
+     {
+      "libelle": "Fréquence d'images",
+      "valeur": "60 im/s"
+     },
+     {
+      "libelle": "Logiciel",
+      "valeur": "à compléter"
+     },
+     {
+      "libelle": "Encodeur",
+      "valeur": "à compléter"
+     },
+     {
+      "libelle": "Débit",
+      "valeur": "à compléter"
+     },
+     {
+      "libelle": "Montage",
+      "valeur": "à compléter"
+     }
+    ]
+   },
+   {
+    "titre": "Les réglages en jeu",
+    "lignes": [
+     {
+      "libelle": "Préréglage graphique",
+      "valeur": "Ultra"
+     },
+     {
+      "libelle": "Ray tracing",
+      "valeur": "à compléter"
+     },
+     {
+      "libelle": "Upscaling",
+      "valeur": "à compléter"
+     },
+     {
+      "libelle": "Interface à l'écran",
+      "valeur": "à compléter"
+     },
+     {
+      "libelle": "Langue",
+      "valeur": "Version française"
+     },
+     {
+      "libelle": "Commentaire",
+      "valeur": "Aucun — le son du jeu seul"
+     }
+    ]
+   }
+  ]
+ },
  "statuts": {
   "youtube": "ok",
   "reddit": "echec",
