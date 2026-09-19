@@ -67,10 +67,12 @@
   /* ─────────────────────────── Lecteur « façade » ──────────────────────── */
   /* L'iframe YouTube n'est injectée qu'au clic : la page reste légère et
      aucun cookie YouTube n'est déposé avant une action de l'utilisateur. */
-  const CROIX = `<svg class="lecteur-croix" viewBox="0 0 84 84" aria-hidden="true">
-      <circle cx="42" cy="42" r="40"/>
-      <path d="M39 20h6v44h-6z"/><path d="M26 36h32v6H26z"/>
-    </svg>`;
+  /* Le blason de la chaîne sert de bouton de lecture. Il est posé en simple
+     image : un seul fichier à changer si le logo évolue, et il reste net sur
+     un écran 4K là où un SVG redessiné à la main ne le serait pas. */
+  const SCEAU = `<span class="lecteur-sceau" aria-hidden="true">
+      <img src="assets/img/logo.png" alt="" width="320" height="320" decoding="async">
+    </span>`;
 
   function construireLecteur(video) {
     const conteneur = document.createElement("div");
@@ -80,7 +82,7 @@
     conteneur.setAttribute("aria-label", `Lire : ${video.titre}`);
     conteneur.innerHTML = `
       <img src="${echapper(video.miniature)}" alt="" loading="lazy" decoding="async">
-      ${CROIX}`;
+      ${SCEAU}`;
 
     const lancer = () => {
       conteneur.innerHTML = `<iframe
