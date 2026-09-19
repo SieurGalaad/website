@@ -222,11 +222,16 @@ a { color: inherit; }
    "morceaux manquants" seulement sur les grands écrans. Comportement identique
    sur Chrome et Firefox : c'est la spécification CSS, pas un bug de moteur. */
 .heros-couche { position: absolute; left: 0; right: 0; width: 100%; will-change: transform; }
+/* Halo central : une ambiance, pas un projecteur. L'or est un accent du site,
+   donc cette lueur doit rester sous le seuil de conscience — on doit la
+   remarquer seulement quand elle disparaît. Passée de .24 à .09 le 19/09/2026,
+   et un peu élargie : plus elle est large, moins elle dessine un cercle net
+   autour du titre. */
 .heros-couche--lueur {
   inset: 0;
   background:
-    radial-gradient(42% 34% at 50% 40%, rgba(200,163,74,.24), transparent 72%),
-    radial-gradient(80% 45% at 50% 100%, rgba(142,43,36,.14), transparent 72%);
+    radial-gradient(52% 40% at 50% 40%, rgba(200,163,74,.09), transparent 74%),
+    radial-gradient(80% 45% at 50% 100%, rgba(142,43,36,.12), transparent 72%);
 }
 /* Bandes de collines : hauteurs en pourcentage du héros, largeur pleine.
    Combinées à preserveAspectRatio="none" dans le HTML, elles collent au pixel
@@ -321,7 +326,8 @@ a { color: inherit; }
 .heros-titre-ligne--or {
   background: linear-gradient(175deg, var(--or-clair), var(--or) 42%, var(--or-sombre));
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  filter: drop-shadow(0 2px 14px rgba(200,163,74,.22));
+  /* Lueur propre au mot doré, réduite en même temps que le halo de fond. */
+  filter: drop-shadow(0 2px 10px rgba(200,163,74,.1));
 }
 
 .heros-accroche {

@@ -1,18 +1,21 @@
-SIEURGALAAD — MISE A JOUR DU 19/09/2026 (version 2026-09-19a)
+SIEURGALAAD — MISE A JOUR DU 19/09/2026 (version 2026-09-19b)
 ==============================================================
 
 CE QUE CORRIGE CE PAQUET
 ------------------------
-1. Les lisers dores sous les titres de section se deployaient depuis la
-   gauche. Ils s'ouvrent maintenant depuis le losange central, vers la
-   gauche et vers la droite en meme temps. Le losange eclot en premier.
+1. L'aura doree au centre de la page d'accueil etait trop forte.
+   Elle passe de 24 % a 9 % d'intensite et s'etale plus large, pour
+   qu'elle ne dessine plus un rond visible autour du titre. La lueur
+   propre au mot GALAAD est reduite dans la meme proportion.
 
-2. La croix au centre du lecteur video est remplacee par ton blason.
-   Il s'affiche desormais en couleur (il heritait du noir et blanc
-   applique aux miniatures).
+2. Les lisers dores sous les titres de section s'ouvrent depuis le
+   losange central au lieu de se tracer depuis la gauche.
 
-3. Rappel du correctif precedent, inclus ici aussi : le decor du heros
-   qui s'arretait en plein milieu des grands ecrans, et les particules
+3. La croix au centre du lecteur video est remplacee par ton blason,
+   qui s'affiche desormais en couleur.
+
+4. Rappel des correctifs precedents, inclus ici aussi : le decor du
+   heros qui s'arretait au milieu des grands ecrans, et les particules
    qui ne volaient que dans un carre de 300 x 150 pixels.
 
 
@@ -23,9 +26,6 @@ CE QU'IL Y A DANS CE ZIP
   assets/js/main.js       <- a mettre dans assets/js/
   assets/img/*.png        <- inchanges, presents pour que la structure soit
                              complete si tu preferes tout reglisser d'un coup
-
-Les trois fichiers ont change cette fois-ci, y compris main.js : c'est lui
-qui construit le lecteur video, donc lui qui pose le blason.
 
 
 CE QU'IL N'Y A PAS, ET POURQUOI
@@ -52,22 +52,17 @@ MARCHE A SUIVRE
 7. Sur le site, recharge avec Ctrl + F5.
 
 
-SI WINDOWS BLOQUE ENCORE LE FICHIER .JS
+SI WINDOWS BLOQUE UN FICHIER TELECHARGE
 ---------------------------------------
-Cette fois main.js contient une vraie modification, tu ne peux pas la
-sauter. Si Windows refuse le fichier extrait :
+Clic droit dessus > Proprietes > en bas, coche "Debloquer" > OK.
 
-  - clic droit sur main.js > Proprietes > en bas, coche "Debloquer" > OK.
 
-Ou, sans rien telecharger, directement sur GitHub :
-  - ouvre assets/js/main.js > icone crayon (Edit),
-  - cherche la ligne qui commence par :  const CROIX =
-  - remplace les QUATRE lignes de ce bloc (jusqu'a la ligne qui se termine
-    par </svg>`; ) par :
-
-      const SCEAU = `<span class="lecteur-sceau" aria-hidden="true">
-          <img src="assets/img/logo.png" alt="" width="320" height="320" decoding="async">
-        </span>`;
-
-  - puis plus bas, remplace  ${CROIX}  par  ${SCEAU}
-  - bouton vert "Commit changes".
+SI TU VEUX REGLER L'AURA TOI-MEME PLUS TARD
+-------------------------------------------
+Dans assets/css/style.css, cherche :  .heros-couche--lueur
+La premiere ligne "radial-gradient" se termine par  rgba(200,163,74,.09)
+Ce dernier nombre est l'intensite de l'aura :
+   .04 = presque invisible
+   .09 = reglage actuel
+   .24 = ancien reglage, celui que tu trouvais trop fort
+Change juste ce nombre, rien d'autre.
