@@ -1,0 +1,63 @@
+SIEURGALAAD — CORRECTIF DU 19/09/2026 (version 2026-09-18c)
+============================================================
+
+CE QUE CORRIGE CE PAQUET
+------------------------
+Le decor du heros (collines, brume) s'arretait en plein milieu de l'ecran
+sur les grands ecrans : 62 % de la largeur sur un 2560, 46 % sur un 3440.
+Les particules, elles, ne volaient que dans un carre invisible de
+300 x 150 pixels en haut a gauche de chaque section.
+
+Les deux venaient de la meme cause : en CSS, un <svg> et un <canvas> ne
+s'etirent pas tout seuls entre le bord gauche et le bord droit. Il faut
+leur donner une largeur explicite. C'est fait.
+
+
+CE QU'IL Y A DANS CE ZIP
+------------------------
+  index.html              <- a mettre a la RACINE du depot
+  assets/css/style.css    <- LE fichier important, c'est lui qui corrige tout
+  assets/js/main.js       <- secondaire : monte le nombre de particules
+  assets/img/*.png        <- inchanges, presents pour que la structure soit
+                             complete si tu preferes tout reglisser d'un coup
+
+
+CE QU'IL N'Y A PAS, ET POURQUOI
+-------------------------------
+Le dossier "data" n'est PAS dans ce zip, VOLONTAIREMENT.
+
+C'est le robot GitHub Actions qui remplit data/site.json avec tes vraies
+videos, tes abonnes et tes vues. Ma copie locale est vide. Si tu la
+reversais par-dessus la tienne, ton site se retrouverait sans aucune
+video jusqu'a la prochaine execution du robot (jusqu'a 6 heures plus
+tard). Ne touche pas a data.
+
+Le dossier ".github" n'y est pas non plus : il n'a pas change, et Windows
+masque les dossiers qui commencent par un point de toute facon.
+
+
+MARCHE A SUIVRE
+---------------
+1. Clic droit sur le zip > "Extraire tout".
+2. Ouvre https://github.com/SieurGalaad/website
+3. Bouton "Add file" > "Upload files".
+4. Glisse DANS la page le fichier index.html ET le dossier assets.
+   GitHub garde l'arborescence tout seul et remplace les anciens fichiers.
+5. En bas, bouton vert "Commit changes".
+6. Onglet "Actions" : attends que la coche verte apparaisse (~2 minutes).
+7. Sur le site, recharge avec Ctrl + F5.
+
+
+SI WINDOWS REFUSE ENCORE LE FICHIER .JS
+---------------------------------------
+Tu n'es pas oblige de le remplacer. Le correctif du decor est entierement
+dans style.css. main.js ne fait que monter le plafond de particules de 70
+a 120 par section.
+
+Pour le faire sans rien telecharger, directement sur GitHub :
+  - ouvre assets/js/main.js sur le site de GitHub,
+  - clique sur l'icone crayon (Edit),
+  - Ctrl+F dans la page, cherche :  Math.min(70, r.width
+  - remplace le 70 par 120,
+  - bouton vert "Commit changes".
+C'est la seule modification du fichier.

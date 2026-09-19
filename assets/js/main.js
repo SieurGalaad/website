@@ -1,31 +1,30 @@
-
 /* ==========================================================================
    SieurGalaad — logique du site
    Le navigateur ne contacte jamais YouTube, Reddit ou RAWG directement :
    il lit data/site.json, rafraîchi côté serveur par GitHub Actions.
    C'est ce qui évite les blocages CORS et les clés d'API exposées.
    ========================================================================== */
- 
+
 (() => {
   "use strict";
- 
+
   const $  = (sel, racine = document) => racine.querySelector(sel);
   const $$ = (sel, racine = document) => [...racine.querySelectorAll(sel)];
   const moinsDeMouvement = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const pointeurFin = window.matchMedia("(pointer: fine)").matches;
- 
+
   const nombreFr = new Intl.NumberFormat("fr-FR");
   const dateLongue = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" });
   const dateCourte = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "short" });
- 
+
   const echapper = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => (
     { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
   ));
- 
+
   const LIBELLES_STATUT = {
     en_cours: "En cours", prevu: "Prévu", envisage: "Envisagé", termine: "Terminé",
   };
- 
+
   /* ───────────────────────── Récupération des données ──────────────────── */
   async function chargerDonnees() {
     try {
@@ -40,7 +39,7 @@
       return null;
     }
   }
- 
+
   /* ─────────────────────────────── Formatage ───────────────────────────── */
   function formaterDuree(secondes) {
     if (!secondes) return "";
@@ -50,13 +49,13 @@
     return h ? `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
              : `${m}:${String(s).padStart(2, "0")}`;
   }
- 
+
   function formaterDate(iso, format = dateLongue) {
     if (!iso) return "";
     const d = new Date(iso);
     return Number.isNaN(d.getTime()) ? "" : format.format(d);
   }
- 
+
   function joursRestants(iso) {
     const cible = new Date(`${iso}T00:00:00`);
     if (Number.isNaN(cible.getTime())) return null;
@@ -64,7 +63,7 @@
     aujourdhui.setHours(0, 0, 0, 0);
     return Math.round((cible - aujourdhui) / 86400000);
   }
- 
+
   /* ─────────────────────────── Lecteur « façade » ──────────────────────── */
   /* L'iframe YouTube n'est injectée qu'au clic : la page reste légère et
      aucun cookie YouTube n'est déposé avant une action de l'utilisateur. */
@@ -72,7 +71,7 @@
       <circle cx="42" cy="42" r="40"/>
       <path d="M39 20h6v44h-6z"/><path d="M26 36h32v6H26z"/>
     </svg>`;
- 
+
   function construireLecteur(video) {
     const conteneur = document.createElement("div");
     conteneur.className = "lecteur";
@@ -82,7 +81,7 @@
     conteneur.innerHTML = `
       <img src="${echapper(video.miniature)}" alt="" loading="lazy" decoding="async">
       ${CROIX}`;
- 
+
     const lancer = () => {
       conteneur.innerHTML = `<iframe
         src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(video.id)}?autoplay=1&rel=0&hl=fr"
@@ -98,7 +97,7 @@
     });
     return conteneur;
   }
- 
+
   /* ─────────────────────────────── Rendus ──────────────────────────────── */
   function rendreEnTete(donnees) {
     const chaine = donnees.chaine || {};
@@ -108,25 +107,25 @@
     const videos = donnees.videos || [];
     const totalVues = chaine.vues_totales
       || videos.reduce((somme, v) => somme + (v.vues || 0), 0);
- 
+
     animerCompteur($("#stat-videos"), chaine.nb_videos || videos.length);
     animerCompteur($("#stat-abonnes"), chaine.abonnes || 0);
     animerCompteur($("#stat-vues"), totalVues);
- 
+
     /* Les heures de visionnage ne sont pas exposées par l'API publique de
        YouTube : seul le propriétaire de la chaîne y a accès, dans Studio. Le
        chiffre est donc saisi à la main dans data/chaine.json, et sa case
        disparaît tant qu'il vaut zéro — mieux vaut rien qu'un chiffre faux. */
     const heures = Math.round(Number(chaine.heures_visionnees) || 0);
     animerCompteur($("#stat-heures"), heures, " h");
- 
+
     if (!chaine.abonnes) $("#stat-abonnes").closest("div").hidden = true;
     if (!heures) $("#stat-heures").closest("div").hidden = true;
- 
+
     $("#date-maj").textContent = donnees.genere_le
       ? new Intl.DateTimeFormat("fr-FR", { dateStyle: "long", timeStyle: "short" }).format(new Date(donnees.genere_le))
       : "—";
- 
+
     const statuts = donnees.statuts || {};
     const soucis = Object.entries(statuts)
       .filter(([, v]) => v === "echec" || v === "sans_cle")
@@ -135,7 +134,7 @@
       $("#pied-etat").textContent = `Source(s) momentanément indisponible(s) : ${soucis.join(", ")} — dernières données connues affichées.`;
     }
   }
- 
+
   function rendreAffiche(donnees) {
     const cible = $("#affiche-grille");
     const video = (donnees.videos || []).find((v) => !v.short) || (donnees.videos || [])[0];
@@ -145,7 +144,7 @@
     }
     cible.innerHTML = "";
     cible.appendChild(construireLecteur(video));
- 
+
     const infos = document.createElement("div");
     infos.className = "affiche-infos";
     const resume = (video.description || "").split("\n").find((l) => l.trim().length > 40) || "";
@@ -161,22 +160,22 @@
       <a class="bouton bouton--fantome" href="${echapper(video.url)}" target="_blank" rel="noopener">Ouvrir sur YouTube</a>`;
     cible.appendChild(infos);
   }
- 
+
   let toutesLesVideos = [];
   let filtreActif = "*";
   let nbAffichees = 9;
- 
+
   function rendreVideos() {
     const grille = $("#grille-videos");
     const liste = toutesLesVideos.filter((v) => filtreActif === "*" || v.jeu === filtreActif);
     const visibles = liste.slice(0, nbAffichees);
- 
+
     if (!visibles.length) {
       grille.innerHTML = `<p class="etat-vide">Aucune vidéo pour ce filtre.</p>`;
       $("#plus-videos").hidden = true;
       return;
     }
- 
+
     grille.innerHTML = visibles.map((v) => `
       <a class="carte-video panneau inclinable" href="${echapper(v.url)}" target="_blank" rel="noopener">
         <div class="vignette-video">
@@ -192,21 +191,21 @@
           </div>
         </div>
       </a>`).join("");
- 
+
     $("#plus-videos").hidden = liste.length <= nbAffichees;
     if (pointeurFin && !moinsDeMouvement) brancherInclinaison(grille);
   }
- 
+
   function rendreFiltres() {
     const compte = new Map();
     toutesLesVideos.forEach((v) => { if (v.jeu) compte.set(v.jeu, (compte.get(v.jeu) || 0) + 1); });
     const jeux = [...compte.entries()].filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1]).slice(0, 8);
     if (!jeux.length) return;
- 
+
     const conteneur = $("#filtres");
     conteneur.innerHTML = `<button class="filtre est-active" data-jeu="*">Tout</button>` +
       jeux.map(([jeu, n]) => `<button class="filtre" data-jeu="${echapper(jeu)}">${echapper(jeu)} <span aria-hidden="true">· ${n}</span></button>`).join("");
- 
+
     conteneur.addEventListener("click", (e) => {
       const bouton = e.target.closest(".filtre");
       if (!bouton) return;
@@ -216,7 +215,7 @@
       rendreVideos();
     });
   }
- 
+
   function rendrePlanning(donnees) {
     const frise = $("#frise");
     const creneaux = donnees.planning || [];
@@ -245,7 +244,7 @@
         </li>`;
     }).join("");
   }
- 
+
   function rendreSorties(donnees) {
     const grille = $("#grille-sorties");
     const sorties = donnees.sorties || [];
@@ -275,24 +274,24 @@
         </a>`;
     }).join("");
   }
- 
+
   function rendreForge(donnees) {
     const grille = $("#grille-forge");
     const forge = donnees.forge || {};
     const groupes = (forge.groupes || []).filter((g) => (g.lignes || []).length);
     let auMoinsUnLien = false;
- 
+
     const pseudo = donnees.chaine?.reddit || "SieurGalaad";
     const lienReddit = $("#lien-reddit");
     if (lienReddit) lienReddit.href = `https://www.reddit.com/user/${encodeURIComponent(pseudo)}`;
- 
+
     $("#forge-intro").textContent = forge.intro || "";
- 
+
     if (!groupes.length) {
       grille.innerHTML = `<p class="etat-vide">Configuration non renseignée — complète <code>data/forge.json</code>.</p>`;
       return;
     }
- 
+
     grille.innerHTML = groupes.map((groupe) => `
       <article class="forge-groupe panneau" data-apparition>
         <h3>${echapper(groupe.titre)}</h3>
@@ -313,7 +312,7 @@
           }).join("")}
         </dl>
       </article>`).join("");
- 
+
     /* La mention d'affiliation n'apparaît que s'il y a effectivement un lien :
        elle est obligatoire dès qu'on en met un (loi influenceurs en France,
        et conditions du programme Amazon Partenaires), inutile sinon. */
@@ -322,7 +321,7 @@
     mention.hidden = !(auMoinsUnLien && texte);
     mention.textContent = texte;
   }
- 
+
   /* N'accepte qu'une vraie adresse http(s). Écarte javascript:, data: et les
      valeurs mal recopiées, qui deviendraient un lien piégé sur le site. */
   function lienSur(url) {
@@ -333,7 +332,7 @@
       return (u.protocol === "https:" || u.protocol === "http:") ? u.href : "";
     } catch { return ""; }
   }
- 
+
   /* ─────────────────────────────── Contact ─────────────────────────────── */
   /* Un site statique ne peut pas envoyer de courrier tout seul. Deux modes :
      avec une clé Web3Forms, le message part en arrière-plan ; sans clé, le
@@ -345,12 +344,12 @@
     const adresse = (contact.adresse || "").trim();
     const formulaire = $("#contact-formulaire");
     if (!formulaire) return;
- 
+
     if (contact.titre) $("#contact-titre").textContent = contact.titre;
     if (contact.oeil) $("#contact-oeil").textContent = contact.oeil;
     $("#contact-intro").textContent = contact.intro || "";
     $("#contact-delai").textContent = contact.delai || "";
- 
+
     const lienAdresse = $("#contact-adresse");
     if (adresse) {
       lienAdresse.textContent = adresse;
@@ -358,29 +357,29 @@
     } else {
       lienAdresse.closest(".contact-adresse-bloc").hidden = true;
     }
- 
+
     const sujets = (contact.sujets || []).filter(Boolean);
     $("#contact-sujet").innerHTML = (sujets.length ? sujets : ["Message"])
       .map((s) => `<option value="${echapper(s)}">${echapper(s)}</option>`).join("");
- 
+
     const etat = $("#contact-etat");
     const bouton = $("#contact-envoi");
     const cle = (contact.cle || "").trim();
- 
+
     const dire = (message, type) => {
       etat.textContent = message;
       etat.className = `contact-etat ${type ? `est-${type}` : ""}`;
     };
- 
+
     formulaire.addEventListener("submit", async (e) => {
       e.preventDefault();
       if ($("#contact-siteweb").value) return; // robot : on ne fait rien, sans le dire
- 
+
       const nom = $("#contact-nom").value.trim();
       const courriel = $("#contact-email").value.trim();
       const sujet = $("#contact-sujet").value;
       const message = $("#contact-message").value.trim();
- 
+
       if (!nom || !courriel || !message) {
         dire("Il manque ton nom, ton adresse ou ton message.", "erreur");
         return;
@@ -389,14 +388,14 @@
         dire("Cette adresse e-mail ne semble pas valide.", "erreur");
         return;
       }
- 
+
       if (!cle) {
         const corps = `${message}\n\n— ${nom} (${courriel})`;
         window.location.href = `mailto:${adresse}?subject=${encodeURIComponent(`[Site] ${sujet}`)}&body=${encodeURIComponent(corps)}`;
         dire("Ton logiciel de mail vient de s'ouvrir avec le message pré-rempli.", "ok");
         return;
       }
- 
+
       bouton.disabled = true;
       dire("Envoi en cours…");
       try {
@@ -422,7 +421,7 @@
       }
     });
   }
- 
+
   /* Les visuels de marque sont des fichiers que l'on remplace librement. Si
      l'un manque, on retire l'image plutôt que de laisser une icône cassée. */
   function surveillerLogos() {
@@ -432,9 +431,9 @@
       img.addEventListener("error", retirer);
     });
   }
- 
+
   /* ─────────────────────────────── Effets ──────────────────────────────── */
- 
+
   // 1. Apparition à l'encre : opacité + relevé, une seule fois par élément.
   //    Trois filets successifs, parce qu'un contenu invisible est un bug bien
   //    plus grave qu'une animation manquée :
@@ -450,14 +449,14 @@
       const r = el.getBoundingClientRect();
       return r.top < window.innerHeight * 0.92 && r.bottom > 0;
     };
- 
+
     cibles.forEach((el) => { if (dansLaVue(el)) reveler(el); });
- 
+
     let restants = cibles.filter((el) => !el.classList.contains("est-visible"));
     if (!restants.length) return;
- 
+
     if (typeof IntersectionObserver !== "function") { restants.forEach(reveler); return; }
- 
+
     const observateur = new IntersectionObserver((entrees) => {
       entrees.forEach((entree) => {
         if (entree.isIntersecting) {
@@ -467,7 +466,7 @@
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     restants.forEach((el) => observateur.observe(el));
- 
+
     const auDefilement = () => {
       restants = restants.filter((el) => {
         if (el.classList.contains("est-visible")) return false;
@@ -481,14 +480,14 @@
     window.addEventListener("scroll", auDefilement, { passive: true });
     window.addEventListener("resize", auDefilement, { passive: true });
   }
- 
+
   // 2. Parallaxe du héros : trois profondeurs, calculées dans un seul rAF.
   function brancherParallaxe() {
     if (moinsDeMouvement) return;
     const couches = $$("[data-parallaxe]");
     const heros = $(".heros");
     let enAttente = false;
- 
+
     const mettreAJour = () => {
       enAttente = false;
       const y = window.scrollY;
@@ -503,7 +502,7 @@
     }, { passive: true });
     mettreAJour();
   }
- 
+
   // 3. Barre de progression + en-tête collé + lien de navigation actif.
   function brancherDefilement() {
     const entete = $("#entete");
@@ -511,20 +510,20 @@
     const liens = $$(".navigation a");
     const sections = liens.map((a) => document.querySelector(a.getAttribute("href"))).filter(Boolean);
     let enAttente = false;
- 
+
     const mettreAJour = () => {
       enAttente = false;
       const y = window.scrollY;
       const hauteur = document.documentElement.scrollHeight - window.innerHeight;
       barre.style.width = `${hauteur > 0 ? (y / hauteur) * 100 : 0}%`;
       entete.classList.toggle("est-collee", y > 60);
- 
+
       let actif = -1;
       sections.forEach((section, i) => {
         if (section.getBoundingClientRect().top <= window.innerHeight * 0.35) actif = i;
       });
       liens.forEach((a, i) => a.classList.toggle("est-active", i === actif));
- 
+
       majFrise();
     };
     window.addEventListener("scroll", () => {
@@ -533,7 +532,7 @@
     window.addEventListener("resize", mettreAJour);
     mettreAJour();
   }
- 
+
   // 4. La frise du registre se dessine au fil du défilement.
   function majFrise() {
     const frise = $("#frise");
@@ -547,7 +546,7 @@
       creneau.classList.toggle("est-atteint", centre < debut);
     });
   }
- 
+
   // 5. Compteurs : le chiffre est écrit tout de suite, puis animé s'il est à
   //    l'écran. Jamais d'observateur ici — un chiffre bloqué sur « — » parce
   //    qu'une animation ne s'est pas lancée serait absurde.
@@ -556,10 +555,10 @@
     if (!valeur) { element.textContent = "—"; return; }
     element.textContent = nombreFr.format(valeur) + suffixe;
     if (moinsDeMouvement) return;
- 
+
     const r = element.getBoundingClientRect();
     if (r.top > window.innerHeight || r.bottom < 0) return;
- 
+
     const duree = 1100;
     const depart = performance.now();
     const pas = (maintenant) => {
@@ -570,7 +569,7 @@
     };
     requestAnimationFrame(pas);
   }
- 
+
   // 6. Inclinaison 3D légère des cartes (souris uniquement, 6° maximum).
   function brancherInclinaison(racine) {
     $$(".inclinable", racine).forEach((carte) => {
@@ -585,7 +584,7 @@
       carte.addEventListener("mouseleave", () => { carte.style.transform = ""; });
     });
   }
- 
+
   // 7. Poussière du héros : quelques particules très lentes, canvas léger.
   function brancherPoussiere() {
     if (moinsDeMouvement) return;
@@ -593,7 +592,7 @@
       .map((canvas) => ({ canvas, ctx: canvas.getContext("2d"), particules: [] }))
       .filter((c) => c.ctx);
     if (!calques.length) return;
- 
+
     const semer = (c) => {
       const r = c.canvas.getBoundingClientRect();
       if (!r.width || !r.height) { c.particules = []; return; }
@@ -616,9 +615,9 @@
         a: Math.random() * 0.4 + 0.1,
       }));
     };
- 
+
     const dimensionner = () => calques.forEach(semer);
- 
+
     /* Une seule boucle d'animation pour tous les calques, et on ne dessine que
        ceux qui sont effectivement à l'écran : le reste du site ne coûte rien. */
     const dessiner = () => {
@@ -640,7 +639,7 @@
       });
       requestAnimationFrame(dessiner);
     };
- 
+
     dimensionner();
     dessiner();
     let minuterie;
@@ -649,7 +648,7 @@
       minuterie = setTimeout(dimensionner, 180);
     });
   }
- 
+
   // 8. Menu mobile.
   function brancherMenu() {
     const bouton = $("#bascule-menu");
@@ -663,23 +662,23 @@
       if (e.target.tagName === "A") { bouton.setAttribute("aria-expanded", "false"); menu.hidden = true; }
     });
   }
- 
+
   /* ─────────────────────────────── Démarrage ───────────────────────────── */
- 
+
   /* Un effet décoratif qui échoue ne doit JAMAIS empêcher le contenu de
      s'afficher. Chaque étage est isolé : s'il tombe, le reste continue. */
   function sansCasser(nom, fonction) {
     try { fonction(); }
     catch (e) { console.warn(`[site] « ${nom} » a échoué, le reste continue :`, e); }
   }
- 
+
   async function demarrer() {
     sansCasser("logos", surveillerLogos);
     sansCasser("menu", brancherMenu);
     sansCasser("parallaxe", brancherParallaxe);
     sansCasser("poussière", brancherPoussiere);
     sansCasser("défilement", brancherDefilement);
- 
+
     const donnees = await chargerDonnees();
     if (!donnees) {
       $("#affiche-grille").innerHTML = `<p class="etat-vide">Les données du site n'ont pas pu être chargées. Si tu ouvres ce fichier directement depuis ton disque, lance plutôt un petit serveur local (voir le README).</p>`;
@@ -687,7 +686,7 @@
       brancherApparitions();
       return;
     }
- 
+
     toutesLesVideos = (donnees.videos || []).filter((v) => !v.short);
     rendreEnTete(donnees);
     rendreAffiche(donnees);
@@ -697,15 +696,14 @@
     rendreSorties(donnees);
     rendreForge(donnees);
     rendreContact(donnees);
- 
+
     $("#plus-videos").addEventListener("click", () => { nbAffichees += 9; rendreVideos(); });
- 
+
     brancherApparitions();
     majFrise();
     if (pointeurFin && !moinsDeMouvement) brancherInclinaison(document);
   }
- 
+
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", demarrer);
   else demarrer();
 })();
- 
