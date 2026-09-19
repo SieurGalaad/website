@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-19T10:51:20.473985Z",
+ "genere_le": "2026-09-19T15:49:54.695180Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -154,7 +154,7 @@
    "miniature": "https://i.ytimg.com/vi/4MAArbDDw2M/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2097,
-   "vues": 9,
+   "vues": 10,
    "jeu": "Au nom du Père",
    "short": false
   },
@@ -166,7 +166,7 @@
    "miniature": "https://i.ytimg.com/vi/gzai3NtT5cs/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2193,
-   "vues": 3,
+   "vues": 4,
    "jeu": "Ruche et nectar",
    "short": false
   },
@@ -190,7 +190,7 @@
    "miniature": "https://i.ytimg.com/vi/BIP-qY0UJNI/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1699,
-   "vues": 16,
+   "vues": 17,
    "jeu": "Une enquête maculée de pourpre",
    "short": false
   },
@@ -346,7 +346,7 @@
    "miniature": "https://i.ytimg.com/vi/14eIXLtsXRw/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1793,
-   "vues": 8,
+   "vues": 9,
    "jeu": "Le cœur a ses raisons",
    "short": false
   },
@@ -394,7 +394,7 @@
    "miniature": "https://i.ytimg.com/vi/4PSIauanxUM/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1591,
-   "vues": 8,
+   "vues": 7,
    "jeu": "La cave d'Ambrus",
    "short": false
   },
@@ -1031,6 +1031,23 @@
    "url": "https://rawg.io/games/silent-hill-townfall-2"
   },
   {
+   "nom": "EA SPORTS FC 27",
+   "sortie": "2026-09-25",
+   "image": "https://media.rawg.io/media/screenshots/d9b/d9b0ef34a249647310c5bc7577ce68e3.jpg",
+   "note": null,
+   "popularite": 1,
+   "genres": [
+    "Sports"
+   ],
+   "boutiques": [
+    "Steam",
+    "PlayStation Store",
+    "Nintendo Store",
+    "Epic Games"
+   ],
+   "url": "https://rawg.io/games/ea-sports-fc-27"
+  },
+  {
    "nom": "Transport Fever 3",
    "sortie": "2026-09-28",
    "image": "https://media.rawg.io/media/screenshots/003/003cfd6bb966df4e3e9cd97641c83bfb.jpg",
@@ -1259,19 +1276,6 @@
     "GOG"
    ],
    "url": "https://rawg.io/games/remothered-red-nuns-legacy"
-  },
-  {
-   "nom": "Phantom Blade Zero",
-   "sortie": "2026-10-29",
-   "image": "https://media.rawg.io/media/games/25f/25f536a977488f12ef8a6d013e50fda1.jpg",
-   "note": null,
-   "popularite": 225,
-   "genres": [
-    "Adventure",
-    "Action"
-   ],
-   "boutiques": [],
-   "url": "https://rawg.io/games/phantom-blade-zero"
   }
  ],
  "planning": [
