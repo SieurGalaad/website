@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-19T09:10:35.814693Z",
+ "genere_le": "2026-09-19T10:51:20.473985Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -8,12 +8,24 @@
   "reddit": "",
   "description": "Hello ! Moi c'est Sieur Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion visuelle, le tout sans commentaire.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique ultime des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la d",
   "abonnes": 12,
-  "nb_videos": 77,
+  "nb_videos": 78,
   "vues_totales": 12677,
   "heures_visionnees": 0.0,
   "heures_maj": ""
  },
  "videos": [
+  {
+   "id": "lWtSl9dOndI",
+   "titre": "[VF] L'ultime lueur — Resonance : A Plague Tale Legacy | Walkthrough 19 | 4K60 Ultra PC",
+   "url": "https://www.youtube.com/watch?v=lWtSl9dOndI",
+   "publie": "2026-09-19T10:00:36Z",
+   "miniature": "https://i.ytimg.com/vi/lWtSl9dOndI/maxresdefault.jpg",
+   "description": "Resonance: A Plague Tale Legacy (Ep. 19)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
+   "duree_s": 1763,
+   "vues": 3,
+   "jeu": "L'ultime lueur",
+   "short": false
+  },
   {
    "id": "hMByPAzMJcQ",
    "titre": "[VF] Le moine et le Saint — The Blood of Dawnwalker | Walkthrough 25 | 4K60 Ultra PC",
@@ -58,7 +70,7 @@
    "miniature": "https://i.ytimg.com/vi/p9fzgenwd8g/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1635,
-   "vues": 10,
+   "vues": 11,
    "jeu": "Le legs d'un héros",
    "short": false
   },
@@ -1130,7 +1142,7 @@
    "sortie": "2026-10-15",
    "image": "https://media.rawg.io/media/games/23a/23a1c71366aea4341aec483c9dd08a59.jpg",
    "note": null,
-   "popularite": 342,
+   "popularite": 343,
    "genres": [
     "Adventure",
     "Action",
