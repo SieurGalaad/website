@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-19T15:49:54.695180Z",
+ "genere_le": "2026-09-19T17:50:50.977910Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -8,12 +8,24 @@
   "reddit": "",
   "description": "Hello ! Moi c'est Sieur Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion visuelle, le tout sans commentaire.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique ultime des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la d",
   "abonnes": 12,
-  "nb_videos": 78,
+  "nb_videos": 79,
   "vues_totales": 12677,
   "heures_visionnees": 0.0,
   "heures_maj": ""
  },
  "videos": [
+  {
+   "id": "d3y4bGCuduc",
+   "titre": "[VF] L'origine du mal — The Blood of Dawnwalker | Walkthrough 26 | 4K60 Ultra PC",
+   "url": "https://www.youtube.com/watch?v=d3y4bGCuduc",
+   "publie": "2026-09-19T16:00:39Z",
+   "miniature": "https://i.ytimg.com/vi/d3y4bGCuduc/maxresdefault.jpg",
+   "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
+   "duree_s": 1779,
+   "vues": 1,
+   "jeu": "L'origine du mal",
+   "short": false
+  },
   {
    "id": "lWtSl9dOndI",
    "titre": "[VF] L'ultime lueur — Resonance : A Plague Tale Legacy | Walkthrough 19 | 4K60 Ultra PC",
@@ -346,7 +358,7 @@
    "miniature": "https://i.ytimg.com/vi/14eIXLtsXRw/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1793,
-   "vues": 9,
+   "vues": 10,
    "jeu": "Le cœur a ses raisons",
    "short": false
   },
@@ -466,7 +478,7 @@
    "miniature": "https://i.ytimg.com/vi/YSMfIOp9oW0/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1659,
-   "vues": 16,
+   "vues": 15,
    "jeu": "Mouvement dissident",
    "short": false
   },
@@ -682,7 +694,7 @@
    "miniature": "https://i.ytimg.com/vi/Yk9nNOEVCi4/maxresdefault.jpg",
    "description": "Un affrontement brutal dans un brasier... Sophia montre de quoi elle est capable. 🔥⚔️\n\n📌 La première heure du jeu en Full Ultra est disponible ! (Clique sur la vidéo liée juste au-dessus du titre)\n\n🎮 Gameplay 4K 60FPS Ultra / Ray Tracing (RTX 5080)\n\n#Resonance #APlagueTaleLegacy #Shorts #Gaming #RTX5080 #Gameplay",
    "duree_s": 12,
-   "vues": 1137,
+   "vues": 1138,
    "jeu": "Sophia ne fait AUCUN QUARTIER dans les flammes ! 🔥",
    "short": true
   },
