@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-19T20:34:33.943470Z",
+ "genere_le": "2026-09-19T20:49:46.402577Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Sieur Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion visuelle, le tout sans commentaire.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique ultime des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la d",
   "abonnes": 12,
   "nb_videos": 79,
-  "vues_totales": 12677,
+  "vues_totales": 12680,
   "heures_visionnees": 0.0,
   "heures_maj": ""
  },
@@ -159,7 +159,8 @@
    "duree_s": 9,
    "vues": 2,
    "jeu": "Coen succombe à la tentation... 🦇",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "r2qd0FTlfJw",
@@ -411,7 +412,8 @@
    "duree_s": 6,
    "vues": 900,
    "jeu": "Coen DÉCOUPE ce monstre ! 🩸",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "l3BOStfNn08",
@@ -678,7 +680,8 @@
    "duree_s": 8,
    "vues": 1354,
    "jeu": "THE BLOOD OF DAWNWALKER",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "apARj9aHXmo",
@@ -855,7 +858,8 @@
    "duree_s": 12,
    "vues": 1138,
    "jeu": "Sophia ne fait AUCUN QUARTIER dans les flammes ! 🔥",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "vSTy6dSchdE",
@@ -882,7 +886,8 @@
    "duree_s": 15,
    "vues": 1249,
    "jeu": "The Witcher 3 4K 60FPS",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "TqIcQAwkSHE",
@@ -924,7 +929,8 @@
    "duree_s": 21,
    "vues": 1997,
    "jeu": "Geralt ne fait AUCUN QUARTIER ! 🩸",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "liqt5R61cf4",
@@ -981,7 +987,8 @@
    "duree_s": 21,
    "vues": 516,
    "jeu": "THE WITCHER 3",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "eJF8Z2-YSPU",
@@ -1083,7 +1090,8 @@
    "duree_s": 16,
    "vues": 724,
    "jeu": "CETTE AMBIANCE... 🌅",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "6vJuMgoXEns",
@@ -1125,7 +1133,8 @@
    "duree_s": 16,
    "vues": 1297,
    "jeu": "Le plus beau",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "OLk7dwF5R4I",
@@ -1152,7 +1161,8 @@
    "duree_s": 70,
    "vues": 177,
    "jeu": "L'éveil de Geralt en 4K Ultra RTX 😱",
-   "short": false
+   "short": false,
+   "exclu": true
   },
   {
    "id": "zrViWuFdd44",
@@ -1164,7 +1174,8 @@
    "duree_s": 21,
    "vues": 1534,
    "jeu": "The Witcher 3",
-   "short": true
+   "short": true,
+   "exclu": true
   }
  ],
  "series": [
