@@ -1,72 +1,101 @@
-SIEURGALAAD — APERCU AU PARTAGE (19/09/2026)
-=============================================
+SIEURGALAAD — CHRONIQUES PAR PLAYLIST (19/09/2026)
+===================================================
 
-CE QUE CA FAIT
---------------
-Quand tu colles l'adresse de ton site dans un mail, un DM, Discord,
-LinkedIn, WhatsApp ou X, il s'affichait en carte de texte nue.
-Desormais il affiche une image aux couleurs de ta chaine.
+CE QUI CHANGE
+-------------
+La section Chroniques n'est plus une grille de 70 vignettes triee du plus
+recent au plus ancien. C'est maintenant une tuile par playlist YouTube, et
+les episodes s'affichent DANS L'ORDRE DE LA PLAYLIST : l'episode 1 en
+premier, plus le dernier publie.
 
-C'est la premiere chose que voit un editeur a qui tu envoies le lien,
-avant meme de cliquer.
+La premiere serie s'ouvre toute seule au chargement. Tu avais choisi la
+mise en forme B (coffres fermes) : je l'ai faite, avec cette nuance. Une
+section qui ne montre que des tuiles closes oblige a cliquer pour savoir ce
+qu'il y a dedans, et un studio presse ne clique pas. Si tu preferes que
+TOUT soit ferme au depart, dis-le moi : c'est une ligne a changer.
+
+Les anciens boutons de filtre (Tout / The Witcher 3 / ...) ont disparu.
+Ils devinaient le jeu en lisant le titre de la video, ce qui se cassait a
+chaque renommage. Les coffres les remplacent.
 
 
-DEUX FICHIERS SEULEMENT
------------------------
-  index.html                 <- a la RACINE du depot (remplace l'ancien)
-  assets/img/partage.jpg     <- a mettre dans assets/img/ (nouveau fichier)
+LA REGLE A RETENIR
+------------------
+  UNE PLAYLIST PAR JEU. Sans exception.
 
-Rien d'autre n'a bouge : ni le CSS, ni le JavaScript, ni le dossier data.
-Le site a exactement la meme apparence qu'avant. Le changement ne se voit
-que hors du site.
+Une video qui n'est dans aucune playlist tombe dans un coffre de repli
+nomme "Autres chroniques". Elle n'est pas perdue, mais elle n'est pas mise
+en valeur non plus. Prends le reflexe d'ajouter la video a sa playlist au
+moment de la publication.
+
+Rien a ecrire nulle part : tu crees la playlist sur YouTube, elle apparait
+toute seule a la mise a jour suivante (le site se rafraichit toutes les
+6 heures). Le nom est nettoye automatiquement :
+  "[VF] The Witcher 3 | Walkthrough full game - 4K60"  ->  "The Witcher 3"
+
+
+DEUX CHOSES A FAIRE DE TON COTE
+-------------------------------
+1. Creer la playlist "Premiere heure". Tu m'as dit qu'elle etait melangee
+   dans Showcases : tant qu'elle n'existe pas comme playlist a part, le
+   site ne peut pas l'afficher separement.
+
+2. Verifier qu'aucune video longue ne traine hors playlist. Apres la
+   prochaine mise a jour, onglet Actions du depot, cherche cette ligne :
+     [collecteur] 1 video(s) sans playlist -> coffre 'Autres chroniques' :
+   Elle te donne la liste exacte. Si elle n'apparait pas, tout est range.
+
+La playlist Shorts est volontairement ecartee : tu avais refuse une section
+Shorts sur le site. Pour revenir dessus, retire "shorts" de la liste
+"exclure" dans data/series.json.
+
+
+LES FICHIERS DU ZIP
+-------------------
+  index.html                  <- a la RACINE (remplace l'ancien)
+  assets/css/style.css        <- remplace
+  assets/js/main.js           <- remplace
+  scripts/fetch_data.py       <- remplace
+  data/series.json            <- NOUVEAU fichier
+  data/exemple.json           <- remplace (sert a l'apercu local)
+  README.md                   <- remplace
+
+Rien d'autre n'a bouge : ni tes images, ni data/planning.json, ni
+data/forge.json, ni data/contact.json, ni data/chaine.json.
 
 
 MARCHE A SUIVRE
 ---------------
 1. Clic droit sur le zip > "Extraire tout".
 2. https://github.com/SieurGalaad/website > "Add file" > "Upload files".
-3. Glisse index.html ET le dossier assets.
+3. Glisse index.html, README.md ET les dossiers assets, scripts, data.
 4. Bouton vert "Commit changes".
 5. Onglet Actions : attends la coche verte (~2 minutes).
 
-
-VERIFIER QUE CA MARCHE
-----------------------
-Les reseaux gardent ces apercus en cache tres longtemps, parfois des
-semaines. Si tu colles ton lien et que tu vois encore l'ancienne carte,
-c'est normal : force la relecture avec ces outils gratuits.
-
-  Facebook / Instagram / WhatsApp
-    developers.facebook.com/tools/debug/
-    (colle l'adresse, puis bouton "Scrape Again")
-
-  LinkedIn
-    linkedin.com/post-inspector/
-
-  X / Twitter
-    cards-dev.twitter.com/validator
-
-  Discord et Slack
-    Pas d'outil. Ils relisent tout seuls au bout de quelques heures.
-    Pour tester tout de suite, ajoute un ?1 a la fin de ton lien :
-    le lien fonctionne pareil mais eux le voient comme une nouvelle page.
+La section restera vide jusqu'a la premiere mise a jour reussie, le temps
+que le collecteur aille lire tes playlists. C'est normal.
 
 
-LE JOUR OU TU PRENDS UN NOM DE DOMAINE
---------------------------------------
-Trois adresses sont ecrites en dur dans index.html, parce que les robots
-des reseaux sociaux ne comprennent PAS les chemins relatifs. Cherche
-"sieurgalaad.github.io" dans le fichier : il apparait 3 fois, dans les
-balises og:url, og:image et twitter:image.
+REGLAGES : data/series.json
+---------------------------
+  exclure   une playlist dont le titre contient un de ces mots est ignoree.
+            "shorts" y est par defaut.
 
-Remplace-les par ton nouveau domaine et refais un tour des outils de
-verification ci-dessus. C'est la seule chose a ne pas oublier lors du
-changement de domaine.
+  noms      titre YouTube exact -> nom court affiche. Il y a deja une
+            entree pour "4K 60FPS Ultra — Showcases" -> "Showcases".
+            ATTENTION : le titre doit etre recopie A L'IDENTIQUE, tiret
+            long compris, sinon la regle ne s'applique pas.
+
+  ordre     noms a epingler en tete. Vide par defaut : les series sont
+            classees de la plus recemment alimentee a la plus ancienne.
+            Ce qui te met automatiquement en avant ce que tu publies en
+            ce moment, sans rien avoir a faire.
+
+  minimum   une playlist de moins de N videos est ignoree (2 par defaut).
+            Evite qu'un brouillon apparaisse sur le site.
 
 
-SI TU VEUX CHANGER L'IMAGE PLUS TARD
-------------------------------------
-Remplace assets/img/partage.jpg par une autre image de 1200 x 630 px,
-puis incremente le ?v= dans les deux balises qui pointent dessus
-(og:image et twitter:image). Sans ca, les reseaux continueront de servir
-l'ancienne pendant des semaines.
+COUT EN QUOTA YOUTUBE
+---------------------
+Environ 6 unites de plus par mise a jour, sur les 10 000 gratuites par
+jour. Autrement dit : rien.

@@ -49,6 +49,7 @@ FICHIER_PLANNING = RACINE / "data" / "planning.json"
 FICHIER_FORGE = RACINE / "data" / "forge.json"
 FICHIER_CONTACT = RACINE / "data" / "contact.json"
 FICHIER_CHAINE = RACINE / "data" / "chaine.json"
+FICHIER_SERIES = RACINE / "data" / "series.json"
 
 YOUTUBE_HANDLE = os.environ.get("YOUTUBE_HANDLE", "SieurGalaad").strip().lstrip("@")
 # Laisse vide : l'identifiant est resolu automatiquement a partir du pseudo.
@@ -60,7 +61,7 @@ REDDIT_CLIENT_SECRET = os.environ.get("REDDIT_CLIENT_SECRET", "").strip()
 RAWG_API_KEY = os.environ.get("RAWG_API_KEY", "").strip()
 
 UA = "sieurgalaad-site/1.0 (+https://github.com/) collecteur statique"
-NB_VIDEOS_MAX = 120
+NB_VIDEOS_MAX = 200
 NB_SORTIES_MAX = 24
 NB_POSTS_MAX = 12
 
@@ -117,8 +118,12 @@ def deviner_jeu(titre: str) -> str:
     """Extrait un nom de jeu du gabarit de titre de la chaine.
 
     Gabarit cible : "[VF] <Jeu> - <accroche> | 4K60 Ultra RTX5080 PC"
-    On reste tolerant : si le gabarit n'est pas respecte, on renvoie une chaine
-    vide plutot qu'un faux positif qui polluerait les filtres du site.
+
+    Ce n'est plus qu'un FILET : le rangement du site se fait desormais par
+    playlist, seule source fiable (un titre se renomme, pas une playlist).
+    Cette fonction ne sert plus qu'aux videos qui n'appartiennent a aucune
+    playlist, pour leur donner malgre tout une etiquette. Si le gabarit n'est
+    pas respecte, on renvoie une chaine vide plutot qu'un faux positif.
     """
     t = re.sub(r"^\s*\[[^\]]+\]\s*", "", titre or "")  # retire [VF], [FR]...
     t = t.split("|")[0]
@@ -259,8 +264,66 @@ def youtube_via_api() -> dict:
         if not page:
             break
 
+    videos = details_videos(ids[:NB_VIDEOS_MAX])
+
+    # Les series (playlists). Si elles tombent, le catalogue reste servi :
+    # une videotheque en vrac vaut mieux qu'une section vide.
+    series: list[dict] = []
+    try:
+        reglages = charger_reglages_series()
+        series = youtube_series(reglages)
+
+        # Une playlist peut contenir une video hors du dernier lot recupere
+        # (catalogue plafonne, video tres ancienne). On va chercher les
+        # manquantes, sinon le coffre afficherait un trou.
+        connus = {v["id"] for v in videos}
+        absents = [i for s in series for i in s["videos"] if i not in connus]
+        if absents:
+            log(f"{len(absents)} video(s) de playlist hors catalogue -> recuperation")
+            videos += details_videos(list(dict.fromkeys(absents)))
+
+        dates = {v["id"]: v.get("publie", "") for v in videos}
+        series = ordonner_series(series, reglages, dates)
+
+        # Chaque video sait a quelle serie elle appartient et a quel rang.
+        # C'est ce rang, et non la date de publication, qui ordonne le site.
+        par_id = {v["id"]: v for v in videos}
+        for s in series:
+            for rang, vid in enumerate(s["videos"], start=1):
+                v = par_id.get(vid)
+                if not v or v.get("serie"):
+                    continue  # une video dans deux playlists garde la premiere
+                v["serie"] = s["titre"]
+                v["serie_id"] = s["id"]
+                v["episode"] = rang
+                # Le nom de la serie ne remplace le jeu devine que si la serie
+                # porte bien sur un seul jeu. Dans une playlist "Showcases",
+                # chaque video est un jeu different : on garde la devinette,
+                # qui est justement la bonne information a cet endroit.
+                if s["numerote"]:
+                    v["jeu"] = s["titre"]
+    except Exception as exc:  # noqa: BLE001
+        log(f"Playlists indisponibles ({exc}) -> series non rafraichies")
+        series = []
+
+    videos.sort(key=lambda v: v["publie"], reverse=True)
+    return {
+        "titre": item["snippet"].get("title", "SieurGalaad"),
+        "description": (item["snippet"].get("description") or "")[:500],
+        "abonnes": int(stats.get("subscriberCount") or 0),
+        "nb_videos": int(stats.get("videoCount") or 0),
+        "vues_totales": int(stats.get("viewCount") or 0),
+        "videos": videos,
+        "series": series,
+        "complet": True,
+    }
+
+
+def details_videos(ids: list[str]) -> list[dict]:
+    """Fiche complete de chaque video, par paquets de 50 (limite de l'API)."""
+    base = "https://www.googleapis.com/youtube/v3"
     videos = []
-    for debut in range(0, min(len(ids), NB_VIDEOS_MAX), 50):
+    for debut in range(0, len(ids), 50):
         paquet = ",".join(ids[debut : debut + 50])
         detail = http_json_retry(
             f"{base}/videos?part=snippet,contentDetails,statistics&id={paquet}&key={YOUTUBE_API_KEY}"
@@ -291,17 +354,173 @@ def youtube_via_api() -> dict:
                     "short": duree > 0 and duree <= 60,
                 }
             )
+    return videos
 
-    videos.sort(key=lambda v: v["publie"], reverse=True)
+
+# --------------------------------------------------------------------------- #
+# Series : les playlists publiques de la chaine
+#
+# Pourquoi passer par les playlists plutot que deviner le jeu dans le titre :
+# un titre change (renommage, refonte du gabarit), une playlist non. Et surtout
+# une playlist porte l'ORDRE voulu -- episode 1 en premier -- alors que le
+# catalogue brut est trie du plus recent au plus ancien, ce qui fait tomber le
+# visiteur sur la fin de l'aventure.
+#
+# Cout en quota : 1 unite pour la liste des playlists, 1 par page de contenu.
+# Cinq playlists = environ 6 unites par execution, sur 10 000 offertes par jour.
+# --------------------------------------------------------------------------- #
+MOTS_SOUS_TITRE = (
+    ("walkthrough", "Walkthrough intégral"),
+    ("full game", "Walkthrough intégral"),
+    ("première heure", "La première heure"),
+    ("premiere heure", "La première heure"),
+    ("first hour", "La première heure"),
+    ("60 premières minutes", "La première heure"),
+    ("showcase", "Vitrine technique"),
+    ("vitrine", "Vitrine technique"),
+)
+
+
+def charger_reglages_series() -> dict:
+    defauts = {"exclure": ["shorts"], "noms": {}, "ordre": [], "minimum": 2}
+    if not FICHIER_SERIES.exists():
+        return defauts
+    try:
+        brut = json.loads(FICHIER_SERIES.read_text(encoding="utf-8"))
+    except Exception as exc:  # noqa: BLE001
+        log(f"data/series.json illisible ({exc}) -> reglages par defaut")
+        return defauts
     return {
-        "titre": item["snippet"].get("title", "SieurGalaad"),
-        "description": (item["snippet"].get("description") or "")[:500],
-        "abonnes": int(stats.get("subscriberCount") or 0),
-        "nb_videos": int(stats.get("videoCount") or 0),
-        "vues_totales": int(stats.get("viewCount") or 0),
-        "videos": videos,
-        "complet": True,
+        "exclure": [str(m).lower() for m in brut.get("exclure", defauts["exclure"])],
+        "noms": brut.get("noms", {}),
+        "ordre": brut.get("ordre", []),
+        "minimum": int(brut.get("minimum", defauts["minimum"]) or 0),
     }
+
+
+def nettoyer_titre_serie(titre: str) -> str:
+    """"[VF] The Witcher 3 | Walkthrough full game - 4K60" -> "The Witcher 3"."""
+    t = re.sub(r"^\s*\[[^\]]+\]\s*", "", titre or "")
+    t = t.split("|")[0]
+    t = re.sub(r"\s*[-–—]\s*4K\s*60.*$", "", t, flags=re.I)
+    t = t.strip(" -–—:#·").strip()
+    return t or (titre or "").strip()
+
+
+def sous_titre_serie(titre_complet: str) -> str:
+    bas = (titre_complet or "").lower()
+    for motif, libelle in MOTS_SOUS_TITRE:
+        if motif in bas:
+            return libelle
+    return ""
+
+
+def youtube_series(reglages: dict) -> list[dict]:
+    """Playlists publiques -> series, chacune dans son ordre de playlist."""
+    base = "https://www.googleapis.com/youtube/v3"
+
+    brutes: list[dict] = []
+    page = ""
+    while True:
+        url = (
+            f"{base}/playlists?part=snippet,contentDetails&channelId={CHANNEL_ID}"
+            f"&maxResults=50&key={YOUTUBE_API_KEY}"
+        )
+        if page:
+            url += f"&pageToken={page}"
+        lot = http_json_retry(url)
+        brutes += lot.get("items", [])
+        page = lot.get("nextPageToken", "")
+        if not page:
+            break
+
+    series = []
+    for pl in brutes:
+        snippet = pl.get("snippet", {})
+        titre_complet = (snippet.get("title") or "").strip()
+        bas = titre_complet.lower()
+        if any(mot in bas for mot in reglages["exclure"]):
+            log(f"Serie ecartee (regle d'exclusion) : {titre_complet}")
+            continue
+
+        ids = []
+        page = ""
+        while True:
+            url = (
+                f"{base}/playlistItems?part=snippet,contentDetails&maxResults=50"
+                f"&playlistId={pl['id']}&key={YOUTUBE_API_KEY}"
+            )
+            if page:
+                url += f"&pageToken={page}"
+            lot = http_json_retry(url)
+            for e in lot.get("items", []):
+                # Une video supprimee ou passee en privee reste dans la playlist :
+                # elle n'a plus de titre exploitable, on la saute silencieusement.
+                titre_item = (e.get("snippet", {}).get("title") or "").strip()
+                if titre_item in ("Deleted video", "Private video", ""):
+                    continue
+                vid = e.get("contentDetails", {}).get("videoId")
+                if vid and vid not in ids:
+                    ids.append(vid)
+            page = lot.get("nextPageToken", "")
+            if not page:
+                break
+
+        if len(ids) < reglages["minimum"]:
+            log(f"Serie ignoree ({len(ids)} video(s), minimum {reglages['minimum']}) : {titre_complet}")
+            continue
+
+        miniatures = snippet.get("thumbnails", {})
+        meilleure = (
+            miniatures.get("maxres")
+            or miniatures.get("standard")
+            or miniatures.get("high")
+            or miniatures.get("medium")
+            or {}
+        )
+        sous_titre = sous_titre_serie(titre_complet)
+        series.append(
+            {
+                "id": pl["id"],
+                "titre": reglages["noms"].get(titre_complet) or nettoyer_titre_serie(titre_complet),
+                "titre_complet": titre_complet,
+                "sous_titre": sous_titre,
+                # Numerotee = un seul et meme jeu du debut a la fin. Une playlist
+                # "Showcases" ou "Premiere heure" rassemble des jeux differents :
+                # y afficher "Episode 03" n'aurait aucun sens.
+                "numerote": "walkthrough" in f"{sous_titre} {titre_complet}".lower(),
+                "url": f"https://www.youtube.com/playlist?list={pl['id']}",
+                "miniature": meilleure.get("url", ""),
+                "nb": len(ids),
+                "videos": ids,
+            }
+        )
+
+    log(f"YouTube (playlists) : {len(series)} serie(s) retenue(s) sur {len(brutes)} playlist(s)")
+    return series
+
+
+def ordonner_series(series: list[dict], reglages: dict, dates: dict[str, str]) -> list[dict]:
+    """Les series epinglees d'abord, puis la plus recemment alimentee.
+
+    Ce tri par derniere video se maintient tout seul : la serie en cours de
+    publication remonte en tete sans que personne n'ait a toucher un fichier.
+    """
+    epingles = [str(n).lower() for n in reglages["ordre"]]
+
+    def cle(s: dict) -> tuple:
+        nom = s["titre"].lower()
+        rang = epingles.index(nom) if nom in epingles else len(epingles)
+        derniere = max((dates.get(v, "") for v in s["videos"]), default="")
+        return (rang, "" if rang < len(epingles) else _inverse(derniere))
+
+    return sorted(series, key=cle)
+
+
+def _inverse(horodatage: str) -> str:
+    """Trie une date ISO en ordre decroissant sans passer par reverse=True
+    (le premier critere du tri, lui, reste croissant)."""
+    return "".join(chr(0x10FFFF - ord(c)) if ord(c) < 0x10FFFF else c for c in horodatage)
 
 
 def collecter_youtube() -> tuple[dict | None, str]:
@@ -611,6 +830,7 @@ def main() -> int:
 
     chaine_precedente = precedent.get("chaine", {})
     videos_precedentes = precedent.get("videos", [])
+    series_precedentes = precedent.get("series", [])
 
     if yt:
         chaine = {
@@ -632,7 +852,11 @@ def main() -> int:
             connus = {v["id"] for v in videos}
             videos += [v for v in videos_precedentes if v["id"] not in connus]
             videos.sort(key=lambda v: v.get("publie", ""), reverse=True)
+        # Idem pour les series : le RSS ne connait pas les playlists, et une
+        # panne passagere de l'API ne doit pas vider les coffres du site.
+        series = yt.get("series") or series_precedentes
     else:
+        series = series_precedentes
         chaine = chaine_precedente or {
             "id": CHANNEL_ID,
             "titre": "SieurGalaad",
@@ -649,6 +873,7 @@ def main() -> int:
         "genere_le": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "chaine": chaine,
         "videos": videos[:NB_VIDEOS_MAX],
+        "series": series,
         "reddit": posts if posts is not None else precedent.get("reddit", []),
         "sorties": sorties if sorties is not None else precedent.get("sorties", []),
         "planning": planning,
@@ -663,9 +888,24 @@ def main() -> int:
     )
     log(
         f"Ecrit {FICHIER_SORTIE.relative_to(RACINE)} : "
-        f"{len(site['videos'])} videos, {len(site['reddit'])} posts, "
+        f"{len(site['videos'])} videos, {len(site['series'])} series, "
+        f"{len(site['reddit'])} posts, "
         f"{len(site['sorties'])} sorties, {len(site['planning'])} creneaux"
     )
+
+    # Une video hors playlist n'a pas de place naturelle sur le site : elle
+    # tombe dans le coffre "Autres chroniques". On le signale pour que ca ne
+    # passe pas inapercu -- c'est le seul entretien que demande la section.
+    dans_series = {v for s in site["series"] for v in s.get("videos", [])}
+    orphelines = [v for v in site["videos"] if not v.get("short") and v["id"] not in dans_series]
+    if site["series"] and orphelines:
+        log(f"{len(orphelines)} video(s) sans playlist -> coffre 'Autres chroniques' :")
+        for v in orphelines[:10]:
+            log(f"    - {v['titre'][:70]}")
+        if len(orphelines) > 10:
+            log(f"    ... et {len(orphelines) - 10} autre(s)")
+    elif site["series"]:
+        log("Toutes les videos longues sont rangees dans une playlist.")
 
     # On ne fait jamais echouer la publication : un site en ligne avec une
     # section vide vaut mieux qu'un site absent. Les sources en panne sont

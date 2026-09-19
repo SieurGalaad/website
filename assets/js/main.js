@@ -163,29 +163,155 @@
     cible.appendChild(infos);
   }
 
+  /* ═══════════════════════════ Chroniques ════════════════════════════════
+     La vidéothèque est rangée par série, c'est-à-dire par playlist YouTube.
+     Deux raisons, dans cet ordre d'importance :
+       1. l'ORDRE. Le catalogue brut est trié du plus récent au plus ancien :
+          un visiteur tombait sur l'épisode 32 avant l'épisode 1. Une playlist
+          porte l'ordre voulu.
+       2. le RANGEMENT. Le classement se faisait en devinant le nom du jeu dans
+          le titre de la vidéo, ce qui se cassait à chaque renommage.
+     Une série sans playlist n'existe pas : les vidéos non rangées tombent dans
+     un coffre de repli, affiché seulement s'il n'est pas vide.
+     ═══════════════════════════════════════════════════════════════════════ */
   let toutesLesVideos = [];
-  let filtreActif = "*";
-  let nbAffichees = 9;
+  let series = [];
+  let serieActive = null;
+  let nbAffichees = 8;
 
-  function rendreVideos() {
-    const grille = $("#grille-videos");
-    const liste = toutesLesVideos.filter((v) => filtreActif === "*" || v.jeu === filtreActif);
-    const visibles = liste.slice(0, nbAffichees);
+  const PAS_EPISODES = 8;
 
-    if (!visibles.length) {
-      grille.innerHTML = `<p class="etat-vide">Aucune vidéo pour ce filtre.</p>`;
-      $("#plus-videos").hidden = true;
+  function construireSeries(donnees) {
+    const parId = new Map(toutesLesVideos.map((v) => [v.id, v]));
+
+    const liste = (donnees.series || [])
+      .map((s) => ({
+        id: s.id,
+        titre: s.titre || "",
+        sous_titre: s.sous_titre || "",
+        url: s.url || "",
+        miniature: s.miniature || "",
+        numerote: !!s.numerote,
+        videos: (s.videos || []).map((id) => parId.get(id)).filter(Boolean),
+      }))
+      .filter((s) => s.videos.length);
+
+    // Coffre de repli : ce qui n'est dans aucune playlist. Il ne s'affiche que
+    // s'il contient quelque chose — c'est aussi le rappel visuel qu'une vidéo
+    // a été publiée sans être rangée.
+    const rangees = new Set(liste.flatMap((s) => s.videos.map((v) => v.id)));
+    const restantes = toutesLesVideos.filter((v) => !rangees.has(v.id));
+    if (liste.length && restantes.length) {
+      liste.push({
+        id: "__hors_serie",
+        titre: "Autres chroniques",
+        sous_titre: "Hors série",
+        url: "",
+        miniature: restantes[0].miniature || "",
+        numerote: false,
+        videos: restantes,
+      });
+    }
+
+    // Aucune playlist exploitable (API en panne, ou données anciennes) : on
+    // sert quand même le catalogue, en un seul coffre. Mieux vaut une section
+    // moins bien rangée qu'une section vide.
+    if (!liste.length && toutesLesVideos.length) {
+      liste.push({
+        id: "__tout",
+        titre: "Toutes les vidéos",
+        sous_titre: "",
+        url: "",
+        miniature: toutesLesVideos[0].miniature || "",
+        numerote: false,
+        videos: toutesLesVideos,
+      });
+    }
+    return liste;
+  }
+
+  /* La ligne sous le nom de la série. On n'y répète pas « Walkthrough
+     intégral » : ce serait écrit à l'identique sur presque toutes les tuiles,
+     ça ferait passer la ligne sur deux lignes, et ça n'apprendrait rien.
+     La mention n'apparaît donc que pour les séries qui ne sont PAS un
+     walkthrough — c'est là qu'elle porte une information. */
+  function decompte(s) {
+    const n = s.videos.length;
+    const mot = (s.numerote ? "épisode" : "vidéo") + (n > 1 ? "s" : "");
+    const mention = s.numerote ? "" : s.sous_titre;
+    return `${n} ${mot}${mention ? ` · ${echapper(mention)}` : ""}`;
+  }
+
+  function rendreCoffres() {
+    const conteneur = $("#coffres");
+    if (!series.length) {
+      conteneur.innerHTML = `<p class="etat-vide">La vidéothèque n'a pas pu être chargée.</p>`;
       return;
     }
 
-    grille.innerHTML = visibles.map((v) => `
+    conteneur.innerHTML = series.map((s) => `
+      <button type="button" class="coffre panneau${s.id === serieActive ? " est-ouvert" : ""}"
+              data-serie="${echapper(s.id)}" role="tab" aria-controls="deplie"
+              aria-selected="${s.id === serieActive}">
+        <span class="coffre-vignette">
+          ${s.miniature
+            ? `<img src="${echapper(s.miniature)}" alt="" loading="lazy" decoding="async">`
+            : ""}
+        </span>
+        <span class="coffre-corps">
+          <span class="coffre-nom">${echapper(s.titre)}</span>
+          <span class="coffre-meta">${decompte(s)}</span>
+        </span>
+      </button>`).join("");
+  }
+
+  /* Le petit libellé dorée au-dessus du titre. Dans une série consacrée à un
+     seul jeu, le rang est la seule chose utile — répéter le nom du jeu sur
+     chaque carte, alors qu'il est déjà écrit en haut du bloc, ne renseigne
+     personne. Ailleurs (Showcases, première heure) c'est l'inverse : chaque
+     vidéo est un jeu différent, et c'est ce nom-là qu'on veut lire. */
+  function etiquette(serie, v, index) {
+    const texte = serie.numerote
+      ? `Épisode ${String(index + 1).padStart(2, "0")}`
+      : (v.jeu || "");
+    return texte ? `<span class="etiquette">${echapper(texte)}</span>` : "";
+  }
+
+  function ouvrirSerie(id, deplacer) {
+    if (!series.some((s) => s.id === id)) return;
+    serieActive = id;
+    nbAffichees = PAS_EPISODES;
+    rendreCoffres();
+    rendreVideos();
+    if (deplacer) {
+      const cible = $("#deplie");
+      const haut = cible.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: haut, behavior: moinsDeMouvement ? "auto" : "smooth" });
+    }
+  }
+
+  function rendreVideos() {
+    const grille = $("#grille-videos");
+    const deplie = $("#deplie");
+    const serie = series.find((s) => s.id === serieActive);
+
+    if (!serie) { deplie.hidden = true; return; }
+    deplie.hidden = false;
+
+    $("#deplie-titre").textContent = serie.titre;
+    const lien = $("#deplie-lien");
+    lien.hidden = !serie.url;
+    if (serie.url) lien.href = serie.url;
+
+    const visibles = serie.videos.slice(0, nbAffichees);
+    grille.innerHTML = visibles.map((v, i) => `
       <a class="carte-video panneau inclinable" href="${echapper(v.url)}" target="_blank" rel="noopener">
         <div class="vignette-video">
           <img src="${echapper(v.miniature)}" alt="" loading="lazy" decoding="async">
           ${v.duree_s ? `<span class="duree">${formaterDuree(v.duree_s)}</span>` : ""}
         </div>
         <div class="corps">
-          ${v.jeu ? `<span class="etiquette">${echapper(v.jeu)}</span>` : ""}
+          ${etiquette(serie, v, i)}
           <h3>${echapper(v.titre)}</h3>
           <div class="pied-carte">
             <span>${formaterDate(v.publie, dateCourte)}</span>
@@ -194,26 +320,30 @@
         </div>
       </a>`).join("");
 
-    $("#plus-videos").hidden = liste.length <= nbAffichees;
+    const reste = serie.videos.length - visibles.length;
+    const bouton = $("#plus-videos");
+    bouton.hidden = reste <= 0;
+    bouton.textContent = reste > 0
+      ? `Dérouler le parchemin · ${reste} de plus`
+      : "Dérouler le parchemin";
     if (pointeurFin && !moinsDeMouvement) brancherInclinaison(grille);
   }
 
-  function rendreFiltres() {
-    const compte = new Map();
-    toutesLesVideos.forEach((v) => { if (v.jeu) compte.set(v.jeu, (compte.get(v.jeu) || 0) + 1); });
-    const jeux = [...compte.entries()].filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1]).slice(0, 8);
-    if (!jeux.length) return;
+  function brancherChroniques(donnees) {
+    series = construireSeries(donnees);
+    // La première série s'ouvre d'emblée : une section qui ne montre que des
+    // tuiles closes oblige à cliquer pour savoir ce qu'il y a dedans, et un
+    // visiteur pressé — un studio, par exemple — ne clique pas.
+    serieActive = series.length ? series[0].id : null;
+    rendreCoffres();
+    rendreVideos();
 
-    const conteneur = $("#filtres");
-    conteneur.innerHTML = `<button class="filtre est-active" data-jeu="*">Tout</button>` +
-      jeux.map(([jeu, n]) => `<button class="filtre" data-jeu="${echapper(jeu)}">${echapper(jeu)} <span aria-hidden="true">· ${n}</span></button>`).join("");
-
-    conteneur.addEventListener("click", (e) => {
-      const bouton = e.target.closest(".filtre");
-      if (!bouton) return;
-      $$(".filtre", conteneur).forEach((b) => b.classList.toggle("est-active", b === bouton));
-      filtreActif = bouton.dataset.jeu;
-      nbAffichees = 9;
+    $("#coffres").addEventListener("click", (e) => {
+      const bouton = e.target.closest(".coffre");
+      if (bouton) ouvrirSerie(bouton.dataset.serie, true);
+    });
+    $("#plus-videos").addEventListener("click", () => {
+      nbAffichees += PAS_EPISODES;
       rendreVideos();
     });
   }
@@ -692,14 +822,11 @@
     toutesLesVideos = (donnees.videos || []).filter((v) => !v.short);
     rendreEnTete(donnees);
     rendreAffiche(donnees);
-    rendreFiltres();
-    rendreVideos();
+    brancherChroniques(donnees);
     rendrePlanning(donnees);
     rendreSorties(donnees);
     rendreForge(donnees);
     rendreContact(donnees);
-
-    $("#plus-videos").addEventListener("click", () => { nbAffichees += 9; rendreVideos(); });
 
     brancherApparitions();
     majFrise();

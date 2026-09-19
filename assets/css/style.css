@@ -506,16 +506,82 @@ a { color: inherit; }
   text-transform: uppercase; font-family: var(--police-titre);
 }
 
-/* ───────────────────────────── Filtres ─────────────────────────────────── */
-.filtres { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-bottom: 38px; }
-.filtre {
-  font-family: var(--police-titre); font-size: 11px; letter-spacing: .14em;
-  text-transform: uppercase; padding: 8px 15px; cursor: pointer;
-  background: transparent; border: 1px solid var(--trait); color: var(--parchemin-terne);
-  transition: var(--transition);
+/* ──────────────────────── Coffres (séries) ─────────────────────────────── */
+/* Une tuile par playlist. La grille est en auto-fill et non en 4 colonnes
+   fixes : le nombre de séries augmente d'un jeu à l'autre, la mise en page
+   doit suivre sans qu'on y retouche. */
+.coffres {
+  display: grid; gap: clamp(16px, 2vw, 22px); margin-bottom: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 248px), 1fr));
 }
-.filtre:hover { border-color: var(--or-sombre); color: var(--parchemin); }
-.filtre.est-active { border-color: var(--or); color: var(--or-clair); background: rgba(200,163,74,.08); }
+.coffre {
+  display: flex; flex-direction: column; text-align: left; padding: 0;
+  font: inherit; color: inherit; cursor: pointer; -webkit-appearance: none; appearance: none;
+}
+.coffre-vignette {
+  display: block; aspect-ratio: 16/9; overflow: hidden; background: #000;
+  border-bottom: 1px solid var(--trait);
+}
+.coffre-vignette img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: grayscale(1) contrast(1.14) brightness(.62);
+  transition: filter 560ms ease, transform 760ms cubic-bezier(.2,.7,.3,1);
+}
+.coffre:hover .coffre-vignette img { filter: grayscale(.5) brightness(.8); transform: scale(1.05); }
+.coffre.est-ouvert .coffre-vignette img { filter: grayscale(.15) brightness(.95); }
+.coffre-corps { display: block; padding: 15px 18px 17px; }
+/* Deux lignes réservées pour le nom : sans ça, « Elden Ring » et « Resonance :
+   A Plague Tale Legacy » décalent leurs lignes de dessous l'une par rapport à
+   l'autre, et la rangée de tuiles perd son alignement. */
+.coffre-nom {
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  min-height: 2.6em; font-family: var(--police-titre); font-size: 15.5px; line-height: 1.3;
+  color: var(--parchemin); letter-spacing: .02em;
+}
+.coffre-meta {
+  display: block; margin-top: 7px; font-family: var(--police-titre);
+  font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--or);
+}
+.coffre.est-ouvert { border-color: var(--or); background: var(--panneau-haut); }
+.coffre:focus-visible { outline: 2px solid var(--or); outline-offset: 3px; }
+
+/* Sur téléphone, une tuile par ligne en format vignette 16/9 imposerait de
+   faire défiler toute la liste des séries avant d'atteindre le premier
+   épisode — et cette liste s'allonge d'un jeu à l'autre. On bascule donc en
+   rangées compactes : la hauteur d'un coffre passe d'environ 300 px à 92 px. */
+@media (max-width: 560px) {
+  /* Une seule colonne, obligatoirement : en rangée compacte, la vignette prend
+     122 px et il ne reste pas de quoi écrire « Resonance : A Plague Tale
+     Legacy » dans une demi-largeur d'écran — le nom se faisait couper. */
+  .coffres { gap: 12px; grid-template-columns: 1fr; }
+  .coffre { flex-direction: row; align-items: stretch; }
+  .coffre-vignette {
+    flex: none; width: 122px; aspect-ratio: 16/10;
+    border-bottom: 0; border-right: 1px solid var(--trait);
+  }
+  .coffre-corps { display: flex; flex-direction: column; justify-content: center; padding: 12px 15px; }
+  /* Trois lignes autorisées ici : en colonne unique, une tuile un peu plus
+     haute ne dérange personne, alors qu'un nom de jeu tronqué, si. */
+  .coffre-nom { min-height: 0; font-size: 15px; -webkit-line-clamp: 3; }
+  .coffre-meta { margin-top: 5px; }
+}
+
+/* ─────────────────── Déplié : les épisodes de la série ─────────────────── */
+.deplie { margin-top: 30px; border-top: 1px solid var(--or-sombre); padding-top: 26px; }
+.deplie-entete {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap; margin-bottom: 22px;
+}
+.deplie-titre {
+  margin: 0; font-family: var(--police-titre); font-weight: 400; font-size: 13px;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--or-clair);
+}
+.deplie-lien {
+  font-family: var(--police-titre); font-size: 10.5px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--parchemin-terne); text-decoration: none;
+  border-bottom: 1px solid var(--trait); padding-bottom: 3px; transition: var(--transition);
+}
+.deplie-lien:hover { color: var(--or-clair); border-color: var(--or-sombre); }
 
 /* ──────────────────────────── Grille vidéos ────────────────────────────── */
 .grille-videos {
@@ -770,6 +836,7 @@ a { color: inherit; }
 }
 .squelette--lecteur { aspect-ratio: 16/9; min-height: 0; }
 .squelette--ligne { min-height: 86px; list-style: none; }
+.squelette--coffre { min-height: 208px; }
 @keyframes chatoyer { to { background-position: -220% 0; } }
 
 /* ─────────────────────────────── Pied ──────────────────────────────────── */

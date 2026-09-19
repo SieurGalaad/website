@@ -217,6 +217,51 @@ dans la minute qui suit.
 
 ---
 
+## Les Chroniques : une playlist = une série
+
+La vidéothèque du site est **le reflet exact de tes playlists YouTube
+publiques**. Une tuile par playlist, et les épisodes dans l'ordre de la
+playlist — l'épisode 1 en premier, pas le dernier publié.
+
+**La règle, et elle n'a pas d'exception : une playlist par jeu.**
+Une vidéo qui n'est dans aucune playlist n'a pas de place à elle ; elle tombe
+dans un coffre de repli nommé « Autres chroniques ». Le site ne la perd pas,
+mais elle n'est pas mise en valeur. Prends le réflexe d'ajouter la vidéo à sa
+playlist au moment de la publication.
+
+Rien à écrire nulle part : crée la playlist sur YouTube, elle apparaît toute
+seule à la mise à jour suivante. Le nom affiché est nettoyé automatiquement
+(`[VF] The Witcher 3 | Walkthrough full game - 4K60` devient `The Witcher 3`).
+
+Trois vérifications utiles dans l'onglet **Actions** après une mise à jour :
+
+```
+[collecteur] YouTube (playlists) : 4 serie(s) retenue(s) sur 6 playlist(s)
+[collecteur] Serie ecartee (regle d'exclusion) : Shorts | Gameplay | 4K60 ULTRA
+[collecteur] 1 video(s) sans playlist -> coffre 'Autres chroniques' :
+```
+
+La dernière ligne est celle à surveiller : elle te dit exactement quelles
+vidéos ne sont rangées nulle part.
+
+### Régler le comportement : `data/series.json`
+
+| Clé | À quoi ça sert |
+|---|---|
+| `exclure` | une playlist dont le titre contient un de ces mots est ignorée. `"shorts"` y est par défaut : il n'y a pas de section Shorts sur le site. |
+| `noms` | titre YouTube exact → nom court affiché. Utile quand le nettoyage automatique ne tombe pas juste. |
+| `ordre` | noms à épingler en tête. Vide par défaut : les séries sont classées de la plus récemment alimentée à la plus ancienne, ce qui met en avant ce que tu publies en ce moment sans rien avoir à faire. |
+| `minimum` | une playlist de moins de N vidéos est ignorée. Évite qu'un brouillon apparaisse sur le site. |
+
+### Ce que ça a remplacé
+
+Avant, le site devinait le nom du jeu en lisant le titre de chaque vidéo. Deux
+défauts : un titre renommé cassait le rangement, et la grille était triée du
+plus récent au plus ancien — un visiteur tombait sur l'épisode 32 avant
+l'épisode 1. Une playlist ne se renomme pas et porte l'ordre voulu.
+
+---
+
 ## Voir le site sur ton PC avant publication
 
 ```bash
@@ -284,6 +329,7 @@ assets/css/style.css          toute la mise en forme
 assets/js/main.js             affichage des données + effets
 assets/img/                   ← tes visuels (remplace les fichiers, garde les noms)
 data/planning.json            ← ton planning de jeu
+data/series.json              ← réglages des Chroniques (exclusions, noms, ordre)
 data/forge.json               ← ta configuration, tes réglages et tes liens d'achat
 data/contact.json             ← ton adresse de contact et les textes du formulaire
 data/chaine.json              ← tes heures de visionnage (relevées à la main)

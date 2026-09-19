@@ -36,7 +36,7 @@
      de style et le script des qu'ils changent. Sans lui, un visiteur garde
      l'ancienne version jusqu'a 10 minutes, voire plus. Il est mis a jour a
      chaque livraison. -->
-<link rel="stylesheet" href="assets/css/style.css?v=2026-09-19b">
+<link rel="stylesheet" href="assets/css/style.css?v=2026-09-19c">
 <!-- Icone d'onglet : remplace assets/img/logo.png par ton logo, rien d'autre a faire. -->
 <link rel="icon" type="image/png" href="assets/img/logo.png">
 <link rel="apple-touch-icon" href="assets/img/logo.png">
@@ -194,11 +194,18 @@
         <h2 class="section-titre">Chroniques</h2>
         <svg class="filet" viewBox="0 0 400 12" aria-hidden="true"><path d="M160 6 H0" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M200 6 H400" stroke="url(#degrade-or-h)" stroke-width="1.6" pathLength="100" class="filet-trait"/><path d="M180 1 L186 6 L180 11 L174 6 Z" fill="#c8a34a" class="filet-gemme"/></svg>
       </header>
-      <div class="filtres" id="filtres" role="group" aria-label="Filtrer par jeu" data-apparition></div>
-      <div class="grille-videos" id="grille-videos">
-        <div class="squelette"></div><div class="squelette"></div><div class="squelette"></div>
+      <div class="coffres" id="coffres" role="tablist" aria-label="Séries" data-apparition>
+        <div class="squelette squelette--coffre"></div><div class="squelette squelette--coffre"></div>
+        <div class="squelette squelette--coffre"></div><div class="squelette squelette--coffre"></div>
       </div>
-      <div class="centrer"><button class="bouton bouton--fantome" id="plus-videos" hidden>Dérouler le parchemin</button></div>
+      <div class="deplie" id="deplie" hidden>
+        <div class="deplie-entete">
+          <h3 class="deplie-titre" id="deplie-titre"></h3>
+          <a class="deplie-lien" id="deplie-lien" target="_blank" rel="noopener" hidden>Ouvrir la playlist</a>
+        </div>
+        <div class="grille-videos" id="grille-videos"></div>
+        <div class="centrer"><button class="bouton bouton--fantome" id="plus-videos" hidden>Dérouler le parchemin</button></div>
+      </div>
     </div>
   </section>
 
@@ -326,6 +333,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=2026-09-19b"></script>
+<script src="assets/js/main.js?v=2026-09-19c"></script>
 </body>
 </html>

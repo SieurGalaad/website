@@ -1,0 +1,26 @@
+{
+  "_lisez_moi": [
+    "Pilotage de la section Chroniques du site.",
+    "Les series affichees sont tes playlists YouTube PUBLIQUES, dans l'ordre de la playlist.",
+    "Une video sans playlist n'apparait que dans le coffre 'Autres chroniques'.",
+    "Donc : une playlist par jeu, sinon la video se retrouve au fond du sac.",
+    "",
+    "exclure : une playlist est ecartee si son titre contient un de ces mots.",
+    "noms    : titre YouTube exact -> nom court affiche sur le site.",
+    "          (sans entree ici, le site nettoie tout seul : il retire [VF] et",
+    "           tout ce qui suit la barre verticale)",
+    "ordre   : noms courts a epingler en tete, dans cet ordre. Les autres suivent,",
+    "          de la serie la plus recemment alimentee a la plus ancienne.",
+    "minimum : une playlist de moins de N videos est ignoree (evite les brouillons)."
+  ],
+
+  "exclure": ["shorts"],
+
+  "noms": {
+    "4K 60FPS Ultra — Showcases": "Showcases"
+  },
+
+  "ordre": [],
+
+  "minimum": 2
+}
