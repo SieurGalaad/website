@@ -1,68 +1,72 @@
-SIEURGALAAD — MISE A JOUR DU 19/09/2026 (version 2026-09-19b)
-==============================================================
+SIEURGALAAD — APERCU AU PARTAGE (19/09/2026)
+=============================================
 
-CE QUE CORRIGE CE PAQUET
-------------------------
-1. L'aura doree au centre de la page d'accueil etait trop forte.
-   Elle passe de 24 % a 9 % d'intensite et s'etale plus large, pour
-   qu'elle ne dessine plus un rond visible autour du titre. La lueur
-   propre au mot GALAAD est reduite dans la meme proportion.
+CE QUE CA FAIT
+--------------
+Quand tu colles l'adresse de ton site dans un mail, un DM, Discord,
+LinkedIn, WhatsApp ou X, il s'affichait en carte de texte nue.
+Desormais il affiche une image aux couleurs de ta chaine.
 
-2. Les lisers dores sous les titres de section s'ouvrent depuis le
-   losange central au lieu de se tracer depuis la gauche.
-
-3. La croix au centre du lecteur video est remplacee par ton blason,
-   qui s'affiche desormais en couleur.
-
-4. Rappel des correctifs precedents, inclus ici aussi : le decor du
-   heros qui s'arretait au milieu des grands ecrans, et les particules
-   qui ne volaient que dans un carre de 300 x 150 pixels.
+C'est la premiere chose que voit un editeur a qui tu envoies le lien,
+avant meme de cliquer.
 
 
-CE QU'IL Y A DANS CE ZIP
-------------------------
-  index.html              <- a mettre a la RACINE du depot
-  assets/css/style.css    <- a mettre dans assets/css/
-  assets/js/main.js       <- a mettre dans assets/js/
-  assets/img/*.png        <- inchanges, presents pour que la structure soit
-                             complete si tu preferes tout reglisser d'un coup
+DEUX FICHIERS SEULEMENT
+-----------------------
+  index.html                 <- a la RACINE du depot (remplace l'ancien)
+  assets/img/partage.jpg     <- a mettre dans assets/img/ (nouveau fichier)
 
-
-CE QU'IL N'Y A PAS, ET POURQUOI
--------------------------------
-Le dossier "data" n'est PAS dans ce zip, VOLONTAIREMENT.
-
-C'est le robot GitHub Actions qui remplit data/site.json avec tes vraies
-videos, tes abonnes et tes vues. Ma copie locale est vide. Si tu la
-reversais par-dessus la tienne, ton site se retrouverait sans aucune
-video jusqu'a la prochaine execution du robot. Ne touche pas a data.
-
-Le dossier ".github" n'y est pas non plus : il n'a pas change.
+Rien d'autre n'a bouge : ni le CSS, ni le JavaScript, ni le dossier data.
+Le site a exactement la meme apparence qu'avant. Le changement ne se voit
+que hors du site.
 
 
 MARCHE A SUIVRE
 ---------------
 1. Clic droit sur le zip > "Extraire tout".
-2. Ouvre https://github.com/SieurGalaad/website
-3. Bouton "Add file" > "Upload files".
-4. Glisse DANS la page le fichier index.html ET le dossier assets.
-   GitHub garde l'arborescence tout seul et remplace les anciens fichiers.
-5. En bas, bouton vert "Commit changes".
-6. Onglet "Actions" : attends la coche verte (~2 minutes).
-7. Sur le site, recharge avec Ctrl + F5.
+2. https://github.com/SieurGalaad/website > "Add file" > "Upload files".
+3. Glisse index.html ET le dossier assets.
+4. Bouton vert "Commit changes".
+5. Onglet Actions : attends la coche verte (~2 minutes).
 
 
-SI WINDOWS BLOQUE UN FICHIER TELECHARGE
----------------------------------------
-Clic droit dessus > Proprietes > en bas, coche "Debloquer" > OK.
+VERIFIER QUE CA MARCHE
+----------------------
+Les reseaux gardent ces apercus en cache tres longtemps, parfois des
+semaines. Si tu colles ton lien et que tu vois encore l'ancienne carte,
+c'est normal : force la relecture avec ces outils gratuits.
+
+  Facebook / Instagram / WhatsApp
+    developers.facebook.com/tools/debug/
+    (colle l'adresse, puis bouton "Scrape Again")
+
+  LinkedIn
+    linkedin.com/post-inspector/
+
+  X / Twitter
+    cards-dev.twitter.com/validator
+
+  Discord et Slack
+    Pas d'outil. Ils relisent tout seuls au bout de quelques heures.
+    Pour tester tout de suite, ajoute un ?1 a la fin de ton lien :
+    le lien fonctionne pareil mais eux le voient comme une nouvelle page.
 
 
-SI TU VEUX REGLER L'AURA TOI-MEME PLUS TARD
--------------------------------------------
-Dans assets/css/style.css, cherche :  .heros-couche--lueur
-La premiere ligne "radial-gradient" se termine par  rgba(200,163,74,.09)
-Ce dernier nombre est l'intensite de l'aura :
-   .04 = presque invisible
-   .09 = reglage actuel
-   .24 = ancien reglage, celui que tu trouvais trop fort
-Change juste ce nombre, rien d'autre.
+LE JOUR OU TU PRENDS UN NOM DE DOMAINE
+--------------------------------------
+Trois adresses sont ecrites en dur dans index.html, parce que les robots
+des reseaux sociaux ne comprennent PAS les chemins relatifs. Cherche
+"sieurgalaad.github.io" dans le fichier : il apparait 3 fois, dans les
+balises og:url, og:image et twitter:image.
+
+Remplace-les par ton nouveau domaine et refais un tour des outils de
+verification ci-dessus. C'est la seule chose a ne pas oublier lors du
+changement de domaine.
+
+
+SI TU VEUX CHANGER L'IMAGE PLUS TARD
+------------------------------------
+Remplace assets/img/partage.jpg par une autre image de 1200 x 630 px,
+puis incremente le ?v= dans les deux balises qui pointent dessus
+(og:image et twitter:image). Sans ca, les reseaux continueront de servir
+l'ancienne pendant des semaines.
