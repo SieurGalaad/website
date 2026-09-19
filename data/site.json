@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-18T20:50:46.603574Z",
+ "genere_le": "2026-09-19T04:31:34.015917Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -58,7 +58,7 @@
    "miniature": "https://i.ytimg.com/vi/p9fzgenwd8g/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1635,
-   "vues": 8,
+   "vues": 9,
    "jeu": "Le legs d'un héros",
    "short": false
   },
@@ -142,7 +142,7 @@
    "miniature": "https://i.ytimg.com/vi/4MAArbDDw2M/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2097,
-   "vues": 8,
+   "vues": 9,
    "jeu": "Au nom du Père",
    "short": false
   },
@@ -178,7 +178,7 @@
    "miniature": "https://i.ytimg.com/vi/BIP-qY0UJNI/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1699,
-   "vues": 15,
+   "vues": 16,
    "jeu": "Une enquête maculée de pourpre",
    "short": false
   },
@@ -214,7 +214,7 @@
    "miniature": "https://i.ytimg.com/vi/vr-libw8zQ0/maxresdefault.jpg",
    "description": "Resonance: A Plague Tale Legacy (Ep. 11)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1878,
-   "vues": 29,
+   "vues": 30,
    "jeu": "La mort il sema",
    "short": false
   },
@@ -1023,7 +1023,7 @@
    "sortie": "2026-09-28",
    "image": "https://media.rawg.io/media/screenshots/003/003cfd6bb966df4e3e9cd97641c83bfb.jpg",
    "note": null,
-   "popularite": 0,
+   "popularite": 1,
    "genres": [],
    "boutiques": [
     "GOG"
@@ -1084,6 +1084,18 @@
     "Steam"
    ],
    "url": "https://rawg.io/games/gears-of-war-e-day"
+  },
+  {
+   "nom": "Battleplan",
+   "sortie": "2026-10-11",
+   "image": "https://media.rawg.io/media/screenshots/252/252c359a0db2bcf04802bab5e488fe69.jpg",
+   "note": null,
+   "popularite": 0,
+   "genres": [],
+   "boutiques": [
+    "GOG"
+   ],
+   "url": "https://rawg.io/games/battleplan"
   },
   {
    "nom": "Valor Mortis",
@@ -1208,6 +1220,23 @@
    "url": "https://rawg.io/games/ecstatica"
   },
   {
+   "nom": "EmberVille",
+   "sortie": "2026-10-26",
+   "image": "https://media.rawg.io/media/screenshots/a65/a65915e30efd086919dafcb7f79a6b79.jpg",
+   "note": null,
+   "popularite": 2,
+   "genres": [
+    "Indie",
+    "Adventure",
+    "Action"
+   ],
+   "boutiques": [
+    "Steam",
+    "GOG"
+   ],
+   "url": "https://rawg.io/games/emberville"
+  },
+  {
    "nom": "Remothered: Red Nun's Legacy",
    "sortie": "2026-10-26",
    "image": "https://media.rawg.io/media/screenshots/7ea/7ea439920ce17884b49e2e3988f8786a.jpg",
@@ -1231,30 +1260,6 @@
    ],
    "boutiques": [],
    "url": "https://rawg.io/games/phantom-blade-zero"
-  },
-  {
-   "nom": "After the Wane",
-   "sortie": "2026-11-09",
-   "image": "https://media.rawg.io/media/screenshots/836/836e2d2968195f59425b2716f3570e4a.jpg",
-   "note": null,
-   "popularite": 0,
-   "genres": [],
-   "boutiques": [
-    "GOG"
-   ],
-   "url": "https://rawg.io/games/after-the-wane"
-  },
-  {
-   "nom": "Space Station Designer",
-   "sortie": "2026-11-17",
-   "image": "https://media.rawg.io/media/screenshots/53c/53ca443f2fb80f24ecec21d4b21a9f2b.jpg",
-   "note": null,
-   "popularite": 0,
-   "genres": [],
-   "boutiques": [
-    "GOG"
-   ],
-   "url": "https://rawg.io/games/space-station-designer"
   }
  ],
  "planning": [
