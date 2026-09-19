@@ -271,7 +271,16 @@ def youtube_via_api() -> dict:
     series: list[dict] = []
     try:
         reglages = charger_reglages_series()
-        series = youtube_series(reglages)
+        series, exclus = youtube_series(reglages)
+
+        # Les videos d'une playlist ecartee (les Shorts) sont marquees, et le
+        # site les ignore. On ne se fie PAS a la duree pour ca : YouTube accepte
+        # des Shorts jusqu'a 3 minutes, et un Short de 70 s passait donc au
+        # travers du filtre pour atterrir dans « Autres chroniques ».
+        if exclus:
+            for v in videos:
+                if v["id"] in exclus:
+                    v["exclu"] = True
 
         # Une playlist peut contenir une video hors du dernier lot recupere
         # (catalogue plafonne, video tres ancienne). On va chercher les
@@ -434,21 +443,13 @@ def youtube_series(reglages: dict) -> list[dict]:
         if not page:
             break
 
-    series = []
-    for pl in brutes:
-        snippet = pl.get("snippet", {})
-        titre_complet = (snippet.get("title") or "").strip()
-        bas = titre_complet.lower()
-        if any(mot in bas for mot in reglages["exclure"]):
-            log(f"Serie ecartee (regle d'exclusion) : {titre_complet}")
-            continue
-
-        ids = []
+    def contenu_playlist(pid: str) -> list[str]:
+        ids: list[str] = []
         page = ""
         while True:
             url = (
                 f"{base}/playlistItems?part=snippet,contentDetails&maxResults=50"
-                f"&playlistId={pl['id']}&key={YOUTUBE_API_KEY}"
+                f"&playlistId={pid}&key={YOUTUBE_API_KEY}"
             )
             if page:
                 url += f"&pageToken={page}"
@@ -465,6 +466,25 @@ def youtube_series(reglages: dict) -> list[dict]:
             page = lot.get("nextPageToken", "")
             if not page:
                 break
+        return ids
+
+    series = []
+    exclus: set[str] = set()
+    for pl in brutes:
+        snippet = pl.get("snippet", {})
+        titre_complet = (snippet.get("title") or "").strip()
+        bas = titre_complet.lower()
+        if any(mot in bas for mot in reglages["exclure"]):
+            # On lit quand meme son contenu : ces videos doivent disparaitre du
+            # site, pas seulement de leur propre tuile. Sans ca, un Short non
+            # detecte par sa duree atterrit dans « Autres chroniques ».
+            membres = contenu_playlist(pl["id"])
+            exclus.update(membres)
+            log(f"Serie ecartee (regle d'exclusion) : {titre_complet} "
+                f"-> {len(membres)} video(s) retirees du site")
+            continue
+
+        ids = contenu_playlist(pl["id"])
 
         if len(ids) < reglages["minimum"]:
             log(f"Serie ignoree ({len(ids)} video(s), minimum {reglages['minimum']}) : {titre_complet}")
@@ -497,7 +517,7 @@ def youtube_series(reglages: dict) -> list[dict]:
         )
 
     log(f"YouTube (playlists) : {len(series)} serie(s) retenue(s) sur {len(brutes)} playlist(s)")
-    return series
+    return series, exclus
 
 
 def ordonner_series(series: list[dict], reglages: dict, dates: dict[str, str]) -> list[dict]:
@@ -897,7 +917,10 @@ def main() -> int:
     # tombe dans le coffre "Autres chroniques". On le signale pour que ca ne
     # passe pas inapercu -- c'est le seul entretien que demande la section.
     dans_series = {v for s in site["series"] for v in s.get("videos", [])}
-    orphelines = [v for v in site["videos"] if not v.get("short") and v["id"] not in dans_series]
+    orphelines = [
+        v for v in site["videos"]
+        if not v.get("short") and not v.get("exclu") and v["id"] not in dans_series
+    ]
     if site["series"] and orphelines:
         log(f"{len(orphelines)} video(s) sans playlist -> coffre 'Autres chroniques' :")
         for v in orphelines[:10]:

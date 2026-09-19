@@ -137,9 +137,15 @@
     }
   }
 
+  /* Ce qui a droit de cité sur le site : ni les Shorts (détectés par leur
+     durée), ni les vidéos d'une playlist écartée dans data/series.json.
+     Les deux critères sont nécessaires : YouTube accepte des Shorts jusqu'à
+     3 minutes, donc la durée seule en laisse passer. */
+  const surLeSite = (v) => !v.short && !v.exclu;
+
   function rendreAffiche(donnees) {
     const cible = $("#affiche-grille");
-    const video = (donnees.videos || []).find((v) => !v.short) || (donnees.videos || [])[0];
+    const video = (donnees.videos || []).find(surLeSite) || (donnees.videos || [])[0];
     if (!video) {
       cible.innerHTML = `<p class="etat-vide">Aucune vidéo à afficher pour le moment.</p>`;
       return;
@@ -277,17 +283,21 @@
     return texte ? `<span class="etiquette">${echapper(texte)}</span>` : "";
   }
 
-  function ouvrirSerie(id, deplacer) {
+  /* Un clic sur le coffre déjà ouvert le referme. La section revient alors à
+     son état de départ : rien que les tuiles. */
+  function basculerSerie(id) {
     if (!series.some((s) => s.id === id)) return;
-    serieActive = id;
+    const fermeture = id === serieActive;
+    serieActive = fermeture ? null : id;
     nbAffichees = PAS_EPISODES;
     rendreCoffres();
     rendreVideos();
-    if (deplacer) {
-      const cible = $("#deplie");
-      const haut = cible.getBoundingClientRect().top + window.scrollY - 90;
-      window.scrollTo({ top: haut, behavior: moinsDeMouvement ? "auto" : "smooth" });
-    }
+    if (fermeture) return;
+
+    // On amène le bloc déplié sous les yeux : il s'ouvre en dessous des tuiles,
+    // et sur un grand écran il peut naître hors du champ de vision.
+    const haut = $("#deplie").getBoundingClientRect().top + window.scrollY - 90;
+    window.scrollTo({ top: haut, behavior: moinsDeMouvement ? "auto" : "smooth" });
   }
 
   function rendreVideos() {
@@ -331,16 +341,15 @@
 
   function brancherChroniques(donnees) {
     series = construireSeries(donnees);
-    // La première série s'ouvre d'emblée : une section qui ne montre que des
-    // tuiles closes oblige à cliquer pour savoir ce qu'il y a dedans, et un
-    // visiteur pressé — un studio, par exemple — ne clique pas.
-    serieActive = series.length ? series[0].id : null;
+    // Tous les coffres fermés au départ : c'est le choix de Charlie, la section
+    // ne montre que les tuiles tant qu'on n'a rien demandé.
+    serieActive = null;
     rendreCoffres();
     rendreVideos();
 
     $("#coffres").addEventListener("click", (e) => {
       const bouton = e.target.closest(".coffre");
-      if (bouton) ouvrirSerie(bouton.dataset.serie, true);
+      if (bouton) basculerSerie(bouton.dataset.serie);
     });
     $("#plus-videos").addEventListener("click", () => {
       nbAffichees += PAS_EPISODES;
@@ -819,7 +828,7 @@
       return;
     }
 
-    toutesLesVideos = (donnees.videos || []).filter((v) => !v.short);
+    toutesLesVideos = (donnees.videos || []).filter(surLeSite);
     rendreEnTete(donnees);
     rendreAffiche(donnees);
     brancherChroniques(donnees);

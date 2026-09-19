@@ -1,101 +1,107 @@
-SIEURGALAAD — CHRONIQUES PAR PLAYLIST (19/09/2026)
-===================================================
+SIEURGALAAD — CORRECTIF CHRONIQUES (19/09/2026, soir)
+======================================================
 
-CE QUI CHANGE
--------------
-La section Chroniques n'est plus une grille de 70 vignettes triee du plus
-recent au plus ancien. C'est maintenant une tuile par playlist YouTube, et
-les episodes s'affichent DANS L'ORDRE DE LA PLAYLIST : l'episode 1 en
-premier, plus le dernier publie.
+D'ABORD : POURQUOI TU NE VOYAIS AUCUN CHANGEMENT
+-------------------------------------------------
+J'ai regarde ton site et ton depot. Le zip precedent
+("sieurgalaad-coffres-fermes.zip") n'a jamais ete depose sur GitHub.
 
-La premiere serie s'ouvre toute seule au chargement. Tu avais choisi la
-mise en forme B (coffres fermes) : je l'ai faite, avec cette nuance. Une
-section qui ne montre que des tuiles closes oblige a cliquer pour savoir ce
-qu'il y a dedans, et un studio presse ne clique pas. Si tu preferes que
-TOUT soit ferme au depart, dis-le moi : c'est une ligne a changer.
+Preuve : ton dernier envoi de fichiers date de 20h16 UTC et ne contenait
+que la livraison d'avant. Le depot contient encore l'ancien main.js
+(la fonction s'appelle toujours "ouvrirSerie" au lieu de "basculerSerie")
+et l'ancien index.html (version 2026-09-19c au lieu de 19d).
 
-Les anciens boutons de filtre (Tout / The Witcher 3 / ...) ont disparu.
-Ils devinaient le jeu en lisant le titre de la video, ce qui se cassait a
-chaque renommage. Les coffres les remplacent.
+Ce n'est donc ni un probleme de cache, ni un bug : le correctif n'etait
+pas encore en ligne. Rien de grave, mais ca valait le coup de le dire
+plutot que de te faire chercher.
 
-
-LA REGLE A RETENIR
-------------------
-  UNE PLAYLIST PAR JEU. Sans exception.
-
-Une video qui n'est dans aucune playlist tombe dans un coffre de repli
-nomme "Autres chroniques". Elle n'est pas perdue, mais elle n'est pas mise
-en valeur non plus. Prends le reflexe d'ajouter la video a sa playlist au
-moment de la publication.
-
-Rien a ecrire nulle part : tu crees la playlist sur YouTube, elle apparait
-toute seule a la mise a jour suivante (le site se rafraichit toutes les
-6 heures). Le nom est nettoye automatiquement :
-  "[VF] The Witcher 3 | Walkthrough full game - 4K60"  ->  "The Witcher 3"
+Ce zip-ci remplace le precedent. Ne cherche plus l'ancien.
 
 
-DEUX CHOSES A FAIRE DE TON COTE
--------------------------------
-1. Creer la playlist "Premiere heure". Tu m'as dit qu'elle etait melangee
-   dans Showcases : tant qu'elle n'existe pas comme playlist a part, le
-   site ne peut pas l'afficher separement.
+CE QU'IL CORRIGE
+----------------
+1. LA TUILE ALLUMEE ET LE BLOC DES EPISODES AU CHARGEMENT
+   (ce que tu avais entoure en rouge)
 
-2. Verifier qu'aucune video longue ne traine hors playlist. Apres la
-   prochaine mise a jour, onglet Actions du depot, cherche cette ligne :
-     [collecteur] 1 video(s) sans playlist -> coffre 'Autres chroniques' :
-   Elle te donne la liste exacte. Si elle n'apparait pas, tout est range.
+   J'ouvrais la premiere serie automatiquement. C'est supprime.
+   - au chargement : les tuiles, rien d'autre ;
+   - un clic ouvre la serie, la tuile s'allume, le bloc apparait
+     dessous et la page glisse jusqu'a lui ;
+   - un second clic sur la MEME tuile la referme.
 
-La playlist Shorts est volontairement ecartee : tu avais refuse une section
-Shorts sur le site. Pour revenir dessus, retire "shorts" de la liste
-"exclure" dans data/series.json.
+2. UN SHORT QUI SE RETROUVAIT DANS "AUTRES CHRONIQUES"
+   (trouve en inspectant ton site, tu ne me l'avais pas signale)
+
+   "L'eveil de Geralt en 4K Ultra RTX" dure 70 secondes. Le site
+   reconnaissait un Short a sa duree, avec un seuil a 60 secondes --
+   or YouTube accepte des Shorts jusqu'a 3 minutes. Celui-la passait
+   donc au travers et atterrissait dans le coffre de repli.
+
+   Le site ne se fie plus a la duree seule : il lit aussi le contenu
+   de ta playlist Shorts et ecarte tout ce qui s'y trouve. C'est plus
+   sur, parce que c'est TOI qui decides ce qui est un Short, pas un
+   chronometre.
+
+   Consequence pratique : le coffre "Autres chroniques" devrait
+   disparaitre completement de ton site apres la prochaine mise a jour,
+   puisqu'il ne contenait que cette video.
 
 
-LES FICHIERS DU ZIP
--------------------
-  index.html                  <- a la RACINE (remplace l'ancien)
-  assets/css/style.css        <- remplace
-  assets/js/main.js           <- remplace
-  scripts/fetch_data.py       <- remplace
-  data/series.json            <- NOUVEAU fichier
-  data/exemple.json           <- remplace (sert a l'apercu local)
-  README.md                   <- remplace
+TROIS FICHIERS
+--------------
+  index.html              <- a la RACINE (remplace l'ancien)
+  assets/js/main.js       <- remplace
+  scripts/fetch_data.py   <- remplace
 
-Rien d'autre n'a bouge : ni tes images, ni data/planning.json, ni
-data/forge.json, ni data/contact.json, ni data/chaine.json.
+NE PAS toucher au dossier data/ : tu as deja depose series.json, et
+site.json en ligne contient tes vraies videos.
+
+Le index.html ne change que sur un point : le numero de version passe
+de "2026-09-19c" a "2026-09-19d". Sans ca, ton navigateur et le cache
+de GitHub continueraient a servir l'ancien script pendant une dizaine
+de minutes.
 
 
 MARCHE A SUIVRE
 ---------------
 1. Clic droit sur le zip > "Extraire tout".
 2. https://github.com/SieurGalaad/website > "Add file" > "Upload files".
-3. Glisse index.html, README.md ET les dossiers assets, scripts, data.
+3. Glisse index.html ET les dossiers assets et scripts.
 4. Bouton vert "Commit changes".
 5. Onglet Actions : attends la coche verte (~2 minutes).
+6. Sur ton site : Ctrl+F5.
 
-La section restera vide jusqu'a la premiere mise a jour reussie, le temps
-que le collecteur aille lire tes playlists. C'est normal.
+VERIFIER QUE C'EST BIEN PASSE
+-----------------------------
+Sur ton site, F12 > onglet Console, et colle :
 
+  document.querySelector('script[src*="main.js"]').src
 
-REGLAGES : data/series.json
----------------------------
-  exclure   une playlist dont le titre contient un de ces mots est ignoree.
-            "shorts" y est par defaut.
-
-  noms      titre YouTube exact -> nom court affiche. Il y a deja une
-            entree pour "4K 60FPS Ultra — Showcases" -> "Showcases".
-            ATTENTION : le titre doit etre recopie A L'IDENTIQUE, tiret
-            long compris, sinon la regle ne s'applique pas.
-
-  ordre     noms a epingler en tete. Vide par defaut : les series sont
-            classees de la plus recemment alimentee a la plus ancienne.
-            Ce qui te met automatiquement en avant ce que tu publies en
-            ce moment, sans rien avoir a faire.
-
-  minimum   une playlist de moins de N videos est ignoree (2 par defaut).
-            Evite qu'un brouillon apparaisse sur le site.
+Si ca finit par "v=2026-09-19d", le correctif est en ligne.
+Si ca finit par "v=2026-09-19c", l'envoi n'a pas pris.
 
 
-COUT EN QUOTA YOUTUBE
----------------------
-Environ 6 unites de plus par mise a jour, sur les 10 000 gratuites par
-jour. Autrement dit : rien.
+CE QUE J'AI VU DE BON SUR TON SITE AU PASSAGE
+---------------------------------------------
+Le collecteur tourne correctement sur tes vraies donnees :
+  The Blood of Dawnwalker ........ 26 episodes
+  Resonance : A Plague Tale ...... 19 episodes
+  Showcases ....................... 5 videos
+  The Witcher 3 .................. 18 episodes
+  ------------------------------------------
+  68 episodes ranges, 10 Shorts ecartes, 1 seule video hors playlist
+  (celle du point 2 ci-dessus, qui disparaitra).
+
+Autrement dit : ton rangement par playlist est propre. Il ne manquait
+que ces deux corrections.
+
+
+SI TU CHANGES D'AVIS SUR L'OUVERTURE AUTOMATIQUE
+------------------------------------------------
+Dans assets/js/main.js, fonction brancherChroniques(), remplace :
+
+    serieActive = null;
+
+par :
+
+    serieActive = series.length ? series[0].id : null;
