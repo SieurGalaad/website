@@ -1,40 +1,51 @@
-SIEURGALAAD — LISERES SYMETRIQUES (19/09/2026)
-===============================================
+SIEURGALAAD — « IMMERSION · VF · 4K60 ULTRA » (21/09/2026)
+===========================================================
 
-LE DEFAUT QUE TU AS REPERE
---------------------------
-Tu avais raison, et c'est mesurable. Le dessin du lisere va de 0 a 400
-en unites internes, donc son centre est a 200. Or :
-
-  trait gauche  : de 160 a 0     -> longueur 160
-  trait droit   : de 200 a 400   -> longueur 200
-  losange       : pose a 180, au lieu de 200
-
-Le bras gauche etait donc 20 % plus court que le droit, et l'ensemble
-decale de 20 unites vers la gauche. A l'ecran ca faisait 18 px d'ecart
-sur les 324 px du lisere.
-
-C'est une erreur que j'ai introduite en coupant le trait en deux pour
-qu'il s'ouvre depuis le centre. Je n'avais verifie que le SENS de
-l'animation, pas les LONGUEURS.
-
-Corrige :
-
-  trait gauche  : de 180 a 0     -> longueur 180
-  trait droit   : de 220 a 400   -> longueur 180
-  losange       : a 200, le vrai centre
-
-Mesure apres correction, sur les six liseres du site :
-  gauche = 162 px, droit = 162 px, ecart = 0, losange au centre exact.
+CE ZIP REMPLACE TOUS LES PRECEDENTS.
+Si tu n'as encore rien depose depuis hier, prends uniquement celui-ci :
+il contient l'ensemble des corrections.
 
 
-PENDANT QUE J'Y ETAIS
----------------------
-La meme asymetrie etait figee dans ton image de partage
-(assets/img/partage.jpg), celle qui s'affiche quand tu colles ton lien
-dans un mail ou sur Discord. Je l'ai refaite avec le lisere corrige.
-Tout est recentre au pixel : blason, nom, lisere, accroche et losange
-tombent tous exactement a 600 sur une carte de 1200 de large.
+CE QU'IL CONTIENT
+-----------------
+1. « Sans commentaire » retire partout, remplace par
+   « Immersion · VF · 4K60 Ultra ».
+
+   Huit endroits, dont trois invisibles a l'oeil mais qui comptent :
+     - la description affichee par Google sous ton titre
+     - la description des apercus de lien (og:description)
+     - le texte alternatif de l'image de partage
+     - l'accroche du heros
+     - la note du pied de page
+     - l'image de partage elle-meme
+     - les donnees de demonstration
+
+   La phrase « L'image, le son du jeu, et rien entre les deux » a saute :
+   elle decrivait explicitement l'absence de commentaire.
+
+2. Les liseres rendus symetriques (le bras gauche faisait 160 contre 200
+   a droite, et le losange etait pose a 180 au lieu de 200).
+
+3. La ruine posee sur la crete au lieu de flotter.
+
+
+OU LE TRIPLET APPARAIT
+----------------------
+  Banniere YouTube (fichier separe)
+    IMMERSION · VF · 4K60 ULTRA, en dore sous ton nom
+
+  Carte de partage
+    IMMERSION · VF · 4K60 ULTRA sous ton nom
+    WALKTHROUGHS INTEGRAUX · RTX 5080 en bas
+    (la ligne du bas a change pour ne pas repeter VF et 4K60,
+     desormais portes par le triplet)
+
+  Site, accroche du heros
+    « Des aventures jouees d'un bout a l'autre, en version francaise et
+      commentees. Tout est regle pour une seule chose : l'immersion. »
+
+  Site, pied de page
+    « Immersion · VF · 4K60 Ultra — walkthroughs complets, commentes. »
 
 
 DEUX FICHIERS
@@ -42,46 +53,39 @@ DEUX FICHIERS
   index.html               <- a la RACINE (remplace l'ancien)
   assets/img/partage.jpg   <- remplace
 
-Le CSS, le JavaScript et le collecteur ne bougent pas cette fois :
-les liseres sont dessines directement dans index.html.
-
 NE PAS toucher au dossier data/.
-
-Les numeros de version passent a "2026-09-19e" (c'etait "d"). C'est ce
-qui force ton navigateur et le cache de GitHub a relire les fichiers.
+Versions : "2026-09-21c".
 
 
 MARCHE A SUIVRE
 ---------------
 1. Clic droit sur le zip > "Extraire tout".
 2. Ouvre le dossier extrait. IMPORTANT : entre DEDANS.
-3. https://github.com/SieurGalaad/website > "Add file" > "Upload files".
+3. github.com/SieurGalaad/website > "Add file" > "Upload files".
 4. Glisse index.html ET le dossier assets.
-   (Si tu glisses le dossier extrait lui-meme, GitHub recree un
-    sous-dossier a son nom et le site n'est pas modifie. C'est le piege
-    le plus courant.)
-5. Bouton vert "Commit changes".
-6. Onglet Actions : attends la coche verte (~2 minutes).
-7. Sur ton site : Ctrl+F5.
+   (Glisser le dossier extrait lui-meme cree un sous-dossier et ne change
+    rien au site. C'est le piege le plus courant.)
+5. "Commit changes", puis onglet Actions, coche verte (~2 min).
+6. Ctrl+F5 sur ton site.
 
-
-VERIFIER EN DEUX SECONDES
--------------------------
-Sur ton site, F12 > onglet Console, colle :
-
+Verification : F12 > Console >
   document.querySelector('link[href*="style.css"]').href
+doit finir par "v=2026-09-21c".
 
-Si ca finit par "v=2026-09-19e", c'est en ligne.
+
+L'IMAGE DE PARTAGE MET DU TEMPS A CHANGER
+------------------------------------------
+Facebook et LinkedIn gardent ces apercus en cache des semaines. Pour
+forcer : developers.facebook.com/tools/debug ("Scrape Again"),
+linkedin.com/post-inspector. Discord et Slack relisent seuls.
 
 
-L'IMAGE DE PARTAGE MET DU TEMPS A SE METTRE A JOUR
---------------------------------------------------
-Facebook, LinkedIn et X gardent ces apercus en cache des semaines. Le
-"?v=2026-09-19e" leur dit que l'image a change, mais pour forcer tout
-de suite :
+CE QUI PORTE ENCORE « SANS COMMENTAIRE » ET QUE JE NE PEUX PAS TOUCHER
+----------------------------------------------------------------------
+  - les titres et descriptions de tes 79 videos
+  - la description de ta chaine YouTube  <- la plus urgente
+  - tes modeles de miniatures Canva, si la mention y figure
+  - le PDF 4K de ta DA et les planches du canvas
 
-  developers.facebook.com/tools/debug  ("Scrape Again")
-  linkedin.com/post-inspector
-  cards-dev.twitter.com/validator
-
-Discord et Slack relisent seuls au bout de quelques heures.
+Les trois premiers sont a faire dans YouTube Studio. Pour le dernier,
+dis-moi quand tu veux que je le refasse.
