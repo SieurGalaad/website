@@ -1,99 +1,75 @@
-SIEURGALAAD — « IMMERSION · VF · 4K60 ULTRA » (21/09/2026)
-===========================================================
+SIEURGALAAD — CONTROLE AVANT PUBLICATION (21/09/2026)
+======================================================
 
 CE ZIP REMPLACE TOUS LES PRECEDENTS.
-Si tu n'as encore rien depose depuis hier, prends uniquement celui-ci :
-il contient l'ensemble des corrections.
+
+CE QU'IL AJOUTE
+---------------
+Un script qui verifie le site AVANT qu'il parte, pour que tu n'aies plus a
+reperer les defauts a ma place.
+
+  python3 scripts/verifier_site.py
+
+Onze controles, chacun ne d'une erreur reellement commise cette semaine sur
+ton site. Le script ouvre un vrai navigateur, charge la page a 390, 768,
+1440, 1920 et 2560 px, et sort en erreur si quelque chose cloche.
+
+  - les calques du decor font bien la largeur de la fenetre
+      (19/09 : le paysage s'arretait a 62 % de l'ecran)
+  - les six liseres sont symetriques
+      (19/09 : bras gauche 160 contre 200 a droite)
+  - la ruine est posee sur la crete
+      (21/09 : elle flottait 71 px en l'air)
+  - le texte des blocs centres l'est vraiment
+      (21/09 : le triplet decale de 133 px)
+  - les estampilles de version sont coherentes
+      (21/09 : « rien n'a change » alors que tout etait en ligne)
+  - la signature est identique partout
+      (21/09 : le surtitre ne disait pas la meme chose que la banniere)
+  - aucune mention abandonnee ne traine
+  - pas de debordement horizontal, pas d'erreur JavaScript
+
+ET LE VERIFICATEUR, QUI LE VERIFIE ?
+------------------------------------
+  python3 scripts/prouver_verifieur.py
+
+Il recopie le depot, y reinjecte les huit pannes une par une, et exige que
+le controle ECHOUE a chaque fois. Un test qui ne sait pas echouer ne
+protege de rien.
+
+C'est d'ailleurs ce test qui a revele que ma premiere version ne voyait
+qu'un calque trop etroit, jamais trop large — la moitie des cas m'echappait
+encore.
+
+TU N'AS RIEN A LANCER.
+C'est moi qui passe ces controles avant chaque livraison. Les fichiers sont
+dans le depot pour que ca reste vrai meme dans six mois.
 
 
-CE QU'IL CONTIENT
------------------
-1. « Sans commentaire » retire partout, remplace par
-   « Immersion · VF · 4K60 Ultra ».
-
-   Huit endroits, dont trois invisibles a l'oeil mais qui comptent :
-     - la description affichee par Google sous ton titre
-     - la description des apercus de lien (og:description)
-     - le texte alternatif de l'image de partage
-     - l'accroche du heros
-     - la note du pied de page
-     - l'image de partage elle-meme
-     - les donnees de demonstration
-
-   La phrase « L'image, le son du jeu, et rien entre les deux » a saute :
-   elle decrivait explicitement l'absence de commentaire.
-
-2. Les liseres rendus symetriques (le bras gauche faisait 160 contre 200
-   a droite, et le losange etait pose a 180 au lieu de 200).
-
-3. La ruine posee sur la crete au lieu de flotter.
-
-
-OU LE TRIPLET APPARAIT
+CE QU'IL CORRIGE AUSSI
 ----------------------
-  Banniere YouTube (fichier separe)
-    IMMERSION · VF · 4K60 ULTRA, en dore sous ton nom
-
-  Carte de partage
-    IMMERSION · VF · 4K60 ULTRA sous ton nom
-    WALKTHROUGHS INTEGRAUX · RTX 5080 en bas
-    (la ligne du bas a change pour ne pas repeter VF et 4K60,
-     desormais portes par le triplet)
-
-  Site, ligne au-dessus du nom (le surtitre)
-    IMMERSION · VF · 4K60 ULTRA
-    Elle disait « Chaine de walkthroughs · 4K60 Ultra · RTX 5080 ». Je
-    l'avais laissee parce qu'elle portait le materiel ; c'etait une erreur,
-    c'est la ligne qu'un visiteur venu de la banniere reconnait en premier.
-    Elle doit correspondre au mot pres. Le RTX 5080 reste detaille dans
-    La Forge.
-
-  Site, accroche du heros
-    « Des aventures jouees d'un bout a l'autre, en version francaise et
-      commentees. Tout est regle pour une seule chose : l'immersion. »
-
-  Site, pied de page
-    « Immersion · VF · 4K60 Ultra — walkthroughs complets, commentes. »
+Tout ce qui avait ete livre ce matin, reuni : liseres symetriques, ruine
+posee, « Immersion · VF · 4K60 Ultra » partout y compris le surtitre.
 
 
-DEUX FICHIERS
--------------
-  index.html               <- a la RACINE (remplace l'ancien)
-  assets/img/partage.jpg   <- remplace
+FICHIERS
+--------
+  index.html                      <- a la RACINE
+  README.md                       <- remplace
+  assets/img/partage.jpg          <- remplace
+  scripts/verifier_site.py        <- NOUVEAU
+  scripts/prouver_verifieur.py    <- NOUVEAU
 
 NE PAS toucher au dossier data/.
-Versions : "2026-09-21d".
+Version : "2026-09-21e".
 
 
 MARCHE A SUIVRE
 ---------------
-1. Clic droit sur le zip > "Extraire tout".
-2. Ouvre le dossier extrait. IMPORTANT : entre DEDANS.
-3. github.com/SieurGalaad/website > "Add file" > "Upload files".
-4. Glisse index.html ET le dossier assets.
-   (Glisser le dossier extrait lui-meme cree un sous-dossier et ne change
-    rien au site. C'est le piege le plus courant.)
-5. "Commit changes", puis onglet Actions, coche verte (~2 min).
-6. Ctrl+F5 sur ton site.
-
-Verification : F12 > Console >
-  document.querySelector('link[href*="style.css"]').href
-doit finir par "v=2026-09-21d".
-
-
-L'IMAGE DE PARTAGE MET DU TEMPS A CHANGER
-------------------------------------------
-Facebook et LinkedIn gardent ces apercus en cache des semaines. Pour
-forcer : developers.facebook.com/tools/debug ("Scrape Again"),
-linkedin.com/post-inspector. Discord et Slack relisent seuls.
-
-
-CE QUI PORTE ENCORE « SANS COMMENTAIRE » ET QUE JE NE PEUX PAS TOUCHER
-----------------------------------------------------------------------
-  - les titres et descriptions de tes 79 videos
-  - la description de ta chaine YouTube  <- la plus urgente
-  - tes modeles de miniatures Canva, si la mention y figure
-  - le PDF 4K de ta DA et les planches du canvas
-
-Les trois premiers sont a faire dans YouTube Studio. Pour le dernier,
-dis-moi quand tu veux que je le refasse.
+1. Extraire le zip, puis ENTRER dans le dossier extrait.
+2. github.com/SieurGalaad/website > "Add file" > "Upload files".
+3. Glisser index.html, README.md ET les dossiers assets et scripts.
+4. "Commit changes", onglet Actions, coche verte.
+5. Ctrl+Shift+R sur ton site (le simple F5 ne suffit pas :
+   le ?v= force le rechargement du CSS et du JS, jamais celui
+   d'index.html, ou vivent tous les textes).

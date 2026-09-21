@@ -262,6 +262,41 @@ l'épisode 1. Une playlist ne se renomme pas et porte l'ordre voulu.
 
 ---
 
+## Vérifier le site avant de publier
+
+```bash
+python3 scripts/verifier_site.py
+```
+
+Onze contrôles, chacun né d'une erreur réellement commise sur ce site — pas
+d'une crainte théorique. Le script lance un vrai navigateur, charge la page à
+cinq largeurs (390, 768, 1440, 1920 et 2560 px), et sort en erreur si quelque
+chose cloche. Il ne modifie rien.
+
+| Contrôle | L'erreur dont il vient |
+|---|---|
+| Calques du décor à la largeur de la fenêtre | 19/09 : le paysage s'arrêtait à 62 % de l'écran. Un `<svg>` en position absolue ne s'étire pas sans `width` explicite. |
+| Liserés symétriques | 19/09 : le bras gauche faisait 160 contre 200 à droite, losange décalé de 20. |
+| Ruine posée sur la crête | 21/09 : elle flottait 71 px en l'air sur la bannière. |
+| Texte centré dans les blocs centrés | 21/09 : le triplet était décalé de 133 px. Mesuré sur les **glyphes**, pas sur la boîte — en colonne flex, la boîte paraît toujours centrée. |
+| Estampilles de version cohérentes | 21/09 : « rien n'a changé » alors que tout était en ligne. |
+| Signature identique partout | 21/09 : le surtitre du site ne disait pas la même chose que la bannière. |
+| Mentions abandonnées absentes | pour qu'un ancien slogan ne survive pas dans un coin. |
+| Pas de débordement horizontal, pas d'erreur JavaScript | filets généraux. |
+
+### Et le vérificateur, qui le vérifie ?
+
+```bash
+python3 scripts/prouver_verifieur.py
+```
+
+Celui-ci recopie le dépôt, y réinjecte les huit pannes ci-dessus une par une, et
+exige que `verifier_site.py` **échoue** à chaque fois. Un contrôle qui ne sait
+pas échouer ne protège de rien : c'est ce test-là qui a révélé que la version
+initiale ne voyait qu'un calque trop étroit, jamais trop large.
+
+---
+
 ## Voir le site sur ton PC avant publication
 
 ```bash
@@ -336,5 +371,7 @@ data/chaine.json              ← tes heures de visionnage (relevées à la main
 data/site.json                généré par le robot, ne pas éditer à la main
 data/exemple.json             données fictives pour l'aperçu local
 scripts/fetch_data.py         le collecteur (Python, sans dépendance)
+scripts/verifier_site.py      contrôle avant publication
+scripts/prouver_verifieur.py  vérifie que le contrôle sait échouer
 .github/workflows/update.yml  la planification et la publication
 ```
