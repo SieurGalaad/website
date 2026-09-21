@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-21T04:48:32.266460Z",
+ "genere_le": "2026-09-21T08:33:28.580974Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -22,7 +22,7 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 553,
+   "vues": 590,
    "jeu": "Le passé tragique de Lacra dévoilé !",
    "short": true,
    "exclu": true
@@ -438,7 +438,7 @@
    "miniature": "https://i.ytimg.com/vi/589fGroJ910/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2073,
-   "vues": 9,
+   "vues": 10,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1482,7 +1482,7 @@
    "sortie": "2026-10-01",
    "image": "https://media.rawg.io/media/games/9b7/9b755942f5c8006891c20e50095dae09.jpg",
    "note": null,
-   "popularite": 34,
+   "popularite": 35,
    "genres": [
     "Adventure",
     "Action"
