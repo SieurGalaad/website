@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-21T09:41:37.052046Z",
+ "genere_le": "2026-09-21T10:06:16.681953Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -8,12 +8,27 @@
   "reddit": "",
   "description": "Hello ! Moi c'est Sieur Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion visuelle, le tout sans commentaire.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique ultime des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la d",
   "abonnes": 12,
-  "nb_videos": 82,
+  "nb_videos": 83,
   "vues_totales": 12708,
   "heures_visionnees": 0.0,
   "heures_maj": ""
  },
  "videos": [
+  {
+   "id": "o6tBdc8YRVU",
+   "titre": "[VF] Ce qui subsiste — Resonance : A Plague Tale Legacy | Walkthrough 21 | 4K60 Ultra PC",
+   "url": "https://www.youtube.com/watch?v=o6tBdc8YRVU",
+   "publie": "2026-09-21T10:00:39Z",
+   "miniature": "https://i.ytimg.com/vi/o6tBdc8YRVU/maxresdefault.jpg",
+   "description": "Resonance: A Plague Tale Legacy (Ep. 21 FIN)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série i",
+   "duree_s": 1388,
+   "vues": 1,
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 21
+  },
   {
    "id": "XIPcNhHSJ8c",
    "titre": "Le passé tragique de Lacra dévoilé !  #rtx5080 #dawnwalker  #gaming",
@@ -22,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 590,
+   "vues": 615,
    "jeu": "Le passé tragique de Lacra dévoilé !",
    "short": true,
    "exclu": true
@@ -1223,6 +1238,39 @@
  ],
  "series": [
   {
+   "id": "PLKNKejoIs3Uc",
+   "titre": "Resonance : A Plague Tale Legacy",
+   "titre_complet": "[VF] Resonance : A Plague Tale Legacy | Walkthrough full game | 4K60 Ultra PC",
+   "sous_titre": "Walkthrough intégral",
+   "numerote": true,
+   "url": "https://www.youtube.com/playlist?list=PLKNKejoIs3Uc",
+   "miniature": "https://i.ytimg.com/vi/auUMiYnBlU4/maxresdefault.jpg",
+   "nb": 21,
+   "videos": [
+    "auUMiYnBlU4",
+    "6RbsKUUL3f8",
+    "EhSC8YXPVqY",
+    "wqMi8NgtGIg",
+    "bbv15Es1-w8",
+    "xjKWYNA7OOc",
+    "913N0DmZhr0",
+    "0WIhSDrl2UI",
+    "l3BOStfNn08",
+    "4gGHxf9Bczc",
+    "vr-libw8zQ0",
+    "QSZn7Ht6AdM",
+    "AdWdOu3eu-w",
+    "wzON7zLyd1I",
+    "TGt2DWBfGR4",
+    "h_B7-ZZGrek",
+    "lnWLTdBo2LI",
+    "6JZNS9FRiYk",
+    "lWtSl9dOndI",
+    "-WIZDSRzUFI",
+    "o6tBdc8YRVU"
+   ]
+  },
+  {
    "id": "PLPkHE1QHMYrY",
    "titre": "The Blood of Dawnwalker",
    "titre_complet": "[VF] The Blood of Dawnwalker | Walkthrough full game | 4K60 Ultra PC",
@@ -1259,38 +1307,6 @@
     "hMByPAzMJcQ",
     "d3y4bGCuduc",
     "zx93-pAmwqQ"
-   ]
-  },
-  {
-   "id": "PLKNKejoIs3Uc",
-   "titre": "Resonance : A Plague Tale Legacy",
-   "titre_complet": "[VF] Resonance : A Plague Tale Legacy | Walkthrough full game | 4K60 Ultra PC",
-   "sous_titre": "Walkthrough intégral",
-   "numerote": true,
-   "url": "https://www.youtube.com/playlist?list=PLKNKejoIs3Uc",
-   "miniature": "https://i.ytimg.com/vi/auUMiYnBlU4/maxresdefault.jpg",
-   "nb": 20,
-   "videos": [
-    "auUMiYnBlU4",
-    "6RbsKUUL3f8",
-    "EhSC8YXPVqY",
-    "wqMi8NgtGIg",
-    "bbv15Es1-w8",
-    "xjKWYNA7OOc",
-    "913N0DmZhr0",
-    "0WIhSDrl2UI",
-    "l3BOStfNn08",
-    "4gGHxf9Bczc",
-    "vr-libw8zQ0",
-    "QSZn7Ht6AdM",
-    "AdWdOu3eu-w",
-    "wzON7zLyd1I",
-    "TGt2DWBfGR4",
-    "h_B7-ZZGrek",
-    "lnWLTdBo2LI",
-    "6JZNS9FRiYk",
-    "lWtSl9dOndI",
-    "-WIZDSRzUFI"
    ]
   },
   {
