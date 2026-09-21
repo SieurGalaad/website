@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-21T10:06:16.681953Z",
+ "genere_le": "2026-09-21T12:41:06.631928Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -8,7 +8,7 @@
   "reddit": "",
   "description": "Hello ! Moi c'est Sieur Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion visuelle, le tout sans commentaire.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique ultime des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la d",
   "abonnes": 12,
-  "nb_videos": 83,
+  "nb_videos": 82,
   "vues_totales": 12708,
   "heures_visionnees": 0.0,
   "heures_maj": ""
@@ -22,7 +22,7 @@
    "miniature": "https://i.ytimg.com/vi/o6tBdc8YRVU/maxresdefault.jpg",
    "description": "Resonance: A Plague Tale Legacy (Ep. 21 FIN)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série i",
    "duree_s": 1388,
-   "vues": 1,
+   "vues": 3,
    "jeu": "Resonance : A Plague Tale Legacy",
    "short": false,
    "serie": "Resonance : A Plague Tale Legacy",
@@ -37,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 615,
+   "vues": 617,
    "jeu": "Le passé tragique de Lacra dévoilé !",
    "short": true,
    "exclu": true
@@ -50,7 +50,7 @@
    "miniature": "https://i.ytimg.com/vi/zx93-pAmwqQ/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1693,
-   "vues": 12,
+   "vues": 13,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -80,7 +80,7 @@
    "miniature": "https://i.ytimg.com/vi/d3y4bGCuduc/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1779,
-   "vues": 9,
+   "vues": 11,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -273,7 +273,7 @@
    "miniature": "https://i.ytimg.com/vi/gzai3NtT5cs/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2193,
-   "vues": 5,
+   "vues": 6,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1635,6 +1635,22 @@
    "url": "https://rawg.io/games/crimson-desert-charting-the-unknown"
   },
   {
+   "nom": "Mycopunk",
+   "sortie": "2026-10-20",
+   "image": "https://media.rawg.io/media/screenshots/2e0/2e0721ea99ea466968c35ef501985c47.jpg",
+   "note": null,
+   "popularite": 16,
+   "genres": [
+    "Shooter",
+    "Indie",
+    "Action"
+   ],
+   "boutiques": [
+    "Steam"
+   ],
+   "url": "https://rawg.io/games/mycopunk"
+  },
+  {
    "nom": "Stupid Never Dies",
    "sortie": "2026-10-21",
    "image": "https://media.rawg.io/media/games/41c/41c5448f15d06825947791da15489f92.jpg",
@@ -1686,18 +1702,6 @@
     "GOG"
    ],
    "url": "https://rawg.io/games/emberville"
-  },
-  {
-   "nom": "Remothered: Red Nun's Legacy",
-   "sortie": "2026-10-26",
-   "image": "https://media.rawg.io/media/screenshots/7ea/7ea439920ce17884b49e2e3988f8786a.jpg",
-   "note": null,
-   "popularite": 1,
-   "genres": [],
-   "boutiques": [
-    "GOG"
-   ],
-   "url": "https://rawg.io/games/remothered-red-nuns-legacy"
   }
  ],
  "planning": [
