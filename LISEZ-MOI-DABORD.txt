@@ -40,6 +40,14 @@ OU LE TRIPLET APPARAIT
     (la ligne du bas a change pour ne pas repeter VF et 4K60,
      desormais portes par le triplet)
 
+  Site, ligne au-dessus du nom (le surtitre)
+    IMMERSION · VF · 4K60 ULTRA
+    Elle disait « Chaine de walkthroughs · 4K60 Ultra · RTX 5080 ». Je
+    l'avais laissee parce qu'elle portait le materiel ; c'etait une erreur,
+    c'est la ligne qu'un visiteur venu de la banniere reconnait en premier.
+    Elle doit correspondre au mot pres. Le RTX 5080 reste detaille dans
+    La Forge.
+
   Site, accroche du heros
     « Des aventures jouees d'un bout a l'autre, en version francaise et
       commentees. Tout est regle pour une seule chose : l'immersion. »
@@ -54,7 +62,7 @@ DEUX FICHIERS
   assets/img/partage.jpg   <- remplace
 
 NE PAS toucher au dossier data/.
-Versions : "2026-09-21c".
+Versions : "2026-09-21d".
 
 
 MARCHE A SUIVRE
@@ -70,7 +78,7 @@ MARCHE A SUIVRE
 
 Verification : F12 > Console >
   document.querySelector('link[href*="style.css"]').href
-doit finir par "v=2026-09-21c".
+doit finir par "v=2026-09-21d".
 
 
 L'IMAGE DE PARTAGE MET DU TEMPS A CHANGER
