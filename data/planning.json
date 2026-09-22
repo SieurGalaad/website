@@ -4,50 +4,58 @@
     {
       "jeu": "The Witcher 3: Wild Hunt",
       "debut": "2026-09-21",
-      "fin": "2026-09-28",
+      "fin": "2026-10-30",
       "statut": "en_cours",
-      "episodes": "Ep. 12-16",
-      "note": "Fin de la campagne principale avant la bascule sur le Remastered."
+      "episodes": "L'histoire principale",
+      "note": "Fin de la campagne principale avec 191 mods, avant la bascule sur le Remastered."
     },
     {
-      "jeu": "The Witcher 3: Wild Hunt",
-      "debut": "2026-09-29",
-      "fin": "2026-10-12",
-      "statut": "prevu",
-      "episodes": "Ep. 1-8",
-      "note": "Remastered, captation day-1. Priorite absolue : pic de recherche le jour de la sortie."
-    },
-    {
-      "jeu": "Gears of War: E-Day",
-      "debut": "2026-10-06",
-      "fin": "2026-10-19",
-      "statut": "prevu",
-      "episodes": "Ep. 1-6",
-      "note": "Sortie le 06/10. Les 60 premieres minutes en ligne sous 24 h."
-    },
-    {
-      "jeu": "Phantom Blade Zero",
-      "debut": "2026-10-29",
-      "fin": "2026-11-15",
-      "statut": "prevu",
-      "episodes": "Ep. 1-10",
-      "note": "Vitrine technique ideale pour la RTX 5080."
+      "jeu": "1666 : Amsterdam",
+      "debut": "2026-09-23",
+      "fin": "2026-09-24",
+      "statut": "en_cours",
+      "episodes": "La première heure",
+      "note": "Découverte de la pépite du papa d'Assassin's Creed"
     },
     {
       "jeu": "The Blood of Dawnwalker",
-      "debut": "2026-11-16",
-      "fin": "2026-11-30",
-      "statut": "envisage",
-      "episodes": "a definir",
-      "note": "Dark fantasy, parfaitement aligne avec l'identite de la chaine."
+      "debut": "2026-09-04",
+      "fin": "2026-09-30",
+      "statut": "en_cours",
+      "episodes": "La totale",
+      "note": "The Witcher des carpates ?"
     },
     {
-      "jeu": "Fable",
-      "debut": "2027-02-23",
-      "fin": "2027-03-15",
-      "statut": "envisage",
-      "episodes": "a definir",
-      "note": "Sortie annoncee au 23/02/2027. A confirmer."
+      "jeu": "Gears of War: E-Day",
+      "debut": "2026-10-01",
+      "fin": "2026-10-10",
+      "statut": "prevu",
+      "episodes": "La totale",
+      "note": "Ca va trancher du Locuste à l'ancienne"
+    },
+    {
+      "jeu": "Silent Hill : Townfall",
+      "debut": "2026-10-11",
+      "fin": "2026-10-30",
+      "statut": "prevu",
+      "episodes": "La totale",
+      "note": "Ca va trancher du Locuste à l'ancienne"
+    },
+    {
+      "jeu": "The Witcher 3: Heart of Stone",
+      "debut": "2026-11-01",
+      "fin": "2026-11-31",
+      "statut": "prévu",
+      "episodes": "Ep. 1-8",
+      "note": "Remastered de l'homme au coeur de pierre"
+    },
+    {
+      "jeu": "The Witcher 3: Blood and wine",
+      "debut": "2026-12-01",
+      "fin": "2027-02-01",
+      "statut": "prévu",
+      "episodes": "Ep. 1-8",
+      "note": "Remastered, du meilleur DLC de tous les temps ?"
     }
   ]
 }
