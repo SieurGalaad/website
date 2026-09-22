@@ -1,6 +1,6 @@
 {
   "_lisezmoi": "Chiffres que l'API publique de YouTube ne donne PAS : seul le proprietaire de la chaine y a acces, dans YouTube Studio. A recopier a la main de temps en temps. Laisse 0 pour masquer la case sur le site : mieux vaut rien qu'un chiffre faux.",
   "_ou_trouver": "YouTube Studio > Analyses > Vue d'ensemble > selectionne la periode 'Depuis toujours' > la carte 'Duree de visionnage (heures)'.",
-  "heures_visionnees": 0,
-  "heures_maj": ""
+  "heures_visionnees": 68,
+  "heures_maj": "22/09/2026"
 }
