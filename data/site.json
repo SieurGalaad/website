@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-22T05:04:05.194810Z",
+ "genere_le": "2026-09-22T11:30:55.616208Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Sieur Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion visuelle, le tout sans commentaire.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique ultime des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la d",
   "abonnes": 12,
   "nb_videos": 84,
-  "vues_totales": 13518,
+  "vues_totales": 13637,
   "heures_visionnees": 0.0,
   "heures_maj": ""
  },
@@ -24,7 +24,10 @@
    "duree_s": 2294,
    "vues": 8,
    "jeu": "The Blood of Dawnwalker",
-   "short": false
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 28
   },
   {
    "id": "o6tBdc8YRVU",
@@ -35,8 +38,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 21 FIN)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série i",
    "duree_s": 1388,
    "vues": 4,
-   "jeu": "Ce qui subsiste",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 21
   },
   {
    "id": "XIPcNhHSJ8c",
@@ -46,9 +52,10 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 808,
+   "vues": 839,
    "jeu": "Le passé tragique de Lacra dévoilé !",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "zx93-pAmwqQ",
@@ -58,9 +65,12 @@
    "miniature": "https://i.ytimg.com/vi/zx93-pAmwqQ/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1693,
-   "vues": 15,
+   "vues": 16,
    "jeu": "The Blood of Dawnwalker",
-   "short": false
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 27
   },
   {
    "id": "-WIZDSRzUFI",
@@ -71,8 +81,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 20)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1958,
    "vues": 5,
-   "jeu": "A l'unisson",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 20
   },
   {
    "id": "d3y4bGCuduc",
@@ -83,8 +96,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1779,
    "vues": 12,
-   "jeu": "L'origine du mal",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 26
   },
   {
    "id": "lWtSl9dOndI",
@@ -95,8 +111,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 19)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1763,
    "vues": 9,
-   "jeu": "L'ultime lueur",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 19
   },
   {
    "id": "hMByPAzMJcQ",
@@ -107,8 +126,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1914,
    "vues": 11,
-   "jeu": "Le moine et le Saint",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 25
   },
   {
    "id": "6JZNS9FRiYk",
@@ -119,8 +141,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 18)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1801,
    "vues": 9,
-   "jeu": "Patera",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 18
   },
   {
    "id": "lnWLTdBo2LI",
@@ -131,8 +156,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 17)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1953,
    "vues": 8,
-   "jeu": "Patera",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 17
   },
   {
    "id": "p9fzgenwd8g",
@@ -143,8 +171,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1635,
    "vues": 29,
-   "jeu": "Le legs d'un héros",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 24
   },
   {
    "id": "h_B7-ZZGrek",
@@ -155,8 +186,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 16)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1554,
    "vues": 7,
-   "jeu": "Chemins parallèles",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 16
   },
   {
    "id": "I2pXoEtNfqY",
@@ -167,8 +201,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1835,
    "vues": 19,
-   "jeu": "Au nom du Père",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 23
   },
   {
    "id": "TGt2DWBfGR4",
@@ -179,8 +216,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 15)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1898,
    "vues": 10,
-   "jeu": "Chemins parallèles",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 15
   },
   {
    "id": "0ESeBUQu6lM",
@@ -192,7 +232,8 @@
    "duree_s": 9,
    "vues": 2,
    "jeu": "Coen succombe à la tentation... 🦇",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "r2qd0FTlfJw",
@@ -203,8 +244,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1977,
    "vues": 9,
-   "jeu": "Le cœur a ses raisons",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 22
   },
   {
    "id": "wzON7zLyd1I",
@@ -215,8 +259,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 01)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1427,
    "vues": 9,
-   "jeu": "Quand vient la nuit",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 14
   },
   {
    "id": "4MAArbDDw2M",
@@ -227,8 +274,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2097,
    "vues": 10,
-   "jeu": "Au nom du Père",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 21
   },
   {
    "id": "gzai3NtT5cs",
@@ -238,9 +288,12 @@
    "miniature": "https://i.ytimg.com/vi/gzai3NtT5cs/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2193,
-   "vues": 6,
-   "jeu": "Ruche et nectar",
-   "short": false
+   "vues": 8,
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 20
   },
   {
    "id": "AdWdOu3eu-w",
@@ -251,8 +304,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 13)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1836,
    "vues": 8,
-   "jeu": "Résonance",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 13
   },
   {
    "id": "BIP-qY0UJNI",
@@ -263,8 +319,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1699,
    "vues": 19,
-   "jeu": "Une enquête maculée de pourpre",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 19
   },
   {
    "id": "QSZn7Ht6AdM",
@@ -275,8 +334,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 12)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 2015,
    "vues": 7,
-   "jeu": "La mort il sema",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 12
   },
   {
    "id": "scZs0FB5TPc",
@@ -288,7 +350,10 @@
    "duree_s": 3379,
    "vues": 8,
    "jeu": "Halo Campaign Evolved",
-   "short": false
+   "short": false,
+   "serie": "Les Premières heures",
+   "serie_id": "PLHMEH3OmTqeE",
+   "episode": 1
   },
   {
    "id": "vr-libw8zQ0",
@@ -299,8 +364,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 11)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1878,
    "vues": 31,
-   "jeu": "La mort il sema",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 11
   },
   {
    "id": "8MV-ynb0OWU",
@@ -311,8 +379,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1871,
    "vues": 6,
-   "jeu": "La mélodie de la montagne",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 18
   },
   {
    "id": "eEJg_RgkeRE",
@@ -323,8 +394,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1872,
    "vues": 14,
-   "jeu": "Association volatile",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 17
   },
   {
    "id": "UMlUNn82rb4",
@@ -336,7 +410,10 @@
    "duree_s": 3732,
    "vues": 18,
    "jeu": "Beast of Reincarnation",
-   "short": false
+   "short": false,
+   "serie": "Les Premières heures",
+   "serie_id": "PLHMEH3OmTqeE",
+   "episode": 2
   },
   {
    "id": "4gGHxf9Bczc",
@@ -347,8 +424,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 10)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1788,
    "vues": 9,
-   "jeu": "Ce qui se terre",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 10
   },
   {
    "id": "o_IFxIjntEw",
@@ -359,8 +439,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1819,
    "vues": 13,
-   "jeu": "Une enquête maculée de pourpre",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 16
   },
   {
    "id": "LohaPzA8Ybs",
@@ -372,7 +455,10 @@
    "duree_s": 4654,
    "vues": 9,
    "jeu": "The Blood of Dawnwalker",
-   "short": false
+   "short": false,
+   "serie": "Les Premières heures",
+   "serie_id": "PLHMEH3OmTqeE",
+   "episode": 3
   },
   {
    "id": "589fGroJ910",
@@ -383,8 +469,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2073,
    "vues": 10,
-   "jeu": "Le moine et le Saint",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 15
   },
   {
    "id": "_4enCoakkTY",
@@ -396,7 +485,8 @@
    "duree_s": 6,
    "vues": 908,
    "jeu": "Coen DÉCOUPE ce monstre ! 🩸",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "l3BOStfNn08",
@@ -407,8 +497,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 09)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1793,
    "vues": 8,
-   "jeu": "Ce qui se terre",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 9
   },
   {
    "id": "14eIXLtsXRw",
@@ -419,8 +512,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1793,
    "vues": 16,
-   "jeu": "Le cœur a ses raisons",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 14
   },
   {
    "id": "c5sI222M9rU",
@@ -431,8 +527,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2286,
    "vues": 7,
-   "jeu": "Echos des cloches muettes",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 13
   },
   {
    "id": "0WIhSDrl2UI",
@@ -443,8 +542,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 08)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1731,
    "vues": 8,
-   "jeu": "La désolation il causa",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 8
   },
   {
    "id": "9841CLCMvvI",
@@ -455,8 +557,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1942,
    "vues": 4,
-   "jeu": "Echos des cloches muettes",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 12
   },
   {
    "id": "4PSIauanxUM",
@@ -467,8 +572,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1591,
    "vues": 8,
-   "jeu": "La cave d'Ambrus",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 11
   },
   {
    "id": "913N0DmZhr0",
@@ -479,8 +587,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 07)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1811,
    "vues": 6,
-   "jeu": "La désolation il causa",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 7
   },
   {
    "id": "WUFHwPrrPEY",
@@ -491,8 +602,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2033,
    "vues": 20,
-   "jeu": "Les prisonniers d'Ambrus",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 10
   },
   {
    "id": "3bvF2xqGk_A",
@@ -503,8 +617,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2045,
    "vues": 13,
-   "jeu": "Le bois des ombres",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 9
   },
   {
    "id": "xjKWYNA7OOc",
@@ -515,8 +632,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 06)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1999,
    "vues": 17,
-   "jeu": "De l'enfer il s'éleva",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 6
   },
   {
    "id": "PTRh1Oi5LQk",
@@ -527,8 +647,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1811,
    "vues": 32,
-   "jeu": "Sous haute surveillance",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 8
   },
   {
    "id": "YSMfIOp9oW0",
@@ -539,8 +662,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1659,
    "vues": 19,
-   "jeu": "Mouvement dissident",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 7
   },
   {
    "id": "bbv15Es1-w8",
@@ -551,8 +677,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 05)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1526,
    "vues": 31,
-   "jeu": "De l'enfer il s'éleva",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 5
   },
   {
    "id": "ALWAPWKuyrU",
@@ -563,8 +692,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1826,
    "vues": 39,
-   "jeu": "D'en haut",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 6
   },
   {
    "id": "BdmAxL3erH4",
@@ -575,8 +707,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1828,
    "vues": 30,
-   "jeu": "Cendres et fumée",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 5
   },
   {
    "id": "wqMi8NgtGIg",
@@ -587,8 +722,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 04)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1624,
    "vues": 21,
-   "jeu": "Ceux avant nous",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 4
   },
   {
    "id": "06yUTwrsne0",
@@ -599,8 +737,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2144,
    "vues": 43,
-   "jeu": "Mauvais sang",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 4
   },
   {
    "id": "s76DMwgtN5I",
@@ -612,7 +753,8 @@
    "duree_s": 8,
    "vues": 1356,
    "jeu": "THE BLOOD OF DAWNWALKER",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "apARj9aHXmo",
@@ -623,8 +765,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1852,
    "vues": 18,
-   "jeu": "Pacte sacré",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 3
   },
   {
    "id": "EhSC8YXPVqY",
@@ -635,8 +780,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 03)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1708,
    "vues": 8,
-   "jeu": "Ceux avant nous",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 3
   },
   {
    "id": "lYeYGZiD9-8",
@@ -647,8 +795,11 @@
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1801,
    "vues": 71,
-   "jeu": "Sur le déclin",
-   "short": false
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 2
   },
   {
    "id": "wN2vqxuHkt0",
@@ -659,8 +810,11 @@
    "description": "Episode 18 de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nAprès avoir accompli la tâche exigée par les Dames du Bois, Geralt obtient enfin des réponses sur le passage de Ciri à Torséchine. En incarnant la jeune femme, le sorceleur revit sa fuite désespérée à travers les marécages alors qu'elle tente d'échapper à la traque des Moires et des ",
    "duree_s": 2022,
    "vues": 6,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 18
   },
   {
    "id": "U2861-zcjGs",
@@ -672,7 +826,10 @@
    "duree_s": 1002,
    "vues": 100,
    "jeu": "The Blood of Dawnwalker",
-   "short": false
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 1
   },
   {
    "id": "6RbsKUUL3f8",
@@ -683,8 +840,11 @@
    "description": "Resonance: A Plague Tale Legacy (Ep. 02)\n\nPlongez dans l'histoire originale et préquelle des jeux primés A Plague Tale. Incarnez Sophia et voyagez jusqu'à l'île du Minotaure : déjouez les plans d'ennemis redoutables, percez d'anciens secrets et affrontez une créature mythique à l'origine d'une terrible malédiction.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS Qualité), cette série inclu",
    "duree_s": 1990,
    "vues": 14,
-   "jeu": "Félons",
-   "short": false
+   "jeu": "Resonance : A Plague Tale Legacy",
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 2
   },
   {
    "id": "a2heVnBCtTY",
@@ -695,8 +855,11 @@
    "description": "Episode dix-sept de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nGeralt conclut un marché avec les Moires pour obtenir des indices sur Ciri. En échange, le sorceleur armé de leur dague doit se rendre auprès d'un échevin et neutraliser l'entité maléfique qui s'est éveillée sous la Colline aux murmures.\n\n👉 L'Épisode 16 \"LE SENTIER DES DOUCEURS",
    "duree_s": 1942,
    "vues": 35,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 5
   },
   {
    "id": "QizsUpV-PGo",
@@ -707,8 +870,11 @@
    "description": "Episode seize de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nGeralt s'enfonce au cœur des marais de Velen. En suivant le chemin des douceurs, le sorceleur fait la rencontre de Jeannot, des enfants du village et de leur mystérieuse « grand-mère », avant d'obtenir une audience auprès des Dames du Bois.\n\n👉 L'Épisode 15 \"PISTE A OXENFURT\" est d",
    "duree_s": 1699,
    "vues": 10,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 17
   },
   {
    "id": "auUMiYnBlU4",
@@ -720,7 +886,10 @@
    "duree_s": 1993,
    "vues": 47,
    "jeu": "Resonance : A Plague Tale Legacy",
-   "short": false
+   "short": false,
+   "serie": "Resonance : A Plague Tale Legacy",
+   "serie_id": "PLKNKejoIs3Uc",
+   "episode": 1
   },
   {
    "id": "Ft1KPB5wtiQ",
@@ -731,8 +900,11 @@
    "description": "Episode quinze de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nGeralt quitte la crasse du marais et met le cap sur la cité universitaire d'Oxenfurt. \nObjectif : retrouver la trace de Tamara, la fille du Baron Sanglant.\n\n👉 L'Épisode 14 \"SECRET DE FAMILLE\" est disponible sur la chaîne !\n\nCHAPITRES DE LA VIDÉO :\n00:00 - Voyage vers Oxenfurt\n02:",
    "duree_s": 1933,
    "vues": 112,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 1
   },
   {
    "id": "NHIo3VlsL7Y",
@@ -744,7 +916,10 @@
    "duree_s": 3991,
    "vues": 191,
    "jeu": "Resonance : A Plague Tale Legacy",
-   "short": false
+   "short": false,
+   "serie": "Les Premières heures",
+   "serie_id": "PLHMEH3OmTqeE",
+   "episode": 4
   },
   {
    "id": "Yk9nNOEVCi4",
@@ -756,7 +931,8 @@
    "duree_s": 12,
    "vues": 1138,
    "jeu": "Sophia ne fait AUCUN QUARTIER dans les flammes ! 🔥",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "vSTy6dSchdE",
@@ -767,8 +943,11 @@
    "description": "Episode quatorze de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nGeralt suit la piste guidée pour retrouver la mère et la fille disparues. Une traque sombre au cœur de Velen où chaque indice lève le voile sur le terrible secret de cette famille.\n\n👉 L'Épisode 13 \"PATERNITE SANGLANTE\" est disponible sur la chaîne !\n\nCHAPITRES DE LA VIDÉO :\n00:",
    "duree_s": 1844,
    "vues": 21,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 14
   },
   {
    "id": "1HSms1bfYr8",
@@ -780,7 +959,8 @@
    "duree_s": 15,
    "vues": 1250,
    "jeu": "The Witcher 3 4K 60FPS",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "TqIcQAwkSHE",
@@ -790,9 +970,12 @@
    "miniature": "https://i.ytimg.com/vi/TqIcQAwkSHE/maxresdefault.jpg",
    "description": "Relaxing 4K 60FPS graphic showcase of The Witcher 3 running on NVIDIA RTX 5080 with 191+ mods and Ray Tracing Ultra.\n\nFull walkthrough 4K60 here : https://youtube.com/playlist?list=PLafR4cD73B1g&si=YdYnwPCpk1UmSG3q",
    "duree_s": 267,
-   "vues": 241,
+   "vues": 242,
    "jeu": "The Witcher 3 RTX 5080",
-   "short": false
+   "short": false,
+   "serie": "Showcases",
+   "serie_id": "PLPqH5gBuYr5Q",
+   "episode": 5
   },
   {
    "id": "OKPrTK-hesA",
@@ -803,8 +986,11 @@
    "description": "Episode treize de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nFace au Couvin, le Baron doit assumer son rôle de père, nommer l'enfant et accomplir le rituel pour lui offrir le repos. Une quête poignante sur la rédemption et le poids du passé.\n\n👉 L'Épisode 12 \"ERRANCE TENEBREUSE\" est disponible sur la chaîne !\n\nCHAPITRES DE LA VIDÉO :\n00:00 ",
    "duree_s": 1480,
    "vues": 24,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 12
   },
   {
    "id": "qGLo9GVmgjM",
@@ -816,7 +1002,8 @@
    "duree_s": 21,
    "vues": 1997,
    "jeu": "Geralt ne fait AUCUN QUARTIER ! 🩸",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "liqt5R61cf4",
@@ -827,8 +1014,11 @@
    "description": "Douzième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nAu cœur des souterrains, le sorceleur enchaîne les affrontements acharnés contre golems, gargouilles et les guerriers de la Chasse Sauvage venus sceller leur avancée.\n\n👉 L'Épisode 11 \"LA TRAQUE SAUVAGE\" est disponible sur la chaîne !\n\nCHAPITRES DE LA VIDÉO :\n00:00 - Avancée dan",
    "duree_s": 2001,
    "vues": 29,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 9
   },
   {
    "id": "NJ2usJI5OnA",
@@ -839,8 +1029,11 @@
    "description": "Onzième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nSa quête le mène jusqu'à Keira Metz, une ancienne conseillère royale. Ensemble, ils s'enfoncent dans de sombres ruines elfiques sur les traces d'un mystérieux sorcier et de la Chasse Sauvage.\n\n👉 L'Épisode 11 \"LA SORCIERE ET L'ELFE\" est disponible sur la chaîne !\n\nCHAPITRES DE LA",
    "duree_s": 1861,
    "vues": 11,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 16
   },
   {
    "id": "j6u946fdk-o",
@@ -851,8 +1044,11 @@
    "description": "Dixième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nSa quête le mène jusqu'à Keira Metz, une ancienne conseillère royale. Ensemble, ils s'enfoncent dans de sombres ruines élfiques sur les traces d'un mystérieux sorcier et de la Chasse Sauvage.\n\n👉 L'Épisode 9 \"LE CHAMAN ET LE COUVIN\" est disponible sur la chaîne !\n\nCHAPITRES DE LA",
    "duree_s": 1855,
    "vues": 11,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 15
   },
   {
    "id": "H6Tgur_GBwE",
@@ -864,7 +1060,8 @@
    "duree_s": 21,
    "vues": 517,
    "jeu": "THE WITCHER 3",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "eJF8Z2-YSPU",
@@ -875,8 +1072,11 @@
    "description": "Neuvième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nPour obtenir l'aide du Chaman, le sorceleur doit d'abord retrouver sa chèvre Princesse égarée dans les bois. Ces recherches lèvent le voile sur les secrets sombres du château et l'existence tragique d'un enfant mort-né.\n\n👉 L'Épisode 8 \"LE PACTE DU BARON\" est disponible sur la c",
    "duree_s": 1757,
    "vues": 46,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 3
   },
   {
    "id": "PIJaLq9GzSs",
@@ -887,8 +1087,11 @@
    "description": "Huitième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nAfin d'obtenir des informations cruciales sur la présence de Ciri à Velen, le sorceleur doit passer un marché avec le Baron et se lancer à la recherche de sa femme et de sa fille disparues dans les terres ravagées de la région.\n\n👉 L'Épisode 7 \"LA PISTE DE HENDRIK\" est disponibl",
    "duree_s": 2350,
    "vues": 28,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 8
   },
   {
    "id": "T8EKKVTdcvc",
@@ -899,8 +1102,11 @@
    "description": "Septième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nArrivé au village ravagé de Bourg-la-Lande, le sorceleur découvre le cadavre d'Hendrik, victime de la Traque Sauvage. En fouillant la maison, il met au jour une cave secrète renfermant le registre caché qui contient des indices cruciaux sur la traque de Ciri.\n\n👉 L'Épisode 6 \"AU",
    "duree_s": 1768,
    "vues": 28,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 7
   },
   {
    "id": "M-PLnj-Wo7E",
@@ -911,8 +1117,11 @@
    "description": "Sixième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nLe départ de Blanchefleur se termine dans un bain de sang à la taverne. Geralt retrouve enfin Yennefer, mais la Chasse Sauvage les traque déjà. L'heure est venue de se rendre à Wyzima pour une audience royale avec l'Empereur de Nilfgaard : Emhyr var Emreis.\n\n👉 L'Épisode 5 \"Comba",
    "duree_s": 2090,
    "vues": 25,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 11
   },
   {
    "id": "Q1A7a34MXBI",
@@ -923,8 +1132,11 @@
    "description": "Cinquième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nL'heure de l'affrontement a sonné ! Geralt et Vesemir tendent un piège mortel au redoutable Griffon Royal qui terrorise Blanchefleur. Après ce combat épique, on nettoie la zone avec l'exploration et quelques quêtes annexes.\n\n👉 L'Épisode 4 \"La traque royale\" est disponible sur ",
    "duree_s": 1791,
    "vues": 39,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 4
   },
   {
    "id": "ZC-FV89vw2A",
@@ -935,8 +1147,11 @@
    "description": "Quatrième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nGeralt s'allie au chasseur Mislav pour pister la bête qui terrorise Blanchefleur. La découverte macabre du nid et de la femelle massacrée lève le voile sur la fureur du Griffon Royal... La préparation au combat commence !\n\n👉 L'Épisode 3 \"Le Démon du puits\" est disponible sur l",
    "duree_s": 2044,
    "vues": 20,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 13
   },
   {
    "id": "uRlNGQlW67c",
@@ -948,7 +1163,8 @@
    "duree_s": 16,
    "vues": 724,
    "jeu": "CETTE AMBIANCE... 🌅",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "6vJuMgoXEns",
@@ -959,8 +1175,11 @@
    "description": "Troisième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nGeralt honore son premier contrat de sorceleur à Blanchefleur ! Pour soigner la fille d'Odolan, il doit lever la malédiction et affronter la redoutable Doyenne de Midi qui hante le village abandonné.\n\n👉 L'Épisode 2 \"Disparu au combat\" est disponible sur la chaîne !\n\nCHAPITRES ",
    "duree_s": 2098,
    "vues": 32,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 6
   },
   {
    "id": "V44ZkeRQjOQ",
@@ -971,8 +1190,11 @@
    "description": "Deuxième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nGeralt aide à retrouver un frère disparu sur le champ de bataille de Blanchefleur parmi les cadavres témériens et nilfgaardien.\n\nCHAPITRES DE LA VIDÉO :\n00:00 - Règlement de compte\n02:00 - Un nain dans le besoin\n16:00 - Balade en forêt\n18:30 - Un frère dans le besoin\n\nPRÉSENTAT",
    "duree_s": 1783,
    "vues": 25,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 10
   },
   {
    "id": "jc7rjmv7Yeg",
@@ -984,7 +1206,8 @@
    "duree_s": 16,
    "vues": 1297,
    "jeu": "Le plus beau",
-   "short": true
+   "short": true,
+   "exclu": true
   },
   {
    "id": "OLk7dwF5R4I",
@@ -995,8 +1218,11 @@
    "description": "Premier épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. Geralt et Vesemir reprennent la route à la recherche de Yennefer dans la région de Blanchefleur.\n\nCHAPITRES DE LA VIDÉO :\n00:00 - Le Cauchemar de Kaer Morhen\n10:00 - L'éveil\n17:00 - Rencontre avec un griffon\n21:00 - L'arrivée à Blanchefleur\n30:00 - Une rencontre à retenir\n\nPRÉSENT",
    "duree_s": 2002,
    "vues": 91,
-   "jeu": "THE WITCHER 3",
-   "short": false
+   "jeu": "The Witcher 3",
+   "short": false,
+   "serie": "The Witcher 3",
+   "serie_id": "PLafR4cD73B1g",
+   "episode": 2
   },
   {
    "id": "wVnoZ0v9wKo",
@@ -1008,7 +1234,8 @@
    "duree_s": 70,
    "vues": 177,
    "jeu": "L'éveil de Geralt en 4K Ultra RTX 😱",
-   "short": false
+   "short": false,
+   "exclu": true
   },
   {
    "id": "zrViWuFdd44",
@@ -1020,7 +1247,8 @@
    "duree_s": 21,
    "vues": 1536,
    "jeu": "The Witcher 3",
-   "short": true
+   "short": true,
+   "exclu": true
   }
  ],
  "series": [
