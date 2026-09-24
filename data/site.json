@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-24T04:39:09.665662Z",
+ "genere_le": "2026-09-24T11:38:26.822936Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -37,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/9S5-euz9shw/maxresdefault.jpg",
    "description": "\"Sens le pouvoir qui afflue en ces lieux...\" 🩸\n\nUne confrontation glaçante où les sombres secrets refont surface. La soif de pouvoir justifie-t-elle une telle trahison ? Plongez avec Sieur Galaad dans ce moment clé du lore où les anciens alliés se déchirent.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure compl",
    "duree_s": 24,
-   "vues": 237,
+   "vues": 254,
    "jeu": "La trahison ultime... 🩸#dawnwalker",
    "short": true,
    "exclu": true
@@ -95,7 +95,7 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 881,
+   "vues": 882,
    "jeu": "Le passé tragique de Lacra dévoilé !",
    "short": true,
    "exclu": true
@@ -168,7 +168,7 @@
    "miniature": "https://i.ytimg.com/vi/hMByPAzMJcQ/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1914,
-   "vues": 12,
+   "vues": 13,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -511,7 +511,7 @@
    "miniature": "https://i.ytimg.com/vi/589fGroJ910/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2073,
-   "vues": 11,
+   "vues": 14,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1288,7 +1288,7 @@
    "miniature": "https://i.ytimg.com/vi/zrViWuFdd44/maxresdefault.jpg",
    "description": "Prends un casque 🎧, monte le son et profite de cette balade paisible dans les forêts de The Witcher 3, 191 mods, Full Ray Tracing .\n\n🔔 Abonne-toi pour ne rien rater des prochaines vidéos !\n\n#TheWitcher3 #thewitcher3wildhuntnextgen #thewitcher4  #Shorts #RTX #GamingChill #ASMRGaming #UltraGraphics #pcgaming MR #Gaming #cdprojektred",
    "duree_s": 21,
-   "vues": 1536,
+   "vues": 1537,
    "jeu": "The Witcher 3",
    "short": true,
    "exclu": true
@@ -1750,16 +1750,20 @@
    "url": "https://rawg.io/games/phantom-blade-zero"
   },
   {
-   "nom": "After the Wane",
-   "sortie": "2026-11-09",
-   "image": "https://media.rawg.io/media/screenshots/836/836e2d2968195f59425b2716f3570e4a.jpg",
+   "nom": "Tavern Farkle GB",
+   "sortie": "2026-10-29",
+   "image": "https://media.rawg.io/media/screenshots/a70/a70fe6db270dae52f5169b826c81c3ec.jpg",
    "note": null,
    "popularite": 0,
-   "genres": [],
-   "boutiques": [
-    "GOG"
+   "genres": [
+    "Casual",
+    "Board Games"
    ],
-   "url": "https://rawg.io/games/after-the-wane"
+   "boutiques": [
+    "Steam",
+    "itch.io"
+   ],
+   "url": "https://rawg.io/games/tavern-farkle-gb"
   }
  ],
  "planning": [
