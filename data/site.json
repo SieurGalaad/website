@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-25T08:59:04.645300Z",
+ "genere_le": "2026-09-25T11:44:18.784815Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -8,7 +8,7 @@
   "reddit": "",
   "description": "Hello ! Moi c'est Sieur Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion visuelle, le tout sans commentaire.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique ultime des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la d",
   "abonnes": 13,
-  "nb_videos": 87,
+  "nb_videos": 86,
   "vues_totales": 14114,
   "heures_visionnees": 73.0,
   "heures_maj": "25/09/2026"
@@ -264,19 +264,6 @@
    "serie": "Resonance : A Plague Tale Legacy",
    "serie_id": "PLKNKejoIs3Uc",
    "episode": 15
-  },
-  {
-   "id": "0ESeBUQu6lM",
-   "titre": "Coen succombe à la tentation... 🦇 #dawnwalker",
-   "url": "https://www.youtube.com/watch?v=0ESeBUQu6lM",
-   "publie": "2026-09-14T16:00:22Z",
-   "miniature": "https://i.ytimg.com/vi/0ESeBUQu6lM/maxresdefault.jpg",
-   "description": "Une rencontre nocturne aussi envoûtante que dangereuse pour Coen. Les charmes des vampires ne pardonnent pas. 🩸⚔️\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLKNKejoIs3Uc\n\n⚙️ Spécifications Techniques :\n\nGPU : NVIDIA GeForce RTX 5080\nCPU : AMD Ryzen ",
-   "duree_s": 9,
-   "vues": 2,
-   "jeu": "Coen succombe à la tentation... 🦇",
-   "short": true,
-   "exclu": true
   },
   {
    "id": "r2qd0FTlfJw",
@@ -1539,7 +1526,7 @@
    "sortie": "2026-10-08",
    "image": "https://media.rawg.io/media/screenshots/de4/de45de8994fbed7891da2c9023ed3218.jpg",
    "note": null,
-   "popularite": 13,
+   "popularite": 14,
    "genres": [
     "Action"
    ],
