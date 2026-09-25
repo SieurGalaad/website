@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-25T17:04:59.722506Z",
+ "genere_le": "2026-09-25T21:30:44.985318Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Sieur Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion visuelle, le tout sans commentaire.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique ultime des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la d",
   "abonnes": 13,
   "nb_videos": 87,
-  "vues_totales": 14114,
+  "vues_totales": 14132,
   "heures_visionnees": 73.0,
   "heures_maj": "25/09/2026"
  },
@@ -37,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/v3adiv0jAXU/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2783,
-   "vues": 15,
+   "vues": 16,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -52,7 +52,7 @@
    "miniature": "https://i.ytimg.com/vi/9S5-euz9shw/maxresdefault.jpg",
    "description": "\"Sens le pouvoir qui afflue en ces lieux...\" 🩸\n\nUne confrontation glaçante où les sombres secrets refont surface. La soif de pouvoir justifie-t-elle une telle trahison ? Plongez avec Sieur Galaad dans ce moment clé du lore où les anciens alliés se déchirent.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure compl",
    "duree_s": 24,
-   "vues": 282,
+   "vues": 283,
    "jeu": "La trahison ultime... 🩸#dawnwalker",
    "short": true,
    "exclu": true
@@ -556,7 +556,7 @@
    "miniature": "https://i.ytimg.com/vi/14eIXLtsXRw/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1793,
-   "vues": 21,
+   "vues": 22,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1542,7 +1542,7 @@
    "sortie": "2026-10-08",
    "image": "https://media.rawg.io/media/screenshots/de4/de45de8994fbed7891da2c9023ed3218.jpg",
    "note": null,
-   "popularite": 14,
+   "popularite": 15,
    "genres": [
     "Action"
    ],
@@ -1566,7 +1566,7 @@
    "sortie": "2026-10-13",
    "image": "https://media.rawg.io/media/screenshots/b33/b33060428bd146f3412bfcedc44fd7ce.jpg",
    "note": null,
-   "popularite": 47,
+   "popularite": 48,
    "genres": [
     "Action",
     "RPG"
@@ -1733,7 +1733,7 @@
    "sortie": "2026-10-29",
    "image": "https://media.rawg.io/media/games/25f/25f536a977488f12ef8a6d013e50fda1.jpg",
    "note": null,
-   "popularite": 228,
+   "popularite": 229,
    "genres": [
     "Adventure",
     "Action"
