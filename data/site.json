@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-26T11:17:15.795255Z",
+ "genere_le": "2026-09-26T16:18:17.588950Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -8,12 +8,27 @@
   "reddit": "",
   "description": "Hello ! Moi c'est Sieur Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion visuelle, le tout sans commentaire.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique ultime des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la d",
   "abonnes": 13,
-  "nb_videos": 87,
-  "vues_totales": 14140,
+  "nb_videos": 88,
+  "vues_totales": 14153,
   "heures_visionnees": 73.0,
   "heures_maj": "25/09/2026"
  },
  "videos": [
+  {
+   "id": "_vm_L9axyUk",
+   "titre": "[VF] The Blood of Dawnwalker — Ambrus Boss Fight | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/watch?v=_vm_L9axyUk",
+   "publie": "2026-09-26T16:00:34Z",
+   "miniature": "https://i.ytimg.com/vi/_vm_L9axyUk/maxresdefault.jpg",
+   "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
+   "duree_s": 1595,
+   "vues": 0,
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 32
+  },
   {
    "id": "ZErrjfPpkB0",
    "titre": "[VF] The Blood of Dawnwalker — L'épée de Mihail | Guide | 4K60 Ultra RTX5080 PC",
@@ -22,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/ZErrjfPpkB0/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2313,
-   "vues": 3,
+   "vues": 5,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -110,7 +125,7 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 887,
+   "vues": 888,
    "jeu": "Le passé tragique de Lacra dévoilé !",
    "short": true,
    "exclu": true
@@ -318,7 +333,7 @@
    "miniature": "https://i.ytimg.com/vi/4MAArbDDw2M/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2097,
-   "vues": 12,
+   "vues": 13,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -453,7 +468,7 @@
    "miniature": "https://i.ytimg.com/vi/UMlUNn82rb4/maxresdefault.jpg",
    "description": "Découvrez la toute première heure de jeu (First Hour Gameplay) de Beast of Reincarnation dans sa qualité visuelle maximale.\n\nUne expérience 100 % immersive, sans interface superflue et sans commentaire (No Commentary).\n\n⚙️ Configuration PC & Qualité d'enregistrement :\n\nRésolution : 4K (2160p) 60FPS\nGraphismes : Qualité Ultra + Ray Tracing\nGPU : NVIDIA GeForce RTX 5080\nCPU : AMD Ryzen 7 9800X3D\n\n🔗 ",
    "duree_s": 3732,
-   "vues": 19,
+   "vues": 20,
    "jeu": "Beast of Reincarnation",
    "short": false,
    "serie": "Les Premières heures",
@@ -1305,7 +1320,7 @@
    "numerote": true,
    "url": "https://www.youtube.com/playlist?list=PLPkHE1QHMYrY",
    "miniature": "https://i.ytimg.com/vi/U2861-zcjGs/maxresdefault.jpg",
-   "nb": 31,
+   "nb": 32,
    "videos": [
     "U2861-zcjGs",
     "lYeYGZiD9-8",
@@ -1337,7 +1352,8 @@
     "X-jh8m2jVUQ",
     "2kGiLD9SiqA",
     "v3adiv0jAXU",
-    "ZErrjfPpkB0"
+    "ZErrjfPpkB0",
+    "_vm_L9axyUk"
    ]
   },
   {
