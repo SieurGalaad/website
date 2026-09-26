@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-26T04:50:05.693282Z",
+ "genere_le": "2026-09-26T11:17:15.795255Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -37,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/v3adiv0jAXU/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2783,
-   "vues": 16,
+   "vues": 17,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -363,7 +363,7 @@
    "miniature": "https://i.ytimg.com/vi/BIP-qY0UJNI/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1699,
-   "vues": 20,
+   "vues": 21,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -513,7 +513,7 @@
    "miniature": "https://i.ytimg.com/vi/589fGroJ910/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2073,
-   "vues": 16,
+   "vues": 17,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1523,7 +1523,7 @@
   {
    "nom": "Clive Barker's Hellraiser: Revival",
    "sortie": "2026-10-08",
-   "image": "https://media.rawg.io/media/screenshots/de4/de45de8994fbed7891da2c9023ed3218.jpg",
+   "image": "https://media.rawg.io/media/games/816/8167f331942bc2cb8a6711938cd17f5c.jpg",
    "note": null,
    "popularite": 15,
    "genres": [
@@ -1605,7 +1605,7 @@
    "sortie": "2026-10-15",
    "image": "https://media.rawg.io/media/games/429/42928697eb80feb13e6087170a10565a.jpeg",
    "note": null,
-   "popularite": 22,
+   "popularite": 23,
    "genres": [
     "Action",
     "RPG"
@@ -1675,7 +1675,7 @@
    "sortie": "2026-10-22",
    "image": "https://media.rawg.io/media/games/e51/e51aab3845c598b52a2881c3f7155f76.jpg",
    "note": null,
-   "popularite": 17,
+   "popularite": 18,
    "genres": [
     "RPG"
    ],
