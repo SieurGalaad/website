@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-29T22:10:50.810716Z",
+ "genere_le": "2026-09-30T05:25:36.799142Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -183,7 +183,7 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 893,
+   "vues": 896,
    "jeu": "Le passé tragique de Lacra dévoilé !",
    "short": true,
    "exclu": true
@@ -256,7 +256,7 @@
    "miniature": "https://i.ytimg.com/vi/hMByPAzMJcQ/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1914,
-   "vues": 19,
+   "vues": 22,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -764,7 +764,7 @@
    "miniature": "https://i.ytimg.com/vi/PTRh1Oi5LQk/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1811,
-   "vues": 34,
+   "vues": 35,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1363,7 +1363,7 @@
    "miniature": "https://i.ytimg.com/vi/zrViWuFdd44/maxresdefault.jpg",
    "description": "Prends un casque 🎧, monte le son et profite de cette balade paisible dans les forêts de The Witcher 3, 191 mods, Full Ray Tracing .\n\n🔔 Abonne-toi pour ne rien rater des prochaines vidéos !\n\n#TheWitcher3 #thewitcher3wildhuntnextgen #thewitcher4  #Shorts #RTX #GamingChill #ASMRGaming #UltraGraphics #pcgaming MR #Gaming #cdprojektred",
    "duree_s": 21,
-   "vues": 1540,
+   "vues": 1541,
    "jeu": "The Witcher 3",
    "short": true,
    "exclu": true
@@ -1516,18 +1516,6 @@
  ],
  "reddit": [],
  "sorties": [
-  {
-   "nom": "Okko The Exiled",
-   "sortie": "2026-09-29",
-   "image": "https://media.rawg.io/media/screenshots/1b5/1b57f1b1bddfe11b702b398755795546.jpg",
-   "note": null,
-   "popularite": 0,
-   "genres": [],
-   "boutiques": [
-    "GOG"
-   ],
-   "url": "https://rawg.io/games/okko-the-exiled"
-  },
   {
    "nom": "End of Abyss",
    "sortie": "2026-10-01",
@@ -1840,6 +1828,18 @@
     "GOG"
    ],
    "url": "https://rawg.io/games/after-the-wane"
+  },
+  {
+   "nom": "Space Station Designer",
+   "sortie": "2026-11-17",
+   "image": "https://media.rawg.io/media/screenshots/53c/53ca443f2fb80f24ecec21d4b21a9f2b.jpg",
+   "note": null,
+   "popularite": 0,
+   "genres": [],
+   "boutiques": [
+    "GOG"
+   ],
+   "url": "https://rawg.io/games/space-station-designer"
   }
  ],
  "planning": [
