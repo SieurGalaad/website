@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-30T12:27:22.239799Z",
+ "genere_le": "2026-09-30T22:10:47.741437Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -8,12 +8,27 @@
   "reddit": "",
   "description": "Hello ! Moi c'est Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la direction artistique d'origine et le rythme du je",
   "abonnes": 14,
-  "nb_videos": 92,
+  "nb_videos": 93,
   "vues_totales": 15564,
   "heures_visionnees": 107.0,
   "heures_maj": "30/09/2026"
  },
  "videos": [
+  {
+   "id": "OLzT9BsspUU",
+   "titre": "[VF] The Blood of Dawnwalker — La fin de Brencis ? | 4K60 Ultra RTX5080 PC",
+   "url": "https://www.youtube.com/watch?v=OLzT9BsspUU",
+   "publie": "2026-09-30T16:00:14Z",
+   "miniature": "https://i.ytimg.com/vi/OLzT9BsspUU/maxresdefault.jpg",
+   "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
+   "duree_s": 2426,
+   "vues": 0,
+   "jeu": "The Blood of Dawnwalker",
+   "short": false,
+   "serie": "The Blood of Dawnwalker",
+   "serie_id": "PLPkHE1QHMYrY",
+   "episode": 35
+  },
   {
    "id": "AXiVEeSL-ow",
    "titre": "[VF] The Blood of Dawnwalker — Xanthe Boss Fight | 4K60 Ultra RTX5080 PC",
@@ -22,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/AXiVEeSL-ow/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1629,
-   "vues": 3,
+   "vues": 6,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -37,7 +52,7 @@
    "miniature": "https://i.ytimg.com/vi/TotsrmcigPA/maxresdefault.jpg",
    "description": "1666 Amsterdam, le nouveau jeu de Patrice Désilets (le créateur d'Assassin's Creed), récupéré après 13 ans de bataille avec Ubisoft. Apothicaire le jour, sorcière traquée la nuit, à la poursuite d'un démon qui revient tous les 333 ans.\n\n🎬 Je commente la première heure de gameplay, sur la chaîne ( lien\nen commentaire épinglé)\n\n👁️ Immersion · VF · 4K60 Ultra — walkthroughs commentés sur PC RTX5080 /",
    "duree_s": 47,
-   "vues": 1231,
+   "vues": 1237,
    "jeu": "1666 Amsterdam",
    "short": true,
    "exclu": true
@@ -301,7 +316,7 @@
    "miniature": "https://i.ytimg.com/vi/p9fzgenwd8g/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1635,
-   "vues": 42,
+   "vues": 43,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -436,7 +451,7 @@
    "miniature": "https://i.ytimg.com/vi/BIP-qY0UJNI/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1699,
-   "vues": 30,
+   "vues": 31,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -496,7 +511,7 @@
    "miniature": "https://i.ytimg.com/vi/8MV-ynb0OWU/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1871,
-   "vues": 8,
+   "vues": 9,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1363,7 +1378,7 @@
    "miniature": "https://i.ytimg.com/vi/zrViWuFdd44/maxresdefault.jpg",
    "description": "Prends un casque 🎧, monte le son et profite de cette balade paisible dans les forêts de The Witcher 3, 191 mods, Full Ray Tracing .\n\n🔔 Abonne-toi pour ne rien rater des prochaines vidéos !\n\n#TheWitcher3 #thewitcher3wildhuntnextgen #thewitcher4  #Shorts #RTX #GamingChill #ASMRGaming #UltraGraphics #pcgaming MR #Gaming #cdprojektred",
    "duree_s": 21,
-   "vues": 1541,
+   "vues": 1543,
    "jeu": "The Witcher 3",
    "short": true,
    "exclu": true
@@ -1378,7 +1393,7 @@
    "numerote": true,
    "url": "https://www.youtube.com/playlist?list=PLPkHE1QHMYrY",
    "miniature": "https://i.ytimg.com/vi/U2861-zcjGs/maxresdefault.jpg",
-   "nb": 34,
+   "nb": 35,
    "videos": [
     "U2861-zcjGs",
     "lYeYGZiD9-8",
@@ -1413,7 +1428,8 @@
     "ZErrjfPpkB0",
     "_vm_L9axyUk",
     "LVlZcBuOtiQ",
-    "AXiVEeSL-ow"
+    "AXiVEeSL-ow",
+    "OLzT9BsspUU"
    ]
   },
   {
@@ -1521,7 +1537,7 @@
    "sortie": "2026-10-01",
    "image": "https://media.rawg.io/media/games/9b7/9b755942f5c8006891c20e50095dae09.jpg",
    "note": null,
-   "popularite": 37,
+   "popularite": 38,
    "genres": [
     "Adventure",
     "Action"
@@ -1536,7 +1552,7 @@
    "sortie": "2026-10-02",
    "image": "https://media.rawg.io/media/games/541/541d6c97a674635d68ea3d19737f090b.jpg",
    "note": null,
-   "popularite": 24,
+   "popularite": 25,
    "genres": [
     "Action",
     "Simulation"
@@ -1551,7 +1567,7 @@
    "sortie": "2026-10-06",
    "image": "https://media.rawg.io/media/games/c85/c85991ad8164824715377e603a2d7693.jpg",
    "note": null,
-   "popularite": 86,
+   "popularite": 87,
    "genres": [
     "Adventure",
     "Action"
@@ -1566,7 +1582,7 @@
    "sortie": "2026-10-06",
    "image": "https://media.rawg.io/media/games/553/5536c25da9711a39a5c4d752361de551.jpg",
    "note": null,
-   "popularite": 11,
+   "popularite": 12,
    "genres": [
     "Racing"
    ],
@@ -1658,7 +1674,7 @@
    "sortie": "2026-10-15",
    "image": "https://media.rawg.io/media/games/429/42928697eb80feb13e6087170a10565a.jpeg",
    "note": null,
-   "popularite": 23,
+   "popularite": 24,
    "genres": [
     "Action",
     "RPG"
@@ -1683,19 +1699,6 @@
    "url": "https://rawg.io/games/tenebris-somnia-demo"
   },
   {
-   "nom": "Crimson Desert: Charting the Unknown",
-   "sortie": "2026-10-16",
-   "image": "https://media.rawg.io/media/screenshots/83c/83ca2a4e4e94eecad38064f34304af49.jpg",
-   "note": null,
-   "popularite": 1,
-   "genres": [
-    "Adventure",
-    "Action"
-   ],
-   "boutiques": [],
-   "url": "https://rawg.io/games/crimson-desert-charting-the-unknown"
-  },
-  {
    "nom": "Mycopunk",
    "sortie": "2026-10-20",
    "image": "https://media.rawg.io/media/screenshots/2e0/2e0721ea99ea466968c35ef501985c47.jpg",
@@ -1716,7 +1719,7 @@
    "sortie": "2026-10-21",
    "image": "https://media.rawg.io/media/games/41c/41c5448f15d06825947791da15489f92.jpg",
    "note": null,
-   "popularite": 3,
+   "popularite": 4,
    "genres": [
     "Action"
    ],
@@ -1728,7 +1731,7 @@
    "sortie": "2026-10-22",
    "image": "https://media.rawg.io/media/games/e51/e51aab3845c598b52a2881c3f7155f76.jpg",
    "note": null,
-   "popularite": 18,
+   "popularite": 19,
    "genres": [
     "RPG"
    ],
@@ -1788,6 +1791,19 @@
    ],
    "boutiques": [],
    "url": "https://rawg.io/games/phantom-blade-zero"
+  },
+  {
+   "nom": "Crimson Desert: Charting the Unknown",
+   "sortie": "2026-10-29",
+   "image": "https://media.rawg.io/media/screenshots/83c/83ca2a4e4e94eecad38064f34304af49.jpg",
+   "note": null,
+   "popularite": 1,
+   "genres": [
+    "Adventure",
+    "Action"
+   ],
+   "boutiques": [],
+   "url": "https://rawg.io/games/crimson-desert-charting-the-unknown"
   },
   {
    "nom": "Tavern Farkle GB",
