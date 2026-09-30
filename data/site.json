@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-09-30T07:07:47.788976Z",
+ "genere_le": "2026-09-30T12:27:22.239799Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la direction artistique d'origine et le rythme du je",
   "abonnes": 14,
   "nb_videos": 92,
-  "vues_totales": 14275,
+  "vues_totales": 15564,
   "heures_visionnees": 107.0,
   "heures_maj": "30/09/2026"
  },
@@ -37,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/TotsrmcigPA/maxresdefault.jpg",
    "description": "1666 Amsterdam, le nouveau jeu de Patrice Désilets (le créateur d'Assassin's Creed), récupéré après 13 ans de bataille avec Ubisoft. Apothicaire le jour, sorcière traquée la nuit, à la poursuite d'un démon qui revient tous les 333 ans.\n\n🎬 Je commente la première heure de gameplay, sur la chaîne ( lien\nen commentaire épinglé)\n\n👁️ Immersion · VF · 4K60 Ultra — walkthroughs commentés sur PC RTX5080 /",
    "duree_s": 47,
-   "vues": 1229,
+   "vues": 1231,
    "jeu": "1666 Amsterdam",
    "short": true,
    "exclu": true
@@ -50,7 +50,7 @@
    "miniature": "https://i.ytimg.com/vi/zCFFdm7UUF4/maxresdefault.jpg",
    "description": "Tous les 333 ans, quelque chose s'éveille à Amsterdam. Voici la première heure commentée de 1666 Amsterdam, le jeu de Patrice Désilets (créateur d'Assassin's Creed), mis au placard par Ubisoft en 2013 et enfin sorti en accès anticipé.\n\nJ'incarne Noa, apprentie apothicaire le jour et sorcière traquée la nuit, lancée sur la piste d'un démon caché parmi les habitants, dont il faut découvrir le vrai n",
    "duree_s": 4636,
-   "vues": 21,
+   "vues": 22,
    "jeu": "1666 Amsterdam",
    "short": false,
    "serie": "Les Premières heures",
@@ -1642,7 +1642,7 @@
    "sortie": "2026-10-15",
    "image": "https://media.rawg.io/media/games/23a/23a1c71366aea4341aec483c9dd08a59.jpg",
    "note": null,
-   "popularite": 344,
+   "popularite": 345,
    "genres": [
     "Adventure",
     "Action",
