@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-01T22:37:32.296045Z",
+ "genere_le": "2026-10-02T05:27:37.161218Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -22,7 +22,7 @@
    "miniature": "https://i.ytimg.com/vi/J1oE1W2dfns/maxresdefault.jpg",
    "description": "Il traverse un continent en guerre pour retrouver sa fille… qui n'est même pas la sienne. Geralt de Riv, Ciri, et quelque chose qui fait geler le ciel à son passage : la Chasse sauvage.\n\nThe Witcher 3 Remastered est sorti le 29 septembre 2026, en mise à jour gratuite pour ceux qui ont déjà le jeu. L'occasion de le découvrir, ou d'y retourner.\n\n🎬 L'épisode 1 du let's play commenté est juste sous mo",
    "duree_s": 44,
-   "vues": 315,
+   "vues": 537,
    "jeu": "The Witcher 3 Remastered",
    "short": true,
    "exclu": true
@@ -35,7 +35,7 @@
    "miniature": "https://i.ytimg.com/vi/OLzT9BsspUU/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2426,
-   "vues": 4,
+   "vues": 6,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -65,7 +65,7 @@
    "miniature": "https://i.ytimg.com/vi/TotsrmcigPA/maxresdefault.jpg",
    "description": "1666 Amsterdam, le nouveau jeu de Patrice Désilets (le créateur d'Assassin's Creed), récupéré après 13 ans de bataille avec Ubisoft. Apothicaire le jour, sorcière traquée la nuit, à la poursuite d'un démon qui revient tous les 333 ans.\n\n🎬 Je commente la première heure de gameplay, sur la chaîne ( lien\nen commentaire épinglé)\n\n👁️ Immersion · VF · 4K60 Ultra — walkthroughs commentés sur PC RTX5080 /",
    "duree_s": 47,
-   "vues": 1252,
+   "vues": 1253,
    "jeu": "1666 Amsterdam",
    "short": true,
    "exclu": true
@@ -78,7 +78,7 @@
    "miniature": "https://i.ytimg.com/vi/zCFFdm7UUF4/maxresdefault.jpg",
    "description": "Tous les 333 ans, quelque chose s'éveille à Amsterdam. Voici la première heure commentée de 1666 Amsterdam, le jeu de Patrice Désilets (créateur d'Assassin's Creed), mis au placard par Ubisoft en 2013 et enfin sorti en accès anticipé.\n\nJ'incarne Noa, apprentie apothicaire le jour et sorcière traquée la nuit, lancée sur la piste d'un démon caché parmi les habitants, dont il faut découvrir le vrai n",
    "duree_s": 4636,
-   "vues": 22,
+   "vues": 23,
    "jeu": "1666 Amsterdam",
    "short": false,
    "serie": "Les Premières heures",
@@ -108,7 +108,7 @@
    "miniature": "https://i.ytimg.com/vi/_vm_L9axyUk/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1595,
-   "vues": 11,
+   "vues": 12,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -955,7 +955,7 @@
    "miniature": "https://i.ytimg.com/vi/wN2vqxuHkt0/maxresdefault.jpg",
    "description": "Episode 18 de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nAprès avoir accompli la tâche exigée par les Dames du Bois, Geralt obtient enfin des réponses sur le passage de Ciri à Torséchine. En incarnant la jeune femme, le sorceleur revit sa fuite désespérée à travers les marécages alors qu'elle tente d'échapper à la traque des Moires et des ",
    "duree_s": 2022,
-   "vues": 7,
+   "vues": 8,
    "jeu": "The Witcher 3",
    "short": false,
    "serie": "The Witcher 3",
@@ -1546,21 +1546,6 @@
  "reddit": [],
  "sorties": [
   {
-   "nom": "End of Abyss",
-   "sortie": "2026-10-01",
-   "image": "https://media.rawg.io/media/games/9b7/9b755942f5c8006891c20e50095dae09.jpg",
-   "note": null,
-   "popularite": 39,
-   "genres": [
-    "Adventure",
-    "Action"
-   ],
-   "boutiques": [
-    "PlayStation Store"
-   ],
-   "url": "https://rawg.io/games/end-of-abyss"
-  },
-  {
    "nom": "Ace Combat 8: Wings of Theve",
    "sortie": "2026-10-02",
    "image": "https://media.rawg.io/media/games/541/541d6c97a674635d68ea3d19737f090b.jpg",
@@ -1869,6 +1854,22 @@
     "GOG"
    ],
    "url": "https://rawg.io/games/space-station-designer"
+  },
+  {
+   "nom": "Beautiful Light",
+   "sortie": "2026-12-01",
+   "image": "https://media.rawg.io/media/screenshots/3c5/3c511506ba31902bbdcbf963219ef77c.jpg",
+   "note": null,
+   "popularite": 7,
+   "genres": [
+    "Indie",
+    "Shooter",
+    "Strategy"
+   ],
+   "boutiques": [
+    "Steam"
+   ],
+   "url": "https://rawg.io/games/beautiful-light"
   }
  ],
  "planning": [
