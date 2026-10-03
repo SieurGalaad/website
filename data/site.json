@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-03T11:34:08.700736Z",
+ "genere_le": "2026-10-03T16:11:13.700606Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -8,12 +8,27 @@
   "reddit": "",
   "description": "Hello ! Moi c'est Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la direction artistique d'origine et le rythme du je",
   "abonnes": 14,
-  "nb_videos": 96,
-  "vues_totales": 16194,
+  "nb_videos": 97,
+  "vues_totales": 16304,
   "heures_visionnees": 107.0,
   "heures_maj": "30/09/2026"
  },
  "videos": [
+  {
+   "id": "bfeKUbW-V08",
+   "titre": "[VF] Gears of War: E-Day — Épisode 2 : Le jour où tout commence | Let's Play FR 4K60 Ultra PC",
+   "url": "https://www.youtube.com/watch?v=bfeKUbW-V08",
+   "publie": "2026-10-03T16:00:24Z",
+   "miniature": "https://i.ytimg.com/vi/bfeKUbW-V08/maxresdefault.jpg",
+   "description": "Gears of War: E-Day en VF : l'épisode 2, commenté en français et joué en 4K60 Ultra sur PC.\n\nQuatorze ans avant le premier Gears of War, Marcus Fenix et Dominic Santiago rentrent à Kalona… le jour où les Locustes sortent de terre. C'est l'Emergence Day, le jour où tout a commencé, et on le vit ensemble.\n\nCe let's play couvre toute la campagne de Gears of War: E-Day, un épisode par jour, en version",
+   "duree_s": 2638,
+   "vues": 1,
+   "jeu": "Gears of War: E-Day",
+   "short": false,
+   "serie": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
+   "serie_id": "PLavjqyvEyoRo",
+   "episode": 2
+  },
   {
    "id": "n44ILEaqsic",
    "titre": "Gears of War: E-Day — le jour où l'humanité a perdu #gearsofwar  #shorts  #rtx5080 #gaming",
@@ -22,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/n44ILEaqsic/maxresdefault.jpg",
    "description": "Quatorze ans avant le premier Gears of War, Marcus et Dom rentrent de la guerre… et le sol s'ouvre sous Kalona. Gears of War: E-Day raconte l'Emergence Day, le jour où tout a commencé.\n\nSortie le 6 octobre 2026 sur PC et Xbox Series X|S, dès le premier jour dans le Game Pass (accès anticipé depuis le 1er octobre avec l'édition Premium).\n\n🎬 La première heure, commentée en entier : juste sous mon no",
    "duree_s": 34,
-   "vues": 584,
+   "vues": 589,
    "jeu": "Gears of War: E-Day",
    "short": true,
    "exclu": true
@@ -35,9 +50,12 @@
    "miniature": "https://i.ytimg.com/vi/StzUmxNH7ig/maxresdefault.jpg",
    "description": "Gears of War: E-Day en VF : la première heure du jeu, commentée en français et jouée en 4K60 Ultra sur PC.\n\nQuatorze ans avant le premier Gears of War, Marcus Fenix et Dominic Santiago rentrent à Kalona… le jour où les Locustes sortent de terre. C'est l'Emergence Day, le jour où tout a commencé, et on le vit ensemble dès les premières minutes.\n\nCe let's play couvre toute la campagne de Gears of Wa",
    "duree_s": 3235,
-   "vues": 9,
+   "vues": 10,
    "jeu": "Gears of War: E-Day",
-   "short": false
+   "short": false,
+   "serie": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
+   "serie_id": "PLavjqyvEyoRo",
+   "episode": 1
   },
   {
    "id": "J1oE1W2dfns",
@@ -47,7 +65,7 @@
    "miniature": "https://i.ytimg.com/vi/J1oE1W2dfns/maxresdefault.jpg",
    "description": "Il traverse un continent en guerre pour retrouver sa fille… qui n'est même pas la sienne. Geralt de Riv, Ciri, et quelque chose qui fait geler le ciel à son passage : la Chasse sauvage.\n\nThe Witcher 3 Remastered est sorti le 29 septembre 2026, en mise à jour gratuite pour ceux qui ont déjà le jeu. L'occasion de le découvrir, ou d'y retourner.\n\n🎬 L'épisode 1 du let's play commenté est juste sous mo",
    "duree_s": 44,
-   "vues": 641,
+   "vues": 681,
    "jeu": "The Witcher 3 Remastered",
    "short": true,
    "exclu": true
@@ -60,7 +78,7 @@
    "miniature": "https://i.ytimg.com/vi/OLzT9BsspUU/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2426,
-   "vues": 10,
+   "vues": 11,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -236,7 +254,7 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 899,
+   "vues": 902,
    "jeu": "Le passé tragique de Lacra dévoilé !",
    "short": true,
    "exclu": true
@@ -249,7 +267,7 @@
    "miniature": "https://i.ytimg.com/vi/zx93-pAmwqQ/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1693,
-   "vues": 18,
+   "vues": 19,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -354,7 +372,7 @@
    "miniature": "https://i.ytimg.com/vi/p9fzgenwd8g/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1635,
-   "vues": 43,
+   "vues": 44,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1423,6 +1441,20 @@
   }
  ],
  "series": [
+  {
+   "id": "PLavjqyvEyoRo",
+   "titre": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
+   "titre_complet": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
+   "sous_titre": "",
+   "numerote": false,
+   "url": "https://www.youtube.com/playlist?list=PLavjqyvEyoRo",
+   "miniature": "https://i.ytimg.com/vi/StzUmxNH7ig/maxresdefault.jpg",
+   "nb": 2,
+   "videos": [
+    "StzUmxNH7ig",
+    "bfeKUbW-V08"
+   ]
+  },
   {
    "id": "PLPkHE1QHMYrY",
    "titre": "The Blood of Dawnwalker",
