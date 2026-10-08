@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-07T23:01:51.094571Z",
+ "genere_le": "2026-10-08T05:54:19.259395Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -22,7 +22,7 @@
    "miniature": "https://i.ytimg.com/vi/MS_Af5pDPsQ/maxresdefault.jpg",
    "description": "Gears of War: E-Day en VF : l'épisode 4, commenté en français et joué en 4K60 Ultra sur PC.\n\nQuatorze ans avant le premier Gears of War, Marcus Fenix et Dominic Santiago rentrent à Kalona… le jour où les Locustes sortent de terre. C'est l'Emergence Day, le jour où tout a commencé, et on le vit ensemble.\n\nCe let's play couvre toute la campagne de Gears of War: E-Day, un épisode par jour, en version",
    "duree_s": 3311,
-   "vues": 8,
+   "vues": 10,
    "jeu": "Gears of War: E-Day",
    "short": false,
    "serie": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
@@ -37,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/mhZKnfzkFGQ/maxresdefault.jpg",
    "description": "Gears of War: E-Day en VF : l'épisode 3, commenté en français et joué en 4K60 Ultra sur PC.\n\nQuatorze ans avant le premier Gears of War, Marcus Fenix et Dominic Santiago rentrent à Kalona… le jour où les Locustes sortent de terre. C'est l'Emergence Day, le jour où tout a commencé, et on le vit ensemble.\n\nCe let's play couvre toute la campagne de Gears of War: E-Day, un épisode par jour, en version",
    "duree_s": 2453,
-   "vues": 8,
+   "vues": 11,
    "jeu": "Gears of War: E-Day",
    "short": false,
    "serie": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
@@ -52,7 +52,7 @@
    "miniature": "https://i.ytimg.com/vi/bfeKUbW-V08/maxresdefault.jpg",
    "description": "Gears of War: E-Day en VF : l'épisode 2, commenté en français et joué en 4K60 Ultra sur PC.\n\nQuatorze ans avant le premier Gears of War, Marcus Fenix et Dominic Santiago rentrent à Kalona… le jour où les Locustes sortent de terre. C'est l'Emergence Day, le jour où tout a commencé, et on le vit ensemble.\n\nCe let's play couvre toute la campagne de Gears of War: E-Day, un épisode par jour, en version",
    "duree_s": 2638,
-   "vues": 14,
+   "vues": 16,
    "jeu": "Gears of War: E-Day",
    "short": false,
    "serie": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
@@ -95,7 +95,7 @@
    "miniature": "https://i.ytimg.com/vi/J1oE1W2dfns/maxresdefault.jpg",
    "description": "Il traverse un continent en guerre pour retrouver sa fille… qui n'est même pas la sienne. Geralt de Riv, Ciri, et quelque chose qui fait geler le ciel à son passage : la Chasse sauvage.\n\nThe Witcher 3 Remastered est sorti le 29 septembre 2026, en mise à jour gratuite pour ceux qui ont déjà le jeu. L'occasion de le découvrir, ou d'y retourner.\n\n🎬 L'épisode 1 du let's play commenté est juste sous mo",
    "duree_s": 44,
-   "vues": 714,
+   "vues": 715,
    "jeu": "The Witcher 3 Remastered",
    "short": true,
    "exclu": true
@@ -925,7 +925,7 @@
    "miniature": "https://i.ytimg.com/vi/BdmAxL3erH4/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1828,
-   "vues": 30,
+   "vues": 31,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1635,18 +1635,6 @@
  "reddit": [],
  "sorties": [
   {
-   "nom": "Echo Weaver",
-   "sortie": "2026-10-07",
-   "image": "https://media.rawg.io/media/screenshots/7a9/7a985b642022cee59468053ec5404ddb.jpg",
-   "note": null,
-   "popularite": 0,
-   "genres": [],
-   "boutiques": [
-    "GOG"
-   ],
-   "url": "https://rawg.io/games/echo-weaver"
-  },
-  {
    "nom": "Clive Barker's Hellraiser: Revival",
    "sortie": "2026-10-08",
    "image": "https://media.rawg.io/media/games/816/8167f331942bc2cb8a6711938cd17f5c.jpg",
@@ -1951,6 +1939,22 @@
     "GOG"
    ],
    "url": "https://rawg.io/games/space-station-designer"
+  },
+  {
+   "nom": "Beautiful Light",
+   "sortie": "2026-12-01",
+   "image": "https://media.rawg.io/media/screenshots/3c5/3c511506ba31902bbdcbf963219ef77c.jpg",
+   "note": null,
+   "popularite": 7,
+   "genres": [
+    "Indie",
+    "Shooter",
+    "Strategy"
+   ],
+   "boutiques": [
+    "Steam"
+   ],
+   "url": "https://rawg.io/games/beautiful-light"
   }
  ],
  "planning": [
