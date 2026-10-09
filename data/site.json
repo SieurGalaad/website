@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-08T23:17:06.461612Z",
+ "genere_le": "2026-10-09T06:00:29.995589Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -67,7 +67,7 @@
    "miniature": "https://i.ytimg.com/vi/n44ILEaqsic/maxresdefault.jpg",
    "description": "Quatorze ans avant le premier Gears of War, Marcus et Dom rentrent de la guerre… et le sol s'ouvre sous Kalona. Gears of War: E-Day raconte l'Emergence Day, le jour où tout a commencé.\n\nSortie le 6 octobre 2026 sur PC et Xbox Series X|S, dès le premier jour dans le Game Pass (accès anticipé depuis le 1er octobre avec l'édition Premium).\n\n🎬 La première heure, commentée en entier : juste sous mon no",
    "duree_s": 34,
-   "vues": 2858,
+   "vues": 2870,
    "jeu": "Gears of War: E-Day",
    "short": true,
    "exclu": true
@@ -95,7 +95,7 @@
    "miniature": "https://i.ytimg.com/vi/J1oE1W2dfns/maxresdefault.jpg",
    "description": "Il traverse un continent en guerre pour retrouver sa fille… qui n'est même pas la sienne. Geralt de Riv, Ciri, et quelque chose qui fait geler le ciel à son passage : la Chasse sauvage.\n\nThe Witcher 3 Remastered est sorti le 29 septembre 2026, en mise à jour gratuite pour ceux qui ont déjà le jeu. L'occasion de le découvrir, ou d'y retourner.\n\n🎬 L'épisode 1 du let's play commenté est juste sous mo",
    "duree_s": 44,
-   "vues": 715,
+   "vues": 716,
    "jeu": "The Witcher 3 Remastered",
    "short": true,
    "exclu": true
@@ -108,7 +108,7 @@
    "miniature": "https://i.ytimg.com/vi/OLzT9BsspUU/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2426,
-   "vues": 17,
+   "vues": 18,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -284,7 +284,7 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 909,
+   "vues": 910,
    "jeu": "Le passé tragique de Lacra dévoilé !",
    "short": true,
    "exclu": true
@@ -1635,18 +1635,6 @@
  "reddit": [],
  "sorties": [
   {
-   "nom": "Clive Barker's Hellraiser: Revival",
-   "sortie": "2026-10-08",
-   "image": "https://media.rawg.io/media/games/816/8167f331942bc2cb8a6711938cd17f5c.jpg",
-   "note": null,
-   "popularite": 19,
-   "genres": [
-    "Action"
-   ],
-   "boutiques": [],
-   "url": "https://rawg.io/games/clive-barkers-hellraiser-revival"
-  },
-  {
    "nom": "Battleplan",
    "sortie": "2026-10-11",
    "image": "https://media.rawg.io/media/screenshots/252/252c359a0db2bcf04802bab5e488fe69.jpg",
@@ -1867,7 +1855,7 @@
    "sortie": "2026-10-29",
    "image": "https://media.rawg.io/media/games/25f/25f536a977488f12ef8a6d013e50fda1.jpg",
    "note": null,
-   "popularite": 232,
+   "popularite": 233,
    "genres": [
     "Adventure",
     "Action"
@@ -1955,6 +1943,18 @@
     "Steam"
    ],
    "url": "https://rawg.io/games/beautiful-light"
+  },
+  {
+   "nom": "SOMBRAS: negative frames",
+   "sortie": "2026-12-02",
+   "image": "https://media.rawg.io/media/screenshots/c27/c27aaf1ec5a4156cf93b906f29bb34a3.jpg",
+   "note": null,
+   "popularite": 0,
+   "genres": [],
+   "boutiques": [
+    "GOG"
+   ],
+   "url": "https://rawg.io/games/sombras-negative-frames"
   }
  ],
  "planning": [
