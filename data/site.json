@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-12T05:48:21.065380Z",
+ "genere_le": "2026-10-12T15:13:23.095431Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la direction artistique d'origine et le rythme du je",
   "abonnes": 20,
   "nb_videos": 99,
-  "vues_totales": 19491,
+  "vues_totales": 19521,
   "heures_visionnees": 107.0,
   "heures_maj": "30/09/2026"
  },
@@ -67,7 +67,7 @@
    "miniature": "https://i.ytimg.com/vi/n44ILEaqsic/maxresdefault.jpg",
    "description": "Quatorze ans avant le premier Gears of War, Marcus et Dom rentrent de la guerre… et le sol s'ouvre sous Kalona. Gears of War: E-Day raconte l'Emergence Day, le jour où tout a commencé.\n\nSortie le 6 octobre 2026 sur PC et Xbox Series X|S, dès le premier jour dans le Game Pass (accès anticipé depuis le 1er octobre avec l'édition Premium).\n\n🎬 La première heure, commentée en entier : juste sous mon no",
    "duree_s": 34,
-   "vues": 2895,
+   "vues": 2897,
    "jeu": "Gears of War: E-Day",
    "short": true,
    "exclu": true
@@ -284,7 +284,7 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 915,
+   "vues": 916,
    "jeu": "Le passé tragique de Lacra dévoilé !",
    "short": true,
    "exclu": true
@@ -925,7 +925,7 @@
    "miniature": "https://i.ytimg.com/vi/BdmAxL3erH4/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1828,
-   "vues": 31,
+   "vues": 32,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1639,7 +1639,7 @@
    "sortie": "2026-10-13",
    "image": "https://media.rawg.io/media/games/61d/61d1431d20f9f6e19b27cb89aa4a4402.jpg",
    "note": null,
-   "popularite": 50,
+   "popularite": 51,
    "genres": [
     "Action",
     "RPG"
@@ -1790,7 +1790,7 @@
    "sortie": "2026-10-21",
    "image": "https://media.rawg.io/media/games/41c/41c5448f15d06825947791da15489f92.jpg",
    "note": null,
-   "popularite": 4,
+   "popularite": 5,
    "genres": [
     "Action"
    ],
