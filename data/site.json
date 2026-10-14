@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-13T22:38:40.051122Z",
+ "genere_le": "2026-10-14T04:45:33.803463Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -22,7 +22,7 @@
    "miniature": "https://i.ytimg.com/vi/MS_Af5pDPsQ/maxresdefault.jpg",
    "description": "Gears of War: E-Day en VF : l'épisode 4, commenté en français et joué en 4K60 Ultra sur PC.\n\nQuatorze ans avant le premier Gears of War, Marcus Fenix et Dominic Santiago rentrent à Kalona… le jour où les Locustes sortent de terre. C'est l'Emergence Day, le jour où tout a commencé, et on le vit ensemble.\n\nCe let's play couvre toute la campagne de Gears of War: E-Day, un épisode par jour, en version",
    "duree_s": 3311,
-   "vues": 21,
+   "vues": 22,
    "jeu": "Gears of War: E-Day",
    "short": false,
    "serie": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
@@ -702,7 +702,7 @@
    "miniature": "https://i.ytimg.com/vi/_4enCoakkTY/maxresdefault.jpg",
    "description": "Un affrontement sans pitié contre une créature cauchemardesque... L'exécution ne pardonne pas. 🩸⚔️\n\n📌 L'aventure complète est disponible ! https://youtube.com/playlist?list=PLPkHE1QHMYrY&si=Y3yXxfDlz3DFaeEd\n\n🎮 Gameplay 4K 60FPS Ultra / Ray Tracing (RTX 5080)\n\n#thebloodofdawnwalker #dawnwalker  #shorts  #gaming  #rtx5080  #Gameplay #nocommentary #rebelwolves",
    "duree_s": 6,
-   "vues": 921,
+   "vues": 922,
    "jeu": "Coen DÉCOUPE ce monstre ! 🩸",
    "short": true,
    "exclu": true
@@ -1635,43 +1635,6 @@
  "reddit": [],
  "sorties": [
   {
-   "nom": "Valor Mortis",
-   "sortie": "2026-10-13",
-   "image": "https://media.rawg.io/media/games/61d/61d1431d20f9f6e19b27cb89aa4a4402.jpg",
-   "note": null,
-   "popularite": 52,
-   "genres": [
-    "Action",
-    "RPG"
-   ],
-   "boutiques": [],
-   "url": "https://rawg.io/games/valor-mortis"
-  },
-  {
-   "nom": "FIRE AND ASHES",
-   "sortie": "2026-10-13",
-   "image": "https://media.rawg.io/media/screenshots/889/8895c68d88e39f50e0ad33b68f2b7ec7.jpg",
-   "note": null,
-   "popularite": 0,
-   "genres": [],
-   "boutiques": [
-    "GOG"
-   ],
-   "url": "https://rawg.io/games/fire-and-ashes"
-  },
-  {
-   "nom": "Thank You Bus Driver",
-   "sortie": "2026-10-13",
-   "image": "https://media.rawg.io/media/screenshots/730/730de75e5e4b795f4540ed2ca03d055f.jpg",
-   "note": null,
-   "popularite": 0,
-   "genres": [],
-   "boutiques": [
-    "GOG"
-   ],
-   "url": "https://rawg.io/games/thank-you-bus-driver"
-  },
-  {
    "nom": "Warhammer 40,000: Boltgun 2",
    "sortie": "2026-10-14",
    "image": "",
@@ -1790,7 +1753,7 @@
    "sortie": "2026-10-21",
    "image": "https://media.rawg.io/media/games/41c/41c5448f15d06825947791da15489f92.jpg",
    "note": null,
-   "popularite": 5,
+   "popularite": 6,
    "genres": [
     "Action"
    ],
@@ -1826,7 +1789,7 @@
    "sortie": "2026-10-26",
    "image": "https://media.rawg.io/media/screenshots/7ea/7ea439920ce17884b49e2e3988f8786a.jpg",
    "note": null,
-   "popularite": 2,
+   "popularite": 3,
    "genres": [],
    "boutiques": [
     "GOG"
@@ -1951,6 +1914,46 @@
     "GOG"
    ],
    "url": "https://rawg.io/games/warhammer-survivors"
+  },
+  {
+   "nom": "Space Station Designer",
+   "sortie": "2026-11-17",
+   "image": "https://media.rawg.io/media/screenshots/53c/53ca443f2fb80f24ecec21d4b21a9f2b.jpg",
+   "note": null,
+   "popularite": 0,
+   "genres": [],
+   "boutiques": [
+    "GOG"
+   ],
+   "url": "https://rawg.io/games/space-station-designer"
+  },
+  {
+   "nom": "Beautiful Light",
+   "sortie": "2026-12-01",
+   "image": "https://media.rawg.io/media/screenshots/3c5/3c511506ba31902bbdcbf963219ef77c.jpg",
+   "note": null,
+   "popularite": 7,
+   "genres": [
+    "Indie",
+    "Shooter",
+    "Strategy"
+   ],
+   "boutiques": [
+    "Steam"
+   ],
+   "url": "https://rawg.io/games/beautiful-light"
+  },
+  {
+   "nom": "SOMBRAS: negative frames",
+   "sortie": "2026-12-02",
+   "image": "https://media.rawg.io/media/screenshots/c27/c27aaf1ec5a4156cf93b906f29bb34a3.jpg",
+   "note": null,
+   "popularite": 0,
+   "genres": [],
+   "boutiques": [
+    "GOG"
+   ],
+   "url": "https://rawg.io/games/sombras-negative-frames"
   }
  ],
  "planning": [
