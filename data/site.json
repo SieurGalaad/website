@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-15T16:53:10.991320Z",
+ "genere_le": "2026-10-15T21:17:44.800708Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la direction artistique d'origine et le rythme du je",
   "abonnes": 20,
   "nb_videos": 99,
-  "vues_totales": 19573,
+  "vues_totales": 19586,
   "heures_visionnees": 107.0,
   "heures_maj": "30/09/2026"
  },
@@ -297,7 +297,7 @@
    "miniature": "https://i.ytimg.com/vi/zx93-pAmwqQ/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1693,
-   "vues": 22,
+   "vues": 23,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -327,7 +327,7 @@
    "miniature": "https://i.ytimg.com/vi/d3y4bGCuduc/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1779,
-   "vues": 21,
+   "vues": 23,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -507,7 +507,7 @@
    "miniature": "https://i.ytimg.com/vi/gzai3NtT5cs/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2193,
-   "vues": 20,
+   "vues": 21,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1028,7 +1028,7 @@
    "miniature": "https://i.ytimg.com/vi/wN2vqxuHkt0/maxresdefault.jpg",
    "description": "Episode 18 de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nAprès avoir accompli la tâche exigée par les Dames du Bois, Geralt obtient enfin des réponses sur le passage de Ciri à Torséchine. En incarnant la jeune femme, le sorceleur revit sa fuite désespérée à travers les marécages alors qu'elle tente d'échapper à la traque des Moires et des ",
    "duree_s": 2022,
-   "vues": 13,
+   "vues": 14,
    "jeu": "The Witcher 3",
    "short": false,
    "serie": "The Witcher 3",
@@ -1408,7 +1408,7 @@
    "miniature": "https://i.ytimg.com/vi/V44ZkeRQjOQ/maxresdefault.jpg",
    "description": "Deuxième épisode de notre aventure immersive sur The Witcher 3, sublimé en 4K Ultra 60fps avec Ray Tracing et 191 mods. \n\nGeralt aide à retrouver un frère disparu sur le champ de bataille de Blanchefleur parmi les cadavres témériens et nilfgaardien.\n\nCHAPITRES DE LA VIDÉO :\n00:00 - Règlement de compte\n02:00 - Un nain dans le besoin\n16:00 - Balade en forêt\n18:30 - Un frère dans le besoin\n\nPRÉSENTAT",
    "duree_s": 1783,
-   "vues": 26,
+   "vues": 27,
    "jeu": "The Witcher 3",
    "short": false,
    "serie": "The Witcher 3",
@@ -1655,7 +1655,7 @@
    "sortie": "2026-10-15",
    "image": "https://media.rawg.io/media/games/429/42928697eb80feb13e6087170a10565a.jpeg",
    "note": null,
-   "popularite": 30,
+   "popularite": 32,
    "genres": [
     "Action",
     "RPG"
@@ -1738,7 +1738,7 @@
    "sortie": "2026-10-22",
    "image": "https://media.rawg.io/media/games/e51/e51aab3845c598b52a2881c3f7155f76.jpg",
    "note": null,
-   "popularite": 21,
+   "popularite": 22,
    "genres": [
     "RPG"
    ],
