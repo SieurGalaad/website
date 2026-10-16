@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-16T04:23:11.931467Z",
+ "genere_le": "2026-10-16T11:14:54.506914Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -1884,6 +1884,19 @@
    "url": "https://rawg.io/games/rayman-legends-retold"
   },
   {
+   "nom": "Guns of Eschaton",
+   "sortie": "2026-12-08",
+   "image": "https://media.rawg.io/media/games/b03/b03195ee349fdfe45e12a0352adb3162.jpg",
+   "note": null,
+   "popularite": 2,
+   "genres": [
+    "Shooter",
+    "Action"
+   ],
+   "boutiques": [],
+   "url": "https://rawg.io/games/guns-of-eschaton"
+  },
+  {
    "nom": "Path of Exile 2",
    "sortie": "2026-12-11",
    "image": "https://media.rawg.io/media/games/401/4010e56adceb7db58ba42d1189796d5e.jpg",
@@ -1943,21 +1956,6 @@
     "Steam"
    ],
    "url": "https://rawg.io/games/ananta"
-  },
-  {
-   "nom": "Titan Quest 2",
-   "sortie": "2027-01-19",
-   "image": "https://media.rawg.io/media/games/233/233b58ed99520a1e0b19109f7263f011.jpg",
-   "note": null,
-   "popularite": 108,
-   "genres": [
-    "Action",
-    "RPG"
-   ],
-   "boutiques": [
-    "Steam"
-   ],
-   "url": "https://rawg.io/games/titan-quest-2"
   }
  ],
  "planning": [
