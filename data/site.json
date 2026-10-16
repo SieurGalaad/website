@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-15T21:17:44.800708Z",
+ "genere_le": "2026-10-16T04:23:11.931467Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -138,7 +138,7 @@
    "miniature": "https://i.ytimg.com/vi/TotsrmcigPA/maxresdefault.jpg",
    "description": "1666 Amsterdam, le nouveau jeu de Patrice Désilets (le créateur d'Assassin's Creed), récupéré après 13 ans de bataille avec Ubisoft. Apothicaire le jour, sorcière traquée la nuit, à la poursuite d'un démon qui revient tous les 333 ans.\n\n🎬 Je commente la première heure de gameplay, sur la chaîne ( lien\nen commentaire épinglé)\n\n👁️ Immersion · VF · 4K60 Ultra — walkthroughs commentés sur PC RTX5080 /",
    "duree_s": 47,
-   "vues": 1262,
+   "vues": 1263,
    "jeu": "1666 Amsterdam",
    "short": true,
    "exclu": true
@@ -1635,63 +1635,6 @@
  "reddit": [],
  "sorties": [
   {
-   "nom": "Enshrouded",
-   "sortie": "2026-10-15",
-   "image": "https://media.rawg.io/media/games/23a/23a1c71366aea4341aec483c9dd08a59.jpg",
-   "note": null,
-   "popularite": 347,
-   "genres": [
-    "Adventure",
-    "Action",
-    "RPG"
-   ],
-   "boutiques": [
-    "Steam"
-   ],
-   "url": "https://rawg.io/games/enshrouded-2"
-  },
-  {
-   "nom": "Castlevania: Belmont's Curse",
-   "sortie": "2026-10-15",
-   "image": "https://media.rawg.io/media/games/429/42928697eb80feb13e6087170a10565a.jpeg",
-   "note": null,
-   "popularite": 32,
-   "genres": [
-    "Action",
-    "RPG"
-   ],
-   "boutiques": [
-    "Steam"
-   ],
-   "url": "https://rawg.io/games/castlevania-belmonts-curse"
-  },
-  {
-   "nom": "Disney/Pixar Toy Story 3 Complete Edition",
-   "sortie": "2026-10-15",
-   "image": "https://media.rawg.io/media/screenshots/24e/24e4aefbd856a211efd74bd384bd33a2.jpg",
-   "note": null,
-   "popularite": 2,
-   "genres": [
-    "Platformer",
-    "Adventure",
-    "Action"
-   ],
-   "boutiques": [],
-   "url": "https://rawg.io/games/disneypixar-toy-story-3-complete-edition"
-  },
-  {
-   "nom": "Penguin Colony",
-   "sortie": "2026-10-15",
-   "image": "https://media.rawg.io/media/screenshots/8eb/8ebf9110459339d6bded00aa37b73941.jpg",
-   "note": null,
-   "popularite": 0,
-   "genres": [],
-   "boutiques": [
-    "GOG"
-   ],
-   "url": "https://rawg.io/games/penguin-colony"
-  },
-  {
    "nom": "Tenebris Somnia",
    "sortie": "2026-10-16",
    "image": "https://media.rawg.io/media/games/97b/97b849dfc43f7634e65c0fccbf6c737d.jpg",
@@ -1955,6 +1898,66 @@
     "Steam"
    ],
    "url": "https://rawg.io/games/path-of-exile-2"
+  },
+  {
+   "nom": "They Come in Fives",
+   "sortie": "2026-12-16",
+   "image": "https://media.rawg.io/media/games/69f/69f16f2f13fdb39e5efba2fc5528d026.jpg",
+   "note": null,
+   "popularite": 0,
+   "genres": [
+    "Card",
+    "Strategy"
+   ],
+   "boutiques": [
+    "Steam"
+   ],
+   "url": "https://rawg.io/games/they-come-in-fives"
+  },
+  {
+   "nom": "Prince of Persia: The Sands of Time Remake",
+   "sortie": "2026-12-31",
+   "image": "https://media.rawg.io/media/games/b92/b92b55aeab9ed1777104f71f4b22a613.jpg",
+   "note": null,
+   "popularite": 1032,
+   "genres": [
+    "Action"
+   ],
+   "boutiques": [
+    "PlayStation Store",
+    "Xbox Store",
+    "Epic Games"
+   ],
+   "url": "https://rawg.io/games/prince-of-persia-the-sands-of-time-remake"
+  },
+  {
+   "nom": "ananta",
+   "sortie": "2027-01-15",
+   "image": "https://media.rawg.io/media/screenshots/21f/21ffdb58671720697c5e7382b021755b.jpg",
+   "note": null,
+   "popularite": 30,
+   "genres": [
+    "Action"
+   ],
+   "boutiques": [
+    "Steam"
+   ],
+   "url": "https://rawg.io/games/ananta"
+  },
+  {
+   "nom": "Titan Quest 2",
+   "sortie": "2027-01-19",
+   "image": "https://media.rawg.io/media/games/233/233b58ed99520a1e0b19109f7263f011.jpg",
+   "note": null,
+   "popularite": 108,
+   "genres": [
+    "Action",
+    "RPG"
+   ],
+   "boutiques": [
+    "Steam"
+   ],
+   "url": "https://rawg.io/games/titan-quest-2"
   }
  ],
  "planning": [
