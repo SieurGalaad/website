@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-16T11:14:54.506914Z",
+ "genere_le": "2026-10-16T16:33:00.735627Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -37,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/mhZKnfzkFGQ/maxresdefault.jpg",
    "description": "Gears of War: E-Day en VF : l'épisode 3, commenté en français et joué en 4K60 Ultra sur PC.\n\nQuatorze ans avant le premier Gears of War, Marcus Fenix et Dominic Santiago rentrent à Kalona… le jour où les Locustes sortent de terre. C'est l'Emergence Day, le jour où tout a commencé, et on le vit ensemble.\n\nCe let's play couvre toute la campagne de Gears of War: E-Day, un épisode par jour, en version",
    "duree_s": 2453,
-   "vues": 15,
+   "vues": 16,
    "jeu": "Gears of War: E-Day",
    "short": false,
    "serie": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
@@ -52,7 +52,7 @@
    "miniature": "https://i.ytimg.com/vi/bfeKUbW-V08/maxresdefault.jpg",
    "description": "Gears of War: E-Day en VF : l'épisode 2, commenté en français et joué en 4K60 Ultra sur PC.\n\nQuatorze ans avant le premier Gears of War, Marcus Fenix et Dominic Santiago rentrent à Kalona… le jour où les Locustes sortent de terre. C'est l'Emergence Day, le jour où tout a commencé, et on le vit ensemble.\n\nCe let's play couvre toute la campagne de Gears of War: E-Day, un épisode par jour, en version",
    "duree_s": 2638,
-   "vues": 22,
+   "vues": 23,
    "jeu": "Gears of War: E-Day",
    "short": false,
    "serie": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
@@ -80,7 +80,7 @@
    "miniature": "https://i.ytimg.com/vi/StzUmxNH7ig/maxresdefault.jpg",
    "description": "Gears of War: E-Day en VF : la première heure du jeu, commentée en français et jouée en 4K60 Ultra sur PC.\n\nQuatorze ans avant le premier Gears of War, Marcus Fenix et Dominic Santiago rentrent à Kalona… le jour où les Locustes sortent de terre. C'est l'Emergence Day, le jour où tout a commencé, et on le vit ensemble dès les premières minutes.\n\nCe let's play couvre toute la campagne de Gears of Wa",
    "duree_s": 3235,
-   "vues": 33,
+   "vues": 35,
    "jeu": "Gears of War: E-Day",
    "short": false,
    "serie": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
@@ -284,7 +284,7 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 922,
+   "vues": 923,
    "jeu": "Le passé tragique de Lacra dévoilé !",
    "short": true,
    "exclu": true
@@ -567,7 +567,7 @@
    "miniature": "https://i.ytimg.com/vi/scZs0FB5TPc/maxresdefault.jpg",
    "description": "Découvrez la toute première heure de jeu (First Hour Gameplay) du projet communautaire Halo Campaign Evolved dans sa qualité visuelle maximale.\n\nUne expérience 100 % immersive, sans interface superflue et sans commentaire (No Commentary).\n\nConfiguration PC & Qualité d'enregistrement :\nRésolution : 4K (2160p) 60FPS\nGraphismes : Qualité Ultra\nGPU : NVIDIA GeForce RTX 5080\nCPU : AMD Ryzen 7 9800X3D\n\n",
    "duree_s": 3379,
-   "vues": 17,
+   "vues": 18,
    "jeu": "Halo Campaign Evolved",
    "short": false,
    "serie": "Les Premières heures",
@@ -1639,7 +1639,7 @@
    "sortie": "2026-10-16",
    "image": "https://media.rawg.io/media/games/97b/97b849dfc43f7634e65c0fccbf6c737d.jpg",
    "note": null,
-   "popularite": 4,
+   "popularite": 5,
    "genres": [
     "Action"
    ],
