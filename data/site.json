@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-27T22:07:27.333064Z",
+ "genere_le": "2026-10-28T05:29:52.331281Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la direction artistique d'origine et le rythme du je",
   "abonnes": 20,
   "nb_videos": 99,
-  "vues_totales": 19742,
+  "vues_totales": 19747,
   "heures_visionnees": 107.0,
   "heures_maj": "30/09/2026"
  },
@@ -357,7 +357,7 @@
    "miniature": "https://i.ytimg.com/vi/hMByPAzMJcQ/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1914,
-   "vues": 32,
+   "vues": 33,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1635,18 +1635,6 @@
  "reddit": [],
  "sorties": [
   {
-   "nom": "Gennady",
-   "sortie": "2026-10-27",
-   "image": "https://media.rawg.io/media/screenshots/f52/f524ede20617fc1a2671f0be5f3e2c75.jpg",
-   "note": null,
-   "popularite": 0,
-   "genres": [],
-   "boutiques": [
-    "GOG"
-   ],
-   "url": "https://rawg.io/games/gennady"
-  },
-  {
    "nom": "COP BASTARD",
    "sortie": "2026-10-28",
    "image": "https://media.rawg.io/media/screenshots/985/98584b5b6dbd388a148612d54e5ceb5b.jpg",
@@ -1959,6 +1947,21 @@
    ],
    "boutiques": [],
    "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis"
+  },
+  {
+   "nom": "Fable",
+   "sortie": "2027-02-23",
+   "image": "https://media.rawg.io/media/games/e06/e06a04ece5555c8c15a7c68e22649f0c.jpg",
+   "note": null,
+   "popularite": 375,
+   "genres": [
+    "Action",
+    "RPG"
+   ],
+   "boutiques": [
+    "Steam"
+   ],
+   "url": "https://rawg.io/games/fable2020"
   }
  ],
  "planning": [
