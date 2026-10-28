@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-28T12:42:21.770623Z",
+ "genere_le": "2026-10-28T22:30:05.010558Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -1635,6 +1635,22 @@
  "reddit": [],
  "sorties": [
   {
+   "nom": "Sulfur",
+   "sortie": "2026-10-28",
+   "image": "https://media.rawg.io/media/games/c99/c9983fcec946b01924050b683d66cd7a.jpg",
+   "note": null,
+   "popularite": 37,
+   "genres": [
+    "Adventure",
+    "Action",
+    "RPG"
+   ],
+   "boutiques": [
+    "Steam"
+   ],
+   "url": "https://rawg.io/games/sulfur"
+  },
+  {
    "nom": "COP BASTARD",
    "sortie": "2026-10-28",
    "image": "https://media.rawg.io/media/screenshots/985/98584b5b6dbd388a148612d54e5ceb5b.jpg",
@@ -1655,7 +1671,7 @@
    "sortie": "2026-10-29",
    "image": "https://media.rawg.io/media/games/25f/25f536a977488f12ef8a6d013e50fda1.jpg",
    "note": null,
-   "popularite": 248,
+   "popularite": 249,
    "genres": [
     "Adventure",
     "Action"
@@ -1817,6 +1833,19 @@
    "url": "https://rawg.io/games/rayman-legends-retold"
   },
   {
+   "nom": "Cronos: Lazarus",
+   "sortie": "2026-12-03",
+   "image": "https://media.rawg.io/media/screenshots/931/9310c67fb825c90ff9f992c7795c119c.jpg",
+   "note": null,
+   "popularite": 2,
+   "genres": [
+    "Adventure",
+    "Action"
+   ],
+   "boutiques": [],
+   "url": "https://rawg.io/games/cronos-lazarus"
+  },
+  {
    "nom": "Guns of Eschaton",
    "sortie": "2026-12-08",
    "image": "https://media.rawg.io/media/games/b03/b03195ee349fdfe45e12a0352adb3162.jpg",
@@ -1935,33 +1964,6 @@
     "GOG"
    ],
    "url": "https://rawg.io/games/outward-2"
-  },
-  {
-   "nom": "Tomb Raider: Legacy of Atlantis",
-   "sortie": "2027-02-12",
-   "image": "https://media.rawg.io/media/games/c2b/c2b8a3ef89b3edd35c1804dc0d68d7bb.jpg",
-   "note": null,
-   "popularite": 116,
-   "genres": [
-    "Action"
-   ],
-   "boutiques": [],
-   "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis"
-  },
-  {
-   "nom": "Fable",
-   "sortie": "2027-02-23",
-   "image": "https://media.rawg.io/media/games/e06/e06a04ece5555c8c15a7c68e22649f0c.jpg",
-   "note": null,
-   "popularite": 375,
-   "genres": [
-    "Action",
-    "RPG"
-   ],
-   "boutiques": [
-    "Steam"
-   ],
-   "url": "https://rawg.io/games/fable2020"
   }
  ],
  "planning": [
