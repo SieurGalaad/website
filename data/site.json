@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-10-29T12:52:32.383706Z",
+ "genere_le": "2026-10-29T22:41:57.856697Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la direction artistique d'origine et le rythme du je",
   "abonnes": 20,
   "nb_videos": 99,
-  "vues_totales": 19756,
+  "vues_totales": 19760,
   "heures_visionnees": 107.0,
   "heures_maj": "30/09/2026"
  },
@@ -95,7 +95,7 @@
    "miniature": "https://i.ytimg.com/vi/J1oE1W2dfns/maxresdefault.jpg",
    "description": "Il traverse un continent en guerre pour retrouver sa fille… qui n'est même pas la sienne. Geralt de Riv, Ciri, et quelque chose qui fait geler le ciel à son passage : la Chasse sauvage.\n\nThe Witcher 3 Remastered est sorti le 29 septembre 2026, en mise à jour gratuite pour ceux qui ont déjà le jeu. L'occasion de le découvrir, ou d'y retourner.\n\n🎬 L'épisode 1 du let's play commenté est juste sous mo",
    "duree_s": 44,
-   "vues": 731,
+   "vues": 733,
    "jeu": "The Witcher 3 Remastered",
    "short": true,
    "exclu": true
@@ -138,7 +138,7 @@
    "miniature": "https://i.ytimg.com/vi/TotsrmcigPA/maxresdefault.jpg",
    "description": "1666 Amsterdam, le nouveau jeu de Patrice Désilets (le créateur d'Assassin's Creed), récupéré après 13 ans de bataille avec Ubisoft. Apothicaire le jour, sorcière traquée la nuit, à la poursuite d'un démon qui revient tous les 333 ans.\n\n🎬 Je commente la première heure de gameplay, sur la chaîne ( lien\nen commentaire épinglé)\n\n👁️ Immersion · VF · 4K60 Ultra — walkthroughs commentés sur PC RTX5080 /",
    "duree_s": 47,
-   "vues": 1282,
+   "vues": 1285,
    "jeu": "1666 Amsterdam",
    "short": true,
    "exclu": true
@@ -284,7 +284,7 @@
    "miniature": "https://i.ytimg.com/vi/XIPcNhHSJ8c/maxresdefault.jpg",
    "description": "Découvrez le passé de Lacra. Pourquoi la petite Lacra devait-elle garder le silence coûte que coûte ? Plongez dans les origines sombres et le lore de ce personnage fascinant en compagnie de Sieur Galaad.\n\n📌 Série complète & Let's Play :\n\nPlaylist The Blood of Dawnwalker : https://www.youtube.com/playlist?list=PLPkHE1QHMYrY\nAutre aventure complète en 4K60 : https://www.youtube.com/playlist?list=PLK",
    "duree_s": 34,
-   "vues": 932,
+   "vues": 933,
    "jeu": "Le passé tragique de Lacra dévoilé !",
    "short": true,
    "exclu": true
@@ -402,7 +402,7 @@
    "miniature": "https://i.ytimg.com/vi/p9fzgenwd8g/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1635,
-   "vues": 75,
+   "vues": 77,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -687,7 +687,7 @@
    "miniature": "https://i.ytimg.com/vi/589fGroJ910/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2073,
-   "vues": 30,
+   "vues": 31,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1639,7 +1639,7 @@
    "sortie": "2026-10-29",
    "image": "https://media.rawg.io/media/games/25f/25f536a977488f12ef8a6d013e50fda1.jpg",
    "note": null,
-   "popularite": 250,
+   "popularite": 253,
    "genres": [
     "Adventure",
     "Action"
@@ -1652,7 +1652,7 @@
    "sortie": "2026-10-29",
    "image": "https://media.rawg.io/media/screenshots/83c/83ca2a4e4e94eecad38064f34304af49.jpg",
    "note": null,
-   "popularite": 7,
+   "popularite": 8,
    "genres": [
     "Adventure",
     "Action"
@@ -1892,7 +1892,7 @@
    "sortie": "2027-01-19",
    "image": "https://media.rawg.io/media/games/233/233b58ed99520a1e0b19109f7263f011.jpg",
    "note": null,
-   "popularite": 109,
+   "popularite": 110,
    "genres": [
     "Action",
     "RPG"
@@ -1950,7 +1950,7 @@
    "sortie": "2027-02-23",
    "image": "https://media.rawg.io/media/games/e06/e06a04ece5555c8c15a7c68e22649f0c.jpg",
    "note": null,
-   "popularite": 375,
+   "popularite": 376,
    "genres": [
     "Action",
     "RPG"
