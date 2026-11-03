@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-11-02T15:39:15.651955Z",
+ "genere_le": "2026-11-03T01:03:02.023580Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la direction artistique d'origine et le rythme du je",
   "abonnes": 20,
   "nb_videos": 99,
-  "vues_totales": 19808,
+  "vues_totales": 19812,
   "heures_visionnees": 107.0,
   "heures_maj": "30/09/2026"
  },
@@ -37,7 +37,7 @@
    "miniature": "https://i.ytimg.com/vi/mhZKnfzkFGQ/maxresdefault.jpg",
    "description": "Gears of War: E-Day en VF : l'épisode 3, commenté en français et joué en 4K60 Ultra sur PC.\n\nQuatorze ans avant le premier Gears of War, Marcus Fenix et Dominic Santiago rentrent à Kalona… le jour où les Locustes sortent de terre. C'est l'Emergence Day, le jour où tout a commencé, et on le vit ensemble.\n\nCe let's play couvre toute la campagne de Gears of War: E-Day, un épisode par jour, en version",
    "duree_s": 2453,
-   "vues": 19,
+   "vues": 20,
    "jeu": "Gears of War: E-Day",
    "short": false,
    "serie": "Gears of War: E-Day — Let's Play FR intégral (VF, 4K60)",
@@ -730,7 +730,7 @@
    "miniature": "https://i.ytimg.com/vi/14eIXLtsXRw/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1793,
-   "vues": 38,
+   "vues": 39,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1939,8 +1939,8 @@
    "statut": "termine",
    "note": "The Witcher des carpates ?",
    "episodes": "La totale",
-   "image": "https://media.rawg.io/media/games/319/319d18680fd0233e0ff724f234c97d17.jpg",
-   "url_jeu": "https://rawg.io/games/the-blood-of-dawnwalker"
+   "image": "",
+   "url_jeu": ""
   },
   {
    "jeu": "The Witcher 3: Wild Hunt",
@@ -1949,8 +1949,8 @@
    "statut": "en_cours",
    "note": "Fin de la campagne principale avec 191 mods, avant la bascule sur le Remastered.",
    "episodes": "L'histoire principale",
-   "image": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
-   "url_jeu": "https://rawg.io/games/the-witcher-3-wild-hunt"
+   "image": "",
+   "url_jeu": ""
   },
   {
    "jeu": "1666 : Amsterdam",
@@ -1959,8 +1959,8 @@
    "statut": "termine",
    "note": "Découverte de la pépite du papa d'Assassin's Creed",
    "episodes": "La première heure",
-   "image": "https://media.rawg.io/media/screenshots/c56/c56fe0145a3e68010ebf3b7b68260315.jpg",
-   "url_jeu": "https://rawg.io/games/1666-amsterdam"
+   "image": "",
+   "url_jeu": ""
   },
   {
    "jeu": "Gears of War: E-Day",
@@ -1969,8 +1969,8 @@
    "statut": "prevu",
    "note": "Ca va trancher du Locuste à l'ancienne",
    "episodes": "La totale",
-   "image": "https://media.rawg.io/media/games/c85/c85991ad8164824715377e603a2d7693.jpg",
-   "url_jeu": "https://rawg.io/games/gears-of-war-e-day"
+   "image": "",
+   "url_jeu": ""
   },
   {
    "jeu": "Silent Hill : Townfall",
@@ -1979,8 +1979,8 @@
    "statut": "prevu",
    "note": "Ca va trancher du Locuste à l'ancienne",
    "episodes": "La totale",
-   "image": "https://media.rawg.io/media/games/8ff/8ff55788736c59fcb7b814d862c2ae6f.jpeg",
-   "url_jeu": "https://rawg.io/games/silent-hill-townfall-2"
+   "image": "",
+   "url_jeu": ""
   },
   {
    "jeu": "The Witcher 3: Heart of Stone",
@@ -1989,8 +1989,8 @@
    "statut": "prévu",
    "note": "Remastered de l'homme au coeur de pierre",
    "episodes": "Ep. 1-8",
-   "image": "https://media.rawg.io/media/games/c19/c193180583c34e5753a1aaf15a586761.jpg",
-   "url_jeu": "https://rawg.io/games/the-witcher-3-wild-hunt-hearts-of-stone"
+   "image": "",
+   "url_jeu": ""
   },
   {
    "jeu": "The Witcher 3: Blood and wine",
@@ -1999,8 +1999,8 @@
    "statut": "prévu",
    "note": "Remastered, du meilleur DLC de tous les temps ?",
    "episodes": "Ep. 1-8",
-   "image": "https://media.rawg.io/media/games/b51/b51c3649322ac0de9dfbe83435eda449.jpg",
-   "url_jeu": "https://rawg.io/games/the-witcher-3-wild-hunt-blood-and-wine"
+   "image": "",
+   "url_jeu": ""
   }
  ],
  "forge": {
@@ -2118,6 +2118,6 @@
  "statuts": {
   "youtube": "ok",
   "reddit": "echec",
-  "sorties": "ok"
+  "sorties": "echec"
  }
 }
