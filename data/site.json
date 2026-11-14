@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-11-13T19:35:12.725434Z",
+ "genere_le": "2026-11-14T06:09:35.507806Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la direction artistique d'origine et le rythme du je",
   "abonnes": 20,
   "nb_videos": 99,
-  "vues_totales": 19880,
+  "vues_totales": 19884,
   "heures_visionnees": 107.0,
   "heures_maj": "30/09/2026"
  },
@@ -138,7 +138,7 @@
    "miniature": "https://i.ytimg.com/vi/TotsrmcigPA/maxresdefault.jpg",
    "description": "1666 Amsterdam, le nouveau jeu de Patrice Désilets (le créateur d'Assassin's Creed), récupéré après 13 ans de bataille avec Ubisoft. Apothicaire le jour, sorcière traquée la nuit, à la poursuite d'un démon qui revient tous les 333 ans.\n\n🎬 Je commente la première heure de gameplay, sur la chaîne ( lien\nen commentaire épinglé)\n\n👁️ Immersion · VF · 4K60 Ultra — walkthroughs commentés sur PC RTX5080 /",
    "duree_s": 47,
-   "vues": 1303,
+   "vues": 1304,
    "jeu": "1666 Amsterdam",
    "short": true,
    "exclu": true
@@ -687,7 +687,7 @@
    "miniature": "https://i.ytimg.com/vi/589fGroJ910/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 2073,
-   "vues": 32,
+   "vues": 33,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -970,7 +970,7 @@
    "miniature": "https://i.ytimg.com/vi/s76DMwgtN5I/sddefault.jpg",
    "description": "Un affrontement sanglant et une exécution brutale... Les combats de The Blood of Dawnwalker ne pardonnent pas. 🩸⚔️\n\n📌 L'aventure complète en Full Ultra est disponible !\nhttps://www.youtube.com/playlist?list=PLPkHE1QHMYrY\n\n⚙️ Spécifications Techniques :\n\nGPU : NVIDIA GeForce RTX 5080\nCPU : AMD Ryzen 7 9800X3D\nParamètres : 4K (3840x2160) / 60 FPS / Ultra Graphics + Ray Tracing + DLSS\n\n🔗 Rejoignez la",
    "duree_s": 8,
-   "vues": 1372,
+   "vues": 1374,
    "jeu": "THE BLOOD OF DAWNWALKER",
    "short": true,
    "exclu": true
@@ -1703,13 +1703,25 @@
    "sortie": "2026-12-03",
    "image": "https://media.rawg.io/media/screenshots/931/9310c67fb825c90ff9f992c7795c119c.jpg",
    "note": null,
-   "popularite": 2,
+   "popularite": 3,
    "genres": [
     "Adventure",
     "Action"
    ],
    "boutiques": [],
    "url": "https://rawg.io/games/cronos-lazarus"
+  },
+  {
+   "nom": "Elements Destiny",
+   "sortie": "2026-12-07",
+   "image": "https://media.rawg.io/media/screenshots/afd/afd48dc02c76ee43edf376c4f9e7788e.jpg",
+   "note": null,
+   "popularite": 0,
+   "genres": [],
+   "boutiques": [
+    "GOG"
+   ],
+   "url": "https://rawg.io/games/elements-destiny"
   },
   {
    "nom": "Guns of Eschaton",
@@ -1772,7 +1784,7 @@
    "sortie": "2026-12-31",
    "image": "https://media.rawg.io/media/games/b92/b92b55aeab9ed1777104f71f4b22a613.jpg",
    "note": null,
-   "popularite": 1045,
+   "popularite": 1044,
    "genres": [
     "Action"
    ],
@@ -1825,11 +1837,23 @@
    "url": "https://rawg.io/games/lelu"
   },
   {
+   "nom": "Crystals Of Irm",
+   "sortie": "2027-01-20",
+   "image": "https://media.rawg.io/media/screenshots/978/97825eb3f822fbcf73db83c5c9e148cc.jpg",
+   "note": null,
+   "popularite": 0,
+   "genres": [],
+   "boutiques": [
+    "GOG"
+   ],
+   "url": "https://rawg.io/games/crystals-of-irm"
+  },
+  {
    "nom": "Metro 2039",
    "sortie": "2027-02-04",
    "image": "https://media.rawg.io/media/games/4a5/4a5865eca8376e08a8e31ce278b5248f.jpg",
    "note": null,
-   "popularite": 38,
+   "popularite": 39,
    "genres": [
     "Shooter"
    ],
