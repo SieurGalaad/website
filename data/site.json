@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-11-17T20:48:40.205862Z",
+ "genere_le": "2026-11-18T07:14:33.440222Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la direction artistique d'origine et le rythme du je",
   "abonnes": 20,
   "nb_videos": 99,
-  "vues_totales": 19908,
+  "vues_totales": 19913,
   "heures_visionnees": 107.0,
   "heures_maj": "30/09/2026"
  },
@@ -1634,18 +1634,6 @@
  ],
  "reddit": [],
  "sorties": [
-  {
-   "nom": "Space Station Designer",
-   "sortie": "2026-11-17",
-   "image": "https://media.rawg.io/media/screenshots/53c/53ca443f2fb80f24ecec21d4b21a9f2b.jpg",
-   "note": null,
-   "popularite": 0,
-   "genres": [],
-   "boutiques": [
-    "GOG"
-   ],
-   "url": "https://rawg.io/games/space-station-designer"
-  },
   {
    "nom": "Beautiful Light",
    "sortie": "2026-12-01",
