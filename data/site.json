@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-11-19T07:14:02.799262Z",
+ "genere_le": "2026-11-19T20:28:30.290805Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -402,7 +402,7 @@
    "miniature": "https://i.ytimg.com/vi/p9fzgenwd8g/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1635,
-   "vues": 79,
+   "vues": 80,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -432,7 +432,7 @@
    "miniature": "https://i.ytimg.com/vi/I2pXoEtNfqY/maxresdefault.jpg",
    "description": "Plongez dans l'univers sombre et impitoyable de The Blood of Dawnwalker. Incarnez Coen dans une Europe du XIVe siècle ravagée par les guerres et le vampirisme : affrontez des créatures cauchemardesques, maîtrisez vos pouvoirs profanes et percez les mystères du sang et de la nuit.\n\nEnregistré en 4K60 FPS Ultra (avec Ray Tracing et DLSS), cette série inclut le jeu complet en pur gameplay sans commen",
    "duree_s": 1835,
-   "vues": 43,
+   "vues": 44,
    "jeu": "The Blood of Dawnwalker",
    "short": false,
    "serie": "The Blood of Dawnwalker",
@@ -1691,7 +1691,7 @@
    "sortie": "2026-12-03",
    "image": "https://media.rawg.io/media/screenshots/931/9310c67fb825c90ff9f992c7795c119c.jpg",
    "note": null,
-   "popularite": 5,
+   "popularite": 6,
    "genres": [
     "Adventure",
     "Action"
@@ -1741,7 +1741,7 @@
    "sortie": "2026-12-11",
    "image": "https://media.rawg.io/media/games/401/4010e56adceb7db58ba42d1189796d5e.jpg",
    "note": null,
-   "popularite": 537,
+   "popularite": 538,
    "genres": [
     "Massively Multiplayer",
     "Adventure",
@@ -1772,7 +1772,7 @@
    "sortie": "2026-12-31",
    "image": "https://media.rawg.io/media/games/b92/b92b55aeab9ed1777104f71f4b22a613.jpg",
    "note": null,
-   "popularite": 1045,
+   "popularite": 1046,
    "genres": [
     "Action"
    ],
@@ -1841,7 +1841,7 @@
    "sortie": "2027-02-04",
    "image": "https://media.rawg.io/media/games/4a5/4a5865eca8376e08a8e31ce278b5248f.jpg",
    "note": null,
-   "popularite": 39,
+   "popularite": 40,
    "genres": [
     "Shooter"
    ],
@@ -1872,7 +1872,7 @@
    "sortie": "2027-02-12",
    "image": "https://media.rawg.io/media/games/c2b/c2b8a3ef89b3edd35c1804dc0d68d7bb.jpg",
    "note": null,
-   "popularite": 118,
+   "popularite": 119,
    "genres": [
     "Action"
    ],
