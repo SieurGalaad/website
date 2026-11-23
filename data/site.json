@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-11-23T07:24:51.511443Z",
+ "genere_le": "2026-11-23T23:47:36.036879Z",
  "chaine": {
   "id": "UCqaDIhqrP-MLQzU8Mj1-JDA",
   "titre": "SieurGalaad",
@@ -9,7 +9,7 @@
   "description": "Hello ! Moi c'est Galaad.\nJe réalise des Let's Play complets et des Showcases techniques axés sur l'immersion.\n\n⚙️ TECHNIQUES DE CAPTURE & QUALITÉ\n\nRendu maximal : 4K 60FPS Ultra & Ray Tracing \n\nHardware : NVIDIA GeForce RTX 5080 & AMD Ryzen 7 9800X3D\n\nImmersion : Interface (HUD) désactivée ou minimale\n\n\nMon objectif est de proposer la vitrine graphique des plus grands jeux vidéo (Action-RPG, Dark Fantasy, productions AA et AAA). En respectant la direction artistique d'origine et le rythme du je",
   "abonnes": 20,
   "nb_videos": 99,
-  "vues_totales": 19930,
+  "vues_totales": 19933,
   "heures_visionnees": 107.0,
   "heures_maj": "30/09/2026"
  },
@@ -138,7 +138,7 @@
    "miniature": "https://i.ytimg.com/vi/TotsrmcigPA/maxresdefault.jpg",
    "description": "1666 Amsterdam, le nouveau jeu de Patrice Désilets (le créateur d'Assassin's Creed), récupéré après 13 ans de bataille avec Ubisoft. Apothicaire le jour, sorcière traquée la nuit, à la poursuite d'un démon qui revient tous les 333 ans.\n\n🎬 Je commente la première heure de gameplay, sur la chaîne ( lien\nen commentaire épinglé)\n\n👁️ Immersion · VF · 4K60 Ultra — walkthroughs commentés sur PC RTX5080 /",
    "duree_s": 47,
-   "vues": 1314,
+   "vues": 1319,
    "jeu": "1666 Amsterdam",
    "short": true,
    "exclu": true
@@ -970,7 +970,7 @@
    "miniature": "https://i.ytimg.com/vi/s76DMwgtN5I/sddefault.jpg",
    "description": "Un affrontement sanglant et une exécution brutale... Les combats de The Blood of Dawnwalker ne pardonnent pas. 🩸⚔️\n\n📌 L'aventure complète en Full Ultra est disponible !\nhttps://www.youtube.com/playlist?list=PLPkHE1QHMYrY\n\n⚙️ Spécifications Techniques :\n\nGPU : NVIDIA GeForce RTX 5080\nCPU : AMD Ryzen 7 9800X3D\nParamètres : 4K (3840x2160) / 60 FPS / Ultra Graphics + Ray Tracing + DLSS\n\n🔗 Rejoignez la",
    "duree_s": 8,
-   "vues": 1380,
+   "vues": 1381,
    "jeu": "THE BLOOD OF DAWNWALKER",
    "short": true,
    "exclu": true
@@ -1691,7 +1691,7 @@
    "sortie": "2026-12-03",
    "image": "https://media.rawg.io/media/screenshots/931/9310c67fb825c90ff9f992c7795c119c.jpg",
    "note": null,
-   "popularite": 6,
+   "popularite": 7,
    "genres": [
     "Adventure",
     "Action"
@@ -1716,7 +1716,7 @@
    "sortie": "2026-12-08",
    "image": "https://media.rawg.io/media/games/b03/b03195ee349fdfe45e12a0352adb3162.jpg",
    "note": null,
-   "popularite": 3,
+   "popularite": 4,
    "genres": [
     "Shooter",
     "Action"
@@ -1772,7 +1772,7 @@
    "sortie": "2026-12-31",
    "image": "https://media.rawg.io/media/games/b92/b92b55aeab9ed1777104f71f4b22a613.jpg",
    "note": null,
-   "popularite": 1046,
+   "popularite": 1047,
    "genres": [
     "Action"
    ],
@@ -1887,7 +1887,7 @@
    "sortie": "2027-02-12",
    "image": "https://media.rawg.io/media/games/c2b/c2b8a3ef89b3edd35c1804dc0d68d7bb.jpg",
    "note": null,
-   "popularite": 120,
+   "popularite": 121,
    "genres": [
     "Action"
    ],
@@ -1899,7 +1899,7 @@
    "sortie": "2027-02-23",
    "image": "https://media.rawg.io/media/games/e06/e06a04ece5555c8c15a7c68e22649f0c.jpg",
    "note": null,
-   "popularite": 375,
+   "popularite": 377,
    "genres": [
     "Action",
     "RPG"
